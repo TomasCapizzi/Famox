@@ -1,0 +1,26 @@
+@import '../theme/theme.scss';
+
+.rrss{
+    svg{
+        width: 50px;
+        font-size: 3.5rem;
+        margin: 0 15px;
+        cursor: pointer;
+    }
+    #wpp{
+        color: #2CC54E;
+    }
+    #lin{
+        color:#0A66C2;
+    }
+    #insta{
+        color: #D33F76;
+    }
+
+    svg:hover{
+        opacity: 0.85;
+    }
+}
+// linkedin #0A66C2
+//wpp #2CC54E
+// insta #D33F76
