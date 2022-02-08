@@ -1,0 +1,30 @@
+.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4rem;
+    width: 25%;
+    h3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        svg{
+            margin-left: 10px;
+            cursor: pointer;
+            transition: .3s ease-in;
+        }
+        svg:hover{
+            color: $black;
+        }
+    }
+    img{
+        width: auto;
+        height: 300px;
+        cursor: pointer;
+    }
+    img:hover{
+        transition: .3s ease-in-out all;
+        transform: scale(0.9);
+    }
+}
