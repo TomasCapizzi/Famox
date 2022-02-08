@@ -1,0 +1,18 @@
+@import '../theme/theme.scss';
+.categoria{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    h1{
+        width: 100%;
+        font-size: 2.4rem;
+        margin-top: 60px;
+        text-align: center;
+    }
+    .items-container{
+        width: 65%;
+        display: flex;
+        border-top: 2px solid $color1;
+    }
+}
