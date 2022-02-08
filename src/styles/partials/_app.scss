@@ -1,0 +1,16 @@
+@import '../theme/theme.scss';
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: $color1;
+}
+
+.App{
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
