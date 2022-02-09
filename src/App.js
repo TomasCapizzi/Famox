@@ -3,9 +3,9 @@ import './styles/main.scss';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 import Accesorios from './components/ListaProductos/Accesorios/Accesorios';
-import Detalle from './components/Detalle/DetalleGasoterapia';
-import DetalleGasoterapia from './components/Detalle/DetalleGasoterapia';
-import DetalleUnidSum from './components/Detalle/DetalleUnidSum';
+import CrearProducto from './components/CrearProducto/CrearProducto';
+import DetalleGasoterapia from './components/Detalle/Gasoterapia/DetalleGasoterapia';
+import DetalleUnidSum from './components/Detalle/Unidades de Suministro/DetalleUnidSum';
 import Footer from './components/Footer/Footer';
 import Gasoterapia from './components/ListaProductos/Gasoterapia/Gasoterapia';
 import Home from './components/Home/Home';
@@ -26,6 +26,8 @@ function App() {
 
           <Route path='/unidades-de-suministro/:id' element={<DetalleUnidSum/>} />
           <Route path='/gasoterapia/:id' element={<DetalleGasoterapia/>} />
+
+          <Route path='/crear-producto' element={<CrearProducto/>} />
         </Routes>
         <Footer/>
       </div>
