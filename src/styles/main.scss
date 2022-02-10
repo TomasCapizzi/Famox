@@ -6,10 +6,24 @@
 @import './partials/categoriaItem';
 @import './partials/certificaciones';
 @import './partials/contacto';
+@import './partials/crearPorducto';
 @import './partials/footer';
 @import './partials/historia';
 @import './partials/home';
 @import './partials/listaProductos';
 @import './partials/menu';
-@import './partials/producto';
 @import './partials/rrss';
+// Products
+@import './partials/producto/gasoterapia/producto';
+@import './partials/producto/gasoterapia/conectores';
+@import './partials/producto/gasoterapia/gases';
+
+@import './partials/producto/unidadesSuministro/producto';
+
+
+//Forms
+@import './partials/formularios/formAccesorio';
+@import './partials/formularios/formConector';
+@import './partials/formularios/formFrasco';
+@import './partials/formularios/formGasoterapia';
+@import './partials/formularios/formUnidSum';
