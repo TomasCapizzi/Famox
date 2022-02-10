@@ -1,0 +1,48 @@
+@import '../theme/theme.scss';
+
+.crear-producto{
+    display: flex;
+    width: 100%;
+    min-height: 60vh;
+    justify-content: center;
+    align-items: center;
+
+    .opciones{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $color1;
+        padding: 20px 20px 00px 20px;
+        color: $white;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+
+        select{
+            width: 240px;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button{
+            width: 100%;
+            padding: 5px;
+            border: none;
+            background-color: $white;
+            color: $color1;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        button:hover{
+            transition: .3s ease-in all;
+            background-color: $color2;
+            cursor: pointer;
+        }
+    }
+
+    .form-container{
+        display: flex;
+        width: 80%;
+        margin-top: 30px;
+    }
+}
