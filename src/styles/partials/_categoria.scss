@@ -14,5 +14,7 @@
         width: 65%;
         display: flex;
         border-top: 2px solid $color1;
+        display: flex;
+        flex-wrap: wrap;
     }
 }
