@@ -26,11 +26,11 @@ function CrearProducto() {
         {
             handler ?
                 <article className='form-container'>
-                    {tipo === 'unidadsuministro' && <FormUnidadSuministro/>}
-                    {tipo === 'gasoterapia' && <FormGasoterapia/>}
-                    {tipo === 'frasco' && <FormFrasco/>}
-                    {tipo === 'conector' && <FormConector/>}
-                    {tipo === 'accesorio' && <FormAccesorio/>}
+                    {tipo === 'unidadsuministro' && <FormUnidadSuministro setHandler={setHandler} />}
+                    {tipo === 'gasoterapia' && <FormGasoterapia setHandler={setHandler}/>}
+                    {tipo === 'frasco' && <FormFrasco setHandler={setHandler}/>}
+                    {tipo === 'conector' && <FormConector setHandler={setHandler}/>}
+                    {tipo === 'accesorio' && <FormAccesorio setHandler={setHandler}/>}
                 </article>
             :  
             <div className='opciones'>
