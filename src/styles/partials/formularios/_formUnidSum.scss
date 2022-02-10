@@ -1,0 +1,60 @@
+@import '../../theme/theme.scss';
+
+.form-unidSum-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    h3{
+        font-size: 1.6rem;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        flex-wrap: wrap;
+
+        label{
+            font-weight: 400;
+            margin-top: 10px;
+        }
+        input{
+            width: 300px;
+            border-radius: 6px;
+            border: none;
+            background-color: $color2;
+            padding: 5px;
+        }
+        textarea{
+            width: 400px;
+        }
+        .form-anmat{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            input{
+                width: 30px;
+                margin: 0;
+            }
+            label{
+                margin: 0px;
+            }
+        }
+        .form-submit{
+            margin: 50px 0;
+            width: 120px;
+            padding: 8px;
+            background-color: $color1;
+            color: $white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .form-submit:hover{
+            transition: .3s ease-in all;
+            background-color: $color2;
+            color: $color1;
+        }
+    }
+}
