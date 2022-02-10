@@ -19,9 +19,10 @@
         }
     }
     img{
-        width: auto;
-        height: 300px;
+        max-width: 95%;
+        height: 260px;
         cursor: pointer;
+        object-fit: scale-down;
     }
     img:hover{
         transition: .3s ease-in-out all;
