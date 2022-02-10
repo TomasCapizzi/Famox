@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FormGasoterapia() {
+function FormGasoterapia({setHandler}) {
 
   function validarForm(e){
     e.preventDefault();
@@ -53,6 +53,8 @@ function FormGasoterapia() {
         'Content-type' : 'application/json'
       }
     }).then( res => console.log(res))
+
+    setHandler(false);
   }
 
 
