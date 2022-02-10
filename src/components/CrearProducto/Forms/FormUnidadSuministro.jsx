@@ -1,12 +1,12 @@
 import React from 'react';
 
-function FormUnidadSuministro() {
+function FormUnidadSuministro({setHandler}) {
 
   function validarForm(e){
     e.preventDefault();
     const nombre = e.target.nombre.value;
     const uso = e.target.uso.value;
-    const anmat = e.target.anmat.value;
+    const anmat = e.target.anmat.checked;
     const img = e.target.img.value;
 
     const producto = {
@@ -28,14 +28,16 @@ function FormUnidadSuministro() {
         'Content-type' : 'application/json'
       }
     }).then( res => console.log(res))
+
+    setHandler(false);
   }
 
 
   return(
-    <section>
+    <section className='form-unidSum-container'>
       <h3>Formulario Unidad Suministro</h3>
       <form action="" onSubmit={(e)=>validarForm(e)}>
-      <label htmlFor="nombre">Nombre</label>
+          <label htmlFor="nombre">Nombre</label>
           <input type="text" id='nombre' required />
 
           <label htmlFor="uso">Uso</label>
