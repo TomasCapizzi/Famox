@@ -6,10 +6,15 @@ function Item({product}) {
 
   return(
     <div className='item'>
-        <h3>{product.nombre}<IoMdOpen/> </h3>
+      <div>
+        <h3>{product.nombre}</h3>
         <Link to={'/gasoterapia/' + product._id}>
-          <img src={product.img} alt="item" />
-        </Link>
+          <IoMdOpen/>
+        </Link>        
+      </div>
+      <Link to={'/gasoterapia/' + product._id}>
+        <img src={product.img} alt="item" />
+      </Link>
     </div>
   )
 }
