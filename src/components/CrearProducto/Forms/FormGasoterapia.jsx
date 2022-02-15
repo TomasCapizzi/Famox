@@ -25,6 +25,7 @@ function FormGasoterapia({setHandler}) {
       ss_aga:e.target.ssaga.checked,
       ohmeda:e.target.ohmeda.checked,
       on:e.target.on.checked,
+      cu:e.target.cu.checked,
       iram:e.target.iram.checked,
       yugo:e.target.yugo.checked,
     }
@@ -126,6 +127,9 @@ function FormGasoterapia({setHandler}) {
 
               <input type="checkbox" id='on' value='true'/>
               <label htmlFor="on">ON</label>
+
+              <input type="checkbox" id='cu' value='true'/>
+              <label htmlFor="cu">C.U.</label>
 
               <input type="checkbox" id='iram' value='true'/>
               <label htmlFor="iram">Iram</label>

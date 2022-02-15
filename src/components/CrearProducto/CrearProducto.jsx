@@ -2,8 +2,8 @@ import React, {useEffect, useRef, useState} from 'react';
 
 import FormAccesorio from './Forms/FormAccesorio';
 import FormConector from './Forms/FormConector';
-import FormFrasco from './Forms/FormFrasco';
 import FormGasoterapia from './Forms/FormGasoterapia';
+import FormModelo from './Forms/FormModelo';
 import FormUnidadSuministro from './Forms/FormUnidadSuministro';
 
 function CrearProducto() {
@@ -28,7 +28,7 @@ function CrearProducto() {
                 <article className='form-container'>
                     {tipo === 'unidadsuministro' && <FormUnidadSuministro setHandler={setHandler} />}
                     {tipo === 'gasoterapia' && <FormGasoterapia setHandler={setHandler}/>}
-                    {tipo === 'frasco' && <FormFrasco setHandler={setHandler}/>}
+                    {tipo === 'modelo' && <FormModelo setHandler={setHandler}/>}
                     {tipo === 'conector' && <FormConector setHandler={setHandler}/>}
                     {tipo === 'accesorio' && <FormAccesorio setHandler={setHandler}/>}
                 </article>
@@ -38,7 +38,7 @@ function CrearProducto() {
                 <select name="" id="tipo-producto" ref={selectRef}>
                     <option value="gasoterapia">Gasoterapia</option>
                     <option value="unidadsuministro">Unidad Suministro</option>
-                    <option value="frasco">Frasco</option>
+                    <option value="modelo">Modelo</option>
                     <option value="conector">Conector</option>
                     <option value="accesorio">Accesorio</option>
                 </select>
