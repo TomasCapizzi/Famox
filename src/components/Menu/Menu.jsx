@@ -1,5 +1,8 @@
+import {RiShoppingCart2Line, RiShoppingCartFill} from 'react-icons/ri'
+
+import {FaUser} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
-import {MdKeyboardArrowDown} from 'react-icons/md'
+import {MdKeyboardArrowDown} from 'react-icons/md';
 import React from 'react';
 
 function Menu() {
@@ -33,6 +36,9 @@ function Menu() {
             <Link  to='/contacto'>
               <li>Contacto</li>
             </Link>
+            <Link  to='/login'>
+              <li><FaUser/></li>
+            </Link>            
         </ul>
     </nav>
   )
