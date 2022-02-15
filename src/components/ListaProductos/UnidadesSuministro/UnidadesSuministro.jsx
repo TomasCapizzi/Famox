@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import Item from './Item';
+import Spinner from '../../Spinner/Spinner';
 
 function UnidadesSuministro() {
   const api = 'https://famox-api.herokuapp.com/api/products/unidades-suministro'
@@ -25,7 +26,7 @@ function UnidadesSuministro() {
                         products.map(
                             item => <Item key={item._id} product={item} />
                         )
-                    : <p>Cargando...</p>
+                    : <Spinner/>
                 }
             </div>
 
