@@ -50,9 +50,9 @@
             color: $white;
             font-weight: 600;
             cursor: pointer;
+            transition: .3s ease-in all;
         }
         .form-submit:hover{
-            transition: .3s ease-in all;
             background-color: $color2;
             color: $color1;
         }
