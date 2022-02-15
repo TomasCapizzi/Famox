@@ -43,6 +43,13 @@ function Conectores({product}) {
                     </div>
             }
             {
+                conector.cu && 
+                    <div>
+                        <h5>C.U.</h5>
+                        <img src={'/img/Conectores/PAG-CentralUni.png'} alt="cu" />
+                    </div>
+            }
+            {
                 conector.iram &&
                     <div>
                         <h5>IRAM</h5>
