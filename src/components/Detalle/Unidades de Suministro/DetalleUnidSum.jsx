@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
+import Spinner from '../../Spinner/Spinner';
 import {useParams} from 'react-router-dom';
 
 function DetalleUnidSum() {
@@ -47,7 +48,7 @@ function DetalleUnidSum() {
           </div>
         </article>
         :
-        <p>Cargando...</p>
+        <Spinner/>
       }
     </section>
   )
