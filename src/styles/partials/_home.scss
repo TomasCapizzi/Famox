@@ -17,7 +17,6 @@
         width: 33.3%;
         text-align: center;
         h3{
-            font-size: 1.6rem;
             color: $color1;
         }
         img{
@@ -27,9 +26,9 @@
             cursor: pointer;
             box-shadow: 1px 5px 10px rgba(0,0,0,0.6);
             border-radius: 5px;
+            transition: .2s ease-in-out all;
         }
-        img:hover{
-            transition: .3s ease-in-out all;
+        img:hover{            
             transform: scale(0.9)
         }
     }
