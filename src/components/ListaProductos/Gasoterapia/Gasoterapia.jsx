@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import Item from './Item';
+import Spinner from '../../Spinner/Spinner';
 
 function Gasoterapia() {
     const api = 'https://famox-api.herokuapp.com/api/products/gasoterapia';
@@ -9,7 +10,6 @@ function Gasoterapia() {
     async function getProducts(){
         const response = await fetch(api);
         const res = await response.json()
-        console.log(res.products[0]);
         setProducts(res.products)
     }
 
@@ -26,7 +26,7 @@ function Gasoterapia() {
                         products.map(
                             item => <Item key={item._id} product={item} />
                         )
-                    : <p>Cargando...</p>
+                    : <Spinner/>
                 }
             </div>
         </section>
