@@ -3,6 +3,8 @@ import React, {useEffect, useState} from 'react';
 import Conectores from './Descripcion/Conectores';
 import Descripcion from './Descripcion/Descripcion';
 import Gases from './Descripcion/Gases';
+import Modelos from '../Modelos/Modelos';
+import Spinner from '../../Spinner/Spinner';
 import {useParams} from 'react-router-dom';
 
 function DetalleGasoterapia() {
@@ -12,6 +14,7 @@ function DetalleGasoterapia() {
 
     const [product, setProduct] = useState([]);
     const [handler, setHandler] = useState(false);
+    const [poseeModelos, setPoseeModelos] = useState(false);
 
     const api = 'https://famox-api.herokuapp.com/api/products/gasoterapia/';
 
@@ -22,6 +25,9 @@ function DetalleGasoterapia() {
         console.log(res);
         setProduct(res)
         setHandler(true);
+        if(res.nombre === 'Recipiente Colector' || res.nombre === 'Mezclador de Aire/Oxígeno' ){
+          setPoseeModelos(true)
+        }
     }
 
     useEffect(()=>{
@@ -46,11 +52,13 @@ function DetalleGasoterapia() {
               }
               {
                 product.conector && <Conectores product={product} />
-              }   
-
+              }
+              {
+                poseeModelos && <Modelos modelo={product.nombre}/>
+              }
             </article>
           :
-          <p>cargando...</p>
+          <Spinner />
         }
     </section>
   )
