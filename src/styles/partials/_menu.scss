@@ -23,6 +23,8 @@
         a{
             text-decoration: none;
             color: $black;
+            display: flex;
+            align-items: center;
         }
         a:hover{
             transition: .3s ease-in all;
@@ -35,9 +37,15 @@
             cursor: pointer;
         }
         .categorias-handler{
-            position: relative;            
+            position: relative; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a{
+                display: flex;
+                align-items: center;
+            }          
             li{
-                margin-bottom: 20px;
                 cursor: pointer;
             }
         }
@@ -53,18 +61,22 @@
         .categorias{
             display: none;
             position: absolute;
-            top: 30px;
+            top: 16px;
             background-color: $white;
-            border: 1px solid $color2;
-            width: 100%;
+            border: 2px solid $color2;
+            border-radius: 5px;
+            width: 120%;
             a{
                 padding: 10px;
                 border-top: 1px solid $color2;
+                display: flex;
+                align-items: center;
             }
             li{
                 margin: 0;
                 width: 100%;
                 text-align: center;
+                font-size: 0.84rem;
             }
         }
     }
