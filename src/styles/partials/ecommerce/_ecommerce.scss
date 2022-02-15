@@ -1,0 +1,22 @@
+@import '../../theme/theme.scss';
+
+.container-ecommerce{
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+        width: 85%;
+        padding-bottom: 15px;
+        border-bottom: 2px solid $color1;
+        text-align: center;
+    }
+
+    .ecommerce{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+}
