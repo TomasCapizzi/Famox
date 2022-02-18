@@ -3,6 +3,8 @@ import './styles/main.scss';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 import Accesorios from './components/ListaProductos/Accesorios/Accesorios';
+import Carrito from './components/Carrito/Carrito';
+import { CarritoContextProvider } from './store/carritoContext';
 import Certificaciones from './components/Certificaciones/Certificaciones';
 import Contacto from './components/Contacto/Contacto';
 import CrearProducto from './components/CrearProducto/CrearProducto';
@@ -21,32 +23,35 @@ import UnidadesSuministro from './components/ListaProductos/UnidadesSuministro/U
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Menu/>
-        <Routes>
-          <Route path='/' element={<Home/>} />
+    <CarritoContextProvider>
+      <BrowserRouter>
+        <div className="App">
+          <Menu/>
+          <Routes>
+            <Route path='/' element={<Home/>} />
 
-          <Route path='/nosotros' element={<Historia/>} />
-          <Route path='/certificaciones' element={<Certificaciones/>} />
-          <Route path='/contacto' element={<Contacto/>} />
-          <Route path='/productos' element={<Productos/>} />
-          <Route path='/login' element={<Login/>} />
-          <Route path='/ecommerce' element={<Ecommerce/>} />
+            <Route path='/nosotros' element={<Historia/>} />
+            <Route path='/certificaciones' element={<Certificaciones/>} />
+            <Route path='/contacto' element={<Contacto/>} />
+            <Route path='/productos' element={<Productos/>} />
+            <Route path='/login' element={<Login/>} />
+            <Route path='/ecommerce' element={<Ecommerce/>} />
+            <Route path='/carrito' element={<Carrito/>} />
 
-          <Route path='/gasoterapia' element={<Gasoterapia/>}/>
-          <Route path='/unidades-de-suministro' element={<UnidadesSuministro/>}/>
-          <Route path='/accesorios' element={<Accesorios/>}/>
+            <Route path='/gasoterapia' element={<Gasoterapia/>}/>
+            <Route path='/unidades-de-suministro' element={<UnidadesSuministro/>}/>
+            <Route path='/accesorios' element={<Accesorios/>}/>
 
-          <Route path='/unidades-de-suministro/:id' element={<DetalleUnidSum/>} />
-          <Route path='/gasoterapia/:id' element={<DetalleGasoterapia/>} />
+            <Route path='/unidades-de-suministro/:id' element={<DetalleUnidSum/>} />
+            <Route path='/gasoterapia/:id' element={<DetalleGasoterapia/>} />
 
-          <Route path='/crear-producto' element={<CrearProducto/>} />
+            <Route path='/crear-producto' element={<CrearProducto/>} />
 
-        </Routes>
-        <Footer/>
-      </div>
-    </BrowserRouter>
+          </Routes>
+          <Footer/>
+        </div>
+      </BrowserRouter>
+    </CarritoContextProvider>
   );
 }
 
