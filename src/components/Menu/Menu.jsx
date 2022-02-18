@@ -36,6 +36,9 @@ function Menu() {
             <Link  to='/contacto'>
               <li>Contacto</li>
             </Link>
+            <Link to='/carrito' >
+              <li className='carrito'><RiShoppingCart2Line/></li>
+            </Link>
             <Link  to='/login'>
               <li><FaUser/></li>
             </Link>            
