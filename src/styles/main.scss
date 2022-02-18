@@ -1,7 +1,10 @@
 // Imports
+@import './theme/theme.scss';
+
 @import './partials/accesorios';
 @import './partials/app';
-@import './theme/theme.scss';
+@import './partials/carrito/carrito';
+@import './partials/carrito/item';
 @import './partials/carrusel';
 @import './partials/categoria';
 @import './partials/categoriaItem';
@@ -33,3 +36,11 @@
 @import './partials/ecommerce/categoria';
 @import './partials/ecommerce/filtro';
 @import './partials/ecommerce/item';
+@import './partials/ecommerce/busqueda';
+//Modal
+@import './partials/ecommerce/modal/eleccionProducto/botonera';
+@import './partials/ecommerce/modal/eleccionProducto/eleccionProducto';
+@import './partials/ecommerce/modal/eleccionProducto/opciones/conectores';
+@import './partials/ecommerce/modal/eleccionProducto/opciones/gases';
+@import './partials/ecommerce/modal/descripcion/descripcion';
+@import './partials/ecommerce/modal/modal';
