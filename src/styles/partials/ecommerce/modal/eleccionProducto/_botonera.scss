@@ -1,0 +1,52 @@
+@import '../../../../theme/theme.scss';
+
+.botonera{
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    .contador{
+        width: 100%;
+        justify-content: space-around;
+        display: flex;
+        align-items: center;
+        p{
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        button{
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            font-size: 1.3rem;
+            color: $color1;
+        }
+        button:disabled{
+            color: $color2;
+        }
+    }
+
+    .confirmar{
+        cursor: pointer;
+        padding: 3px;
+        border: none;
+        background-color: $color1;
+        font-size: 1rem;
+        color: $white;
+        border-radius: 4px;
+        width: 90%;
+        transition: .3s ease-in-out all;
+    }
+    .confirmar:hover{
+        opacity: 0.8;
+        border-radius: 10px;
+    }
+    .confirmar:disabled{
+        cursor: not-allowed;
+        background-color: $color2;
+        color: $color1;
+    }
+}

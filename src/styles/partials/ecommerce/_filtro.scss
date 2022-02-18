@@ -2,16 +2,81 @@
 
 .filtro-container{
     width: 20%;
-    background-color: $color2;
-    height: 200px;
-    padding: 5px 8px;
+    height: 100%;
+
+    .filtro-wrap{
+        background-color: $color2;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+        padding: 15px 8px;
+        border-radius: 8px;
+    }
     .filtro{
         width: 100%;
         display: flex;
         flex-direction: column;
+        margin-bottom: 20px;
+
+        div{
+            display: flex;
+            width: 100%;
+            justify-content: flex-start;
+            margin-bottom: 10px;
+            label{
+                text-align: center;
+            }
+        }
     }
 
     .hide{
         display: none;
+    }
+    .submit-btn{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: $color1;
+        color: $white;
+        border-radius: 5px;
+        input{
+            border: none;            
+            padding: 5px;
+            color: $white;
+            background-color: transparent;
+        }
+        svg{
+            transition: .3s ease-in-out all;
+        }
+    }
+    .submit-btn:hover{
+        svg{
+            transform: rotate(60deg);
+        }
+    }
+
+    button{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+        width: 100%;
+        border: none;
+        background-color: $black;
+        border-radius: 5px;
+        padding: 5px;
+        color: $color2;
+        svg{
+            color: $white;
+            margin-left: 5px;
+            font-size: 1.2rem;
+            transition: .3s ease-in-out all;
+        }
+    }
+    button:hover{
+        svg{
+            transform: rotate(180deg);
+        }
     }
 }

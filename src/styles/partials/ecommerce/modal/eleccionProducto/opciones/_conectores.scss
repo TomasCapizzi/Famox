@@ -1,0 +1,80 @@
+@import '../../../../../theme/theme.scss';
+
+.modal-conectores{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    p{
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+    .opciones-conectores{
+        display: none;
+        width: 100%;
+
+        .conector{
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            align-items: center;
+            margin: 5px;
+            transition: .2s ease-in all;
+        }
+        .conector:hover{
+            border-color: $color1;
+            box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.5);
+        }
+
+        img{
+            width: 60px;
+        }
+    }
+    .on{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .bloqueado{
+        background-color: #ccc;
+        opacity: 0.7;
+    }
+}
+
+.selecciones{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .container{
+        width: 100%;
+        display: flex;
+    }
+    .seleccionado{
+        border: 1px solid $color2;
+        width: 20%;
+        position: relative;
+    
+        button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: transparent;
+            border: none;
+            color: $color1;
+            font-size: 1.2rem;
+        }
+        img{
+            width: 40px;
+        }
+        p{
+            margin: 0;
+        }
+    }
+
+}

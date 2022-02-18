@@ -1,0 +1,12 @@
+@import '../../theme/theme.scss';
+
+.carrito-item{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    img{
+        width: 60px;
+        height: 65px;
+        object-fit: scale-down;
+    }
+}

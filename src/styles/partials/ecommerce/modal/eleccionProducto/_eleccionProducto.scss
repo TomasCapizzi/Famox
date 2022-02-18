@@ -1,0 +1,29 @@
+@import '../../../../theme/theme.scss';
+
+.modal-eleccion{
+    width: 60%;
+
+    display: flex;
+    margin-top: 25px;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+    }
+    .encabezado{
+        background-color: $color1;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 5px;
+
+        svg{
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+    }
+}
