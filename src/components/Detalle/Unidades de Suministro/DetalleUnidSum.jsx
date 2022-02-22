@@ -4,8 +4,7 @@ import Spinner from '../../Spinner/Spinner';
 import {useParams} from 'react-router-dom';
 
 function DetalleUnidSum() {
-    const {id} = useParams()
-    console.log(id);
+    const {id} = useParams();
 
     const [product, setProduct] = useState([]);
     const [handler, setHandler] = useState(false)
@@ -15,7 +14,6 @@ function DetalleUnidSum() {
     async function getItem(){
         const response = await fetch(api + id);
         const res = await response.json()
-        console.log(res);
         setProduct(res)
         setHandler(true)
     }
