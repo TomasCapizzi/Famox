@@ -38,6 +38,21 @@
         }
         .carrito{
             font-size: 1.15rem;
+            position: relative;
+            p{
+                position: absolute;
+                border-radius: 50%;
+                background-color: $color1;
+                color: $white;
+                font-weight: bold;
+                font-size: 0.9rem;
+                width: 25px;
+                height: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: 3px;
+            }
         }
         .categorias-handler{
             position: relative; 
