@@ -48,13 +48,13 @@ function DetalleGasoterapia() {
                 <Descripcion product={product} />
               </div>
               {
-                product.gases && <Gases product={product} />
+                product.gas && <Gases product={product} />
               }
               {
-                product.conector && <Conectores product={product} />
+                product.conexion && <Conectores product={product} />
               }
               {
-                poseeModelos && <Modelos modelo={product.nombre}/>
+                product.modelos && <Modelos modelo={product.nombre}/>
               }
             </article>
           :
