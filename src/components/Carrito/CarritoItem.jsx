@@ -8,12 +8,13 @@ function CarritoItem({item}) {
   const {removerItem} = useContext(CarritoContext);
 
   return (
-    <article className='carrito-item'>
-        <img src={item.img} alt="" />
-        <p>{item.nombre}</p>
-        <p>Cantidad: {item.cantidad}</p>
-        <BsTrashFill onClick={()=> removerItem(item)} />
-    </article>
+    <tr className='carrito-item'>
+        <td><img src={item.img} alt="" /></td>
+        <td><p>{item.nombre}</p></td>
+        <td><p>{item.cantidad}</p></td>
+        <td><BsTrashFill onClick={()=> removerItem(item)} /></td>
+        
+    </tr>
   )
 }
 
