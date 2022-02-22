@@ -12,7 +12,6 @@ function Conectores({item, setConector}) {
     const opcionesRef = useRef();
 
     function seleccionarElemento(e, id){        
-        console.log(id);
         setOpcionesHandler(!opcionesHandler)
         setConector(id.toUpperCase());
         mostrarConectores(opcionesRef);        
