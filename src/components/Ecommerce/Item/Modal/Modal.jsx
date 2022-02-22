@@ -10,11 +10,11 @@ function Modal({item, toggleModal}) {
       <article className='modal'>
         <button onClick={()=> toggleModal()} className='btn-cerrar'><TiDelete/></button>
         <Descripcion item={item} />
-        <EleccionProducto item={item} />
+        <EleccionProducto item={item} toggleModal={toggleModal} />
       </article>
       
     </section>
   )
 }
 
-export default Modal
+export default Modal;
