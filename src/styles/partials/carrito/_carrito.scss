@@ -1,14 +1,76 @@
 @import '../../theme/theme.scss';
 
 .carrito{
-    width: 100%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    h1{
+        width: 100%;
+        padding-bottom: 15px;
+        border-bottom: 2px solid $color1;
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
     .carrito-container{
         display: flex;
         flex-direction: column;
-        width: 30%;
+        width: 60%;
+        min-height: 45vh;
+        align-items: center;
+
+        button{
+            background-color: $color1;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            color: $white;
+            width: 30%;
+            border: none;
+            margin: 50px;
+            transition: .3s ease-in-out all;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: $color2;
+            color: $color1;
+            border: 1px solid $color1;
+        }
+
+        table{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 25px 15px;
+            thead{
+                width: 100%;
+                display: flex;
+                border-bottom: 2px solid $color1;
+                tr{
+                    width: 100%;
+                    display: flex;
+
+
+                    th:nth-child(1){
+                        width: 60%;
+                    }
+                    th:nth-child(2){
+                        width: 20%;
+                    }
+                    th:nth-child(3){
+                        width: 20%;
+                    }
+                }
+            }
+            tbody{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+
     }
 }
