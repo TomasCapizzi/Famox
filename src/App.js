@@ -1,9 +1,11 @@
 import './styles/main.scss';
 
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import React, {useContext, useEffect} from 'react'
 
 import Accesorios from './components/ListaProductos/Accesorios/Accesorios';
 import Carrito from './components/Carrito/Carrito';
+import { CarritoContext } from './store/carritoContext';
 import { CarritoContextProvider } from './store/carritoContext';
 import Certificaciones from './components/Certificaciones/Certificaciones';
 import Contacto from './components/Contacto/Contacto';
@@ -18,7 +20,6 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Menu from './components/Menu/Menu';
 import Productos from './components/ListaProductos/Productos';
-import React from 'react'
 import UnidadesSuministro from './components/ListaProductos/UnidadesSuministro/UnidadesSuministro';
 
 function App() {
