@@ -12,7 +12,6 @@ function Gases({item, setGas}) {
     const opcionesRef = useRef();
 
     function seleccionarElemento(e, id){
-        console.log(id);
         setOpcionesHandler(!opcionesHandler)
         setGas(id.toUpperCase());
         mostrarGases(opcionesRef);        
