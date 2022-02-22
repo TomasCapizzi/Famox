@@ -1,0 +1,15 @@
+@import '../../theme/theme.scss';
+
+.form-cotizacion{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    input{
+        margin-bottom: 15px;
+    }
+
+    button{
+        width: 100%;
+    }
+}
