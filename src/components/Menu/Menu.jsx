@@ -1,11 +1,19 @@
+import React, {useContext, useEffect} from 'react';
 import {RiShoppingCart2Line, RiShoppingCartFill} from 'react-icons/ri'
 
+import { CarritoContext } from '../../store/carritoContext';
 import {FaUser} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
 import {MdKeyboardArrowDown} from 'react-icons/md';
-import React from 'react';
 
 function Menu() {
+
+  const {carro, obtenerDataLocalStorage} = useContext(CarritoContext);
+  
+  useEffect(()=>{
+    obtenerDataLocalStorage();
+  },[])
+  
 
   return (
     <nav className='menu'>
@@ -37,7 +45,14 @@ function Menu() {
               <li>Contacto</li>
             </Link>
             <Link to='/carrito' >
-              <li className='carrito'><RiShoppingCart2Line/></li>
+              <li className='carrito'>{
+                carro.length > 0 ? <RiShoppingCartFill/> : <RiShoppingCart2Line/>
+              }
+              {
+                carro.length === 0 ?
+                  null : <p>{carro.length}</p>
+              }
+              </li>
             </Link>
             <Link  to='/login'>
               <li><FaUser/></li>
