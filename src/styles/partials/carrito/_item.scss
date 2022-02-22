@@ -3,10 +3,31 @@
 .carrito-item{
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid $color1;
+    td{
+        display: flex;
+        justify-content: center;
+    }
+    td:nth-child(1){
+        width: 20%;
+    }
+    td:nth-child(2){
+        width: 40%;
+        justify-content: flex-start;
+    }
+    td:nth-child(3){
+        width: 20%;
+    }
+    td:nth-child(4){
+        width: 20%;
+    }
     img{
         width: 60px;
         height: 65px;
         object-fit: scale-down;
+    }
+    svg{
+        cursor: pointer;
     }
 }
