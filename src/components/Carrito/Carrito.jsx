@@ -31,6 +31,7 @@ function Carrito() {
                         <thead>
                             <tr>
                                 <th>Artículo</th>
+                                <th>Código</th>
                                 <th>Cantidad</th>
                                 <th>Borrar</th>
                             </tr>
