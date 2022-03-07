@@ -8,7 +8,7 @@ export function CarritoContextProvider({children}){
 
     const obtenerDataLocalStorage = () => {
         const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'))
-        console.log(carrito);
+        //console.log(carrito);
         if(carrito){
             setCarro(carrito)
             borrarDataLocalStorage();
@@ -16,26 +16,29 @@ export function CarritoContextProvider({children}){
     }
     
     const agregarItem = ({producto})=> {
-        console.log(producto);
+        //console.log(producto);
         const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
         if(carrito){
             const coincidencia = carrito.find(
-                item => (item._id === producto._id) && (item.gas === producto.gas) && (item.conector === producto.conector)
+                item => (item.nombre === producto.nombre) && (item._id === producto._id)
+                /*
+                item => (item.nombre === producto.nombre) && (item.gas === producto.gas) && (item.conector === producto.conector) && (item.rango === producto.rango)*/
             );
             if(coincidencia){     
-                console.log('Coinciden este elemento con otro igual' , coincidencia); 
-                      
+                //console.log('Coinciden este elemento con otro igual');                      
                const nuevoCarrito = carrito.filter(
                     item=> item !== coincidencia
                 )
-                console.log('NUEVO CARRITO' ,nuevoCarrito);
-                const {nombre, img, _id,gas, conector} = producto
+                //console.log('NUEVO CARRITO' ,nuevoCarrito);
+                const {nombre, img, _id, gas, conector, rango, modelo} = producto
                 let nuevoProducto = {
                     nombre,
                     img,
                     _id,
                     conector,
                     gas,
+                    rango,
+                    modelo,
                     cantidad: producto.cantidad + coincidencia.cantidad
                 }
                 localStorage.setItem('FamoxCarrito', JSON.stringify([...nuevoCarrito, nuevoProducto]));
@@ -68,7 +71,7 @@ export function CarritoContextProvider({children}){
     const borrarDataLocalStorage = ()=> {
         setTimeout(()=> {
             borrarCarrito()
-        }, 14400000)
+        }, 7400000)
     }
 
     const costoTotal = carro.reduce((acc,{cantidad,precio}) => {
