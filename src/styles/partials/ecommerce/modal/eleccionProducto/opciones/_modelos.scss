@@ -1,0 +1,51 @@
+@import '../../../../../theme/theme.scss';
+
+.modal-modelos-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    h3{
+        width: 100%;
+        text-align: center;
+    }
+    .contenedor{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .modal-modelo{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        align-items: center;
+        transition: .2s ease-in all;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        cursor: pointer;
+
+        h4{
+            margin: 5px;
+        }
+
+        .btn{
+            padding: 5px;
+            background-color: $color1;
+            color: $white;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0s all;
+        }
+        img{
+            width: 50%;
+        }
+    }
+    .modal-modelo:hover{
+        border-color: $color1;
+        box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.5);
+        .btn{
+            background-color: $white;
+            color: $color1;
+        }
+    }
+}
