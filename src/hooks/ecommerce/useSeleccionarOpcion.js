@@ -4,6 +4,7 @@ const useSeleccionarOpcion = () => {
 
     const [opcionesHandler, setOpcionesHandler] = useState(false);
 
+    //////// GASOTERAPIA ////////////////////////
     function mostrarConectores(ref){
         setOpcionesHandler(false)
         ref.current.classList.toggle('on');
@@ -11,14 +12,35 @@ const useSeleccionarOpcion = () => {
     function mostrarGases(ref){
         setOpcionesHandler(false)
         ref.current.classList.toggle('on');
+    }
+    function mostrarRangos(ref){
+        setOpcionesHandler(false);
+        ref.current.classList.toggle('on');
+    }
 
+    //////// UNID SUM ////////////////////////
+    function mostrarMediaTension(ref){
+        setOpcionesHandler(false)
+        ref.current.classList.toggle('on');
+    }
+    function mostrarBajaTension(ref){
+        setOpcionesHandler(false)
+        ref.current.classList.toggle('on');
+    }
+    function mostrarIluminacion(ref){
+        setOpcionesHandler(false)
+        ref.current.classList.toggle('on');
     }
 
     return {
     mostrarConectores,
     opcionesHandler,
     setOpcionesHandler,
-    mostrarGases
+    mostrarGases,
+    mostrarRangos,
+    mostrarMediaTension,
+    mostrarBajaTension,
+    mostrarIluminacion
     }
 }
 
