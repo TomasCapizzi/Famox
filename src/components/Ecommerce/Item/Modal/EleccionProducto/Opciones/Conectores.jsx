@@ -5,7 +5,7 @@ import {MdKeyboardArrowDown} from 'react-icons/md';
 import OpcionItem from './OpcionItem';
 import useSeleccionarOpcion from '../../../../../../hooks/ecommerce/useSeleccionarOpcion';
 
-function Conectores({item, setConector}) {
+function Conectores({items, setConector}) {
 
     const {setOpcionesHandler, mostrarConectores, opcionesHandler} = useSeleccionarOpcion();
 
@@ -13,7 +13,7 @@ function Conectores({item, setConector}) {
 
     function seleccionarElemento(e, id){        
         setOpcionesHandler(!opcionesHandler)
-        setConector(id.toUpperCase());
+        setConector(id);
         mostrarConectores(opcionesRef);        
     }
 
@@ -24,31 +24,11 @@ function Conectores({item, setConector}) {
             <MdKeyboardArrowDown onClick={()=> mostrarConectores(opcionesRef)}/>
         </div>
         <article ref={opcionesRef} className='opciones-conectores'>
-        {
-            item.conector.diss && <OpcionItem item={CONECTORES[0]} seleccionarElemento={seleccionarElemento} opcionesHandler={opcionesHandler} />
-
-        }
-        {
-            item.conector.afnor && <OpcionItem item={CONECTORES[1]} seleccionarElemento={seleccionarElemento} opcionesHandler={opcionesHandler}/>     
-        }
-        {
-            item.conector.ss_aga && <OpcionItem item={CONECTORES[2]} seleccionarElemento={seleccionarElemento} opcionesHandler={opcionesHandler} /> 
-        }
-        {
-            item.conector.ohmeda && <OpcionItem item={CONECTORES[3]} seleccionarElemento={seleccionarElemento} opcionesHandler={opcionesHandler} /> 
-        }
-        {
-            item.conector.on && <OpcionItem item={CONECTORES[4]} seleccionarElemento={seleccionarElemento} opcionesHandler={opcionesHandler} /> 
-        }
-        {
-            item.conector.cu &&  <OpcionItem item={CONECTORES[5]} seleccionarElemento={seleccionarElemento}  opcionesHandler={opcionesHandler}/> 
-        }
-        {
-            item.conector.iram && <OpcionItem item={CONECTORES[6]} seleccionarElemento={seleccionarElemento} opcionesHandler={opcionesHandler} /> 
-        }
-        {
-            item.conector.yugo && <OpcionItem item={CONECTORES[7]} seleccionarElemento={seleccionarElemento} opcionesHandler={opcionesHandler} /> 
-        }
+            {
+                items.map(
+                    item =>  <OpcionItem item={CONECTORES.filter(conec => conec.nombre === item)} seleccionarElemento={seleccionarElemento} opcionesHandler={opcionesHandler} key={item} />
+                )
+            }        
         </article>
     </div>
     
