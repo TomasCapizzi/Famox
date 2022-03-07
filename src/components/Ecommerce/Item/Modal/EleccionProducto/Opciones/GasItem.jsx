@@ -1,16 +1,22 @@
 import React,{useRef} from 'react'
 
 function GasItem({item, seleccionarElemento}) {
+
     const divRef = useRef();
 
     function seleccionarItem(e){
-        seleccionarElemento(e, item.nombre)
+        seleccionarElemento(e, item[0].nombre)
     }
   return (
-    <div ref={divRef} className='gas' id={item.nombre} onClick={(e)=> seleccionarItem(e) } >
-        <img src={item.img} alt="gas"/>
-        <label htmlFor="">{item.nombre}</label>
-    </div>
+  
+      item[0].nombre === undefined ?
+        null
+      :
+      <div ref={divRef} className='gas' id={item[0].nombre}  onClick={(e)=> seleccionarItem(e) } >
+        <img src={item[0].img} alt="gas"/>
+        <label htmlFor="">{item[0].nombre}</label>
+      </div>
+    
   )
 }
 
