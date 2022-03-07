@@ -17,7 +17,7 @@ const GASES = [
     },
     {
         img: 'img/Gases/Oxigeno.png',
-        nombre: 'OXIGENO',
+        nombre: 'OXÍGENO',
     },
     {
         img: 'img/Gases/Aire_Variable.png',
