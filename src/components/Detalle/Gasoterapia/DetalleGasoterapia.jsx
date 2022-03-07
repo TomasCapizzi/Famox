@@ -14,20 +14,14 @@ function DetalleGasoterapia() {
 
     const [product, setProduct] = useState([]);
     const [handler, setHandler] = useState(false);
-    const [poseeModelos, setPoseeModelos] = useState(false);
 
     const api = 'https://famox-api.herokuapp.com/api/products/gasoterapia/';
 
     async function getItem(){
-      console.log(api+id);
         const response = await fetch(api + id);
         const res = await response.json();
-        console.log(res);
         setProduct(res)
         setHandler(true);
-        if(res.nombre === 'Recipiente Colector' || res.nombre === 'Mezclador de Aire/Oxígeno' ){
-          setPoseeModelos(true)
-        }
     }
 
     useEffect(()=>{
@@ -48,13 +42,13 @@ function DetalleGasoterapia() {
                 <Descripcion product={product} />
               </div>
               {
-                product.gas && <Gases product={product} />
+                product.gases_ && <Gases product={product.gases_} />
               }
               {
-                product.conexion && <Conectores product={product} />
+                product.conectores && <Conectores product={product.conectores} />
               }
               {
-                product.modelos && <Modelos modelo={product.nombre}/>
+                product.modelos_ && <Modelos modelos={product.modelos_}  />
               }
             </article>
           :
