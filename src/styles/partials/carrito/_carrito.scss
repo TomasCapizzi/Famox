@@ -1,7 +1,7 @@
 @import '../../theme/theme.scss';
 
 .carrito{
-    width: 70%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +17,7 @@
     .carrito-container{
         display: flex;
         flex-direction: column;
-        width: 60%;
+        width: 65%;
         min-height: 45vh;
         align-items: center;
 
@@ -55,13 +55,16 @@
 
 
                     th:nth-child(1){
-                        width: 60%;
+                        width: 45%;
                     }
                     th:nth-child(2){
-                        width: 20%;
+                        width: 18%;
                     }
                     th:nth-child(3){
-                        width: 20%;
+                        width: 18%;
+                    }
+                    th:nth-child(4){
+                        width: 18%;
                     }
                 }
             }
