@@ -41,35 +41,3 @@
         align-items: center;
     }
 }
-
-.selecciones{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    .container{
-        width: 100%;
-        display: flex;
-    }
-    .seleccionado{
-        border: 1px solid $color2;
-        width: 20%;
-        position: relative;
-    
-        button{
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: transparent;
-            border: none;
-            color: $color1;
-            font-size: 1.2rem;
-        }
-        img{
-            width: 40px;
-        }
-        p{
-            margin: 0;
-        }
-    }
-
-}
