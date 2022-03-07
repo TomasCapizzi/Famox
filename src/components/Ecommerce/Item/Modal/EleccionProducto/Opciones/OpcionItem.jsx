@@ -5,12 +5,12 @@ function OpcionItem({item, seleccionarElemento}) {
     const divRef = useRef();
 
     function seleccionarItem(e){
-        seleccionarElemento(e, item.nombre)
+        seleccionarElemento(e, item[0].nombre)
     }
   return (
-    <div ref={divRef} className='conector' id={item.nombre} onClick={(e)=> seleccionarItem(e) } >
-        <img src={item.img} alt="conector"/>
-        <label htmlFor="">{item.nombre}</label>
+    <div ref={divRef} className='conector' id={item[0].nombre} onClick={(e)=> seleccionarItem(e) } >
+        <img src={item[0].img} alt="conector"/>
+        <label htmlFor="">{item[0].nombre}</label>
     </div>
   )
 }
