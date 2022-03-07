@@ -5,7 +5,7 @@ import GasItem from './GasItem';
 import {MdKeyboardArrowDown} from 'react-icons/md';
 import useSeleccionarOpcion from '../../../../../../hooks/ecommerce/useSeleccionarOpcion';
 
-function Gases({item, setGas}) {
+function Gases({items, setGas}) {
 
     const {mostrarGases, opcionesHandler, setOpcionesHandler} = useSeleccionarOpcion();
 
@@ -13,7 +13,7 @@ function Gases({item, setGas}) {
 
     function seleccionarElemento(e, id){
         setOpcionesHandler(!opcionesHandler)
-        setGas(id.toUpperCase());
+        setGas(id);
         mostrarGases(opcionesRef);        
     }
 
@@ -25,27 +25,11 @@ function Gases({item, setGas}) {
             <MdKeyboardArrowDown onClick={()=> mostrarGases(opcionesRef)}/>
         </div>     
         <article className='opciones-gases' ref={opcionesRef}>
-        {
-            item.gases.aire && <GasItem item={GASES[0]} seleccionarElemento={seleccionarElemento} />
-        }
-        {
-            item.gases.co2 &&  <GasItem item={GASES[1]} seleccionarElemento={seleccionarElemento} />
-        }
-                {
-            item.gases.n2 &&  <GasItem item={GASES[2]} seleccionarElemento={seleccionarElemento} />
-        }
-                {
-            item.gases.n2o && <GasItem item={GASES[3]} seleccionarElemento={seleccionarElemento} />
-        }
-                {
-            item.gases.oxigeno && <GasItem item={GASES[4]} seleccionarElemento={seleccionarElemento} />
-        }
-                {
-            item.gases.oxigeno_aire && <GasItem item={GASES[5]} seleccionarElemento={seleccionarElemento} />
-        }
-                {
-            item.gases.vacio && <GasItem item={GASES[6]} seleccionarElemento={seleccionarElemento} />
-        }
+            {
+                items.map(
+                    item => <GasItem item={GASES.filter(gas => gas.nombre === item)} seleccionarElemento={seleccionarElemento} key={item} />
+                )
+            }
         </article>
     </div>
   )
