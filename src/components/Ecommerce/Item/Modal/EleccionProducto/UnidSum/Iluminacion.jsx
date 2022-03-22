@@ -4,15 +4,48 @@ import IluminacionItem from './Items/IluminacionItem';
 import {MdKeyboardArrowDown} from 'react-icons/md';
 import useSeleccionarOpcion from '../../../../../../hooks/ecommerce/useSeleccionarOpcion';
 
-function Iluminacion({items}) {
+function Iluminacion({items,valoresIluminacion, setValoresIluminacion}) {
   const opcionesRef = useRef();
     
   const {mostrarIluminacion, opcionesHandler, setOpcionesHandler} = useSeleccionarOpcion();
 
-  function seleccionarElemento(e){
+  function confirmarItems(e){
     setOpcionesHandler(!opcionesHandler)
-    //setGas(id);
-    mostrarIluminacion(opcionesRef);        
+    mostrarIluminacion(opcionesRef);     
+}
+function obtenerCantidadInput(e, item){
+  if(valoresIluminacion.length === 0){
+      const valor = {
+            nombre: item,
+            cantidad: e.target.value
+      }
+      setValoresIluminacion([valor])
+  } else{
+      const coincidencia = valoresIluminacion.filter(
+          valor => valor.nombre === item
+      )
+      if(coincidencia){
+          const filtrado = valoresIluminacion.filter(
+              valor => valor.nombre !== item
+          )
+
+          const valor = {
+            nombre: item,
+            cantidad: parseInt(e.target.value)
+          }
+          setValoresIluminacion([...filtrado, valor])
+          
+      } else{
+          const valor = {
+            nombre: item,
+            cantidad: e.target.value
+          }
+          setValoresIluminacion([
+              ...valoresIluminacion,
+              valor
+          ])
+      }
+  }
 }
 
   return (
@@ -22,13 +55,15 @@ function Iluminacion({items}) {
         <MdKeyboardArrowDown onClick={()=> mostrarIluminacion(opcionesRef)} />
     </div>
     <article className='opciones' ref={opcionesRef}>
-        <button>Confirmar</button>
-        {
-            items.map(
-                item => <IluminacionItem item={item} key={item}/>
-            )
-        }
-    </article>
+            <button onClick={()=> confirmarItems()}>
+                Confirmar
+            </button>
+            {
+                items.map(
+                    item => <IluminacionItem item={item} key={item} obtenerCantidadInput={obtenerCantidadInput}/>
+                )
+            }
+        </article>
 
 </article>
   )
