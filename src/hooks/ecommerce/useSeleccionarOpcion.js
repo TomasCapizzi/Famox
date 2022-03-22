@@ -20,15 +20,19 @@ const useSeleccionarOpcion = () => {
 
     //////// UNID SUM ////////////////////////
     function mostrarMediaTension(ref){
-        setOpcionesHandler(false)
+        setOpcionesHandler(false);
         ref.current.classList.toggle('on');
     }
     function mostrarBajaTension(ref){
-        setOpcionesHandler(false)
+        setOpcionesHandler(false);
         ref.current.classList.toggle('on');
     }
     function mostrarIluminacion(ref){
-        setOpcionesHandler(false)
+        setOpcionesHandler(false);
+        ref.current.classList.toggle('on');
+    }
+    function mostrarConexionGases(ref){
+        setOpcionesHandler(false);
         ref.current.classList.toggle('on');
     }
 
@@ -40,7 +44,8 @@ const useSeleccionarOpcion = () => {
     mostrarRangos,
     mostrarMediaTension,
     mostrarBajaTension,
-    mostrarIluminacion
+    mostrarIluminacion,
+    mostrarConexionGases
     }
 }
 
