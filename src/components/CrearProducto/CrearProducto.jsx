@@ -29,7 +29,6 @@ function CrearProducto() {
                     {tipo === 'unidadsuministro' && <FormUnidadSuministro setHandler={setHandler} />}
                     {tipo === 'gasoterapia' && <FormGasoterapia setHandler={setHandler}/>}
                     {tipo === 'modelo' && <FormModelo setHandler={setHandler}/>}
-                    {tipo === 'conector' && <FormConector setHandler={setHandler}/>}
                     {tipo === 'accesorio' && <FormAccesorio setHandler={setHandler}/>}
                 </article>
             :  
@@ -39,7 +38,6 @@ function CrearProducto() {
                     <option value="gasoterapia">Gasoterapia</option>
                     <option value="unidadsuministro">Unidad Suministro</option>
                     <option value="modelo">Modelo</option>
-                    <option value="conector">Conector</option>
                     <option value="accesorio">Accesorio</option>
                 </select>
                 <button onClick={()=> confirmarTipo()}>Confirmar</button>
