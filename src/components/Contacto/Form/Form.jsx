@@ -1,40 +1,83 @@
-import React from 'react'
+import React from 'react';
+import {Redirect} from 'react-router-dom';
+import useValidarFormContacto from '../../../hooks/forms/useValidarFormContacto';
 
-function Form() {
+function Form({mostrarNotificacion}) {
+
+  const {
+    validarNombre, 
+    validarMensaje, 
+    validarEmail, 
+    validarAsunto, 
+    validarEmpresa, 
+    nombreError, 
+    mailError, 
+    mensajeError, 
+    asuntoError, 
+    empresaError,
+    handlerSubmit,
+    setHandlerSubmit,
+    reiniciarValores
+  } = useValidarFormContacto();
 
     function enviarConsulta(e){
-        e.preventDefault();
-        const consulta = {
-            nombre: e.target.nombre.value,
-            correo: e.target.mail.value,
-            asunto: e.target.asunto.value,
-            mensaje: e.target.mensaje.value
-        }
-
-        console.log(consulta);
+      //e.preventDefault();
+      mostrarNotificacion();
+      const consulta = {
+        nombre:e.target.nombre.value,
+        email: e.target.mail.value,
+        asunto: e.target.asunto.value,
+        empresa: e.target.empresa.value,
+        mensaje: e.target.mensaje.value
+      }
+      console.log(consulta);
+      //borrarValoresForm(e)
 
     }
 
+    function borrarValoresForm(e){
+      setHandlerSubmit(false)
+      reiniciarValores();
+    }
+
+    
   return (
-    <form action="http://localhost:4000/formulario/contacto" method='POST' onSubmit={(e)=> enviarConsulta(e)} >
+    <form action="https://famox-api.herokuapp.com/formulario/contacto" method='POST' target='_blank' onSubmit={(e)=> enviarConsulta(e)} >
 
-    <label htmlFor="">Nombre</label>
-    <input type="text" id='nombre' name='nombre' />
+    <div>
+      <label htmlFor="">Nombre</label>
+      <input type="text" id='nombre' name='nombre' required onChange={(e)=>validarNombre(e.target.value)} />
+      <label htmlFor="nombre" className='error'>{nombreError}</label>
+    </div>
 
-    <label htmlFor="">Empresa</label>
-    <input type="text" id='empresa' name='empresa' />
+    <div>
+      <label htmlFor="">Empresa</label>
+      <input type="text" id='empresa' name='empresa' required onChange={(e)=>validarEmpresa(e.target.value)} />
+      <label htmlFor="nombre" className='error'>{empresaError}</label>
+    </div>
 
-    <label htmlFor="">Correo Electrónico</label>
-    <input type="email"  id='mail' name='email' />
+    <div>
+      <label htmlFor="">Correo Electrónico</label>
+      <input type="email"  id='mail' name='email' required onChange={(e)=>validarEmail(e.target.value)} />
+      <label htmlFor="nombre" className='error'>{mailError}</label>
+    </div>
 
-    <label htmlFor="">Asunto</label>
-    <input type="text"  id='asunto' name='asunto' />
+    <div>
+      <label htmlFor="">Asunto</label>
+      <input type="text"  id='asunto' name='asunto' required onChange={(e)=>validarAsunto(e.target.value)} />
+      <label htmlFor="nombre" className='error'>{asuntoError}</label>
+    </div>
 
-    <label htmlFor="">Mensaje</label>
-    <textarea name="mensaje" id="mensaje"></textarea>
+    <div>
+      <label htmlFor="">Mensaje</label>
+      <textarea name="mensaje" id="mensaje" required onChange={(e)=>validarMensaje(e.target.value)}></textarea>
+      <label htmlFor="nombre" className='error'>{mensajeError}</label>
+    </div>
 
-    <input type="submit" value='Enviar' className='submit' />
-
+    <div className={handlerSubmit? '': 'disabled'}>
+      <input type='submit' value='Enviar'  className='submit'/>
+    </div>
+    
     </form>
   )
 }
