@@ -78,6 +78,7 @@ function FormGasoterapia({setHandler}) {
           </div>
 
 
+
           <label htmlFor="manual">Manual (ruta)</label>
           <input type="text" id='manual' />
 
@@ -88,10 +89,10 @@ function FormGasoterapia({setHandler}) {
             <p>Gases</p>
             <div>
               <input type="checkbox" id='oxigeno' value='true'/>
-              <label htmlFor="oxigeno">Oxigeno</label>
+              <label htmlFor="oxigeno">OXÍGENO</label>
 
               <input type="checkbox" id='aire' value='true'/>
-              <label htmlFor="aire">Aire</label>
+              <label htmlFor="aire">AIRE</label>
 
               <input type="checkbox" id='n2o' value='true'/>
               <label htmlFor="n2o">N2O</label>
@@ -106,7 +107,7 @@ function FormGasoterapia({setHandler}) {
               <label htmlFor="vacio">VACIO</label>
 
               <input type="checkbox" id='oxigenoaire' value='true'/>
-              <label htmlFor="oxigeno/aire">Oxigeno/Aire</label>
+              <label htmlFor="oxigeno/aire">OXÍGENO/AIRE</label>
             </div>
           </div>
 
@@ -114,28 +115,28 @@ function FormGasoterapia({setHandler}) {
             <p>Conectores</p>
             <div>
               <input type="checkbox" id='diss' value='true'/>
-              <label htmlFor="diss">Diss</label>
+              <label htmlFor="diss">DISS</label>
 
               <input type="checkbox" id='afnor' value='true'/>
-              <label htmlFor="afnor">Afnor</label>
+              <label htmlFor="afnor">AFNOR</label>
 
               <input type="checkbox" id='ssaga' value='true'/>
               <label htmlFor="ss-aga">SS-AGA</label>
 
               <input type="checkbox" id='ohmeda' value='true'/>
-              <label htmlFor="ohmeda">Ohmeda</label>
+              <label htmlFor="ohmeda">OHMEDA</label>
 
               <input type="checkbox" id='on' value='true'/>
               <label htmlFor="on">ON</label>
 
               <input type="checkbox" id='cu' value='true'/>
-              <label htmlFor="cu">C.U.</label>
+              <label htmlFor="cu">CU</label>
 
               <input type="checkbox" id='iram' value='true'/>
-              <label htmlFor="iram">Iram</label>
+              <label htmlFor="iram">IRAM</label>
 
               <input type="checkbox" id='yugo' value='true'/>
-              <label htmlFor="yugo">Yugo</label>
+              <label htmlFor="yugo">YUGO</label>
             </div>
           </div>
           <input type="submit" value='Enviar' className='form-submit' />
