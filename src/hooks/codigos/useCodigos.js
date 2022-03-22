@@ -6,7 +6,6 @@ const useCodigo = (producto)=> {
     function derivarFuncion(){
 
         const {nombre, gas, conector, rango, modelo} = producto
-        console.log(producto.modelo.nombre);
         
         if(nombre === 'Caudalímetro'){
             return buscarCodigoCaudalimetro(gas, conector, rango)            
@@ -37,19 +36,19 @@ const useCodigo = (producto)=> {
     const buscarCodigoCaudalimetro = (gas, conector, rango)=> {
 
         // Conector: DISS
-        if(gas === 'OXIGENO' && conector === 'DISS' && rango === '0-3 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'DISS' && rango === '0-3 L/MIN' ){
             //setCodigo('PCA002')
             return 'PCA002'
         }
-        if(gas === 'OXIGENO' && conector === 'DISS' && rango === '0-15 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'DISS' && rango === '0-15 L/MIN' ){
             //setCodigo('PCA014')
             return 'PCA014'
         }
-        if(gas === 'OXIGENO' && conector === 'DISS' && rango === '0-30 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'DISS' && rango === '0-30 L/MIN' ){
             //setCodigo('PCA149')
             return 'PCA149'
         }
-        if(gas === 'OXIGENO' && conector === 'DISS' && rango === '0-70 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'DISS' && rango === '0-70 L/MIN' ){
             //setCodigo('PCA151')
             return 'PCA151'
         }
@@ -70,19 +69,19 @@ const useCodigo = (producto)=> {
             return 'PCA152'
         }
         // Conector: AFNOR
-        if(gas === 'OXIGENO' && conector === 'AFNOR' && rango === '0-3 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'AFNOR' && rango === '0-3 L/MIN' ){
             //setCodigo('PCA026')
             return 'PCA026'
         }
-        if(gas === 'OXIGENO' && conector === 'AFNOR' && rango === '0-15 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'AFNOR' && rango === '0-15 L/MIN' ){
             //setCodigo('PCA038')
             return 'PCA038'
         }
-        if(gas === 'OXIGENO' && conector === 'AFNOR' && rango === '0-30 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'AFNOR' && rango === '0-30 L/MIN' ){
             //setCodigo('PCA153')
             return 'PCA153'
         }
-        if(gas === 'OXIGENO' && conector === 'AFNOR' && rango === '0-70 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'AFNOR' && rango === '0-70 L/MIN' ){
             //setCodigo('PCA155')
             return 'PCA155'
         }
@@ -103,19 +102,19 @@ const useCodigo = (producto)=> {
             return 'PCA156'
         }
         // Conector: SS/AGA
-        if(gas === 'OXIGENO' && conector === 'SS/AGA' && rango === '0-3 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'SS/AGA' && rango === '0-3 L/MIN' ){
             //setCodigo('PCA050')
             return 'PCA050'
         }
-        if(gas === 'OXIGENO' && conector === 'SS/AGA' && rango === '0-15 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'SS/AGA' && rango === '0-15 L/MIN' ){
             //setCodigo('PCA062')
             return 'PCA062'
         }
-        if(gas === 'OXIGENO' && conector === 'SS/AGA' && rango === '0-30 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'SS/AGA' && rango === '0-30 L/MIN' ){
             //setCodigo('PCA157')
             return 'PCA157'
         }
-        if(gas === 'OXIGENO' && conector === 'SS/AGA' && rango === '0-70 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'SS/AGA' && rango === '0-70 L/MIN' ){
             //setCodigo('PCA159')
             return 'PCA159'
         }
@@ -136,19 +135,19 @@ const useCodigo = (producto)=> {
             return 'PCA160'
         }
         // Conector: OHMEDA
-        if(gas === 'OXIGENO' && conector === 'OHMEDA' && rango === '0-3 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'OHMEDA' && rango === '0-3 L/MIN' ){
             //setCodigo('PCA074')
             return 'PCA074'
         }
-        if(gas === 'OXIGENO' && conector === 'OHMEDA' && rango === '0-15 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'OHMEDA' && rango === '0-15 L/MIN' ){
             //setCodigo('PCA086')
             return 'PCA086'
         }
-        if(gas === 'OXIGENO' && conector === 'OHMEDA' && rango === '0-30 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'OHMEDA' && rango === '0-30 L/MIN' ){
             //setCodigo('PCA161')
             return 'PCA161'
         }
-        if(gas === 'OXIGENO' && conector === 'OHMEDA' && rango === '0-70 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'OHMEDA' && rango === '0-70 L/MIN' ){
             //setCodigo('PCA163')
             return 'PCA163'
         }
@@ -169,19 +168,19 @@ const useCodigo = (producto)=> {
             return 'PCA164'
         }
         // Conector: ON
-        if(gas === 'OXIGENO' && conector === 'ON' && rango === '0-3 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'ON' && rango === '0-3 L/MIN' ){
             //setCodigo('PCA098')
             return 'PCA098'
         }
-        if(gas === 'OXIGENO' && conector === 'ON' && rango === '0-15 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'ON' && rango === '0-15 L/MIN' ){
             //setCodigo('PCA110')
             return 'PCA110'
         }
-        if(gas === 'OXIGENO' && conector === 'ON' && rango === '0-30 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'ON' && rango === '0-30 L/MIN' ){
             //setCodigo('PCA165')
             return 'PCA165'
         }
-        if(gas === 'OXIGENO' && conector === 'ON' && rango === '0-70 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'ON' && rango === '0-70 L/MIN' ){
             //setCodigo('PCA167')
             return 'PCA167'
         }
@@ -207,7 +206,7 @@ const useCodigo = (producto)=> {
     // REGULADOR DE BAJA
     const buscarCodigoReguladorBaja = (gas, conector)=> {
         // Conector: DISS
-        if(gas === 'OXIGENO' && conector === 'DISS'){
+        if(gas === 'OXÍGENO' && conector === 'DISS'){
             //setCodigo('PRB001')
             return 'PRB001'
         }
@@ -229,7 +228,7 @@ const useCodigo = (producto)=> {
         }
 
         // Conector: AFNOR
-        if(gas === 'OXIGENO' && conector === 'AFNOR'){
+        if(gas === 'OXÍGENO' && conector === 'AFNOR'){
             //setCodigo('PRB006')
             return 'PRB006'
         }
@@ -250,7 +249,7 @@ const useCodigo = (producto)=> {
             return 'PRB010'
         }
         // Conector: SS/AGA
-        if(gas === 'OXIGENO' && conector === 'SS/AGA'){
+        if(gas === 'OXÍGENO' && conector === 'SS/AGA'){
             //setCodigo('PRB011')
             return 'PRB011'
         }
@@ -271,7 +270,7 @@ const useCodigo = (producto)=> {
             return 'PRB015'
         }
         // Conector: OHMEDA
-        if(gas === 'OXIGENO' && conector === 'OHMEDA'){
+        if(gas === 'OXÍGENO' && conector === 'OHMEDA'){
             //setCodigo('PRB016')
             return 'PRB016'
         }
@@ -292,7 +291,7 @@ const useCodigo = (producto)=> {
             return 'PRB019'
         }
         // Conector: ON
-        if(gas === 'OXIGENO' && conector === 'DISS'){
+        if(gas === 'OXÍGENO' && conector === 'DISS'){
             //setCodigo('PRB020')
             return 'PRB020'
         }
@@ -418,7 +417,7 @@ const useCodigo = (producto)=> {
     // ASPIRADOR VENTURI
     const buscarCodigoAspiradorVenturi = (gas, conector)=> {
         // Conector: DISS
-        if(gas === 'OXIGENO' && conector === 'DISS' ){
+        if(gas === 'OXÍGENO' && conector === 'DISS' ){
             //setCodigo('PAV001')
             return 'PAV001'
         }
@@ -427,7 +426,7 @@ const useCodigo = (producto)=> {
             return 'PAV002'
         }
         // Conector: AFNOR
-        if(gas === 'OXIGENO' && conector === 'AFNOR' ){
+        if(gas === 'OXÍGENO' && conector === 'AFNOR' ){
             //setCodigo('PAV003')
             return 'PAV003'
         }
@@ -436,7 +435,7 @@ const useCodigo = (producto)=> {
             return 'PAV004'
         }
         // Conector: SS/AGA
-        if(gas === 'OXIGENO' && conector === 'SS/AGA' ){
+        if(gas === 'OXÍGENO' && conector === 'SS/AGA' ){
             //setCodigo('PAV005')
             return 'PAV005'
         }
@@ -445,7 +444,7 @@ const useCodigo = (producto)=> {
             return 'PAV006'
         }
         // Conector: OHMEDA
-        if(gas === 'OXIGENO' && conector === 'OHMEDA' ){
+        if(gas === 'OXÍGENO' && conector === 'OHMEDA' ){
             //setCodigo('PAV007')
             return 'PAV007'
         }
@@ -454,7 +453,7 @@ const useCodigo = (producto)=> {
             return 'PAV008'
         }
         // Conector: ON
-        if(gas === 'OXIGENO' && conector === 'ON' ){
+        if(gas === 'OXÍGENO' && conector === 'ON' ){
             //setCodigo('PAV009')
             return 'PAV009'
         }
@@ -467,7 +466,7 @@ const useCodigo = (producto)=> {
 
     // HUMIDIFICADOR
     const buscarCodigoHumidificador = (gas)=> {
-        if(gas === 'OXIGENO'){
+        if(gas === 'OXÍGENO'){
             //setCodigo('PFR001')
             return 'PFR001'
         }
@@ -480,7 +479,7 @@ const useCodigo = (producto)=> {
     // REGULADOR DE PRESION PREAJUSTADO
     const buscarCodigoReguladorPreajustado = (gas, conector)=> {
         // Conector: IRAM
-        if(gas === 'OXIGENO' && conector === 'IRAM' ){
+        if(gas === 'OXÍGENO' && conector === 'IRAM' ){
             //setCodigo('PRP001')
             return 'PRP001'
         }
@@ -502,7 +501,7 @@ const useCodigo = (producto)=> {
         }
         
         // Conector: YUGO
-        if(gas === 'OXIGENO' && conector === 'YUGO' ){
+        if(gas === 'OXÍGENO' && conector === 'YUGO' ){
             //setCodigo('PRP006')
             return 'PRP006'
         }
@@ -527,10 +526,10 @@ const useCodigo = (producto)=> {
     // REGULADOR DE PRESION PREAJUSTADO CAUDALÍMETRO
     const buscarCodigoReguladorPreajustadoCaudalimetro = (gas, conector, rango)=> {
         //Conector IRAM
-        if(gas === 'OXIGENO' && conector === 'IRAM' && rango === '0-3 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'IRAM' && rango === '0-3 L/MIN' ){
             return 'PRP011'
         }
-        if(gas === 'OXIGENO' && conector === 'IRAM' && rango === '0-15 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'IRAM' && rango === '0-15 L/MIN' ){
             return 'PRP013'
         }
         if(gas === 'AIRE' && conector === 'IRAM' && rango === '0-3 L/MIN' ){
@@ -540,10 +539,10 @@ const useCodigo = (producto)=> {
             return 'PRP017'
         }
         //Conector YUGO
-        if(gas === 'OXIGENO' && conector === 'YUGO' && rango === '0-3 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'YUGO' && rango === '0-3 L/MIN' ){
             return 'PRP012'
         }
-        if(gas === 'OXIGENO' && conector === 'YUGO' && rango === '0-15 L/MIN' ){
+        if(gas === 'OXÍGENO' && conector === 'YUGO' && rango === '0-15 L/MIN' ){
             return 'PRP014'
         }
         if(gas === 'AIRE' && conector === 'YUGO' && rango === '0-3 L/MIN' ){
@@ -557,7 +556,7 @@ const useCodigo = (producto)=> {
     // REGULADOR AJUSTABLE - aparecen mas gases
     const buscarCodigoReguladorAjustable = (gas, conector)=> {
         // Conector: IRAM
-        if(gas === 'OXIGENO' && conector === 'IRAM' ){
+        if(gas === 'OXÍGENO' && conector === 'IRAM' ){
             //setCodigo('PRA001')
             return 'PRA001'
         }
@@ -578,7 +577,7 @@ const useCodigo = (producto)=> {
             return 'PRA005'
         }
         // Conector: YUGO
-        if(gas === 'OXIGENO' && conector === 'YUGO' ){
+        if(gas === 'OXÍGENO' && conector === 'YUGO' ){
             //setCodigo('PRA006')
             return 'PRA006'
         }
