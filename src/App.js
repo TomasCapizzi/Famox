@@ -19,6 +19,7 @@ import Historia from './components/Historia/Historia';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Menu from './components/Menu/Menu';
+import PregFrec from './components/PregFrec/PregFrec';
 import Productos from './components/ListaProductos/Productos';
 import UnidadesSuministro from './components/ListaProductos/UnidadesSuministro/UnidadesSuministro';
 
@@ -38,6 +39,7 @@ function App() {
             <Route path='/login' element={<Login/>} />
             <Route path='/ecommerce' element={<Ecommerce/>} />
             <Route path='/carrito' element={<Carrito/>} />
+            <Route path='/preguntas-frecuentes' element={<PregFrec/>} />
 
             <Route path='/gasoterapia' element={<Gasoterapia/>}/>
             <Route path='/unidades-de-suministro' element={<UnidadesSuministro/>}/>
