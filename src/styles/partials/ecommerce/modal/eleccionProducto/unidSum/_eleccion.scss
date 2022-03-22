@@ -1,0 +1,70 @@
+@import '../../../../../theme/theme.scss';
+.selecciones-container{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    .seleccion{
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        margin-right: 15px;
+        p{
+            font-weight: bold;
+        }
+        .item{
+            width: 95%;
+            display: flex;
+            flex-direction: row;
+            font-size: 0.75rem;
+            padding: 0 5px;
+            align-items: center;
+            background-color: $color2;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+             p{
+                 font-weight: 400;
+                 margin-right: 8px;
+             }
+             p:nth-child(1){
+                 background-color: $black;
+                 color: $white;
+                 padding: 5px;
+                 border-radius: 20%;
+                 text-align: center;
+             }
+             svg{
+                 font-size:20px;
+                 cursor: pointer;
+             }
+        }
+    }
+
+    .seleccion-conex{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        .container{
+            width: 100%;
+        }
+        .item-conex{
+            display: flex;
+            width: 90%;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 3px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            border: 2px solid $color1;
+            margin-bottom: 5px;
+            p{
+                margin-right: 10px;
+            }
+            svg{
+                font-size: 1.3rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
