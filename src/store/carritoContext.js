@@ -15,7 +15,7 @@ export function CarritoContextProvider({children}){
         }      
     }
     
-    const agregarItem = ({producto})=> {
+    const agregarItemGasoterapia = ({producto})=> {
         //console.log(producto);
         const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
         if(carrito){
@@ -56,6 +56,45 @@ export function CarritoContextProvider({children}){
        // setCarro([...carro, producto]);
 
     }
+
+    const agregarItemUnidSum = ({producto})=> {
+                //console.log(producto);
+                const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
+                if(carrito){
+                    const coincidencia = carrito.find(
+                        item => item === producto
+                    );
+                    if(coincidencia){                    
+                       const nuevoCarrito = carrito.filter(
+                            item=> item !== coincidencia
+                        )
+                        const {nombre, img, _id, bajaTension, mediaTension, iluminacion, conexiones} = producto
+                        let nuevoProducto = {
+                            nombre,
+                            img,
+                            _id,
+                            mediaTension,
+                            bajaTension,
+                            iluminacion,
+                            conexiones,
+                            cantidad: producto.cantidad + coincidencia.cantidad
+                        }
+                        localStorage.setItem('FamoxCarrito', JSON.stringify([...nuevoCarrito, nuevoProducto]));
+                        setCarro([...nuevoCarrito, nuevoProducto])
+                    } else{
+                        localStorage.setItem('FamoxCarrito', JSON.stringify([...carrito, producto]));
+                        setCarro([...carro, producto])
+                    }
+        
+                } else{
+                    localStorage.setItem('FamoxCarrito', JSON.stringify([producto]));
+                    setCarro([producto])
+                    borrarDataLocalStorage()
+                }
+               // setCarro([...carro, producto]);
+
+    }
+
     const removerItem = (producto)=>{
         localStorage.setItem('FamoxCarrito', JSON.stringify(carro.filter(
             item => item._id !== producto._id
@@ -79,7 +118,7 @@ export function CarritoContextProvider({children}){
     },0);
 
     return(
-        <CarritoContext.Provider value={{carro, agregarItem, removerItem, borrarCarrito, costoTotal, obtenerDataLocalStorage}}>
+        <CarritoContext.Provider value={{carro, agregarItemGasoterapia,agregarItemUnidSum, removerItem, borrarCarrito, costoTotal, obtenerDataLocalStorage}}>
             {children}
         </CarritoContext.Provider>
     )
