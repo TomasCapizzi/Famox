@@ -1,0 +1,83 @@
+@import '../../../../../theme/theme.scss';
+
+.modal-gasconec{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    p{
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+    .opciones{
+        display: none;        
+        width: 100%;
+        position: relative;
+        padding-top: 30px;
+        .agregar{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            svg{
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 1.3srem;
+            }
+            p{
+                font-weight: 400;
+                margin-left: 15px;
+            }
+        }
+        .conexiones{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            select{
+                width: 25%;
+                border-radius: 5px;
+            }
+            input{
+                width: 10%;
+                border-radius: 5px;
+                border-color: $color2;
+            }
+            button{
+                width: 15%;
+                border-radius: 5px;
+                border: none;
+                background-color: $color1;
+                color: $white;
+            }
+        }
+        
+        .bajatension{
+            display: flex;
+            width: 90%;
+            align-items: center;
+            margin: 5px;
+            margin-right: 10px;
+            justify-content: space-between;
+            p{
+                font-size: 0.8rem;
+                margin: 0;
+            }
+            div{
+                display: flex;
+                align-items: center;
+                margin-left: 10px;
+                input{
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 10px;
+                    border: 1px solid $color1;
+                }
+            }            
+        }
+    }
+    .on{
+        display: flex;
+        flex-wrap: wrap;
+        
+        align-items: center;
+    }
+}

@@ -1,0 +1,38 @@
+@import '../theme/theme.scss';
+
+.toast{
+    position: absolute;
+    background-color: $white;
+    border: 2px solid $color1;
+    padding: 20px;
+    width: 200px;
+    border-radius: 5px;
+    display: none;
+    bottom: 0px;
+    right: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+    animation: animation ease-in-out 4s;
+}
+
+.on{
+    display: flex;
+}
+
+@keyframes animation {
+    0% {
+        bottom: -300px;
+        opacity: 0;
+    }
+    20%{
+        bottom: 0;
+        opacity: 1;
+    }
+    80%{
+        bottom: 0;
+        opacity: 1;
+    }
+    100%{
+        bottom:-300px;
+        opacity: 0;
+    }
+}

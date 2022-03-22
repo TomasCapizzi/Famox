@@ -5,11 +5,25 @@
     flex-direction: column;
     width: 100%;
     padding: 15px;
+    align-items: center;
     input{
         margin-bottom: 15px;
+        border-radius: 8px;
+        padding: 5px;
+        border: 1px solid $color1;
+        width: 80%;
     }
-
-    button{
-        width: 100%;
+    .btn-submit{
+        background-color: $black;
+        color: $white;
+        font-weight: 700;
+        font-size: 1.15rem;
+        width: 180px;
+        cursor: pointer;
+        transition: .3s ease-in-out all;
+    }
+    .btn-submit:hover{
+        background-color: $color2;
+        color: $color1;
     }
 }

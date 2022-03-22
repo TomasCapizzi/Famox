@@ -6,12 +6,15 @@
     overflow-y: scroll;
     display: flex;
     margin-top: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
 
     .container{
         display: flex;
         flex-direction: column;
         width: 100%;
         position: relative;
+        min-height: 80%;
     }
     .encabezado{
         background-color: $color1;
@@ -40,6 +43,14 @@
             justify-content: space-between;
         }
 
+    }
+
+    .longitud-panel{
+        display: flex;
+        flex-direction: column;
+        p:nth-child(3){
+            font-size: 0.8rem;
+        }
     }
 }
 
