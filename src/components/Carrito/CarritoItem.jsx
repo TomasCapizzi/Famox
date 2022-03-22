@@ -7,19 +7,46 @@ import useCodigo from '../../hooks/codigos/useCodigos';
 function CarritoItem({item}) {
 
   const {derivarFuncion} = useCodigo(item)
-  console.log(item);
 
   const codigo =  derivarFuncion();
   const {removerItem} = useContext(CarritoContext);
 
   return (
     <tr className='carrito-item'>
-      <td><img src={item.img} alt="" /></td>
-      <td><p>{item.nombre}</p></td>
+      <td><img src={item.img} alt="" /><p>{item.nombre}</p></td>
+      <td>
+        <ul className='opciones'>
+            {
+            item.gas &&       
+                <li>Gas: <span>{item.gas}</span></li>
+          }
+          {
+            item.conector && 
+                <li>Conector: <span>{item.conector}</span></li>            
+          }
+          {
+            item.rango &&
+                <li>Rango: <span>{item.rango}</span></li>
+          }
+          {
+            item.modelo &&
+                <li>{(item.nombre === 'Recipiente Colector' || item.nombre === 'Mezclador de Aire/Oxígeno') ?  item.modelo.rango : item.modelo.nombre}</li>
+          }
+        </ul>
+      </td>
       <td><p>{codigo}</p></td>
       <td><p>{item.cantidad}</p></td>
       <td><BsTrashFill onClick={()=> removerItem(item)} /></td>
-      {
+      
+      
+    </tr>
+  )
+}
+
+export default CarritoItem
+
+/*
+{
         item.gas &&       
           <td className='filter'>
             <p>Gas: {item.gas}</p>
@@ -44,8 +71,5 @@ function CarritoItem({item}) {
           </td>
       }
       
-    </tr>
-  )
-}
 
-export default CarritoItem
+*/
