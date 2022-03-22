@@ -2,6 +2,7 @@ import React, {useContext, useRef, useState} from 'react';
 
 import {CarritoContext} from '../../store/carritoContext';
 import CarritoIem from './CarritoItem';
+import CarritoItem2 from './CarritoItem2';
 import FormularioCotizacion from './FormularioCotizacion';
 
 function Carrito() {
@@ -17,6 +18,21 @@ function Carrito() {
 
     function pedirCotizacion(e){
         e.preventDefault()
+        const pedido = {
+            nombre: e.target.nombre.value,
+            empresa: e.target.empresa.value,
+            email: e.target.mail.value,
+            carro
+        }
+        console.log(pedido);
+        const request = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(pedido),
+        }
+        fetch('http://localhost:4000/formulario/venta', request)
     }
   return (
     <section className='carrito'>
@@ -24,13 +40,18 @@ function Carrito() {
         <div className='carrito-container'>
             {
                 carro.length === 0 ?
-                <p>Tu carrito esta vacio ...</p>
+                    <section className='carro-vacio'>
+                        <h5>Tu carrito esta vacio ...</h5>
+                        <p>Dirígete al <span><a href="/ecommerce">Ecommerce</a></span> para poder seleccionar los productos de tu interés y poder pedir una cotización</p>
+
+                    </section>
                 : 
                 <>
                     <table>
                         <thead>
                             <tr>
                                 <th>Artículo</th>
+                                <th>Detalles</th>
                                 <th>Código</th>
                                 <th>Cantidad</th>
                                 <th>Borrar</th>
@@ -40,7 +61,7 @@ function Carrito() {
                             { 
                                 carro.length >= 1 &&
                                     carro.map(
-                                        item => <CarritoIem item={item} key={item._id} />
+                                        item => item.conector || item.gas ? <CarritoIem item={item} key={item._id} /> : <CarritoItem2 item={item} key={item._id} />
                                     )
                             }                    
                         </tbody>   
