@@ -1,12 +1,12 @@
 import React from 'react'
 
-function MediaTensionItem({item}) {
+function MediaTensionItem({item, obtenerCantidadInput}) {
   return (
     <article className='mediatension'>
         <p>{item}</p>
         <div>
-            <p>Cantidad: </p>
-            <input type="number" name="cantidad" id="" />
+            <label>Cantidad: </label>
+            <input type="number" name="cantidad" id="" placeholder='0' min={0} onChange={(e)=>obtenerCantidadInput(e, item)} />
         </div>
     </article>
   )
