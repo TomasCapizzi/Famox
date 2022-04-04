@@ -1,11 +1,11 @@
 import {useState} from "react";
 
-const useCodigo = (producto)=> {
+const useCodigo = (nombre, gas, conector, rango, modelo)=> {
     const [codigo, setCodigo] = useState();
 
     function derivarFuncion(){
+       // const {nombre, gas, conector, rango, modelo} = producto
 
-        const {nombre, gas, conector, rango, modelo} = producto
         
         if(nombre === 'Caudalímetro'){
             return buscarCodigoCaudalimetro(gas, conector, rango)            
@@ -26,9 +26,9 @@ const useCodigo = (producto)=> {
         } else if(nombre === 'Regulador de Presión Pre-Ajustado con Caudalímetro'){
             return buscarCodigoReguladorPreajustadoCaudalimetro(gas, conector, rango)
         } else if(nombre === 'Recipiente Colector' || nombre === 'Mezclador de Aire/Oxígeno'){
-            return buscarCodigoDeModelo(producto)
+            return buscarCodigoDeModelo(modelo)
         } else if(nombre === 'Máscara Nasal'){
-            return buscarCodigoMascaraNasal(producto.modelo.nombre)
+            return buscarCodigoMascaraNasal(modelo.nombre)
         }
     }
 
@@ -611,7 +611,7 @@ const useCodigo = (producto)=> {
 
 
     const buscarCodigoDeModelo = (modelo)=> {
-        return modelo.modelo.nombre;
+        return modelo.nombre;
     }
 
     return {
