@@ -1,6 +1,7 @@
 import {useContext, useState} from 'react'
 
 import { CarritoContext } from '../../store/carritoContext';
+import useCodigo from '../codigos/useCodigos';
 
 const useAgregarCarrito = ({item}) => {
   
@@ -20,6 +21,8 @@ const useAgregarCarrito = ({item}) => {
     const [longitudPanel, setLongitudPanel] = useState();
     //////////////////////////////////////////
 
+
+    const {derivarFuncion} = useCodigo(item.nombre, gas, conector, rango, modelo)
 
     function agregarAlCarrito(cantidad){
         if(modelo){
@@ -41,6 +44,7 @@ const useAgregarCarrito = ({item}) => {
         const nuevoID = (Math.random()*100 + 1).toString();
         const producto = {
           nombre,
+          codigo: derivarFuncion(),
           gas,
           conector,
           img,
@@ -53,6 +57,7 @@ const useAgregarCarrito = ({item}) => {
       } else {
         const producto = {
           nombre,
+          codigo: derivarFuncion(),
           gas,
           conector,
           img,
@@ -61,13 +66,13 @@ const useAgregarCarrito = ({item}) => {
           modelo,
           _id
         }
+        console.log(producto);
         agregarItemGasoterapia({producto})
       }
 
     }
 
     function buscarCoincidenciaModelo(cantidad){
-      console.log(item);
       const {nombre, img, _id} = item
       const coincidencia = carro.find(
         producto => (producto.nombre === nombre) && ( (producto.gas !== gas ) || ( producto.conector !== conector)|| ( producto.modelo.nombre !== modelo.nombre) )
@@ -77,6 +82,7 @@ const useAgregarCarrito = ({item}) => {
         const nuevoID = (Math.random()*100 + 1).toString();
         const producto = {
           nombre,
+          codigo: derivarFuncion(),
           gas,
           conector,
           img,
@@ -90,6 +96,7 @@ const useAgregarCarrito = ({item}) => {
       } else {
         const producto = {
           nombre,
+          codigo: derivarFuncion(),
           gas,
           conector,
           img,
