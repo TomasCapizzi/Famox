@@ -1,19 +1,22 @@
-import React from 'react'
-
 import ModeloItem from './ModeloItem';
+import React from 'react'
 import Spinner from '../../Spinner/Spinner';
 
 function Modelos({modelos}) {
     console.log(modelos);
   return (
     <article className='modelos'>
-        {
-            modelos.length > 0 ? 
-                modelos.map(
-                    item => <ModeloItem item={item} key={item._id} />
-                )
-            : <Spinner />
-        }
+        <h4>Modelos</h4>
+        <div>
+            {
+                modelos.length > 0 ? 
+                    modelos.map(
+                        item => <ModeloItem item={item} key={item._id} />
+                    )
+                : <Spinner />
+            }
+        </div>
+
     </article>
   )
 }
