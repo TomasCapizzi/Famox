@@ -13,8 +13,7 @@ function CarritoItem2({item}) {
 
   const mostrarCaracteristicas = ()=> {
       setHandlerInfo(!handlerInfo);
-      caractRef.current.classList.toggle('on')
-
+      caractRef.current.classList.toggle('on');
   }
 
   return (
