@@ -1,6 +1,12 @@
-import React from 'react';
+import {CONECTORES, GASES} from '../../../data/conexiones';
+import React, {useRef, useState} from 'react';
+
+import BAJATENSION from '../../../data/bajaTension';
+import ILUMINACION from '../../../data/iluminacion';
+import MEDIATENSION from '../../../data/mediaTension';
 
 function FormUnidadSuministro({setHandler}) {
+  console.log(GASES, CONECTORES);
 
   function validarForm(e){
     e.preventDefault();
@@ -8,12 +14,22 @@ function FormUnidadSuministro({setHandler}) {
     const uso = e.target.uso.value;
     const anmat = e.target.anmat.checked;
     const img = e.target.img.value;
+    const bajaTension = e.target.bajaTension.checked ? BAJATENSION : null;
+    const mediaTension = e.target.mediaTension.checked ? MEDIATENSION : null;
+    const gases = e.target.conexiones.checked ? GASES : null;
+    const conectores = e.target.conexiones.checked ? CONECTORES : null;
+    const iluminacion = e.target.iluminacion.checked ? ILUMINACION : null
 
     const producto = {
       nombre,
       uso,
       anmat,
       img,
+      bajaTension,
+      mediaTension,
+      iluminacion,
+      conectores,
+      gases
     }
     console.log(producto);
     crearProducto(producto)
@@ -50,6 +66,20 @@ function FormUnidadSuministro({setHandler}) {
 
           <label htmlFor="img">Imagen (ruta)</label>
           <input type="text" id='img' />
+
+          <label htmlFor="">Baja Tensión</label>
+          <input type="radio" id='bajaTension' />
+
+          <label htmlFor="">Media Tensión</label>
+          <input type="radio" id='mediaTension' />
+
+          <label htmlFor="">Iluminación</label>
+          <input type="radio" id='iluminacion' />
+
+          <label htmlFor="">Conexiones</label>
+          <input type="radio" id='conexiones' />
+
+
 
           <input type="submit" value='Enviar' className='form-submit' />
       </form>
