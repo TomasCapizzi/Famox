@@ -154,7 +154,9 @@ function EleccionUnidSum({item,toggleModal }) {
               // HABILITACION DE BOTONERA
               (item.nombre === 'Panel de Cabecera') ?
                 ((valoresMediaTension.length > 0 || valoresBajaTension.length > 0 || valoresIluminacion.length > 0) && longitudPanel && (conexiones.length>0) ) ? <Botonera agregarAlCarrito={agregarAlCarrito} toggleModal={toggleModal} /> : <p>Seleccionar características y longitud</p>
-              : ((valoresMediaTension.length > 0 || valoresBajaTension.length > 0 || valoresIluminacion.length > 0)&& conexiones.length > 0) ?
+              : (item.nombre === 'Panel de Gases') ? (conexiones.length > 0) ? <Botonera agregarAlCarrito={agregarAlCarrito} toggleModal= {toggleModal} /> : <p>Seleccionar conexiones</p>
+              :
+               ((valoresMediaTension.length > 0 || valoresBajaTension.length > 0 || valoresIluminacion.length > 0)&& conexiones.length > 0) ?
                   <Botonera agregarAlCarrito={agregarAlCarrito} toggleModal={toggleModal}/>
                 : null
             }
