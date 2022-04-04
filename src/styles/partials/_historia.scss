@@ -88,3 +88,279 @@
 
     }
 }
+
+@media only screen and (max-width: 375px){
+    .historia{
+        width: 90%;
+        .seccion1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            border-bottom: 2px solid $color1;
+            img{
+                width: 100%;
+            }
+            p{
+                padding: 10px;
+                font-size: 0.9rem
+            }
+        }   
+        .seccion3{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            img{
+                width: 100%;
+            }
+            div{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p{
+                    width: 85%;
+                }
+            }
+        }
+        .seccion4{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            border-bottom: 2px solid $color1;
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+            img{
+                width: 100%;
+                padding: 10px 0px 10px 10px;
+                object-fit: cover;
+            }
+            div{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p{
+                    width: 85%;
+                }
+            }
+    
+        }
+    }
+}
+
+@media only screen and(min-width: 375px) and (max-width: 568px){
+    .historia{
+        width: 85%;
+        .seccion1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            border-bottom: 2px solid $color1;
+            img{
+                width: 100%;
+            }
+            p{
+                padding: 10px;
+                font-size: 0.9rem
+            }
+        }   
+        .seccion3{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            img{
+                width: 100%;
+            }
+            div{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p{
+                    width: 85%;
+                }
+            }
+        }
+        .seccion4{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            border-bottom: 2px solid $color1;
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+            img{
+                width: 100%;
+                padding: 10px 0px 10px 10px;
+                object-fit: cover;
+            }
+            div{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p{
+                    width: 85%;
+                }
+            }
+    
+        }
+    }
+}
+
+@media only screen and(min-width: 568px) and (max-width: 768px){
+    .historia{
+        width: 82%;   
+        p{
+            font-size: 0.95rem;
+        }    
+        h1{
+            font-size: 1.7rem;
+        }
+        h2{
+            font-size: 1.4rem;
+        }  
+        .seccion1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            border-bottom: 2px solid $color1;
+            img{
+                width: 90%;
+            }
+            p{
+                padding: 10px;
+            }
+        }   
+        .seccion3{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            img{
+                width: 90%;
+            }
+            div{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p{
+                    width: 85%;
+                }
+            }
+        }
+        .seccion4{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            border-bottom: 2px solid $color1;
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+            img{
+                width: 90%;
+                padding: 10px 0px 10px 10px;
+                object-fit: cover;
+            }
+            div{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p{
+                    width: 85%;
+                }
+            }
+    
+        }
+    }
+}
+
+@media only screen and(min-width: 768px) and (max-width: 1024px){
+    .historia{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        align-items: center;
+    
+        p{
+            color: $black;
+            text-align: justify;
+            font-size: 0.95rem
+        }    
+        .seccion1{
+
+            img{
+                width: 80%;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+            }
+            p{
+                padding: 15px;
+            }
+        }
+        .seccion2{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 2px solid $color1;
+    
+            p{
+                padding-bottom: 15px;
+            }
+        }
+    
+        .seccion3{
+            display: flex;
+            width: 100%;
+            margin-top: 20px;
+            border-bottom: 2px solid $color1;
+            padding-bottom: 25px;
+            img{
+                width: 50%;
+                object-fit: contain;
+                padding: 10px 10px 10px 0px;
+            }
+            div{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p{
+                    width: 85%;
+                }
+            }
+        }
+        .seccion4{
+            display: flex;
+            width: 100%;
+            margin-top: 20px;
+            border-bottom: 2px solid $color1;
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+            img{
+                width: 50%;
+                object-fit: cover;
+            }
+            div{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p{
+                    width: 85%;
+                }
+            }
+    
+        }
+    }
+}

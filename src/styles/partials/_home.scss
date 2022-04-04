@@ -39,3 +39,168 @@
         margin: 30px 0;
     }
 }
+
+@media only screen and (max-width: 375px){
+    .home{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 25px;
+    
+        .categorias-container{
+            width: 85%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border-top: 2px solid $color1;
+            border-bottom: 2px solid $color1;
+        }
+    
+        .categoria{
+            width: 100%;
+            text-align: center;
+            h3{
+                color: $color1;
+                font-size: 1.2rem;
+            }
+            img{
+                object-fit: cover;
+                width: 95%;
+                margin-bottom: 25px;
+                cursor: pointer;
+                box-shadow: 1px 5px 10px rgba(0,0,0,0.5);
+                border-radius: 5px;
+                transition: .2s ease-in-out all;
+            }
+            img:hover{            
+                transform: scale(0.9);
+            }
+        }
+        .rrss-container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+    }
+}
+
+@media only screen and(min-width: 375px) and (max-width: 568px){
+    .home{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 25px;
+    
+        .categorias-container{
+            width: 90%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border-top: 2px solid $color1;
+            border-bottom: 2px solid $color1;
+        }
+    
+        .categoria{
+            width: 100%;
+            text-align: center;
+            h3{
+                color: $color1;
+                font-size: 1.4rem;
+            }
+            img{
+                object-fit: cover;
+                width: 75%;
+                margin-bottom: 25px;
+                cursor: pointer;
+                box-shadow: 1px 5px 10px rgba(0,0,0,0.5);
+                border-radius: 5px;
+                transition: .2s ease-in-out all;
+            }
+            img:hover{            
+                transform: scale(0.95);
+            }
+        }
+        .rrss-container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+    }
+
+}
+
+@media only screen and(min-width: 568px) and (max-width: 768px){
+    .home{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 25px;
+    
+        .categorias-container{
+            width: 95%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            border-top: 2px solid $color1;
+            border-bottom: 2px solid $color1;
+            justify-content: center;
+        }
+    
+        .categoria{
+            width: 45%;
+            text-align: center;
+            h3{
+                color: $color1;
+                width: 100%;
+                font-size: 1.2rem;
+            }
+            img{
+                object-fit: cover;
+                width: 75%;
+                margin-bottom: 25px;
+                cursor: pointer;
+                box-shadow: 1px 5px 10px rgba(0,0,0,0.5);
+                border-radius: 5px;
+                transition: .2s ease-in-out all;
+            }
+        }
+    }
+}
+
+@media only screen and(min-width: 768px) and (max-width: 1200px){
+    .home{    
+        .categorias-container{
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            border-top: 2px solid $color1;
+            border-bottom: 2px solid $color1;
+            justify-content: center;
+        }
+    
+        .categoria{
+            width: 33%;
+            text-align: center;
+            h3{
+                color: $color1;
+                width: 100%;
+                font-size: 1.2rem;
+            }
+            img{
+                object-fit: cover;
+                width: 85%;
+                margin-bottom: 25px;
+                cursor: pointer;
+                box-shadow: 1px 5px 10px rgba(0,0,0,0.5);
+                border-radius: 5px;
+                transition: .2s ease-in-out all;
+            }
+        }
+    }
+}

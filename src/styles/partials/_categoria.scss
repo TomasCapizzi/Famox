@@ -6,7 +6,6 @@
     justify-content: center;
     h1{
         width: 100%;
-        font-size: 2.4rem;
         margin-top: 60px;
         text-align: center;
     }
@@ -17,5 +16,65 @@
         display: flex;
         flex-wrap: wrap;
         padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 568px){
+    .categoria{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        h1{
+            width: 100%;
+            margin-top: 60px;
+            text-align: center;
+        }
+        .items-container{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            border-top: 2px solid $color1;
+            display: flex;
+            padding: 20px;
+            align-items: center;
+        }
+    }
+}
+
+@media only screen and(min-width: 568px) and (max-width: 768px){
+    .categoria{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        h1{
+            width: 100%;
+            margin-top: 60px;
+            text-align: center;
+        }
+        .items-container{
+            width: 90%;
+            display: flex;
+            border-top: 2px solid $color1;
+            display: flex;
+            padding: 10px;
+            align-items: center;
+        }
+    }
+}
+
+@media only screen and(min-width: 768px) and (max-width: 1024px){
+    .categoria{
+        .items-container{
+            width: 85%;
+        }
+    }   
+}
+@media only screen and(min-width: 1280px) and (max-width: 1440px){
+    .categoria{
+        .items-container{
+            width: 85%;
+        }
     }
 }

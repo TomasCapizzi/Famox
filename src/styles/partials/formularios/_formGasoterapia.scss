@@ -87,6 +87,70 @@
                 }
             }
         }
+        .btn-modelo{
+            margin: 25px;
+            background-color: $color2;
+            padding: 5px;
+            border-radius: 6px;
+            color: $color1;
+            border: 2px solid $black;
+            cursor: pointer;
+        }
+        .btn-rango{
+            margin: 25px;
+            background-color: $color2;
+            padding: 5px;
+            border-radius: 6px;
+            color: $color1;
+            border: 2px solid $black;
+            cursor: pointer;
+        }
+        .form-rangos{
+            display: flex;
+            flex-direction: column;
+            span{
+                margin: 10px;
+                border: 2px solid $color1;
+                padding: 3px;
+                border-radius: 8px;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+        .rangos-selec{
+            display: flex;
+            div{
+                margin-right: 15px;
+                display: flex;
+                align-items: center;
+                svg{
+                    cursor: pointer;
+                }
+            }
+        }
+        .modelos-selec{
+            display: flex;
+            div{
+                margin-right: 15px;
+                display: flex;
+                align-items: center;
+                svg{
+                    cursor: pointer;
+                }
+            }
+        }
+        .form-modelos{
+            display: flex;
+            flex-direction: column;
+            span{
+                margin: 10px;
+                border: 2px solid $color1;
+                padding: 3px;
+                border-radius: 8px;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
         .form-submit{
             margin: 50px 0;
             width: 120px;

@@ -3,25 +3,217 @@
 .modelos{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
-
     border-top: 2px solid $color1;
-
+    h4{
+        font-size: 1.6rem;
+    }
+    div{
+        display: flex;
+        flex-wrap: wrap;
+    }
     .modelo-item{
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 33%;
+        width: auto;
         div{
-            width: 100%;
-            height: 220px;
+            width: 280px;
+            height: auto;
             margin: 5px;
+            padding: 0 15px;
             display: flex;
         }
         img{
             width: 100%;
+            height: 250px;
             object-fit: contain;
         }
-    }
+    }   
+}
+
+@media only screen and (max-width: 568px){
+    .modelos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
     
+        border-top: 2px solid $color1;
+        h4{
+            font-size: 1.2rem;
+        }
+    
+        .modelo-item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            div{
+                width: 100%;
+                height: 220px;
+                margin: 5px;
+                display: flex;
+            }
+            img{
+                width: 100%;
+                height: 200px;
+                object-fit: contain;
+            }
+        }   
+    }
+}
+
+@media only screen and(min-width: 568px) and (max-width: 768px){
+    .modelos{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    
+        border-top: 2px solid $color1;
+        h4{
+            font-size: 1.4rem;
+        }
+
+        div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    
+        .modelo-item{
+            display: flex;
+            width: 80%;
+            border-bottom: 2px solid $color1;
+            div{
+                width: 140px;
+                height: auto;
+                margin: 5px;
+                display: flex;
+                img{
+                    object-fit: contain;
+                    height: 120px;
+                }
+            }
+            
+        }   
+    }
+}
+
+@media only screen and(min-width: 768px) and (max-width: 1024px){
+    .modelos{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    
+        border-top: 2px solid $color1;
+        h4{
+            font-size: 1.4rem;
+        }
+
+        div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    
+        .modelo-item{
+            display: flex;
+            width: 80%;
+            border-bottom: 2px solid $color1;
+            div{
+                width: 180px;
+                height: auto;
+                margin: 5px;
+                display: flex;
+                img{
+                    object-fit: contain;
+                    height: 160px;
+                }
+            }
+            
+        }    
+    }
+}
+
+@media only screen and(min-width: 1024px) and (max-width: 1280px){
+    .modelos{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    
+        border-top: 2px solid $color1;
+        h4{
+            font-size: 1.6rem;
+        }
+
+        div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    
+        .modelo-item{
+            display: flex;
+            width: 50%;
+            h3{
+                font-size: 1.3rem;
+            }
+            div{
+                width: 200px;
+                height: auto;
+                margin: 5px;
+                display: flex;
+                img{
+                    object-fit: contain;
+                    height: 180px;
+                }
+            }
+            
+        }    
+    }  
+}
+
+@media only screen and(min-width: 1280px) and (max-width: 1440px){
+    .modelos{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;    
+        border-top: 2px solid $color1;
+        h4{
+            font-size: 1.6rem;
+        }
+
+        div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    
+        .modelo-item{
+            display: flex;
+            width: auto;
+            padding: 0 15px;
+            h3{
+                font-size: 1.3rem;
+            }
+            div{
+                width: 220px;
+                height: auto;
+                margin: 5px;
+                display: flex;
+                img{
+                    object-fit: contain;
+                    height: 220px;
+                }
+            }
+            
+        }    
+    } 
 }

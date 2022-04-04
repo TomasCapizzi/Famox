@@ -23,6 +23,16 @@
         transform: scale(0.95);
     }
 }
+@media only screen and (max-width: 375px){
+    .rrss{
+        svg{
+            width: 40px;
+            font-size: 2.2rem;
+            margin: 0 15px;
+        }
+    }
+
+}
 // linkedin #0A66C2
 //wpp #2CC54E
 // insta #D33F76
