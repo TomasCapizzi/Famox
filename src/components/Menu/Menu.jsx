@@ -1,14 +1,20 @@
-import React, {useContext, useEffect} from 'react';
-import {RiShoppingCart2Line, RiShoppingCartFill} from 'react-icons/ri'
+import React, {useContext, useEffect, useRef, useState} from 'react';
+import {RiShoppingCart2Line, RiShoppingCartFill} from 'react-icons/ri';
 
 import { CarritoContext } from '../../store/carritoContext';
-import {FaUser} from 'react-icons/fa';
+import {CgMenuGridR} from 'react-icons/cg';
 import {Link} from 'react-router-dom';
-import {MdKeyboardArrowDown} from 'react-icons/md';
+import Links from './Links';
+import LinksResponsive from './LinksResponsive'
 
 function Menu() {
-
+  const menuUl = useRef();
   const {carro, obtenerDataLocalStorage} = useContext(CarritoContext);
+
+
+  function useMenuHamb(){
+    menuUl.current.classList.toggle('on')
+  }
   
   useEffect(()=>{
     obtenerDataLocalStorage();
@@ -20,44 +26,22 @@ function Menu() {
       <Link to={'/'}>
         <img src="img/Logo_WP.jpg" alt="Logo Famox" />
       </Link>
-        <ul>
-            <Link to='/'>
-              <li>Famox</li>
-            </Link>
-            <Link  to='/ecommerce'>
-              <li>Ecommerce</li>
-            </Link>
-            <Link to='/nosotros'>
-              <li>Nosotros</li>            
-            </Link>
-              <div className='categorias-handler'>
-                <Link  to='/productos'><li>Productos <MdKeyboardArrowDown/></li></Link>
-                <div className='categorias'>
-                  <Link to='/gasoterapia'><li>Gasoterapia</li></Link>
-                  <Link to='/unidades-de-suministro'><li>Unidades de Suministro</li></Link>
-                  <Link to='/accesorios'><li>Accesorios</li></Link>
-                </div>
-              </div>
-            <Link  to='/certificaciones'>
-              <li>Certificaciones</li>            
-            </Link>
-            <Link  to='/contacto'>
-              <li>Contacto</li>
-            </Link>
-            <Link to='/carrito' >
-              <li className='carrito'>{
-                carro.length > 0 ? <RiShoppingCartFill/> : <RiShoppingCart2Line/>
-              }
-              {
-                carro.length === 0 ?
-                  null : <p>{carro.length}</p>
-              }
-              </li>
-            </Link>
-            <Link  to='/login'>
-              <li><FaUser/></li>
-            </Link>            
-        </ul>
+      <div className='responsive-menu'>
+        <Link to='/carrito' className='carrito-responsive' >
+          <li className='carrito'>{
+              carro.length > 0 ? <RiShoppingCartFill/> : <RiShoppingCart2Line/>
+          }
+          {
+              carro.length === 0 ?
+              null : <p>{carro.length}</p>
+          }
+          </li>
+          </Link>
+          <CgMenuGridR className='menu-hamb' onClick={useMenuHamb}/>
+          
+      </div>
+      <LinksResponsive menuUl={menuUl} useMenuHamb={useMenuHamb} />
+      <Links carro={carro} />
     </nav>
   )
 }
