@@ -16,24 +16,25 @@ export function CarritoContextProvider({children}){
     }
     
     const agregarItemGasoterapia = ({producto})=> {
-        //console.log(producto);
+        console.log(producto);
         const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
         if(carrito){
             const coincidencia = carrito.find(
-                item => (item.nombre === producto.nombre) && (item._id === producto._id)
+                item => (item.nombre === producto.nombre) && (item.codigo === producto.codigo)
                 /*
                 item => (item.nombre === producto.nombre) && (item.gas === producto.gas) && (item.conector === producto.conector) && (item.rango === producto.rango)*/
             );
             if(coincidencia){     
-                //console.log('Coinciden este elemento con otro igual');                      
+                console.log('Coinciden este elemento con otro igual');                      
                const nuevoCarrito = carrito.filter(
                     item=> item !== coincidencia
                 )
                 //console.log('NUEVO CARRITO' ,nuevoCarrito);
-                const {nombre, img, _id, gas, conector, rango, modelo} = producto
+                const {nombre, img, _id, gas, conector, rango, modelo, codigo} = producto
                 let nuevoProducto = {
                     nombre,
                     img,
+                    codigo,
                     _id,
                     conector,
                     gas,
