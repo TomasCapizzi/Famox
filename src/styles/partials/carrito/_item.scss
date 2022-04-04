@@ -156,3 +156,407 @@
 .on{
     display: flex;
 }
+
+@media only screen and (max-width: 568px){
+    .carrito-item{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        border-bottom: 1px solid $color1;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        td{
+            display: flex;
+            justify-content: center;
+            li{
+                font-size: 0.8rem;
+            }
+        }
+        td:nth-child(1){
+            width: 40%;
+            justify-content: flex-start;
+            display: flex;
+            flex-direction: column;
+            p{
+                font-size: 0.8rem;
+            }
+        }
+        td:nth-child(2){
+            width: 20%;
+            justify-content: flex-start;
+        }
+        td:nth-child(3){
+            width: 18%;
+        }
+        td:nth-child(4){
+            width: 15%;
+        }
+        td:nth-child(5){
+            width: 12%;
+            padding: 5px 0;
+        }
+        .opciones{
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            padding: 0;
+            li{
+                margin-bottom: 5px;
+                font-size: 0.8rem;
+            }
+        }
+        .filter{
+            width: auto;
+            margin-right: 10px;
+            font-size: 0.8rem;
+            p{
+                background-color: $color1;
+                padding: 3px 5px;
+                border-radius: 8px;
+                color: $white;
+            }
+            
+        }
+    
+        img{
+            width: 60px;
+            height: 65px;
+            object-fit: scale-down;
+            margin-right: 15px;
+        }
+        span{
+            font-weight: 500;
+        }
+        svg{
+            cursor: pointer;
+            transition: .2s ease-in-out all;
+        }
+        svg:hover{
+            transform: scale(1.1);
+            transform: rotate(5deg);
+        }
+    }
+    
+    
+    .detalles{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        border-bottom: 1px solid $color1;
+        flex-wrap: wrap;
+        margin: 10px 0;
+        position: relative;
+    
+        .info{
+    
+        }
+        .info:hover{
+            transform: scale(0.9);
+        }
+        td{
+            display: flex;
+            justify-content: center;
+        }
+        td:nth-child(1){
+            width: 40%;
+            justify-content: flex-start;
+            display: flex;
+            flex-direction: column;
+        }
+        td:nth-child(2){
+            width: 20%;
+            font-size: 1.5rem;
+            right: 0;
+        }
+        td:nth-child(3){
+            width: 15%;
+        }
+        td:nth-child(4){
+            width: 12%;
+        }
+        td:nth-child(5){
+            width: 12%;
+            padding: 5px 0;
+        }
+        img{
+            width: 60px;
+            height: 65px;
+            object-fit: scale-down;
+            margin-right: 15px;
+        }
+        svg{
+            cursor: pointer;
+            transition: .2s ease-in-out all;
+        }
+        svg:hover{
+            transform: scale(1.1);
+            transform: rotate(5deg);
+        }
+    
+    
+    }
+    
+    .caracteristicas{
+        display: none;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-start;
+        border-bottom: 2px solid #ccc;
+
+        .filter{
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            ul{
+
+                li{
+                    margin: 5px 0;
+                }
+            }
+        }
+    
+    }
+}
+
+
+@media only screen and (min-width: 569px)and (max-width: 768px){
+    .carrito-item{
+        td{
+            display: flex;
+            justify-content: center;
+            li{
+                font-size: 0.8rem;
+            }
+        }
+        .opciones{
+            display: flex;
+            list-style: none;
+            padding: 0;
+            li{
+                margin-bottom: 5px;
+                font-size: 0.8rem;
+            }
+        }
+        .filter{
+            width: auto;
+            margin-right: 10px;
+            font-size: 0.8rem;
+            p{
+                background-color: $color1;
+                padding: 3px 5px;
+                border-radius: 8px;
+                color: $white;
+            }
+            
+        }
+    
+        img{
+            width: 60px;
+            height: 65px;
+            object-fit: scale-down;
+            margin-right: 15px;
+        }
+        span{
+            font-weight: 500;
+        }
+        svg{
+            cursor: pointer;
+            transition: .2s ease-in-out all;
+        }
+        svg:hover{
+            transform: scale(1.1);
+            transform: rotate(5deg);
+        }
+    }
+    
+    
+    .detalles{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        border-bottom: 1px solid $color1;
+        flex-wrap: nowrap;
+        margin: 10px 0;
+        position: relative;
+    
+        .info{
+    
+        }
+        .info:hover{
+            transform: scale(0.9);
+        }
+        td{
+            display: flex;
+            justify-content: center;
+        }
+        td:nth-child(1){
+            width: 40%;
+        }
+        td:nth-child(2){
+            width: 20%;
+            font-size: 1.5rem;
+            right: 0;
+        }
+        td:nth-child(3){
+            width: 15%;
+        }
+        td:nth-child(4){
+            width: 12%;
+        }
+        td:nth-child(5){
+            width: 12%;
+            padding: 5px 0;
+        }
+        img{
+            width: 60px;
+            height: 65px;
+            object-fit: scale-down;
+            margin-right: 15px;
+        }
+        svg{
+            cursor: pointer;
+            transition: .2s ease-in-out all;
+        }
+        svg:hover{
+            transform: scale(1.1);
+            transform: rotate(5deg);
+        }
+    
+    
+    }
+    
+    .caracteristicas{
+        display: none;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-start;
+        border-bottom: 2px solid #ccc;
+
+        .filter{
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            ul{
+
+                li{
+                    margin: 5px 0;
+                }
+            }
+        }
+    
+    }
+}
+
+@media only screen and (min-width: 769px)and (max-width: 1024px){
+    .carrito-item{
+        .opciones{
+            padding: 0;
+            li{
+                margin-bottom: 5px;
+                font-size: 0.85rem;
+            }
+        }
+        .filter{
+            width: auto;
+            margin-right: 10px;
+            font-size: 0.8rem;
+            p{
+                background-color: $color1;
+                padding: 3px 5px;
+                border-radius: 8px;
+                color: $white;
+            }
+        }
+    
+        img{
+            width: 60px;
+            height: 65px;
+            object-fit: scale-down;
+            margin-right: 15px;
+        }
+        span{
+            font-weight: 500;
+        }
+        svg{
+            cursor: pointer;
+            transition: .2s ease-in-out all;
+        }
+        svg:hover{
+            transform: scale(1.1);
+            transform: rotate(5deg);
+        }
+    }
+    
+    
+    .detalles{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        border-bottom: 1px solid $color1;
+        flex-wrap: nowrap;
+        margin: 10px 0;
+        position: relative;
+        .info:hover{
+            transform: scale(0.9);
+        }
+        td{
+            display: flex;
+            justify-content: center;
+        }
+        td:nth-child(1){
+            width: 40%;
+        }
+        td:nth-child(2){
+            width: 20%;
+            font-size: 1.5rem;
+            right: 0;
+        }
+        td:nth-child(3){
+            width: 15%;
+        }
+        td:nth-child(4){
+            width: 12%;
+        }
+        td:nth-child(5){
+            width: 12%;
+            padding: 5px 0;
+        }
+        img{
+            width: 60px;
+            height: 65px;
+            object-fit: scale-down;
+            margin-right: 15px;
+        }
+        svg{
+            cursor: pointer;
+            transition: .2s ease-in-out all;
+        }
+        svg:hover{
+            transform: scale(1.1);
+            transform: rotate(5deg);
+        }
+    
+    
+    }
+    
+    .caracteristicas{
+        display: none;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-start;
+        border-bottom: 2px solid #ccc;
+
+        .filter{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            ul{
+
+                li{
+                    margin: 5px 0;
+                }
+            }
+        }
+    
+    }
+}
