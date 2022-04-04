@@ -8,7 +8,7 @@ function CarritoItem({item}) {
 
   const {derivarFuncion} = useCodigo(item)
 
-  const codigo =  derivarFuncion();
+  //const codigo =  derivarFuncion();
   const {removerItem} = useContext(CarritoContext);
 
   return (
@@ -34,7 +34,7 @@ function CarritoItem({item}) {
           }
         </ul>
       </td>
-      <td><p>{codigo}</p></td>
+      <td><p>{item.codigo}</p></td>
       <td><p>{item.cantidad}</p></td>
       <td><BsTrashFill onClick={()=> removerItem(item)} /></td>
       
