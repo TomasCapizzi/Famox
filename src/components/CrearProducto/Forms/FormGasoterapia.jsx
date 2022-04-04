@@ -1,6 +1,23 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
+
+import {TiDelete} from 'react-icons/ti';
 
 function FormGasoterapia({setHandler}) {
+
+  const [gases_, setGases_] = useState([]);
+  const [conectores, setConectores] = useState([]);
+  const [rangos, setRangos] = useState([]);
+  const [handlerRango, setHandlerRango] = useState(false);
+  const [modelos, setModelos] = useState([]);
+  const [handlerModelo, setHandlerModelos] = useState(false);
+
+  const modeloNombreRef = useRef();
+  const modeloImgRef = useRef();
+  const modeloUsoRef = useRef();
+  const modeloRangoRef = useRef();
+
+  const rangoNombreRef = useRef();
+
 
   function validarForm(e){
     e.preventDefault();
@@ -10,6 +27,8 @@ function FormGasoterapia({setHandler}) {
     const anmat = e.target.anmat.value;
     const manual = e.target.manual.value;
     const img = e.target.img.value;
+    verificarGases(e.target);
+    verificarConectores(e.target);
     const gases = {
       oxigeno: e.target.oxigeno.checked,
       aire:e.target.aire.checked,
@@ -19,6 +38,7 @@ function FormGasoterapia({setHandler}) {
       vacio: e.target.vacio.checked,
       oxigeno_aire: e.target.oxigenoaire.checked,
     };
+
     const conector = {
       diss: e.target.diss.checked,
       afnor:e.target.afnor.checked,
@@ -36,6 +56,11 @@ function FormGasoterapia({setHandler}) {
       rango,
       anmat,
       manual,
+      gasoterapia : true,
+      gases_,
+      conectores,
+      modelos,
+      rangos,
       img,
       gases,
       conector
@@ -43,6 +68,103 @@ function FormGasoterapia({setHandler}) {
 
     console.log(producto);
     crearProducto(producto)
+  }
+
+  function verificarGases(gas){
+    if(gas.oxigeno.checked){
+      setGases_(...gases_, 'OXÍGENO')
+    }
+    if(gas.aire.checked){
+      setGases_(...gases_, 'AIRE')
+    }
+    if(gas.n2o.checked){
+      setGases_(...gases_, 'N2O')
+    }
+    if(gas.n2.checked){
+      setGases_(...gases_, 'N2')
+    }
+    if(gas.co2.checked){
+      setGases_(...gases_, 'CO2')
+    }
+    if(gas.vacio.checked){
+      setGases_(...gases_, 'VACIO')
+    }
+    if(gas.oxigenoaire.checked){
+      setGases_(...gases_, 'OXÍGENO/AIRE')
+    }
+  }
+
+  function verificarConectores(conector){
+    if(conector.diss.checked){
+      setConectores(...conectores, 'DISS')
+    }
+    if(conector.afnor.checked){
+      setConectores(...conectores, 'AFNOR')
+    }
+    if(conector.ssaga.checked){
+      setConectores(...conectores, 'SS/AGA')
+    }
+    if(conector.ohmeda.checked){
+      setConectores(...conectores, 'OHMEDA')
+    }
+    if(conector.on.checked){
+      setConectores(...conectores, 'ON')
+    }
+    if(conector.cu.checked){
+      setConectores(...conectores, 'CU')
+    }
+    if(conector.iram.checked){
+      setConectores(...conectores, 'IRAM')
+    }
+    if(conector.yugo.checked){
+      setConectores(...conectores, 'YUGO')
+    }
+
+  }
+
+  function agregarModelo(){
+    const nombre = modeloNombreRef.current.value ? modeloNombreRef.current.value : undefined
+    const img = modeloImgRef.current.value ? modeloImgRef.current.value : undefined
+    const uso = modeloUsoRef.current.value ? modeloUsoRef.current.value :  undefined
+    const rango = modeloRangoRef.current.value ? modeloRangoRef.current.value : undefined
+
+
+    const modelo = {
+      _id : Math.random().toString(36).split('.')[1],
+      nombre,
+      img,
+      uso,
+      rango,
+    }
+    console.log(modelo);
+    setModelos([...modelos, modelo])
+    setHandlerModelos(false)
+    console.log(modelos);
+  }
+
+  function agregarRango(){
+    const nombre = rangoNombreRef.current.value ? rangoNombreRef.current.value : undefined
+
+    const rango = {
+      _id: Math.random().toString(36),
+      nombre
+    }
+    console.log(rango);
+    setRangos([...rangos, rango]);
+    setHandlerRango(false);
+  }
+  function borrarRango(id){
+    const nuevoArray = rangos.filter(
+      item => item._id !== id
+    )
+    setRangos(nuevoArray)
+  }
+  
+  function borrarModelo(id){
+    const nuevoArray = modelos.filter(
+      item => item._id !== id
+    )
+    setModelos(nuevoArray)
   }
 
   function crearProducto(producto){
@@ -77,7 +199,10 @@ function FormGasoterapia({setHandler}) {
             <label htmlFor="anmat">ANMAT</label>
           </div>
 
-
+          <div className='form-model'>
+            <input type="radio" id='modelos'/>
+            <label htmlFor="modelos">Modelos</label>
+          </div>
 
           <label htmlFor="manual">Manual (ruta)</label>
           <input type="text" id='manual' />
@@ -138,6 +263,59 @@ function FormGasoterapia({setHandler}) {
               <input type="checkbox" id='yugo' value='true'/>
               <label htmlFor="yugo">YUGO</label>
             </div>
+          </div>
+
+          <p className='btn-rango' onClick={()=>setHandlerRango(!handlerRango)}>Agregar Rango</p>
+          {
+            handlerRango && 
+              <div className='form-rangos'>
+                <label htmlFor="">Nombre</label>
+                <input type="text" id='rangonombre' name='rangonombre' ref={rangoNombreRef} />
+                <span onClick={agregarRango}>Agregar</span>
+              </div>
+          }
+          <div className='rangos-selec'>
+            {
+              rangos.length > 0 && rangos.map(
+                item => 
+                  <div key={item._id}>
+                    <p>{item.nombre}</p>
+                    <TiDelete onClick={()=> borrarRango(item._id)}/>
+                  </div>
+              )
+            }
+          </div>
+
+
+          <p className='btn-modelo' onClick={()=> setHandlerModelos(!handlerModelo)}>Agregar Modelo</p>
+          {
+            handlerModelo && 
+              <div className='form-modelos'>
+                <label htmlFor="">Nombre</label>
+                <input type="text" id='modelnombre' name='modelnombre' ref={modeloNombreRef} />
+                <label htmlFor="">Img (ruta)</label>
+                <input type="text" id='modelimg' name='modelimg' ref={modeloImgRef} />
+                <label htmlFor="">Uso</label>
+                <input type="text" id='modeluso' name='modeluso' ref={modeloUsoRef} />
+                <label htmlFor="">Rango</label>
+                <input type="text" id='modelrango' name='modelrango' ref={modeloRangoRef} />
+                <span onClick={agregarModelo}>Agregar</span>
+              </div>
+          }
+          <div className='modelos-selec'>
+            {
+              modelos.length > 0 && modelos.map(
+                item => 
+                  <div key={item._id}>
+                    <article>
+                      <p>{item.nombre}</p>
+                      {item.uso !== undefined && <p>{item.uso}</p>}
+                      {item.rango !== undefined && <p>{item.rango}</p>}
+                    </article>
+                    <TiDelete onClick={()=> borrarModelo(item._id)}/>
+                  </div>
+              )
+            }
           </div>
           <input type="submit" value='Enviar' className='form-submit' />
       </form>
