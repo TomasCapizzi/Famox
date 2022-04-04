@@ -1,27 +1,26 @@
 import './styles/main.scss';
 
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import React, {useContext, useEffect} from 'react'
 
-import Accesorios from './components/ListaProductos/Accesorios/Accesorios';
+import Accesorios from './views/Productos/Accesorios/Accesorios';
 import Carrito from './components/Carrito/Carrito';
-import { CarritoContext } from './store/carritoContext';
 import { CarritoContextProvider } from './store/carritoContext';
-import Certificaciones from './components/Certificaciones/Certificaciones';
-import Contacto from './components/Contacto/Contacto';
-import CrearProducto from './components/CrearProducto/CrearProducto';
-import DetalleGasoterapia from './components/Detalle/Gasoterapia/DetalleGasoterapia';
-import DetalleUnidSum from './components/Detalle/Unidades de Suministro/DetalleUnidSum';
-import Ecommerce from './components/Ecommerce/Ecommerce';
+import Certificaciones from './views/Certificaciones/Certificaciones';
+import Contacto from './views/Contacto/Contacto';
+import CrearProducto from './views/CrearProducto/CrearProducto';
+import DetalleGasoterapia from './views/ProductoDetalle/DetalleGasoterapia';
+import DetalleUnidSum from './views/ProductoDetalle/DetalleUnidSum';
+import Ecommerce from './views/Ecommerce/Ecommerce';
 import Footer from './components/Footer/Footer';
-import Gasoterapia from './components/ListaProductos/Gasoterapia/Gasoterapia';
-import Historia from './components/Historia/Historia';
-import Home from './components/Home/Home';
-import Login from './components/Login/Login';
+import Gasoterapia from './views/Productos/Gasoterapia/Gasoterapia';
+import Historia from './views/Nosotros/Historia';
+import Home from './views/Home/Home';
+import Login from './views/Login/Login';
 import Menu from './components/Menu/Menu';
-import PregFrec from './components/PregFrec/PregFrec';
-import Productos from './components/ListaProductos/Productos';
-import UnidadesSuministro from './components/ListaProductos/UnidadesSuministro/UnidadesSuministro';
+import PregFrec from './views/PregFrec/PregFrec';
+import Productos from './views/Productos/Productos';
+import React from 'react'
+import UnidadesSuministro from './views/Productos/UnidadesSuministro/UnidadesSuministro';
 
 function App() {
   return (
