@@ -32,7 +32,7 @@ function Carrito() {
             },
             body: JSON.stringify(pedido),
         }
-        fetch('http://localhost:4000/formulario/venta', request)
+        fetch('https://famox-api.herokuapp.com/formulario/venta', request)
     }
   return (
     <section className='carrito'>
@@ -61,7 +61,7 @@ function Carrito() {
                             { 
                                 carro.length >= 1 &&
                                     carro.map(
-                                        item => item.conector || item.gas ? <CarritoIem item={item} key={item._id} /> : <CarritoItem2 item={item} key={item._id} />
+                                        item => item.conector || item.gas || item.modelo ? <CarritoIem item={item} key={item._id} /> : <CarritoItem2 item={item} key={item._id} />
                                     )
                             }                    
                         </tbody>   
