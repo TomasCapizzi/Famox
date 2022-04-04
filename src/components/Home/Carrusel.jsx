@@ -1,3 +1,4 @@
+import {GoPrimitiveDot} from 'react-icons/go'
 import React from 'react';
 
 function Carrusel() {
@@ -28,25 +29,25 @@ function Carrusel() {
         </ul>
         <ul className='enlaces'>
             <li>
-                <a href="#slide1">1</a>
+                <a href="#slide1"><GoPrimitiveDot/></a>
             </li>
             <li>
-                <a href="#slide1">2</a>
+                <a href="#slide1"><GoPrimitiveDot/></a>
             </li>
             <li>
-                <a href="#slide1">3</a>
+                <a href="#slide1"><GoPrimitiveDot/></a>
             </li>
             <li>
-                <a href="#slide1">4</a>
+                <a href="#slide1"><GoPrimitiveDot/></a>
             </li>
             <li>
-                <a href="#slide1">5</a>
+                <a href="#slide1"><GoPrimitiveDot/></a>
             </li>
             <li>
-                <a href="#slide1">6</a>
+                <a href="#slide1"><GoPrimitiveDot/></a>
             </li>
             <li>
-                <a href="#slide1">7</a>
+                <a href="#slide1"><GoPrimitiveDot/></a>
             </li>
         </ul>
     </div>
