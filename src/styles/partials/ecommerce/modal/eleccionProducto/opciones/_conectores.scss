@@ -46,3 +46,45 @@
         opacity: 0.7;
     }
 }
+
+@media only screen and (max-width: 375px){
+    .modal-conectores{
+        margin-bottom: 12px;
+        p{
+            font-weight: 600;
+        }
+        .opciones-conectores{
+            display: none;
+            width: 100%;    
+            .conector{
+                cursor: pointer;
+                border: 2px solid transparent;
+                border-radius: 5px;
+                padding: 5px;
+                display: flex;
+                flex-direction: column;
+                width: 25%;
+                align-items: center;
+                margin: 5px;
+                transition: .2s ease-in all;
+            }
+            img{
+                width: 50px;
+            }
+            label{
+                font-size: 0.9rem;
+            }
+        }
+        .on{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+    
+        .bloqueado{
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+    }
+}

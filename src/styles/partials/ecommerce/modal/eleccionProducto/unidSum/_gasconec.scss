@@ -35,11 +35,14 @@
             select{
                 width: 25%;
                 border-radius: 5px;
+                text-align: center;
+                background-color: $color2;
             }
             input{
                 width: 10%;
                 border-radius: 5px;
-                border-color: $color2;
+                border: 2px solid;
+                border-color: $color1;
             }
             button{
                 width: 15%;
@@ -79,5 +82,363 @@
         flex-wrap: wrap;
         
         align-items: center;
+    }
+}
+
+
+@media only screen and (max-width: 440px){
+    .modal-gasconec{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        p{
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .opciones{
+            display: none;        
+            width: 100%;
+            position: relative;
+            padding-top: 10px;
+            .agregar{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                svg{
+                    cursor: pointer;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                }
+                p{
+                    font-weight: 400;
+                    margin-left: 15px;
+                    font-size: 0.8rem;
+                }
+            }
+            .conexiones{
+                margin-top: 5px;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                select{
+                    width: 35%;
+                    border-radius: 5px;
+                    margin-right: 5px;
+                    font-size: 0.7rem;
+                }
+                input{
+                    width: 10%;
+                    border-radius: 5px;
+                    border-color: $color2;
+                }
+                button{
+                    width: auto;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: $color1;
+                    color: $white;
+                    margin-top: 5px;
+                    cursor: pointer;
+                    font-size: 0.75rem;
+                }
+            }
+            
+            .bajatension{
+                display: flex;
+                width: 90%;
+                align-items: center;
+                margin: 5px;
+                margin-right: 10px;
+                justify-content: space-between;
+                p{
+                    font-size: 0.8rem;
+                    margin: 0;
+                }
+                div{
+                    display: flex;
+                    align-items: center;
+                    margin-left: 10px;
+                    input{
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 10px;
+                        border: 1px solid $color1;
+                    }
+                }            
+            }
+        }
+        .on{
+            display: flex;
+            flex-wrap: wrap;
+            
+            align-items: center;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 441px) and (max-width: 568px){
+    .modal-gasconec{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        p{
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .opciones{
+            display: none;        
+            width: 95%;
+            position: relative;
+            padding-top: 10px;
+            .agregar{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                svg{
+                    cursor: pointer;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                }
+                p{
+                    font-weight: 400;
+                    margin-left: 15px;
+                    font-size: 0.9rem;
+                }
+            }
+            .conexiones{
+                margin-top: 5px;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                select{
+                    width: 35%;
+                    border-radius: 5px;
+                    margin-right: 5px;
+                    font-size: 0.7rem;
+                }
+                input{
+                    width: 10%;
+                    border-radius: 5px;
+                    border-color: $color2;
+                }
+                button{
+                    width: auto;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: $color1;
+                    color: $white;
+                    margin-top: 5px;
+                    padding: 3px;
+                    cursor: pointer;
+                    font-size: 0.75rem;
+                }
+            }
+            
+            .bajatension{
+                display: flex;
+                width: 90%;
+                align-items: center;
+                margin: 5px;
+                margin-right: 10px;
+                justify-content: space-between;
+                p{
+                    font-size: 0.8rem;
+                    margin: 0;
+                }
+                div{
+                    display: flex;
+                    align-items: center;
+                    margin-left: 10px;
+                    input{
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 10px;
+                        border: 1px solid $color1;
+                    }
+                }            
+            }
+        }
+        .on{
+            display: flex;
+            flex-wrap: wrap;
+            
+            align-items: center;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 569px) and (max-width: 1280px){
+    .modal-gasconec{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        align-items: center;
+        p{
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .opciones{
+            display: none;        
+            width: 95%;
+            position: relative;
+            padding-top: 10px;
+            .agregar{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                svg{
+                    cursor: pointer;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                }
+                p{
+                    font-weight: 400;
+                    margin-left: 15px;
+                    font-size: 1rem;
+                }
+            }
+            .conexiones{
+                margin-top: 5px;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                select{
+                    width: auto;
+                    border-radius: 5px;
+                    margin-right: 5px;
+                    font-size: 0.7rem;
+                }
+                input{
+                    width: 15%;
+                    border-radius: 5px;
+                    border-color: $color2;
+                }
+                button{
+                    width: auto;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: $color1;
+                    color: $white;
+                    margin-top: 5px;
+                    padding: 3px 5px;
+                    cursor: pointer;
+                    font-size: 0.85rem;
+                }
+            }
+            
+            .bajatension{
+                display: flex;
+                width: 90%;
+                align-items: center;
+                margin: 5px;
+                margin-right: 10px;
+                justify-content: space-between;
+                p{
+                    font-size: 0.8rem;
+                    margin: 0;
+                }
+                div{
+                    display: flex;
+                    align-items: center;
+                    margin-left: 10px;
+                    input{
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 10px;
+                        border: 1px solid $color1;
+                    }
+                }            
+            }
+        }
+        .on{
+            display: flex;
+            flex-wrap: wrap;
+            
+            align-items: center;
+        }
+    }
+}
+
+@media only screen and (min-width: 1281px)and (max-width: 1440px){
+    .modal-gasconec{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        align-items: center;
+        p{
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .opciones{
+            display: none;        
+            width: 95%;
+            position: relative;
+            padding-top: 10px;
+            .agregar{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                svg{
+                    cursor: pointer;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                }
+                p{
+                    font-weight: 400;
+                    margin-left: 15px;
+                    font-size: 1rem;
+                }
+            }
+
+        }
+        .on{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1441px)and (max-width: 1980px){
+    .modal-gasconec{
+        align-items: center;
+        .opciones{       
+            width: 95%;
+            padding-top: 15px;
+            justify-content: center;
+            .agregar{
+                justify-content: center;
+                svg{
+                    cursor: pointer;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                }
+                p{
+                    font-weight: 400;
+                    margin-left: 15px;
+                    font-size: 1rem;
+                }
+            }
+            .conexiones{
+                width: 85%;
+            }
+
+        }
+        .on{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
     }
 }

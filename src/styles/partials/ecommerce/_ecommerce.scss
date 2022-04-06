@@ -20,3 +20,47 @@
         width: 100%;
     }
 }
+
+@media only screen and (max-width: 375px){
+    .container-ecommerce{
+        width: 90%;
+        h1{
+            width: 100%;
+        }    
+        .ecommerce{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+    }
+}
+@media only screen and (min-width: 376px)and (max-width: 768px){
+    .container-ecommerce{
+        width: 85%;
+        h1{
+            width: 100%;
+        }    
+        .ecommerce{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+    }
+}
+
+@media only screen and(min-width: 769px) and (max-width: 1024px){
+    .container-ecommerce{
+        width: 85%;
+        h1{
+            width: 100%;
+        }    
+        .ecommerce{
+            display: flex;
+            width: 100%;
+            justify-content: space-between
+            ;
+        }
+    }
+}

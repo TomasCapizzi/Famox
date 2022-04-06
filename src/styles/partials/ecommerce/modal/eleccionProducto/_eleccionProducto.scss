@@ -12,9 +12,11 @@
     .container{
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 100%;
         position: relative;
         min-height: 80%;
+        align-items: center;
     }
     .encabezado{
         background-color: $color1;
@@ -23,12 +25,14 @@
         align-items: center;
         justify-content: space-around;
         border-radius: 5px;
-
+        width: 90%;
+        p{
+            width: 80%;
+        }
         svg{
             cursor: pointer;
             font-size: 1.5rem;
         }
-
     }
 
     .selecciones{
@@ -50,6 +54,11 @@
         flex-direction: column;
         p:nth-child(3){
             font-size: 0.8rem;
+        }
+        select{
+            border: 1px solid $color1;
+            color: $color1;
+            font-weight: 700;
         }
     }
 }
@@ -98,6 +107,651 @@
         }
         svg:hover{
             color: $black;
+        }
+    }
+}
+
+@media only screen and (max-width: 568px){
+    .modal-eleccion{
+        width: 90%;
+        overflow-x: hidden;
+        overflow-y: auto;    
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            position: relative;
+            min-height: 80%;
+        }
+        .encabezado{
+            background-color: $color1;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 5px;
+            width: 90%;
+            p{
+                font-size: 0.9rem;
+            }
+            svg{
+                cursor: pointer;
+                font-size: 1.4rem;
+            }
+    
+        }
+    
+        .selecciones{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 15px;
+    
+            .container{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+    
+        }
+    
+        .longitud-panel{
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            p{
+                font-size: 0.8rem;
+                width: 100%;
+            }
+            input{
+                width: 45%;
+                border-radius: 6px;
+                border: 1px solid $color1;
+            }
+            select{
+                width: 45%;
+                font-size: 0.8rem;
+                margin-left: 5px;
+            }
+        }
+    }
+    
+    .seleccionado{
+        border: 1px solid $color2;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        
+    
+        button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: transparent;
+            border: none;
+            color: $color1;
+            font-size: 1.2rem;
+            margin: 5px;
+        }
+        svg:hover{
+            cursor: pointer;
+            color: $black;
+        }
+        img{
+            width: 40px;
+            margin-right: 15px;
+        }
+        p{
+            margin: 0;
+            padding: 4px;
+        }
+    }
+    
+    .modelo{
+        padding: 0px;
+        background-color: $color1;
+        color: $white;
+        font-weight: bold;
+        border-radius: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        button{
+            background-color: transparent;
+            svg{
+                color: $color2;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 569px)and (max-width: 768px){
+    .modal-eleccion{
+        width: 85%;
+        overflow-x: hidden;
+        overflow-y: auto;    
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            position: relative;
+            min-height: 80%;
+        }
+        .encabezado{
+            background-color: $color1;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 5px;
+            width: 95%;
+            p{
+                font-size: 1rem;
+            }
+            svg{
+                cursor: pointer;
+                font-size: 1.4rem;
+            }
+    
+        }
+    
+        .selecciones{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 15px;
+            
+            .container{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+    
+        }
+    
+        .longitud-panel{
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            p{
+                font-size: 0.9rem;
+                width: 100%;
+            }
+            input{
+                width: 55%;
+                border-radius: 6px;
+                border: 1px solid $color1;
+            }
+            select{
+                width: 30%;
+                font-size: 0.8rem;
+                margin-left: 5px;
+            }
+        }
+    }
+    
+    .seleccionado{
+        border: 1px solid $color2;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        
+    
+        button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: transparent;
+            border: none;
+            color: $color1;
+            font-size: 1.2rem;
+            margin: 5px;
+        }
+        svg:hover{
+            cursor: pointer;
+            color: $black;
+        }
+        img{
+            width: 40px;
+            margin-right: 15px;
+        }
+        p{
+            margin: 0;
+            padding: 4px;
+        }
+    }
+    
+    .modelo{
+        padding: 0px;
+        background-color: $color1;
+        color: $white;
+        font-weight: bold;
+        border-radius: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        button{
+            background-color: transparent;
+            svg{
+                color: $color2;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 769px)and (max-width: 1024px){
+    .modal-eleccion{
+        width: 85%;
+        overflow-x: hidden;
+        overflow-y: auto;    
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            position: relative;
+            min-height: 80%;
+        }
+        .encabezado{
+            background-color: $color1;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 5px;
+            width: 95%;
+            p{
+                font-size: 1rem;
+                
+            }
+            svg{
+                cursor: pointer;
+                font-size: 1.4rem;
+            }
+    
+        }
+    
+        .selecciones{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 15px;
+            
+            .container{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+    
+        }
+    
+        .longitud-panel{
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            p{
+                font-size: 0.9rem;
+                width: 100%;
+            }
+            input{
+                width: 55%;
+                border-radius: 6px;
+                border: 1px solid $color1;
+            }
+            select{
+                width: 30%;
+                font-size: 0.8rem;
+                margin-left: 5px;
+            }
+        }
+    }
+    
+    .seleccionado{
+        border: 1px solid $color2;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        
+    
+        button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: transparent;
+            border: none;
+            color: $color1;
+            font-size: 1.2rem;
+            margin: 5px;
+        }
+        svg:hover{
+            cursor: pointer;
+            color: $black;
+        }
+        img{
+            width: 40px;
+            margin-right: 15px;
+        }
+        p{
+            margin: 0;
+            padding: 4px;
+        }
+    }
+    
+    .modelo{
+        padding: 0px;
+        background-color: $color1;
+        color: $white;
+        font-weight: bold;
+        border-radius: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        button{
+            background-color: transparent;
+            svg{
+                color: $color2;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1025px)and (max-width: 1280px){
+    .modal-eleccion{
+        width: 60%;
+        overflow-x: hidden;
+        overflow-y: auto;    
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            position: relative;
+            min-height: 80%;
+        }
+        .encabezado{
+            background-color: $color1;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 5px;
+            width: 95%;
+            p{
+                font-size: 1rem;
+                
+            }
+            svg{
+                cursor: pointer;
+                font-size: 1.4rem;
+            }
+    
+        }
+    
+        .selecciones{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 15px;
+            
+            .container{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+    
+        }
+    
+        .longitud-panel{
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            p{
+                font-size: 0.9rem;
+                width: 100%;
+            }
+            input{
+                width: 55%;
+                border-radius: 6px;
+                border: 1px solid $color1;
+            }
+            select{
+                width: 30%;
+                font-size: 0.8rem;
+                margin-left: 5px;
+            }
+        }
+    }
+    
+    .seleccionado{
+        border: 1px solid $color2;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        
+    
+        button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: transparent;
+            border: none;
+            color: $color1;
+            font-size: 1.2rem;
+            margin: 5px;
+        }
+        svg:hover{
+            cursor: pointer;
+            color: $black;
+        }
+        img{
+            width: 40px;
+            margin-right: 15px;
+        }
+        p{
+            margin: 0;
+            padding: 4px;
+        }
+    }
+    
+    .modelo{
+        padding: 0px;
+        background-color: $color1;
+        color: $white;
+        font-weight: bold;
+        border-radius: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        button{
+            background-color: transparent;
+            svg{
+                color: $color2;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1281px)and (max-width: 1440px){
+    .modal-eleccion{
+        .encabezado{
+            background-color: $color1;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 5px;
+            width: 90%;
+            p{
+                font-size: 1rem;
+                
+            }    
+        }
+    
+        .selecciones{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 15px;
+            
+            .container{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+    
+        }
+    
+        .longitud-panel{
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            p{
+                font-size: 0.9rem;
+                width: 100%;
+            }
+            input{
+                width: 55%;
+                border-radius: 6px;
+                border: 1px solid $color1;
+            }
+            select{
+                width: 30%;
+                font-size: 0.8rem;
+                margin-left: 5px;
+            }
+        }
+    }
+    
+    .seleccionado{
+        border: 1px solid $color2;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        
+    
+        button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: transparent;
+            border: none;
+            color: $color1;
+            font-size: 1.2rem;
+            margin: 5px;
+        }
+        svg:hover{
+            cursor: pointer;
+            color: $black;
+        }
+        img{
+            width: 40px;
+            margin-right: 15px;
+        }
+        p{
+            margin: 0;
+            padding: 4px;
+        }
+    }
+    
+    .modelo{
+        padding: 0px;
+        background-color: $color1;
+        color: $white;
+        font-weight: bold;
+        border-radius: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        button{
+            background-color: transparent;
+            svg{
+                color: $color2;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1441px)and (max-width: 1980px){
+    .modal-eleccion{
+        .encabezado{
+            p{
+                font-size: 1.05rem;                
+            }    
+        }    
+    
+        .longitud-panel{
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            p{
+                font-size: 0.9rem;
+                width: 100%;
+            }
+            input{
+                width: 55%;
+                border-radius: 6px;
+                border: 1px solid $color1;
+            }
+            select{
+                width: 30%;
+                font-size: 0.8rem;
+                margin-left: 5px;
+            }
+        }
+    }
+    
+    
+    .modelo{
+        padding: 0px;
+        background-color: $color1;
+        color: $white;
+        font-weight: bold;
+        border-radius: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        button{
+            background-color: transparent;
+            svg{
+                color: $color2;
+                cursor: pointer;
+            }
         }
     }
 }

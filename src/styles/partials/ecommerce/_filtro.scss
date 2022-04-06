@@ -81,3 +81,127 @@
         }
     }
 }
+
+@media only screen and (max-width: 375px){
+    .filtro-container{
+        width: 90%;
+        height: 100%;
+        margin-right: 0px;
+        .filtro{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+    
+            div{
+                display: flex;
+                width: 100%;
+                justify-content: flex-start;
+                margin-bottom: 10px;
+                label{
+                    text-align: center;
+                    font-size: 00.85rem;
+                }
+            }
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 376px)and (max-width: 568px){
+    .filtro-container{
+        width: 70%;
+        height: 100%;
+        margin-right: 0px;
+        .filtro{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+    
+            div{
+                display: flex;
+                width: 100%;
+                justify-content: flex-start;
+                margin-bottom: 10px;
+                label{
+                    text-align: center;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 569px)and (max-width: 768px){
+    .filtro-container{
+        width: 60%;
+        height: 100%;
+        margin-right: 0px;
+        .filtro{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+    
+            div{
+                display: flex;
+                width: 100%;
+                justify-content: flex-start;
+                margin-bottom: 10px;
+                label{
+                    text-align: center;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and(min-width: 769px) and (max-width: 1024px){
+    .filtro-container{
+        width: 40%;
+        height: 100%;
+        margin-right: 0px;
+        .filtro{
+            width: 100%;
+            display: flex;
+            margin-bottom: 20px;
+    
+            div{
+                display: flex;
+                width: 100%;
+                justify-content: flex-start;
+                margin-bottom: 10px;
+                label{
+                    text-align: center;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and(min-width: 1025px) and (max-width: 1280px){
+    .filtro-container{
+        width: 30%;
+        height: 100%;
+        margin-right: 0px;
+        .filtro{
+            width: 100%;
+            display: flex;
+            margin-bottom: 20px;
+    
+            div{
+                display: flex;
+                width: 100%;
+                justify-content: flex-start;
+                margin-bottom: 10px;
+                label{
+                    text-align: center;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}

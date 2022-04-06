@@ -48,3 +48,55 @@
         color: $color1;
     }
 }
+
+@media only screen and (max-width: 375px){
+    .botonera{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    
+        .contador{
+            width: 100%;
+            justify-content: space-around;
+            display: flex;
+            align-items: center;
+            p{
+                font-size: 1rem;
+                font-weight: 500;
+            }
+            button{
+                cursor: pointer;
+                border: none;
+                background-color: transparent;
+                font-size: 1rem;
+                color: $color1;
+            }
+            button:disabled{
+                color: $color2;
+            }
+        }
+    
+        .confirmar{
+            cursor: pointer;
+            padding: 3px;
+            border: none;
+            background-color: $color1;
+            font-size: 0.8rem;
+            color: $white;
+            border-radius: 4px;
+            width: 70%;
+            transition: .3s ease-in-out all;
+        }
+        .confirmar:hover{
+            opacity: 0.8;
+            border-radius: 10px;
+        }
+        .confirmar:disabled{
+            cursor: not-allowed;
+            background-color: $color2;
+            color: $color1;
+        }
+    }
+    
+}
