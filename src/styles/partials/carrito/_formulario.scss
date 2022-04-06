@@ -26,6 +26,19 @@
         background-color: $color2;
         color: $color1;
     }
+    .disabled{
+        cursor: not-allowed;
+        input{
+            pointer-events: none;
+            background-color: $color2;
+            color: $black;
+        }
+    }
+    .error{
+        font-size: 0.8rem;
+        margin: 0;
+        color: red;
+    }
 }
 
 @media only screen and (max-width: 375px){
