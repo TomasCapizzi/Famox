@@ -3,19 +3,19 @@ import {TiDelete} from 'react-icons/ti';
 
 function Conexiones({conexiones, eliminarItem}) {
   return (
-    <article className='container'>
+    <tbody className='container'>
         {
             conexiones.map(
                 item => 
-                <div key={`${item.conector + item.gas}`} className='item-conex' >
-                    <p>{item.conector}</p>
-                    <p>{item.gas}</p>
-                    <p>Cantidad: {item.cantidad}</p>
-                    <TiDelete onClick={()=> eliminarItem(item)}/>
-                </div>
+                <tr key={`${item.conector + item.gas}`} className='item-conex' >
+                    <td>{item.conector}</td>
+                    <td>{item.gas}</td>
+                    <td>{item.cantidad}</td>
+                    <td><TiDelete onClick={()=> eliminarItem(item)}/></td>
+                </tr>
             )
         }
-    </article>
+    </tbody>
   )
 }
 
