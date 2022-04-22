@@ -118,34 +118,74 @@ function EleccionUnidSum({item,toggleModal }) {
             <div className='selecciones-container'>
               {
                 conexiones.length >= 1 ?
-                  <article className='seleccion-conex'>
-                    <p>Conexiones</p>
+                <>
+                  <p>Conexiones</p>
+                  <table className='seleccion-conex'>
+                    <thead>
+                      <tr>
+                        <th>Conector</th>
+                        <th>Gas</th>
+                        <th>Cantidad</th>
+                        <th>Borrar</th>
+                      </tr>
+                    </thead>
                     <Conexiones conexiones={conexiones} eliminarItem={eliminarItem} />
-                  </article>
+                  </table>
+                </>
+
                 : null
               }
               {
                 valoresMediaTension.length >= 1 ?
-                <article className='seleccion'>
+                <>
                   <p>Media Tension</p>
-                  <Selecciones valores={valoresMediaTension} eliminarItem={eliminarItem} />
-                </article>
+                  <table className='seleccion'>
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Borrar</th>
+                      </tr>
+                    </thead>
+                    <Selecciones valores={valoresMediaTension} eliminarItem={eliminarItem} />
+                  </table>
+                </>
+
                   : null
               }
               {
                 valoresBajaTension.length >= 1 ?
-                <article className='seleccion'>
+                <>
                   <p>Baja Tension</p>
-                  <Selecciones valores={valoresBajaTension} eliminarItem={eliminarItem} />
-                </article>
+                  <table className='seleccion'>                    
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Borrar</th>
+                      </tr>
+                    </thead>
+                    <Selecciones valores={valoresBajaTension} eliminarItem={eliminarItem} />
+                  </table>
+                </>
                   : null
               }
               {
                 valoresIluminacion.length >= 1 ?
-                <article className='seleccion'>
+                <>
                   <p>Iluminación</p>
-                  <Selecciones valores={valoresIluminacion} eliminarItem={eliminarItem} />
-                </article>
+                  <table className='seleccion'>
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Borrar</th>
+                      </tr>
+                    </thead>
+                    <Selecciones valores={valoresIluminacion} eliminarItem={eliminarItem} />
+                  </table>
+                </>
+                
                   : null
               }
             </div>
