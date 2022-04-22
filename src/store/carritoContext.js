@@ -8,15 +8,46 @@ export function CarritoContextProvider({children}){
 
     const obtenerDataLocalStorage = () => {
         const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'))
-        //console.log(carrito);
+        console.log(carrito);
         if(carrito){
-            setCarro(carrito)
-            borrarDataLocalStorage();
+            if(carrito.length){
+                setCarro(carrito)
+                // Creamos la fecha para poder borrar el carrito 5 hs desp o cualquier otro día que no sea el mismo del primer item agregado
+                const diaInicioCarrito = carrito[0].fecha.split('T')[0]
+                const horaInicioCarrito = carrito[0].fecha.split('T')[1]
+    
+                // Comparar Dia
+                compararDia(diaInicioCarrito, horaInicioCarrito)
+            }
         }      
+    }
+
+    const compararDia = (dia, hora)=> {
+        const fechaActual = new Date()
+        const mes = parseInt(dia.split('-')[1]);
+        const nroDia = parseInt(dia.split('-')[2]);
+
+        if(fechaActual.getDate() !== nroDia){
+            borrarCarrito();
+        } else if (fechaActual.getDate() === nroDia && fechaActual.getMonth() !== (mes - 1)){
+            borrarCarrito();
+        } else{
+            // Comparar horario ya que el dia es el mismo
+            compararHora(hora);
+        }
+
+    }
+    const compararHora = (hora)=> {
+        //Comparamos las horas, como es UTC la hora es 3 veces mayor. Si la hora actual es igual o mayor a la hora UTC + 2 entonces borramos todo
+        const fechaActual = new Date()
+        const horaItem = parseInt(hora.split(':')[0]);
+        if(fechaActual.getHours() >= (horaItem + 2)){
+            borrarCarrito();
+        }
     }
     
     const agregarItemGasoterapia = ({producto})=> {
-        console.log(producto);
+
         const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
         if(carrito){
             const coincidencia = carrito.find(
@@ -33,6 +64,7 @@ export function CarritoContextProvider({children}){
                 const {nombre, img, _id, gas, conector, rango, modelo, codigo} = producto
                 let nuevoProducto = {
                     nombre,
+                    fecha: new Date(),
                     img,
                     codigo,
                     _id,
@@ -52,7 +84,6 @@ export function CarritoContextProvider({children}){
         } else{
             localStorage.setItem('FamoxCarrito', JSON.stringify([producto]));
             setCarro([producto])
-            borrarDataLocalStorage()
         }
        // setCarro([...carro, producto]);
 
@@ -72,6 +103,7 @@ export function CarritoContextProvider({children}){
                         const {nombre, img, _id, bajaTension, mediaTension, iluminacion, conexiones} = producto
                         let nuevoProducto = {
                             nombre,
+                            fecha: new Date(),
                             img,
                             _id,
                             mediaTension,
@@ -90,7 +122,6 @@ export function CarritoContextProvider({children}){
                 } else{
                     localStorage.setItem('FamoxCarrito', JSON.stringify([producto]));
                     setCarro([producto])
-                    borrarDataLocalStorage()
                 }
                // setCarro([...carro, producto]);
 
@@ -106,12 +137,6 @@ export function CarritoContextProvider({children}){
     const borrarCarrito = ()=> {
         setCarro([]);
         localStorage.removeItem('FamoxCarrito');
-    }
-
-    const borrarDataLocalStorage = ()=> {
-        setTimeout(()=> {
-            borrarCarrito()
-        }, 7400000)
     }
 
     const costoTotal = carro.reduce((acc,{cantidad,precio}) => {
