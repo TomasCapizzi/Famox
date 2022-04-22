@@ -1,14 +1,11 @@
 import React, {useContext} from 'react';
 
 import {BsTrashFill} from 'react-icons/bs';
-import {CarritoContext} from '../../store/carritoContext';
-import useCodigo from '../../hooks/codigos/useCodigos';
+import {CarritoContext} from 'store/carritoContext';
+import useCodigo from 'hooks/codigos/useCodigos';
 
 function CarritoItem({item}) {
-
-  const {derivarFuncion} = useCodigo(item)
-
-  //const codigo =  derivarFuncion();
+// Carrito Item para los equipos de GASOTERAPIA
   const {removerItem} = useContext(CarritoContext);
 
   return (
@@ -43,33 +40,4 @@ function CarritoItem({item}) {
   )
 }
 
-export default CarritoItem
-
-/*
-{
-        item.gas &&       
-          <td className='filter'>
-            <p>Gas: {item.gas}</p>
-          </td>
-      }
-      {
-        item.conector && 
-          <td className='filter'>
-            <p>Conector: {item.conector}</p>
-          </td>
-      }
-      {
-        item.rango &&
-          <td className='filter'>
-            <p>Rango: {item.rango}</p>
-          </td>
-      }
-      {
-        item.modelo &&
-          <td className='filter'>
-            <p>{(item.nombre === 'Recipiente Colector' || item.nombre === 'Mezclador de Aire/Oxígeno') ?  item.modelo.rango : item.modelo.nombre}</p>
-          </td>
-      }
-      
-
-*/
+export default CarritoItem;
