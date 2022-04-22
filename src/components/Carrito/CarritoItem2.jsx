@@ -2,10 +2,10 @@ import {AiFillCloseCircle, AiFillInfoCircle} from 'react-icons/ai'
 import React, {useContext, useRef, useState} from 'react';
 
 import {BsTrashFill} from 'react-icons/bs';
-import {CarritoContext} from '../../store/carritoContext';
+import {CarritoContext} from 'store/carritoContext';
 
 function CarritoItem2({item}) {
-
+// Carrito Item 2 para los equipos de UNIDADES DE SUMINISTRO
   const {removerItem} = useContext(CarritoContext);
   const [handlerInfo, setHandlerInfo] = useState(false);
 
