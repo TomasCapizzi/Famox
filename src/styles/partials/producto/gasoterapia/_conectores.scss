@@ -1,4 +1,4 @@
-@import '../../../theme/theme.scss';
+@import 'styles/theme/theme.scss';
 
 .conectores{
     display: flex;
@@ -13,11 +13,12 @@
     .conec-info{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
         div{
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-right: 15px;
             h5{
                 font-size: 1.4rem;
                 margin: 10px;
