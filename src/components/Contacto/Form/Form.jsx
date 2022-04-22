@@ -1,7 +1,7 @@
 import React from 'react';
 import useValidarFormContacto from 'hooks/forms/useValidarFormContacto';
 
-function Form({mostrarNotificacion}) {
+function Form({enviarConsulta}) {
 
   const {
     validarNombre, 
@@ -15,36 +15,12 @@ function Form({mostrarNotificacion}) {
     asuntoError, 
     empresaError,
     handlerSubmit,
-    setHandlerSubmit,
-    reiniciarValores
-  } = useValidarFormContacto();
-
-    function enviarConsulta(e){
-      //e.preventDefault();
-      mostrarNotificacion();
-      const consulta = {
-        nombre:e.target.nombre.value,
-        email: e.target.mail.value,
-        asunto: e.target.asunto.value,
-        empresa: e.target.empresa.value,
-        mensaje: e.target.mensaje.value
-      }
-      console.log(consulta);
-      //borrarValoresForm(e)
-
-    }
-
-    function borrarValoresForm(e){
-      setHandlerSubmit(false)
-      reiniciarValores();
-    }
-
+  } = useValidarFormContacto(); // Hook de validación
     
   return (
-    <form action="https://famox-api.herokuapp.com/formulario/contacto" method='POST' target='_blank' onSubmit={(e)=> enviarConsulta(e)} >
-
+    <form action="" method='POST' onSubmit={(e)=> enviarConsulta(e)} >
+      <p>Díganos lo que necesita y nos pondremos en contacto con usted.</p>
     <div>
-      <label htmlFor="">Nombre</label>
       <label htmlFor="">Nombre*</label>
       <input type="text" id='nombre' name='nombre' required onChange={(e)=>validarNombre(e.target.value)} />
       <label htmlFor="nombre" className='error'>{nombreError}</label>
