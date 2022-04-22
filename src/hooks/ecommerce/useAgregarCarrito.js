@@ -48,6 +48,7 @@ const useAgregarCarrito = ({item}) => {
         console.log(nuevoID);
         const producto = {
           nombre,
+          fecha: new Date(),
           codigo,
           gas,
           conector,
@@ -61,6 +62,7 @@ const useAgregarCarrito = ({item}) => {
       } else {
         const producto = {
           nombre,
+          fecha: new Date(),
           codigo,
           gas,
           conector,
