@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
-import Categoria from '../../components/Ecommerce/Categoria/Categoria';
-import Filtro from '../../components/Ecommerce/Filtro/Filtro';
-import Spinner from '../../components/Spinner/Spinner';
+import Categoria from 'components/Ecommerce/Categoria/Categoria';
+import Filtro from 'components/Ecommerce/Filtro/Filtro';
+import Spinner from 'components/Spinner/Spinner';
 
 function Ecommerce() {
 

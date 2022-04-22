@@ -1,4 +1,4 @@
-import Categorias from '../../components/Home/Categorias'
+import Categorias from 'components/Home/Categorias'
 import React from 'react'
 
 function Productos() {

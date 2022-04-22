@@ -1,14 +1,17 @@
-import Carrusel from '../../components/Home/Carrusel';
-import Categoria from '../../components/Home/Categoria/Categoria';
-import Categorias from '../../components/Home/Categorias';
+import Carrusel from 'components/Home/Carrusel';
+import CarruselMini from 'components/Home/CarruselMini';
+import Categorias from 'components/Home/Categorias';
+import DescripcionTareas from 'components/Home/Descripcion/DescripcionTareas';
 import React from 'react';
-import RedesSociales from '../../components/RedesSociales/RedesSociales';
+import RedesSociales from 'components/RedesSociales/RedesSociales';
 
 function Home() {
   return (
   <div className='home'>
     <Carrusel/>
     <Categorias />
+    <DescripcionTareas />
+    <CarruselMini/>
     <div className='rrss-container'><RedesSociales/></div>
   </div>
   )

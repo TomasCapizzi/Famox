@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 
-import Conectores from '../../components/Detalle/Gasoterapia/Descripcion/Conectores';
-import Descripcion from '../../components/Detalle/Gasoterapia/Descripcion/Descripcion';
-import Gases from '../../components/Detalle/Gasoterapia/Descripcion/Gases';
-import Modelos from '../../components/Detalle/Modelos/Modelos';
-import Spinner from '../../components/Spinner/Spinner';
+import Conectores from 'components/Detalle/Gasoterapia/Descripcion/Conectores';
+import Descripcion from 'components/Detalle/Gasoterapia/Descripcion/Descripcion';
+import Gases from 'components/Detalle/Gasoterapia/Descripcion/Gases';
+import Modelos from 'components/Detalle/Modelos/Modelos';
+import Spinner from 'components/Spinner/Spinner';
 import {useParams} from 'react-router-dom';
 
 function DetalleGasoterapia() {

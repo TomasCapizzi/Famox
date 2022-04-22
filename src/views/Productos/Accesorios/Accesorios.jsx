@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
-import Item from '../../../components/ListaProductos/Accesorios/Item'
-import Spinner from '../../../components/Spinner/Spinner';
+import Item from 'components/ListaProductos/Accesorios/Item'
+import Spinner from 'components/Spinner/Spinner';
 
 function Accesorios() {
   const api = 'https://famox-api.herokuapp.com/api/products/accesorios';

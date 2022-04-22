@@ -1,9 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-import FormAccesorio from '../../components/CrearProducto/Forms/FormAccesorio';
-import FormGasoterapia from '../../components/CrearProducto/Forms/FormGasoterapia';
-import FormModelo from '../../components/CrearProducto/Forms/FormModelo';
-import FormUnidadSuministro from '../../components/CrearProducto/Forms/FormUnidadSuministro';
+import FormAccesorio from 'components/CrearProducto/Forms/FormAccesorio';
+import FormGasoterapia from 'components/CrearProducto/Forms/FormGasoterapia';
+import FormModelo from 'components/CrearProducto/Forms/FormModelo';
+import FormUnidadSuministro from 'components/CrearProducto/Forms/FormUnidadSuministro';
 
 function CrearProducto() {
 
