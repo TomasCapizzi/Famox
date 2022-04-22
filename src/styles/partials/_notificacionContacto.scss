@@ -11,11 +11,31 @@
     bottom: 0px;
     right: 10px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.5);
-    animation: animation ease-in-out 4s;
+    animation: animation ease-in-out 5s;
 }
 
 .on{
     display: flex;
+}
+
+@media only screen and (max-width: 375px){
+    .toast{
+        position: absolute;
+        background-color: $white;
+        border: 2px solid $color1;
+        padding: 20px;
+        width: 80%;
+        border-radius: 5px;
+        display: none;
+        bottom: 0px;
+        right: 0;
+        left: 10px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+        animation: animation ease-in-out 4s;
+    }
+    .on{
+        display: flex;
+    }
 }
 
 @keyframes animation {
