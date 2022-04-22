@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import GASES from '../../../../data/gases';
+import GASES from 'data/gases';
 
 function Gases({product}) {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import useValidarFormCotizacion from '../../hooks/forms/useValidarFormCotizacion';
+import useValidarFormCotizacion from 'hooks/forms/useValidarFormCotizacion';
 
 function FormularioCotizacion({pedirCotizacion, habilitarForm, formRef}) {
 
@@ -11,10 +11,8 @@ function FormularioCotizacion({pedirCotizacion, habilitarForm, formRef}) {
     empresaError,
     nombreError,
     handlerSubmit,
-    setHandlerSubmit,
-    reiniciarValores
   } = useValidarFormCotizacion();
-//method='POST' target='_blank'
+
   return (
     <form action='' className='form-cotizacion off' ref={formRef}   onSubmit={(e)=> pedirCotizacion(e)} >
         <label htmlFor="nombre">Nombre</label>

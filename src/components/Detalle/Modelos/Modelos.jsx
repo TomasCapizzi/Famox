@@ -1,6 +1,6 @@
 import ModeloItem from './ModeloItem';
 import React from 'react'
-import Spinner from '../../Spinner/Spinner';
+import Spinner from 'components/Spinner/Spinner';
 
 function Modelos({modelos}) {
     console.log(modelos);

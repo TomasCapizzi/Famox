@@ -1,9 +1,8 @@
-import CONECTORES from '../../../../data/conectores';
+import CONECTORES from 'data/conectores';
 import React from 'react';
 
 function Conectores({product}) {
 
-    const {conector} = product
   return (
     <article className='conectores'>
         <h4>Conectores</h4>

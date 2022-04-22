@@ -1,5 +1,6 @@
 import {BiReset, BiSearch} from 'react-icons/bi';
-import React, {useState} from 'react';
+
+import React from 'react';
 
 function Filtro({setGasoterapiaHandler, setUnidSumHandler, setHandler}) {
 

@@ -1,13 +1,13 @@
 import Botonera from '../Botonera'
-import CONECTORES from '../../../../../../data/conectores'
-import Conectores from '../Opciones/Conectores'
-import GASES from '../../../../../../data/gases'
-import Gases from '../Opciones/Gases'
-import Modelos from '../Opciones/Modelos'
-import Rango from '../Opciones/Rango'
+import CONECTORES from 'data/conectores'
+import Conectores from './Opciones/Conectores'
+import GASES from 'data/gases'
+import Gases from './Opciones/Gases'
+import Modelos from './Opciones/Modelos'
+import Rango from './Opciones/Rango'
 import React from 'react'
 import {TiDelete} from 'react-icons/ti';
-import useAgregarCarrito from '../../../../../../hooks/ecommerce/useAgregarCarrito'
+import useAgregarCarrito from 'hooks/ecommerce/useAgregarCarrito'
 
 function EleccionGasoterapia({item,toggleModal }) {
 

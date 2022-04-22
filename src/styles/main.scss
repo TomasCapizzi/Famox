@@ -6,15 +6,14 @@
 @import './partials/carrito/carrito';
 @import './partials/carrito/item';
 @import './partials/carrito/formulario';
-@import './partials/carrusel';
 @import './partials/categoria';
 @import './partials/categoriaItem';
 @import './partials/certificaciones';
+@import './partials/checkout';
 @import './partials/contacto';
 @import './partials/crearPorducto';
 @import './partials/footer';
 @import './partials/historia';
-@import './partials/home';
 @import './partials/listaProductos';
 @import './partials/login';
 @import './partials/menu';
@@ -22,6 +21,12 @@
 @import './partials/pregfrec';
 @import './partials/rrss';
 @import './partials/spinner';
+
+// Home
+@import './partials/home/home';
+@import './partials/home/descripcionTareas';
+@import './partials/home/carrusel';
+@import './partials/home/carruselMini';
 // Products
 @import './partials/producto/gasoterapia/producto';
 @import './partials/producto/gasoterapia/conectores';
@@ -30,7 +35,6 @@
 @import './partials/producto/unidadesSuministro/producto';
 //Forms
 @import './partials/formularios/formAccesorio';
-@import './partials/formularios/formConector';
 @import './partials/formularios/formModelo';
 @import './partials/formularios/formGasoterapia';
 @import './partials/formularios/formUnidSum';

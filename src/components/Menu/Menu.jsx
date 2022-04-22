@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
 import {RiShoppingCart2Line, RiShoppingCartFill} from 'react-icons/ri';
 
-import { CarritoContext } from '../../store/carritoContext';
+import { CarritoContext } from 'store/carritoContext';
 import {CgMenuGridR} from 'react-icons/cg';
 import {Link} from 'react-router-dom';
 import Links from './Links';

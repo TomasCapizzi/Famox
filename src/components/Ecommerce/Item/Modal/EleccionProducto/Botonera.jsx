@@ -1,7 +1,7 @@
 import {AiOutlineMinusCircle, AiOutlinePlusCircle} from 'react-icons/ai';
 
 import React from 'react';
-import useContador from '../../../../../hooks/ecommerce/useContador';
+import useContador from 'hooks/ecommerce/useContador';
 
 function Botonera({agregarAlCarrito, toggleModal}) {
 

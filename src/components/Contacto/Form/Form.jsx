@@ -1,6 +1,5 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
-import useValidarFormContacto from '../../../hooks/forms/useValidarFormContacto';
+import useValidarFormContacto from 'hooks/forms/useValidarFormContacto';
 
 function Form({mostrarNotificacion}) {
 
@@ -46,32 +45,38 @@ function Form({mostrarNotificacion}) {
 
     <div>
       <label htmlFor="">Nombre</label>
+      <label htmlFor="">Nombre*</label>
       <input type="text" id='nombre' name='nombre' required onChange={(e)=>validarNombre(e.target.value)} />
       <label htmlFor="nombre" className='error'>{nombreError}</label>
     </div>
 
     <div>
-      <label htmlFor="">Empresa</label>
+      <label htmlFor="">Empresa*</label>
       <input type="text" id='empresa' name='empresa' required onChange={(e)=>validarEmpresa(e.target.value)} />
-      <label htmlFor="nombre" className='error'>{empresaError}</label>
+      <label htmlFor="empresa" className='error'>{empresaError}</label>
     </div>
 
     <div>
-      <label htmlFor="">Correo Electrónico</label>
+      <label htmlFor="">País</label>
+      <input type="text" id='pais' name='pais' required />
+    </div>
+
+    <div>
+      <label htmlFor="">Correo Electrónico*</label>
       <input type="email"  id='mail' name='email' required onChange={(e)=>validarEmail(e.target.value)} />
-      <label htmlFor="nombre" className='error'>{mailError}</label>
+      <label htmlFor="email" className='error'>{mailError}</label>
     </div>
 
     <div>
-      <label htmlFor="">Asunto</label>
+      <label htmlFor="">Asunto*</label>
       <input type="text"  id='asunto' name='asunto' required onChange={(e)=>validarAsunto(e.target.value)} />
-      <label htmlFor="nombre" className='error'>{asuntoError}</label>
+      <label htmlFor="asunto" className='error'>{asuntoError}</label>
     </div>
 
     <div>
-      <label htmlFor="">Mensaje</label>
+      <label htmlFor="">Mensaje*</label>
       <textarea name="mensaje" id="mensaje" required onChange={(e)=>validarMensaje(e.target.value)}></textarea>
-      <label htmlFor="nombre" className='error'>{mensajeError}</label>
+      <label htmlFor="mensaje" className='error'>{mensajeError}</label>
     </div>
 
     <div className={handlerSubmit? '': 'disabled'}>
