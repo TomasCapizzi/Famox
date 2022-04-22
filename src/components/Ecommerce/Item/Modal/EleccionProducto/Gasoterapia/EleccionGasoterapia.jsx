@@ -50,8 +50,7 @@ function EleccionGasoterapia({item,toggleModal }) {
               <Modelos item={item} setModelo={setModelo} />
             : null
           }
-
-          {
+          { // Selecciones de Gas, Conectores, Modelos y Rangos
             item.gases_ || item.conectores || item.modelos || item.rangos ? 
               <div className='selecciones'>
                 {
@@ -62,9 +61,9 @@ function EleccionGasoterapia({item,toggleModal }) {
                     conector && CONECTORES.map(
                       item => item.nombre === conector ? 
                         <div key={item.nombre} className='seleccionado'>
-                          <button><TiDelete onClick={eliminarSeleccionConector} /></button>
                           <img src={item.img} alt="" />
                           <p>{item.nombre}</p>
+                          <button><TiDelete onClick={eliminarSeleccionConector} /></button>
                         </div>
                       : null
                     )
@@ -73,9 +72,9 @@ function EleccionGasoterapia({item,toggleModal }) {
                     gas && GASES.map(
                       item => item.nombre === gas ? 
                         <div key={item.nombre} className='seleccionado' >
-                          <button><TiDelete onClick={eliminarSeleccionGas} /></button>
                           <img src={item.img} alt="" />
                           <p>{item.nombre}</p>
+                          <button><TiDelete onClick={eliminarSeleccionGas} /></button>
                         </div>
                         : null
                     )
@@ -83,8 +82,8 @@ function EleccionGasoterapia({item,toggleModal }) {
                   {
                     rango &&
                       <div className='seleccionado'>
-                        <button><TiDelete onClick={eliminarSeleccionRango} /></button>
                         <p>Rango: {rango}</p>
+                        <button><TiDelete onClick={eliminarSeleccionRango} /></button>
                       </div>
                   }
                 </div>
@@ -95,8 +94,8 @@ function EleccionGasoterapia({item,toggleModal }) {
               item.modelos ?
                   modelo && 
                   <div className='seleccionado modelo'>
-                    <button><TiDelete onClick={eliminarSeleccionModelo} /></button>
                     <p>{modelo.nombre}</p>
+                    <button><TiDelete onClick={eliminarSeleccionModelo} /></button>
                   </div>
                : null
             }            
