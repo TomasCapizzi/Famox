@@ -1,9 +1,9 @@
 import React,{useRef} from 'react'
 
-import Form from '../../components/Contacto/Form/Form'
-import Info from '../../components/Contacto/Info/Info'
-import Notificacion from '../../components/Contacto/Notificacion'
-import RedesSociales from '../../components/RedesSociales/RedesSociales'
+import Form from 'components/Contacto/Form/Form'
+import Info from 'components/Contacto/Info/Info'
+import Notificacion from 'components/Contacto/Notificacion'
+import RedesSociales from 'components/RedesSociales/RedesSociales'
 
 function Contacto() {
 
