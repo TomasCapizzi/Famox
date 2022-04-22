@@ -4,37 +4,46 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    p{
+        font-weight: 600;
+        font-size: 1rem;
+        text-align: center;
+        width: 100%;
+        margin-top: 30px;
+    }
     .seleccion{
         display: flex;
         flex-direction: column;
-        width: 45%;
-        margin-right: 15px;
-        p{
-            font-weight: bold;
+        width: 100%;
+        align-items: center;
+        thead{
+            width: 90%;
+            border-bottom: 2px solid $color1;
+            tr{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+            th:nth-child(1){
+                width: 70%;
+            }
+            th:nth-child(3){
+                opacity: 0;
+            }
         }
         .item{
-            width: 95%;
             display: flex;
             flex-direction: row;
-            font-size: 0.75rem;
-            padding: 0 5px;
+            width: 90%;
             align-items: center;
-            background-color: $color2;
-            border-radius: 5px;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
             justify-content: space-between;
-             p{
-                 font-weight: 400;
-                 margin-right: 8px;
-             }
-             p:nth-child(1){
-                 background-color: $black;
-                 color: $white;
-                 padding: 5px;
-                 border-radius: 20%;
-                 text-align: center;
-             }
+            padding: 3px;
+            border-bottom: 1px solid #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            td:nth-child(1){
+                width: 75%;
+            }
              svg{
                  font-size:20px;
                  cursor: pointer;
@@ -44,23 +53,33 @@
 
     .seleccion-conex{
         display: flex;
+        flex-direction: column;
         width: 100%;
-        flex-wrap: wrap;
-        .container{
-            width: 100%;
+        align-items: center;
+        p{
+            font-weight: 600;
         }
+        thead{
+            width: 90%;
+            border-bottom: 2px solid $color1;
+            tr{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        
         .item-conex{
             display: flex;
             width: 90%;
             align-items: center;
-            justify-content: space-around;
-            padding: 0 3px;
-            border-radius: 8px;
+            justify-content: space-between;
+            padding: 3px;
+            border-bottom: 1px solid #ccc;
             font-size: 0.9rem;
-            border: 2px solid $color1;
             margin-bottom: 5px;
             p{
-                margin-right: 10px;
+                margin-right: 0px;
             }
             svg{
                 font-size: 1.3rem;
@@ -76,72 +95,11 @@
         width: 100%;
         flex-wrap: wrap;
         .seleccion{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin-right: 15px;
-            p{
-                font-weight: bold;
-            }
-            .item{
-                width: 95%;
-                display: flex;
-                flex-direction: row;
-                border-bottom: none;
-                padding: 0 5px;
-                align-items: center;
-                background-color: $color2;
-                border-radius: 5px;
-                margin-bottom: 8px;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                 p{
-                     font-weight: 400;
-                     margin-right: 8px;
-                     font-size: 0.8rem;
-                 }
-                 p:nth-child(1){
-                     background-color: $black;
-                     color: $white;
-                     padding: 5px;
-                     border-radius: 5px;
-                     text-align: center;
-                 }
-                 svg{
-                     font-size:20px;
-                     cursor: pointer;
-                 }
-            }
+            font-size: 00.85rem;
         }
     
         .seleccion-conex{
-            display: flex;
-            width: 100%;
-            flex-wrap: wrap;
-            font-weight: bold;
-            .container{
-                width: 100%;
-            }
-            .item-conex{
-                display: flex;
-                width: 90%;
-                align-items: center;
-                justify-content: space-around;
-                padding: 0px;
-                border-radius: 5px;
-                
-                border: 2px solid $color1;
-                margin-bottom: 5px;
-                p{
-                    margin-right: 10px;
-                    font-size: 0.8rem;
-                    font-weight: 400;
-                }
-                svg{
-                    font-size: 1.3rem;
-                    cursor: pointer;
-                }
-            }
+            font-size: 0.85rem;
         }
     } 
 }
@@ -152,77 +110,11 @@
         width: 100%;
         flex-wrap: wrap;
         .seleccion{
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            margin-right: 15px;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            p{
-                width: 100%;
-                font-weight: bold;
-            }
-            .item{
-                width: 45%;
-                display: flex;
-                flex-direction: row;
-                border-bottom: none;
-                padding: 0 5px;
-                align-items: center;
-                background-color: $color2;
-                border-radius: 5px;
-                margin-right: 5px;
-                margin-bottom: 8px;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                 p{
-                     font-weight: 400;
-                     margin-right: 8px;
-                     font-size: 0.8rem;
-                     width: auto;
-                 }
-                 p:nth-child(1){
-                     background-color: $black;
-                     color: $white;
-                     padding: 5px;
-                     border-radius: 5px;
-                     text-align: center;
-                 }
-                 svg{
-                     font-size:20px;
-                     cursor: pointer;
-                 }
-            }
+            font-size: 00.85rem;
         }
     
         .seleccion-conex{
-            display: flex;
-            width: 100%;
-            flex-wrap: wrap;
-            font-weight: bold;
-            .container{
-                width: 100%;
-            }
-            .item-conex{
-                display: flex;
-                width: 90%;
-                align-items: center;
-                justify-content: space-around;
-                padding: 0px;
-                border-radius: 5px;
-                
-                border: 2px solid $color1;
-                margin-bottom: 5px;
-                p{
-                    margin-right: 10px;
-                    font-size: 0.8rem;
-                    font-weight: 400;
-                }
-                svg{
-                    font-size: 1.3rem;
-                    cursor: pointer;
-                }
-            }
+            font-size: 0.85rem;
         }
     } 
 }
@@ -233,83 +125,10 @@
         width: 100%;
         flex-wrap: wrap;
         .seleccion{
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            margin-right: 15px;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            p{
-                width: 100%;
-                font-weight: bold;
-            }
-            .item{
-                width: 45%;
-                display: flex;
-                flex-direction: row;
-                border-bottom: none;
-                padding: 0 5px;
-                align-items: center;
-                background-color: $color2;
-                border-radius: 5px;
-                margin-right: 5px;
-                margin-bottom: 8px;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                 p{
-                     font-weight: 400;
-                     margin-right: 8px;
-                     font-size: 0.8rem;
-                     width: auto;
-                 }
-                 p:nth-child(1){
-                     background-color: $black;
-                     color: $white;
-                     padding: 5px;
-                     border-radius: 5px;
-                     text-align: center;
-                 }
-                 svg{
-                     font-size:20px;
-                     cursor: pointer;
-                 }
-            }
+            font-size: 00.85rem;
         }
-    
         .seleccion-conex{
-            display: flex;
-            width: 100%;
-            flex-wrap: wrap;
-            font-weight: bold;
-            margin-bottom: 25px;
-            .container{
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-            }
-            .item-conex{
-                display: flex;
-                width: 45%;
-                align-items: center;
-                justify-content: space-around;
-                padding: 0px;
-                border-radius: 5px;
-                margin-right: 5px;
-                
-                border: 2px solid $color1;
-                margin-bottom: 5px;
-                p{
-                    margin: 0px;
-                    font-size: 0.8rem;
-                    font-weight: 400;
-                    margin-right: 5px;
-                }
-                svg{
-                    font-size: 1.3rem;
-                    cursor: pointer;
-                }
-            }
+            font-size: 0.9rem;
         }
     } 
 }
