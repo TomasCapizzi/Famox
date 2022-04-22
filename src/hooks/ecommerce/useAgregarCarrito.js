@@ -22,9 +22,10 @@ const useAgregarCarrito = ({item}) => {
     //////////////////////////////////////////
 
 
-    const {derivarFuncion} = useCodigo(item.nombre, gas, conector, rango, modelo)
+    const {derivarFuncion} = useCodigo(item.nombre, gas, conector, rango, modelo) //Esta función regresa el código de los prod de gasoterapia
 
     function agregarAlCarrito(cantidad){
+      // Antes de agregar busca coincidencia del mismo item para solo sumar la cantidad
         if(modelo){
           buscarCoincidenciaModelo(cantidad)
         } else if(item.gasoterapia) {
@@ -35,16 +36,19 @@ const useAgregarCarrito = ({item}) => {
     }
 
     function buscarCoincidencia(cantidad){
-      const {nombre, img, _id} = item
+      const {nombre, img} = item
+      const codigo = derivarFuncion();
+      // Hacer comparación x codigo
       const coincidencia = carro.find(
-        producto => (producto.nombre === nombre) && ((producto.gas !== gas ) || ( producto.conector !== conector)|| ( producto.rango !== rango) )
+        producto => producto.codigo === codigo
       )       
       if(coincidencia){
         console.log('MISMO ID PERO DIFERENTE PROD', coincidencia)
-        const nuevoID = (Math.random()*100 + 1).toString();
+        const nuevoID = (Math.random().toString(36)).split('.')[1];
+        console.log(nuevoID);
         const producto = {
           nombre,
-          codigo: derivarFuncion(),
+          codigo,
           gas,
           conector,
           img,
@@ -57,7 +61,7 @@ const useAgregarCarrito = ({item}) => {
       } else {
         const producto = {
           nombre,
-          codigo: derivarFuncion(),
+          codigo,
           gas,
           conector,
           img,
