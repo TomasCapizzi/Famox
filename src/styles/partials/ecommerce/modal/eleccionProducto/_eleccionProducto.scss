@@ -39,12 +39,10 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-
         .container{
             width: 100%;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            align-items: flex-start;
         }
 
     }
@@ -65,13 +63,17 @@
 
 .seleccionado{
     border: 1px solid $color2;
-    width: 25%;
+    width: 50%;
     position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    p{
+        width: 85%;
+        padding-left: 10px;
+    }
 
     button{
-        position: absolute;
-        top: 0;
-        right: 0;
         background-color: transparent;
         border: none;
         color: $color1;
@@ -92,17 +94,14 @@
 
 .modelo{
     padding: 5px;
-    background-color: $color1;
-    color: $white;
-    font-weight: bold;
-    border-radius: 10px;
+    border: 1px solid $color2;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     button{
         background-color: transparent;
         svg{
-            color: $color2;
+            color: $color1;
             cursor: pointer;
         }
         svg:hover{
@@ -181,16 +180,13 @@
     
     .seleccionado{
         border: 1px solid $color2;
-        width: 100%;
+        width: 90%;
         position: relative;
         display: flex;
         align-items: center;
         
     
         button{
-            position: absolute;
-            top: 0;
-            right: 0;
             background-color: transparent;
             border: none;
             color: $color1;
@@ -213,20 +209,12 @@
     
     .modelo{
         padding: 0px;
-        background-color: $color1;
-        color: $white;
+        border: 1px solid $color2;
         font-weight: bold;
         border-radius: 10px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        button{
-            background-color: transparent;
-            svg{
-                color: $color2;
-                cursor: pointer;
-            }
-        }
     }
 }
 
@@ -303,16 +291,11 @@
     
     .seleccionado{
         border: 1px solid $color2;
-        width: 100%;
+        width: 90%;
         position: relative;
         display: flex;
         align-items: center;
-        
-    
         button{
-            position: absolute;
-            top: 0;
-            right: 0;
             background-color: transparent;
             border: none;
             color: $color1;
@@ -335,20 +318,12 @@
     
     .modelo{
         padding: 0px;
-        background-color: $color1;
-        color: $white;
+        border: 1px solid $color2;
         font-weight: bold;
         border-radius: 10px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        button{
-            background-color: transparent;
-            svg{
-                color: $color2;
-                cursor: pointer;
-            }
-        }
     }
 }
 
@@ -425,16 +400,13 @@
     
     .seleccionado{
         border: 1px solid $color2;
-        width: 100%;
+        width: 90%;
         position: relative;
         display: flex;
         align-items: center;
         
     
         button{
-            position: absolute;
-            top: 0;
-            right: 0;
             background-color: transparent;
             border: none;
             color: $color1;
@@ -457,20 +429,12 @@
     
     .modelo{
         padding: 0px;
-        background-color: $color1;
-        color: $white;
+        border: 1px solid $color2;
         font-weight: bold;
         border-radius: 10px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        button{
-            background-color: transparent;
-            svg{
-                color: $color2;
-                cursor: pointer;
-            }
-        }
     }
 }
 
@@ -546,16 +510,13 @@
     
     .seleccionado{
         border: 1px solid $color2;
-        width: 100%;
+        width: 90%;
         position: relative;
         display: flex;
         align-items: center;
         
     
         button{
-            position: absolute;
-            top: 0;
-            right: 0;
             background-color: transparent;
             border: none;
             color: $color1;
@@ -578,20 +539,12 @@
     
     .modelo{
         padding: 0px;
-        background-color: $color1;
-        color: $white;
+        border: 1px solid $color2;
         font-weight: bold;
         border-radius: 10px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        button{
-            background-color: transparent;
-            svg{
-                color: $color2;
-                cursor: pointer;
-            }
-        }
     }
 }
 
@@ -654,16 +607,13 @@
     
     .seleccionado{
         border: 1px solid $color2;
-        width: 100%;
+        width: 90%;
         position: relative;
         display: flex;
         align-items: center;
         
     
         button{
-            position: absolute;
-            top: 0;
-            right: 0;
             background-color: transparent;
             border: none;
             color: $color1;
@@ -686,20 +636,12 @@
     
     .modelo{
         padding: 0px;
-        background-color: $color1;
-        color: $white;
+        border: 1px solid $color2;
         font-weight: bold;
         border-radius: 10px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        button{
-            background-color: transparent;
-            svg{
-                color: $color2;
-                cursor: pointer;
-            }
-        }
     }
 }
 
@@ -736,22 +678,13 @@
         }
     }
     
-    
     .modelo{
         padding: 0px;
-        background-color: $color1;
-        color: $white;
+        border: 1px solid $color2;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 5px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        button{
-            background-color: transparent;
-            svg{
-                color: $color2;
-                cursor: pointer;
-            }
-        }
     }
 }
