@@ -1,7 +1,7 @@
 import {useContext, useState} from 'react'
 
-import { CarritoContext } from '../../store/carritoContext';
-import useCodigo from '../codigos/useCodigos';
+import { CarritoContext } from 'store/carritoContext';
+import useCodigo from 'hooks/codigos/useCodigos';
 
 const useAgregarCarrito = ({item}) => {
   
@@ -64,25 +64,28 @@ const useAgregarCarrito = ({item}) => {
           cantidad,
           rango,
           modelo,
-          _id
+          _id: Math.random().toString(36).split('.')[1]
         }
-        console.log(producto);
         agregarItemGasoterapia({producto})
       }
 
     }
 
     function buscarCoincidenciaModelo(cantidad){
-      const {nombre, img, _id} = item
+
+      const {nombre, img} = item
+      const codigo = derivarFuncion();
+      // Hacer comparación x codigo
       const coincidencia = carro.find(
-        producto => (producto.nombre === nombre) && ( (producto.gas !== gas ) || ( producto.conector !== conector)|| ( producto.modelo.nombre !== modelo.nombre) )
-      )
+        producto => producto.codigo === codigo
+      )       
       if(coincidencia){
-        //console.log('MISMO ID PERO DIFERENTE MODELO')
-        const nuevoID = (Math.random()*100 + 1).toString();
+        // Si coincide genero un nuevo item con la misma data pero otro ID y lo mando al context
+        const nuevoID = Math.random().toString(36).split('.')[1];
         const producto = {
           nombre,
-          codigo: derivarFuncion(),
+          fecha: new Date(),
+          codigo,
           gas,
           conector,
           img,
@@ -96,6 +99,7 @@ const useAgregarCarrito = ({item}) => {
       } else {
         const producto = {
           nombre,
+          fecha: new Date(),
           codigo: derivarFuncion(),
           gas,
           conector,
@@ -103,7 +107,7 @@ const useAgregarCarrito = ({item}) => {
           cantidad,
           rango,
           modelo,
-          _id
+          _id: Math.random().toString(36).split('.')[1]
         }
         agregarItemGasoterapia({producto})
       }
@@ -112,14 +116,11 @@ const useAgregarCarrito = ({item}) => {
     function buscarCoincidenciaUnidSum(cantidad){
       // destructuring de variables del ITEM
       const {nombre, img} = item
-      // const coincidencia, hacer un find con el CARRO
-
-      // si hay coincidencia, que ejecute un codigo
-
-      // sino este otro
+      // Panel contiene longitud lo que los demás no, por eso se aisla
       if(nombre === 'Panel de Cabecera'){
         const producto = {
           nombre,
+          fecha: new Date(),
           bajaTension: valoresBajaTension,
           mediaTension: valoresMediaTension,
           iluminacion: valoresIluminacion,
@@ -135,6 +136,7 @@ const useAgregarCarrito = ({item}) => {
       } else{
       const producto = {
         nombre,
+        fecha: new Date(),
         bajaTension: valoresBajaTension,
         mediaTension: valoresMediaTension,
         iluminacion: valoresIluminacion,
