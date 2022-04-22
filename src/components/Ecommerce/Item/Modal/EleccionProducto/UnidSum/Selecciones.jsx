@@ -3,17 +3,17 @@ import {TiDelete} from 'react-icons/ti';
 
 function Selecciones({valores, eliminarItem}) {
   return (
-        <>
+        <tbody className='container'>
       {
       valores.map(
         item => item.cantidad > 0 &&
-        <div key={item.nombre} className='item'>
-          <p>{item.cantidad}</p>
-          <p>{item.nombre}</p>
-          <TiDelete onClick={()=>eliminarItem(item)} />
-        </div>
+        <tr key={item.nombre} className='item'>
+          <td>{item.nombre}</td>
+          <td>{item.cantidad}</td>
+          <td><TiDelete onClick={()=>eliminarItem(item)} /></td>
+        </tr>
     )}
-    </>
+    </tbody>
 
   )
 }
