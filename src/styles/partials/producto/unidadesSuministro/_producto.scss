@@ -27,8 +27,10 @@
                 width: 50%;
                 display: flex;
                 justify-content: center;
+                height: 500px;
                 img{
-                    width: 80%;
+                    max-width: 100%;
+                    height: auto;
                 }
             }
 
@@ -57,6 +59,204 @@
                 }
             }
 
+        }
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+    .producto2-container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    
+        .producto{
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            justify-content: center;
+            margin-top: 50px;
+            
+            .info-producto{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                justify-content: space-around;
+                align-items: center;
+                padding: 25px 0;
+                margin-bottom: 15px;
+                border-top: 2.5px solid $color1;
+                .img-container{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    height: 260px;
+                    img{
+                        width: auto;
+                        height: 100%;
+                        max-width: 100%;
+                    }
+                }
+    
+                .uso{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    div{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+    
+                        h4{
+                            font-size: 1.2rem;
+                        }
+                        p{
+                            font-size: 0.9rem;
+                            text-align: center;
+                            color: $black;
+                            margin: 0;
+                        }
+                    }
+                }
+    
+            }
+        }
+    }
+}
+
+
+@media only screen and(min-width: 769px) and (max-width: 1024px){
+    .producto2-container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+
+        .producto{
+            display: flex;
+            flex-wrap: wrap;
+            width: 85%;
+            justify-content: center;
+            margin-top: 50px;
+            .info-producto{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 25px 0;
+                margin-bottom: 15px;
+                border-top: 2.5px solid $color1;
+                .img-container{
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 370px;
+                    img{
+                        width: auto;
+                        height: 80%;
+                        max-width: 90%;
+                    }
+                }
+
+                .uso{
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    div{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+
+                        h4{
+                            font-size: 1.4rem;
+                        }
+                        p{
+                            font-size: 1rem;
+                            text-align: center;
+                            color: $black;
+                            margin: 0;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media only screen and(min-width: 1024px) and (max-width: 1280px){
+    .producto2-container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+
+        .producto{
+            display: flex;
+            flex-wrap: wrap;
+            width: 85%;
+            justify-content: center;
+            margin-top: 50px;
+            .info-producto{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 25px 0;
+                margin-bottom: 15px;
+                border-top: 2.5px solid $color1;
+                .img-container{
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 420px;
+                    img{
+                        width: auto;
+                        height: 80%;
+                        max-width: 90%;
+                    }
+                }
+
+                .uso{
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    div{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+
+                        h4{
+                            font-size: 1.6rem;
+                        }
+                        p{
+                            font-size: 1rem;
+                            text-align: center;
+                            color: $black;
+                            margin: 0;
+                        }
+                    }
+                }
+
+            }
+        }
+    }   
+}
+
+@media only screen and(min-width: 1280px) and (max-width: 1440px){
+    .producto2-container{
+        .producto{
+            width: 75%;
         }
     }
 }
