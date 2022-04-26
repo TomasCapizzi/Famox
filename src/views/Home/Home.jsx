@@ -1,3 +1,4 @@
+import Aviso from 'components/Home/Aviso';
 import Carrusel from 'components/Home/Carrusel';
 import CarruselMini from 'components/Home/CarruselMini';
 import Categorias from 'components/Home/Categorias';
@@ -9,6 +10,7 @@ function Home() {
   return (
   <div className='home'>
     <Carrusel/>
+    <Aviso/>
     <Categorias />
     <DescripcionTareas />
     <CarruselMini/>

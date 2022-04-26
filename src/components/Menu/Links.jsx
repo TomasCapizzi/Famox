@@ -42,9 +42,13 @@ function Links({carro}) {
         }
         </li>
         </Link>
+        {
+          /*
         <Link  to='/login'>
-        <li><FaUser/></li>
-        </Link>            
+          <li><FaUser/></li>
+        </Link>   */
+        }
+          
     </ul>
   )
 }
