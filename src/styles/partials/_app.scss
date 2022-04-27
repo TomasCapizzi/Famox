@@ -30,7 +30,9 @@ body{
 ::-webkit-scrollbar-thumb:hover{
     background-color: $black;
 }
-
+:root {
+    color-scheme: light;
+  }
 @media (prefers-color-scheme: light){
     .App{
         background-color: $white;
