@@ -1,24 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 
 import Item from 'components/ListaProductos/Accesorios/Item'
 import Spinner from 'components/Spinner/Spinner';
+import useListaAccesorios from 'hooks/productos/useListaAccesorios';
 
 function Accesorios() {
-  const api = 'https://famox-api.herokuapp.com/api/products/accesorios';
+  const api = 'http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/api/products/accesorios';
 
-  const [accesorios, setAccesorios] = useState([]);
-  const [handler, setHandler] = useState(false)
-
-  async function getAccesorios(){
-    const response = await fetch(api);
-    const res = await response.json();
-    console.log(res.products);
-    setAccesorios(res.products);
-    setHandler(true);
-  }
+  const {getAccesorios, accesorios} = useListaAccesorios()
 
   useEffect(()=>{
-    getAccesorios();
+    getAccesorios(api);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   return (
