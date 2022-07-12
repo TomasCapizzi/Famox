@@ -1,20 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 
 import Item from 'components/ListaProductos/Gasoterapia/Item';
 import Spinner from 'components/Spinner/Spinner';
+import useListaProductos from 'hooks/productos/useListaProductos';
 
 function Gasoterapia() {
-    const api = 'https://famox-api.herokuapp.com/api/products/gasoterapia';
-    const [products, setProducts] = useState([]);
-
-    async function getProducts(){
-        const response = await fetch(api);
-        const res = await response.json()
-        setProducts(res.products)
-    }
-
+    const api = 'http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/api/products/gasoterapia';
+    const {getProducts, products} = useListaProductos();
+    
     useEffect(()=>{
-        getProducts();
+        getProducts(api);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     return(
