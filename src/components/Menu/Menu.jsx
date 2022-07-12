@@ -24,7 +24,7 @@ function Menu() {
   return (
     <nav className='menu'>
       <Link to={'/'}>
-        <img src="img/Logo_WP.jpg" alt="Logo Famox" />
+        <img src="img/Logo.png" alt="Logo Famox" />
       </Link>
       <div className='responsive-menu'>
         <Link to='/carrito' className='carrito-responsive' >
