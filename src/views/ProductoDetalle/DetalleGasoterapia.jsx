@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import Conectores from 'components/Detalle/Gasoterapia/Descripcion/Conectores';
 import Descripcion from 'components/Detalle/Gasoterapia/Descripcion/Descripcion';
 import Gases from 'components/Detalle/Gasoterapia/Descripcion/Gases';
+import ManualBtn from 'components/Detalle/ManualBtn';
 import Modelos from 'components/Detalle/Modelos/Modelos';
 import Spinner from 'components/Spinner/Spinner';
 import useDetalle from 'hooks/productos/useDetalle';
@@ -28,6 +29,7 @@ function DetalleGasoterapia() {
           handler ?
             <article className='producto'>
               <h1>{product.nombre}</h1>
+              <ManualBtn product={product}/>
               <div className='info-producto'>
                 <div className='img-container'>
                   <img src={product.img} alt="producto" />

@@ -12,6 +12,21 @@
         width: 70%;
         justify-content: center;
         margin-top: 50px;
+        position: relative;
+        .manual-btn{
+            position: absolute;
+            right: 0;
+            background-color: $color1;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            a{
+                color: $white;
+                font-size: 16px;
+                text-decoration: none;
+            }
+        }
         .info-producto{
             display: flex;
             justify-content: space-around;
@@ -73,6 +88,30 @@
             width: 90%;
             justify-content: center;
             margin-top: 50px;
+            .manual-btn{
+                position: absolute;
+                width: 80px;
+                right: 0;
+                top: -30px;
+                background-color: $color1;
+                border: none;
+                border-radius: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+                a{
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    align-items: center;
+                    color: $white;
+                    font-size: 12px;
+                    text-decoration: none;
+
+                    svg{
+                        font-size: 16px;
+                    }
+                }
+            }
             
             .info-producto{
                 display: flex;
@@ -138,6 +177,29 @@
             width: 90%;
             justify-content: center;
             margin-top: 50px;
+            .manual-btn{
+                position: absolute;
+                right: 0;
+                top: -20px;
+                background-color: $color1;
+                border: none;
+                border-radius: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+                a{
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    align-items: center;
+                    color: $white;
+                    font-size: 12px;
+                    text-decoration: none;
+
+                    svg{
+                        font-size: 16px;
+                    }
+                }
+            }
             .info-producto{
                 display: flex;
                 justify-content: space-around;
@@ -199,6 +261,28 @@
             width: 85%;
             justify-content: center;
             margin-top: 50px;
+            .manual-btn{
+                position: absolute;
+                right: 0;
+                top: -10px;
+                background-color: $color1;
+                border: none;
+                border-radius: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+                a{
+                    display: flex;
+                    align-items: center;
+                    color: $white;
+                    font-size: 14px;
+                    text-decoration: none;
+
+                    svg{
+                        margin-left: 10px;
+                        font-size: 20px;
+                    }
+                }
+            }
             .info-producto{
                 display: flex;
                 justify-content: space-around;

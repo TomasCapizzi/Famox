@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 
 import Descripcion from 'components/Detalle/Gasoterapia/Descripcion/Descripcion';
+import ManualBtn from 'components/Detalle/ManualBtn';
 import Spinner from '../../components/Spinner/Spinner';
 import useDetalle from 'hooks/productos/useDetalle';
 import {useParams} from 'react-router-dom';
@@ -21,6 +22,7 @@ function DetalleUnidSum() {
         handler ?
         <article className='producto'>
           <h1>{product.nombre}</h1>
+          <ManualBtn product={product} />
           <div className='info-producto'>
             <div className='img-container'>
               <img src={product.img} alt="producto" />

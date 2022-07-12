@@ -9,9 +9,24 @@
     .producto{
         display: flex;
         flex-wrap: wrap;
-        width: 60%;
+        width: 70%;
         justify-content: center;
-        margin-top: 50px;
+        margin-top: 50px;            
+        position: relative;
+        .manual-btn{
+            position: absolute;
+            right: 0;
+            background-color: $color1;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            a{
+                color: $white;
+                font-size: 16px;
+                text-decoration: none;
+            }
+        }
         h1{
             font-size: 2.2rem;
         }
