@@ -1,6 +1,6 @@
 import Aviso from 'components/Home/Aviso';
 import Carrusel from 'components/Home/Carrusel';
-import CarruselMini from 'components/Home/CarruselMini';
+import CarruselMini from 'components/Home/Carrusel2/CarruselMini';
 import Categorias from 'components/Home/Categorias';
 import DescripcionTareas from 'components/Home/Descripcion/DescripcionTareas';
 import React from 'react';
