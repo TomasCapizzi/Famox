@@ -6,7 +6,7 @@ function Calidad() {
         <p className='nro'>03</p>
         <div>
             <h2>Calidad</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a provident placeat nulla blanditiis minus, fuga et delectus cum aspernatur non harum nihil molestias necessitatibus animi quibusdam similique, odit expedita!</p>
+            <p>Aplicamos la mejora continua y capacitación a nuestro personal, para lograr a través de su participación, su compromiso con el Sistema de Gestión de Calidad.</p>
         </div>
     </div>
   )
