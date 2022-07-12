@@ -42,11 +42,6 @@ function PregFrec() {
             <h4>¿Medios de pago?</h4>
             <p>Nos manejamos con pagos con cheques o transferencia</p>          
         </article>
-
-        <article className='seccion'>
-            <h4>¿Cambio de productos?</h4>
-            <p></p>
-        </article>
     </section>
   )
 }
