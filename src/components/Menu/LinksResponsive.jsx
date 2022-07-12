@@ -1,6 +1,4 @@
-import {FaUser} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
-import {MdKeyboardArrowDown} from 'react-icons/md';
 import React from 'react';
 
 function LinksResponsive({menuUl, useMenuHamb}) {
@@ -30,9 +28,13 @@ function LinksResponsive({menuUl, useMenuHamb}) {
         <Link  to='/contacto'>
         <li onClick={useMenuHamb}>Contacto</li>
         </Link>
+        {
+          /*
         <Link  to='/login'>
-        <li onClick={useMenuHamb}><FaUser/></li>
-        </Link>            
+          <li onClick={useMenuHamb}><FaUser/></li>
+        </Link> 
+          */
+        }           
     </ul>
   )
 }
