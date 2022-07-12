@@ -6,7 +6,7 @@ function Gasoterapia() {
         <p className='nro'>01</p>
         <div>
             <h2>Gasoterapia</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a provident placeat nulla blanditiis minus, fuga et delectus cum aspernatur non harum nihil molestias necessitatibus animi quibusdam similique, odit expedita!</p>
+            <p>Son equipos destinados al control y regulación de los gases medicinales en puntos de conexión. Reguladores de presión, reductores de presión, mezclador de gases, reguladores de caudal, etc.</p>
         </div>
 
     </article>
