@@ -1,25 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 
+import Descripcion from 'components/Detalle/Gasoterapia/Descripcion/Descripcion';
 import Spinner from '../../components/Spinner/Spinner';
+import useDetalle from 'hooks/productos/useDetalle';
 import {useParams} from 'react-router-dom';
 
 function DetalleUnidSum() {
     const {id} = useParams();
+    const {getItem, product, handler} = useDetalle();
+    const api = 'http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/api/products/unidades-suministro/'
 
-    const [product, setProduct] = useState([]);
-    const [handler, setHandler] = useState(false)
-
-    const api = 'https://famox-api.herokuapp.com/api/products/unidades-suministro/'
-
-    async function getItem(){
-        const response = await fetch(api + id);
-        const res = await response.json()
-        setProduct(res)
-        setHandler(true)
-    }
 
     useEffect(()=>{
-        getItem();
+        getItem(api, id);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
   return(
     <section className='producto2-container'>
@@ -29,20 +23,9 @@ function DetalleUnidSum() {
           <h1>{product.nombre}</h1>
           <div className='info-producto'>
             <div className='img-container'>
-              <img src={product.img} alt="" />
+              <img src={product.img} alt="producto" />
             </div>
-            <div className='uso'>
-              <div>
-                <h4>Uso Previsto</h4>
-                <p>{product.uso}</p>
-              </div>
-              <div>
-                <h4>A.N.M.A.T</h4>
-                <p>{
-                  product.anmat ? 'Considerado Producto Médico por el organismo.' : 'Este equipo no es considerado Producto Médico por el organismo.'  
-                }</p>
-              </div>
-            </div>
+            <Descripcion product={product}/>
           </div>
         </article>
         :
