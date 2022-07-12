@@ -14,7 +14,7 @@ function Ecommerce() {
   const [handler, setHandler] = useState(false);
  
   async function getAllProducts(){
-    const response = await fetch('https://famox-api.herokuapp.com/api/products/listado');
+    const response = await fetch('http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/api/products/listado');
     const res = await response.json();
     setListadoProductos(res.products)
     setHandler(true)
@@ -36,8 +36,7 @@ function Ecommerce() {
               <>
                 {gasoterapiaHandler ? <Categoria items={listadoProductos.gasoterapia} key={listadoProductos.gasoterapia}/> : null}
                 {unidSumHandler? <Categoria items={listadoProductos.unidadesSuministro} key={listadoProductos.unidadesSuministro}/> : null}
-                </>
-
+              </>
               : <Spinner/>
             }
         </article>
