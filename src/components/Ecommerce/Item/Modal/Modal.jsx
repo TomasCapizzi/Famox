@@ -5,7 +5,6 @@ import React from 'react'
 import {TiDelete} from 'react-icons/ti';
 
 function Modal({item, toggleModal}) {
-
   return (
     <section className='modal-container'>
       <article className='modal'>
@@ -13,8 +12,7 @@ function Modal({item, toggleModal}) {
         <Descripcion item={item} />
         {
           item.gasoterapia ? <EleccionGasoterapia item={item} toggleModal={toggleModal} /> : <EleccionUnidSum item={item} toggleModal={toggleModal} />
-        }
-        
+        }        
       </article>      
     </section>
   )
