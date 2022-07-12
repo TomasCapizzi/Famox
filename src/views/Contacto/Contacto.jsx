@@ -1,13 +1,15 @@
-import React,{useRef} from 'react'
+import React,{useRef} from 'react';
 
-import Form from 'components/Contacto/Form/Form'
-import Info from 'components/Contacto/Info/Info'
-import Notificacion from 'components/Contacto/Notificacion'
-import RedesSociales from 'components/RedesSociales/RedesSociales'
+import Form from 'components/Contacto/Form/Form';
+import Info from 'components/Contacto/Info/Info';
+import Notificacion from 'components/Contacto/Notificacion';
+import RedesSociales from 'components/RedesSociales/RedesSociales';
+import useResetValores from 'hooks/contacto/useResetValores';
 
 function Contacto() {
 
   const refNoti = useRef();
+  const {resetValores} = useResetValores()
 
   function enviarConsulta(e){
     e.preventDefault();
@@ -33,14 +35,6 @@ function Contacto() {
     resetValores(e);
 }
 
-function resetValores(e){
-  e.target.nombre.value = ''
-  e.target.mail.value = ''
-  e.target.pais.value = ''
-  e.target.asunto.value = ''
-  e.target.empresa.value = ''
-  e.target.mensaje.value = ''
-}
 
 function mostrarNotificacion(){
   refNoti.current.classList.toggle('on');
