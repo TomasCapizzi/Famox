@@ -1,31 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 
 import Conectores from 'components/Detalle/Gasoterapia/Descripcion/Conectores';
 import Descripcion from 'components/Detalle/Gasoterapia/Descripcion/Descripcion';
 import Gases from 'components/Detalle/Gasoterapia/Descripcion/Gases';
 import Modelos from 'components/Detalle/Modelos/Modelos';
 import Spinner from 'components/Spinner/Spinner';
+import useDetalle from 'hooks/productos/useDetalle';
 import {useParams} from 'react-router-dom';
 
 function DetalleGasoterapia() {
 
     const {id} = useParams();
 
+    const {getItem, product, handler} = useDetalle();
 
-    const [product, setProduct] = useState([]);
-    const [handler, setHandler] = useState(false);
-
-    const api = 'https://famox-api.herokuapp.com/api/products/gasoterapia/';
-
-    async function getItem(){
-        const response = await fetch(api + id);
-        const res = await response.json();
-        setProduct(res)
-        setHandler(true);
-    }
+    const api = 'http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/api/products/gasoterapia/';
 
     useEffect(()=>{
-      getItem();
+      getItem(api, id);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
 
