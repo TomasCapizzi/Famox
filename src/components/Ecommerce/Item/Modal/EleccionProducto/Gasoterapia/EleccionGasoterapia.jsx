@@ -1,18 +1,18 @@
 import Botonera from '../Botonera'
-import CONECTORES from 'data/conectores'
-import Conectores from './Opciones/Conectores'
-import GASES from 'data/gases'
-import Gases from './Opciones/Gases'
-import Modelos from './Opciones/Modelos'
-import Rango from './Opciones/Rango'
+import ConectorSeleccion from './Selecciones/ConectorSeleccion'
+import Conectores from './Opciones/Conector/Conectores'
+import GasSeleccion from './Selecciones/GasSeleccion'
+import Gases from './Opciones/Gas/Gases'
+import ModeloSeleccion from './Selecciones/ModeloSeleccion'
+import Modelos from './Opciones/Modelo/Modelos'
+import Rango from './Opciones/Rango/Rango'
+import RangoSeleccion from './Selecciones/RangoSeleccion'
 import React from 'react'
-import {TiDelete} from 'react-icons/ti';
 import useAgregarCarrito from 'hooks/ecommerce/useAgregarCarrito'
 
 function EleccionGasoterapia({item,toggleModal }) {
 
-    const {agregarAlCarrito, setConector, setGas, setModelo, setRango, modelo, conector, gas, rango} = useAgregarCarrito({item})
-
+    const {agregarAlCarrito, setConector, setGas, setModelo, setRango, modelo, conector, gas, rango} = useAgregarCarrito({item});
     function eliminarSeleccionConector(){
       setConector();
     }
@@ -26,29 +26,23 @@ function EleccionGasoterapia({item,toggleModal }) {
       setModelo();
     }
 
-
   return (
     <div className='modal-eleccion'>
         <div className='container' >
           {
-            item.conectores ? 
-              <Conectores items={item.conectores} setConector={setConector} />
-            : null
+            item.conectores ? <Conectores items={item.conectores} setConector={setConector} /> : null
           }
           {
             item.gases_ ?             
-              <Gases items={item.gases_} setGas={setGas} />
-            : null
+              <Gases items={item.gases_} setGas={setGas} /> : null 
           }
           {
             item.rangos ?
-              <Rango item={item} setRango={setRango} />
-            : null
+              <Rango item={item} setRango={setRango} />: null            
           }
           {
             item.modelos ?
-              <Modelos item={item} setModelo={setModelo} />
-            : null
+              <Modelos item={item} setModelo={setModelo} /> : null 
           }
           { // Selecciones de Gas, Conectores, Modelos y Rangos
             item.gases_ || item.conectores || item.modelos || item.rangos ? 
@@ -58,33 +52,13 @@ function EleccionGasoterapia({item,toggleModal }) {
                 }
                 <div className='container'>
                   {
-                    conector && CONECTORES.map(
-                      item => item.nombre === conector ? 
-                        <div key={item.nombre} className='seleccionado'>
-                          <img src={item.img} alt="" />
-                          <p>{item.nombre}</p>
-                          <button><TiDelete onClick={eliminarSeleccionConector} /></button>
-                        </div>
-                      : null
-                    )
+                    conector && <ConectorSeleccion conector={conector} eliminarSeleccionConector={eliminarSeleccionConector} />
                   }
                   {
-                    gas && GASES.map(
-                      item => item.nombre === gas ? 
-                        <div key={item.nombre} className='seleccionado' >
-                          <img src={item.img} alt="" />
-                          <p>{item.nombre}</p>
-                          <button><TiDelete onClick={eliminarSeleccionGas} /></button>
-                        </div>
-                        : null
-                    )
+                    gas && <GasSeleccion gas={gas} eliminarSeleccionGas={eliminarSeleccionGas} />
                   }
                   {
-                    rango &&
-                      <div className='seleccionado'>
-                        <p>Rango: {rango}</p>
-                        <button><TiDelete onClick={eliminarSeleccionRango} /></button>
-                      </div>
+                    rango && <RangoSeleccion rango={rango} eliminarSeleccionRango={eliminarSeleccionRango} />
                   }
                 </div>
               </div> 
@@ -92,16 +66,10 @@ function EleccionGasoterapia({item,toggleModal }) {
             }
             {
               item.modelos ?
-                  modelo && 
-                  <div className='seleccionado modelo'>
-                    <p>{modelo.nombre}</p>
-                    <button><TiDelete onClick={eliminarSeleccionModelo} /></button>
-                  </div>
-               : null
+                  modelo && <ModeloSeleccion nombre={modelo.nombre} eliminarSeleccionModelo={eliminarSeleccionModelo} /> : null
             }            
         </div>
         { // Habilitacion de Botonera
-
           (item.gases_ && item.conectores && !item.modelos && item.rangos) ?
             (conector && gas && rango) ?
               <Botonera agregarAlCarrito={agregarAlCarrito} toggleModal={toggleModal} />
