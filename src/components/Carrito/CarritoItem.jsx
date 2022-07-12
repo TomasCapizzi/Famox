@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 
 import {BsTrashFill} from 'react-icons/bs';
 import {CarritoContext} from 'store/carritoContext';
-import useCodigo from 'hooks/codigos/useCodigos';
 
 function CarritoItem({item}) {
 // Carrito Item para los equipos de GASOTERAPIA
