@@ -18,7 +18,7 @@ function FormularioCotizacion({pedirCotizacion, habilitarForm, formRef}) {
         <label htmlFor="nombre">Nombre</label>
         <input type="text" name='nombre' id='nombre' required onChange={(e)=>validarNombre(e.target.value)}  />
         <label htmlFor="nombre" className='error'>{nombreError}</label>
-        <label htmlFor="nombre">Empresa</label>
+        <label htmlFor="nombre">Empresa / Hospital</label>
         <input type="text" name='empresa' id='empresa' required onChange={(e)=>validarEmpresa(e.target.value)} />
         <label htmlFor="nombre" className='error'>{empresaError}</label>
         <label htmlFor="mail">Mail</label>
