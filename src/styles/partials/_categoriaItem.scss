@@ -74,6 +74,11 @@
                 transform: scale(0.9);
             }
         }
+        a{
+            img{
+                border: none;
+            }
+        }
     
         img{
             max-width: 95%;
@@ -118,6 +123,11 @@
             svg:hover{
                 color: $black;
                 transform: scale(0.9);
+            }
+        }
+        a{
+            img{
+                border: none;
             }
         }
     
