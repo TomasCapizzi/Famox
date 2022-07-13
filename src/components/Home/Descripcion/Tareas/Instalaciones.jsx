@@ -6,7 +6,7 @@ function Instalaciones() {
         <p className='nro'>04</p>
         <div>
             <h2>Instalaciones</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a provident placeat nulla blanditiis minus, fuga et delectus cum aspernatur non harum nihil molestias necessitatibus animi quibusdam similique, odit expedita!</p>
+            <p>Diseñamos y ejecutamos tendidos para gases médicos bajo las normativas vigentes y pensando en su uso y aplicación,  consideramos esencial un diseño que alcance las necesidades de las instituciones de la salud antes las más severas y críticas condiciones de requerimiento.</p>
         </div>
     </div>
   )
