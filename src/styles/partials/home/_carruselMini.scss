@@ -2,8 +2,7 @@
 
 .carrusel-mini{
     width: 100%;
-    margin: 50px 60px;
-        
+    margin: 50px 60px;        
     h4, h2,small,a{
         margin: 0;
         padding: 0;
@@ -16,9 +15,7 @@
         text-align: center;
         font-size: 2.3rem;
     }
-
     /* images */
-
     .container{
         position: relative;
         display: flex;
@@ -119,16 +116,15 @@
         }
         .contenido{
             top: 0;
-            left: 0;
+            left: 30px;
         }
         .carrusel{
             width: 280px;
-            padding: 0 8px;
             height: 100%;
             picture{
                 img{
                     object-fit: scale-down;
-                    height: auto;
+                    height: 150px;
                     width: 100%;
                 }
                 img:hover{

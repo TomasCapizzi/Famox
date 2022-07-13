@@ -29,9 +29,7 @@
             border-radius: 5px;
             transition: .2s ease-in-out all;
         }
-        img:hover{            
-            transform: scale(0.9)
-        }
+
     }
     .rrss-container{
         width: 100%;
@@ -73,9 +71,6 @@
                 box-shadow: 1px 5px 10px rgba(0,0,0,0.5);
                 border-radius: 5px;
                 transition: .2s ease-in-out all;
-            }
-            img:hover{            
-                transform: scale(0.9);
             }
         }
         .rrss-container{
@@ -119,9 +114,6 @@
                 box-shadow: 1px 5px 10px rgba(0,0,0,0.5);
                 border-radius: 5px;
                 transition: .2s ease-in-out all;
-            }
-            img:hover{            
-                transform: scale(0.95);
             }
         }
         .rrss-container{
@@ -169,6 +161,9 @@
                 border-radius: 5px;
                 transition: .2s ease-in-out all;
             }
+            img:hover{            
+                transform: scale(0.9)
+            }
         }
     }
 }
@@ -201,6 +196,9 @@
                 box-shadow: 1px 5px 10px rgba(0,0,0,0.5);
                 border-radius: 5px;
                 transition: .2s ease-in-out all;
+            }
+            img:hover{            
+                transform: scale(0.9)
             }
         }
     }
