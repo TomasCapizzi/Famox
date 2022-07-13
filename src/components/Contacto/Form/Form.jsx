@@ -27,7 +27,7 @@ function Form({enviarConsulta}) {
     </div>
 
     <div>
-      <label htmlFor="">Empresa*</label>
+      <label htmlFor="">Empresa/Hospital*</label>
       <input type="text" id='empresa' name='empresa' required onChange={(e)=>validarEmpresa(e.target.value)} />
       <label htmlFor="empresa" className='error'>{empresaError}</label>
     </div>
