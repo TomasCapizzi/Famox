@@ -60,14 +60,15 @@ function EleccionGasoterapia({item,toggleModal }) {
                   {
                     rango && <RangoSeleccion rango={rango} eliminarSeleccionRango={eliminarSeleccionRango} />
                   }
+                  {
+                    item.modelos ?
+                        modelo && <ModeloSeleccion nombre={modelo.nombre} eliminarSeleccionModelo={eliminarSeleccionModelo} /> : null
+                  }
                 </div>
               </div> 
             : null
             }
-            {
-              item.modelos ?
-                  modelo && <ModeloSeleccion nombre={modelo.nombre} eliminarSeleccionModelo={eliminarSeleccionModelo} /> : null
-            }            
+            
         </div>
         { // Habilitacion de Botonera
           (item.gases_ && item.conectores && !item.modelos && item.rangos) ?
