@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-const useSeleccionarOpcion = () => {
+const useMostrarOpciones = () => {
 
     const [opcionesHandler, setOpcionesHandler] = useState(false);
 
@@ -49,4 +49,4 @@ const useSeleccionarOpcion = () => {
     }
 }
 
-export default useSeleccionarOpcion;
+export default useMostrarOpciones;
