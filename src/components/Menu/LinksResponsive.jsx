@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import MenuCategoriasResponsive from './MenuCategoriasResponsive';
 import React from 'react';
 
 function LinksResponsive({menuUl, useMenuHamb}) {
@@ -14,14 +15,7 @@ function LinksResponsive({menuUl, useMenuHamb}) {
         <Link to='/nosotros'>
         <li onClick={useMenuHamb}>Nosotros</li>            
         </Link>
-        <div className='categorias-handler'>
-            <Link  to='/productos'><li onClick={useMenuHamb}>Productos</li></Link>
-            <div className='categorias'>
-            <Link to='/gasoterapia'><li onClick={useMenuHamb}>Gasoterapia</li></Link>
-            <Link to='/unidades-de-suministro'><li onClick={useMenuHamb}>Unidades de Suministro</li></Link>
-            <Link to='/accesorios'><li onClick={useMenuHamb}>Accesorios</li></Link>
-            </div>
-        </div>
+        <MenuCategoriasResponsive useMenuHamb={useMenuHamb} />
         <Link  to='/certificaciones'>
         <li onClick={useMenuHamb}>Certificaciones</li>            
         </Link>
