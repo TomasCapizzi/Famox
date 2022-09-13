@@ -1,5 +1,6 @@
-import CarritoItem from './CarritoItem';
-import CarritoItem2 from './CarritoItem2';
+import CarritoItemAcc from './CarritoItemAcc';
+import CarritoItemGas from './CarritoItemGas';
+import CarritoItemUS from './CarritoItemUS';
 import React from 'react';
 
 function Tabla({carro}) {
@@ -18,7 +19,7 @@ function Tabla({carro}) {
         { 
             carro.length >= 1 &&
                 carro.map(
-                    item => item.conector || item.gas || item.modelo ? <CarritoItem item={item} key={item._id} /> : <CarritoItem2 item={item} key={item._id} />
+                    item => item.conector || item.gas || item.modelo ? <CarritoItemGas item={item} key={item._id} /> : item.accesorio ? <CarritoItemAcc item={item} key={item._id} /> : <CarritoItemUS item={item} key={item._id} />
                 )
         }                    
     </tbody>   
