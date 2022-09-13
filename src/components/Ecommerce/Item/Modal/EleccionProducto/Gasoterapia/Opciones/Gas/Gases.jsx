@@ -3,11 +3,11 @@ import React, {useRef} from 'react';
 import GASES from 'data/gases';
 import Item from './Item';
 import {MdKeyboardArrowDown} from 'react-icons/md';
-import useSeleccionarOpcion from 'hooks/ecommerce/useSeleccionarOpcion';
+import useMostrarOpciones from 'hooks/ecommerce/useMostrarOpciones';
 
 function Gases({items, setGas}) {
 
-    const {mostrarGases, opcionesHandler, setOpcionesHandler} = useSeleccionarOpcion();
+    const {mostrarGases, opcionesHandler, setOpcionesHandler} = useMostrarOpciones();
 
     const opcionesRef = useRef();
 

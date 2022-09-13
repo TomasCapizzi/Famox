@@ -3,11 +3,11 @@ import React, {useRef} from 'react';
 import CONECTORES from 'data/conectores';
 import Item from './Item';
 import {MdKeyboardArrowDown} from 'react-icons/md';
-import useSeleccionarOpcion from 'hooks/ecommerce/useSeleccionarOpcion';
+import useMostrarOpciones from 'hooks/ecommerce/useMostrarOpciones';
 
 function Conectores({items, setConector}) {
 
-    const {setOpcionesHandler, mostrarConectores, opcionesHandler} = useSeleccionarOpcion();
+    const {setOpcionesHandler, mostrarConectores, opcionesHandler} = useMostrarOpciones();
 
     const opcionesRef = useRef();
 

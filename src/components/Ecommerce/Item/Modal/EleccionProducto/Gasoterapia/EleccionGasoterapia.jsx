@@ -9,22 +9,13 @@ import Rango from './Opciones/Rango/Rango'
 import RangoSeleccion from './Selecciones/RangoSeleccion'
 import React from 'react'
 import useAgregarCarrito from 'hooks/ecommerce/useAgregarCarrito'
+import useEliminarSelecciones from 'hooks/ecommerce/gasoterapia/useEliminarSelecciones'
 
 function EleccionGasoterapia({item,toggleModal }) {
 
-    const {agregarAlCarrito, setConector, setGas, setModelo, setRango, modelo, conector, gas, rango} = useAgregarCarrito({item});
-    function eliminarSeleccionConector(){
-      setConector();
-    }
-    function eliminarSeleccionGas(){
-      setGas();
-    }
-    function eliminarSeleccionRango(){
-      setRango();
-    }
-    function eliminarSeleccionModelo(){
-      setModelo();
-    }
+  const {agregarAlCarrito, setConector, setGas, setModelo, setRango, modelo, conector, gas, rango} = useAgregarCarrito({item});
+
+  const {eliminarSeleccionConector, eliminarSeleccionGas, eliminarSeleccionRango, eliminarSeleccionModelo} = useEliminarSelecciones(setConector, setGas, setRango, setModelo)
 
   return (
     <div className='modal-eleccion'>
@@ -67,8 +58,7 @@ function EleccionGasoterapia({item,toggleModal }) {
                 </div>
               </div> 
             : null
-            }
-            
+            }            
         </div>
         { // Habilitacion de Botonera
           (item.gases_ && item.conectores && !item.modelos && item.rangos) ?

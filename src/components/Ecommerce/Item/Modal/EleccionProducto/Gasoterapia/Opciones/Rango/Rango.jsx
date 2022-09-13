@@ -2,13 +2,13 @@ import React, {useRef} from 'react';
 
 import Item from './Item';
 import {MdKeyboardArrowDown} from 'react-icons/md';
-import useSeleccionarOpcion from 'hooks/ecommerce/useSeleccionarOpcion';
+import useMostrarOpciones from 'hooks/ecommerce/useMostrarOpciones';
 
 function Rango({item, setRango}){
 
     const opcionesRef = useRef();
 
-    const {mostrarRangos, opcionesHandler, setOpcionesHandler} = useSeleccionarOpcion();
+    const {mostrarRangos, opcionesHandler, setOpcionesHandler} = useMostrarOpciones();
 
     function seleccionarElemento(e, id){
         setOpcionesHandler(!opcionesHandler)
