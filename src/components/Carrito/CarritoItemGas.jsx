@@ -32,9 +32,7 @@ function CarritoItem({item}) {
       </td>
       <td><p>{item.codigo}</p></td>
       <td><p>{item.cantidad}</p></td>
-      <td><BsTrashFill onClick={()=> removerItem(item)} /></td>
-      
-      
+      <td><BsTrashFill onClick={()=> removerItem(item)} /></td>    
     </tr>
   )
 }
