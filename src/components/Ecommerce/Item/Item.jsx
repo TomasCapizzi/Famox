@@ -6,8 +6,15 @@ function Item({item}) {
 
   const modalRef = useRef()
 
-  function toggleModal(){
-    modalRef.current.classList.toggle('off');
+  function toggleModal(e,containerModalRef, modalWinwowRef){
+    if(containerModalRef){
+      if(e.target === containerModalRef.current){
+        modalRef.current.classList.toggle('off');
+      }
+    } else{
+      modalRef.current.classList.toggle('off');
+    }
+    
   }
 
   return (
