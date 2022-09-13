@@ -2,7 +2,8 @@ import React,{useRef, useState} from 'react';
 
 import {BsPlusCircle} from 'react-icons/bs';
 import {MdKeyboardArrowDown} from 'react-icons/md';
-import useSeleccionarOpcion from 'hooks/ecommerce/useSeleccionarOpcion';
+import useMostrarOpciones from 'hooks/ecommerce/useMostrarOpciones';
+import useOpcionesGasConec from 'hooks/ecommerce/unidadSuministro/useOpcionesGasConec';
 
 function GasConector({item, conexiones, setConexiones}) {
   const opcionesRef = useRef();
@@ -10,51 +11,13 @@ function GasConector({item, conexiones, setConexiones}) {
   const gasRef = useRef();
   const cantidadRef = useRef();
 
-    
-  const {mostrarConexionGases} = useSeleccionarOpcion();
+  const {mostrarConexionGases} = useMostrarOpciones();
   const [handler, setHandler] = useState(false);
+  const {agregarConexion} = useOpcionesGasConec(conexiones, setConexiones, mostrarConexion, conectorRef, gasRef,cantidadRef )
   
   function mostrarConexion(){
     setHandler(!handler);
   }
-  function agregarConexion(){
-    if(conectorRef.current.value !== '' && gasRef.current.value !== '' && cantidadRef.current.value !== '' ){
-      const conexion = {
-        conector : conectorRef.current.value,
-        gas : gasRef.current.value,
-        cantidad : parseInt(cantidadRef.current.value)
-      }
-      verificarItemConexion(conexion);
-    }
-  }
-
-  function verificarItemConexion(conexion){
-    const duplicado = conexiones.find(item => item.gas === conexion.gas && item.conector === conexion.conector)
-    if(duplicado){
-      const modificarConexiones = conexiones.filter(
-        item => item !== duplicado
-      )
-      const {conector, gas, cantidad} = conexion
-      const nuevo = {
-        conector,
-        gas,
-        cantidad: cantidad + duplicado.cantidad
-      }
-      setConexiones([
-        ...modificarConexiones,
-        nuevo
-      ])
-    } else{
-      setConexiones([
-        ...conexiones,
-        conexion
-      ])
-      mostrarConexion()
-    }
-
-  }
-
-
   return (
     <article className='modal-gasconec'>
       <div className='encabezado'>

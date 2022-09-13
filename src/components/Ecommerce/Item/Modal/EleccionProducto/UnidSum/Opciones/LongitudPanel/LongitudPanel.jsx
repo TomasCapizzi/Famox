@@ -1,22 +1,13 @@
 import React, {useRef} from 'react'
 
+import useLongitudPanel from 'hooks/ecommerce/unidadSuministro/useLongitudPanel';
+
 function LongitudPanel({setLongitudPanel, longitudPanel, handlerInput, setHandlerInput}){
 
       // Panel de cabecera - Longitud:
-      const medidasRef = useRef();    
-
-  function longitudPanelCabecera(e){
-    if(medidasRef.current.value !== 'default'){
-      setLongitudPanel(`${e.target.value} ${medidasRef.current.value}`)
-    }      
-  }
-  function controlarUnidadMedida(){
-    if(medidasRef.current.value === 'default'){
-      setHandlerInput(true)
-    } else {
-      setHandlerInput(false)
-    }
-  }
+  const medidasRef = useRef();
+  const {longitudPanelCabecera, controlarUnidadMedida} = useLongitudPanel(medidasRef, setLongitudPanel, setHandlerInput)
+      
     return (
       <div className='longitud-panel'>
         <p>Longitud de Panel</p>
