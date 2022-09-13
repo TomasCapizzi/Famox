@@ -37,60 +37,66 @@
                 }
             }
         }
-
-        button{
-            background-color: $color1;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            color: $white;
-            width: 180px;
-            border: none;
-            margin: 50px;
-            transition: .3s ease-in-out all;
-            cursor: pointer;
-        }
-        button:hover{
-            background-color: $color2;
-            color: $color1;
-            border: 1px solid $color1;
-        }
-
-        table{
+        .carro-lleno{
             width: 100%;
+            align-items: center;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-            padding: 25px 15px;
-            thead{
+            button{
+                background-color: $color1;
+                padding: 10px;
+                border-radius: 8px;
+                font-size: 1.2rem;
+                color: $white;
+                width: 180px;
+                border: none;
+                margin: 50px;
+                transition: .3s ease-in-out all;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: $color2;
+                color: $color1;
+                border: 1px solid $color1;
+            }
+    
+            table{
                 width: 100%;
                 display: flex;
-                border-bottom: 2px solid $color1;
-                tr{
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 25px 15px;
+                thead{
                     width: 100%;
                     display: flex;
-
-
-                    th:nth-child(1){
-                        width: 40%;
-                    }
-                    th:nth-child(2){
-                        width: 20%;
-                    }
-                    th:nth-child(3){
-                        width: 15%;
-                    }
-                    th:nth-child(4){
-                        width: 15%;
+                    border-bottom: 2px solid $color1;
+                    tr{
+                        width: 100%;
+                        display: flex;
+    
+    
+                        th:nth-child(1){
+                            width: 40%;
+                        }
+                        th:nth-child(2){
+                            width: 20%;
+                        }
+                        th:nth-child(3){
+                            width: 15%;
+                        }
+                        th:nth-child(4){
+                            width: 15%;
+                        }
                     }
                 }
-            }
-            tbody{
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
+                tbody{
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                }
             }
         }
+
 
     }
 }
@@ -125,64 +131,66 @@
                     }
                 }
             }
-    
-            button{
-                background-color: $color1;
-                padding: 5px;
-                border-radius: 5px;
-                font-size: 0.8rem;
-                color: $white;
-                width: 120px;
-                border: none;
-                margin: 50px;
-                transition: .3s ease-in-out all;
-                cursor: pointer;
-            }
-            button:hover{
-                background-color: $color2;
-                color: $color1;
-                border: 1px solid $color1;
-            }
-    
-            table{
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                padding: 0px;
-                thead{
+
+            .carro-lleno{
+                button{
+                    background-color: $color1;
+                    padding: 5px;
+                    border-radius: 5px;
+                    font-size: 0.8rem;
+                    color: $white;
+                    width: 120px;
+                    border: none;
+                    margin: 50px;
+                    transition: .3s ease-in-out all;
+                    cursor: pointer;
+                }
+                button:hover{
+                    background-color: $color2;
+                    color: $color1;
+                    border: 1px solid $color1;
+                }
+        
+                table{
                     width: 100%;
                     display: flex;
-                    border-bottom: 2px solid $color1;
-                    font-size: 0.8rem;
-                    tr{
+                    flex-direction: column;
+                    justify-content: space-around;
+                    padding: 0px;
+                    thead{
                         width: 100%;
                         display: flex;
-    
-    
-                        th:nth-child(1){
-                            width: 40%;
-                        }
-                        th:nth-child(2){
-                            width: 20%;
-                        }
-                        th:nth-child(3){
-                            width: 18%;
-                        }
-                        th:nth-child(4){
-                            width: 15%;
-                        }
-                        th:nth-child(5){
-                            display: none;
+                        border-bottom: 2px solid $color1;
+                        font-size: 0.8rem;
+                        tr{
+                            width: 100%;
+                            display: flex;        
+                            th:nth-child(1){
+                                width: 35%;
+                            }
+                            th:nth-child(2){
+                                width: 15%;
+                            }
+                            th:nth-child(3){
+                                width: 18%;
+                            }
+                            th:nth-child(4){
+                                width: 10%;
+                            }
+                            th:nth-child(5){
+                                display: none;
+                            }
                         }
                     }
-                }
-                tbody{
-                    width: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
+                    tbody{
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
                 }
             }
+    
+
     
         }
     }   
@@ -215,64 +223,66 @@
                     }
                 }
             }
-    
-            button{
-                background-color: $color1;
-                padding: 6px;
-                border-radius: 6px;
-                font-size: 0.9rem;
-                color: $white;
-                width: 130px;
-                border: none;
-                margin: 30px;
-                transition: .3s ease-in-out all;
-                cursor: pointer;
-            }
-            button:hover{
-                background-color: $color2;
-                color: $color1;
-                border: 1px solid $color1;
-            }
-    
-            table{
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                padding: 0px;
-                thead{
+
+            .carro-lleno{
+                button{
+                    background-color: $color1;
+                    padding: 6px;
+                    border-radius: 6px;
+                    font-size: 0.9rem;
+                    color: $white;
+                    width: 130px;
+                    border: none;
+                    margin: 30px;
+                    transition: .3s ease-in-out all;
+                    cursor: pointer;
+                }
+                button:hover{
+                    background-color: $color2;
+                    color: $color1;
+                    border: 1px solid $color1;
+                }
+        
+                table{
                     width: 100%;
                     display: flex;
-                    border-bottom: 2px solid $color1;
-                    font-size: 0.85rem;
-                    tr{
+                    flex-direction: column;
+                    justify-content: space-around;
+                    padding: 0px;
+                    thead{
                         width: 100%;
                         display: flex;
-    
-    
-                        th:nth-child(1){
-                            width: 40%;
-                        }
-                        th:nth-child(2){
-                            width: 20%;
-                        }
-                        th:nth-child(3){
-                            width: 18%;
-                        }
-                        th:nth-child(4){
-                            width: 15%;
-                        }
-                        th:nth-child(5){
-                            display: none;
+                        border-bottom: 2px solid $color1;
+                        font-size: 0.85rem;
+                        tr{
+                            width: 100%;
+                            display: flex;        
+                            th:nth-child(1){
+                                width: 35%;
+                            }
+                            th:nth-child(2){
+                                width: 15%;
+                            }
+                            th:nth-child(3){
+                                width: 18%;
+                            }
+                            th:nth-child(4){
+                                width: 10%;
+                            }
+                            th:nth-child(5){
+                                display: none;
+                            }
                         }
                     }
-                }
-                tbody{
-                    width: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
+                    tbody{
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
                 }
             }
+    
+            
     
         }
     }  
@@ -283,22 +293,25 @@
         width: 90%;
         .carrito-container{
             width: 100%;
-            button{
-                background-color: $color1;
-                padding: 6px 8px;
-                border-radius: 6px;
-                font-size: 0.9rem;
-                color: $white;
-                width: 130px;
-                border: none;
-                margin: 30px;
-                transition: .3s ease-in-out all;
-                cursor: pointer;
-            }
-            table{
-                padding: 8px 0;
-                thead{
+
+            .carro-lleno{
+                button{
+                    background-color: $color1;
+                    padding: 6px 8px;
+                    border-radius: 6px;
                     font-size: 0.9rem;
+                    color: $white;
+                    width: 130px;
+                    border: none;
+                    margin: 30px;
+                    transition: .3s ease-in-out all;
+                    cursor: pointer;
+                }
+                table{
+                    padding: 8px 0;
+                    thead{
+                        font-size: 0.9rem;
+                    }
                 }
             }
         }
@@ -310,22 +323,24 @@
         width: 80%;
         .carrito-container{
             width: 90%;
-            button{
-                background-color: $color1;
-                padding: 6px 8px;
-                border-radius: 6px;
-                font-size: 0.9rem;
-                color: $white;
-                width: 130px;
-                border: none;
-                margin: 30px;
-                transition: .3s ease-in-out all;
-                cursor: pointer;
-            }
-            table{
-                padding: 8px 0;
-                thead{
+            .carro-lleno{
+                button{
+                    background-color: $color1;
+                    padding: 6px 8px;
+                    border-radius: 6px;
                     font-size: 0.9rem;
+                    color: $white;
+                    width: 130px;
+                    border: none;
+                    margin: 30px;
+                    transition: .3s ease-in-out all;
+                    cursor: pointer;
+                }
+                table{
+                    padding: 8px 0;
+                    thead{
+                        font-size: 0.9rem;
+                    }
                 }
             }
         }
@@ -337,22 +352,24 @@
         width: 75%;
         .carrito-container{
             width: 85%;
-            button{
-                background-color: $color1;
-                padding:8px;
-                border-radius: 6px;
-                font-size: 1rem;
-                color: $white;
-                width: 150px;
-                border: none;
-                margin: 30px;
-                transition: .3s ease-in-out all;
-                cursor: pointer;
-            }
-            table{
-                padding: 8px 0;
-                thead{
-                    font-size: 0.9rem;
+            .carro-lleno{
+                button{
+                    background-color: $color1;
+                    padding:8px;
+                    border-radius: 6px;
+                    font-size: 1rem;
+                    color: $white;
+                    width: 150px;
+                    border: none;
+                    margin: 30px;
+                    transition: .3s ease-in-out all;
+                    cursor: pointer;
+                }
+                table{
+                    padding: 8px 0;
+                    thead{
+                        font-size: 0.9rem;
+                    }
                 }
             }
         }
