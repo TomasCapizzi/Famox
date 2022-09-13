@@ -1,0 +1,390 @@
+@import 'styles/theme/theme.scss';
+
+
+.modal-eleccion-acc{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    width: 60%;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    .modelo-acc{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        width: 90%;
+        margin-bottom: 15px;
+        border: 2px solid $color1;
+        align-items: center;
+        font-weight: 600;
+        border-radius: 14px;
+
+        .modelo-despcrip{
+            display: flex;
+            align-items: center;
+            width: 50%;
+            img{
+                width: 100px;
+                object-fit: scale-down;
+            }
+            p{
+                font-size: 14px;
+                width: 120px;
+            }
+        }
+
+        .modelo-eleccion{
+            display: flex;
+            align-items: center;
+            width: 50%;
+            justify-content: space-around;
+            select{
+                width: 90px;
+                height: 30px;
+                border: 2px solid $color1;
+                border-radius: 10px;
+                font-size: 12px;
+                text-align: center;
+                color: $color1;
+                font-weight: 600;
+            }
+            div{
+                display: flex;
+                width: 100px;
+                p{
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+                input{
+                    width: 30px;
+                    height: 30px;
+                    border: 2px solid $color1;
+                    border-radius: 10px;
+                }
+            }
+            button{
+                border: none;
+                background-color: transparent;
+                font-size: 22px;
+                color: $color1;
+                cursor: pointer;
+                transition: .3s ease-in all;
+            }
+        }
+    }
+    .acc-btn-comprar{
+        background-color: $color1;
+        color: $white;
+        border: none;
+        padding: 8px;
+        border-radius: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: .2s ease-in all;
+        margin-bottom: 15px;
+    }
+    .acc-btn-comprar:hover{
+        padding:8px 5px;
+    }
+    .notificacion{
+        display: none;
+    }
+    .on{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        background-color: $color2;
+        padding: 0 15px;
+        right: 10px;
+        border-radius: 10px;
+        animation: noti 1s ease-in-out;
+        font-size: 12px;
+        color: $black;
+    }
+
+}
+
+@keyframes noti {
+    0%{
+        opacity: 0;
+        bottom: 60px;
+    }
+    100%{
+        opacity: 1;
+        bottom: 0px;
+    }
+}
+
+@media only screen and (max-width: 568px){
+    .modal-eleccion-acc{
+        width: 95%;
+        .modelo-acc{
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            width: 90%;
+            margin-bottom: 15px;
+            align-items: center;
+            font-weight: 600;
+            border-radius: 10px;    
+            .modelo-despcrip{
+                width: 100%;
+                justify-content: space-around;
+                img{
+                    width: 70px;
+                    margin-bottom: 5px;
+                }
+                p{
+                    font-size: 12px;
+                    width: auto;
+                }
+            }
+            .modelo-eleccion{
+                width: 100%;
+                justify-content: space-around;
+                select{
+                    width: 70px;
+                    height: 25px;
+                    border: 1px solid $color1;
+                    border-radius: 5px;
+                    font-size: 11px;
+                    font-weight: 500;
+                }
+                div{
+                    display: flex;
+                    align-items: center;
+                    width: 100px;
+                    justify-content: space-around;
+                    p{
+                        font-size: 11px;
+                        font-weight: 400;
+                    }
+                    input{
+                        width: 30px;
+                        height: 20px;
+                        border: 1px solid $color1;
+                        border-radius: 5px;
+                    }
+                }
+                button{
+                    border: none;
+                    background-color: transparent;
+                    font-size: 22px;
+                    color: $color1;
+                    cursor: pointer;
+                    transition: .3s ease-in all;
+                }
+            }
+        }
+        .acc-btn-comprar{
+            background-color: $color1;
+            color: $white;
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: .2s ease-in all;
+            margin-bottom: 15px;
+        }
+        .acc-btn-comprar:hover{
+            padding:8px 5px;
+        }
+        .notificacion{
+            display: none;
+        }
+        .on{
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            background-color: $color2;
+            padding: 0 15px;
+            right: 10px;
+            border-radius: 10px;
+            animation: noti 1s ease-in-out;
+            font-size: 12px;
+            color: $black;
+        }
+    
+    }
+
+}
+@media only screen and (min-width: 569px)and (max-width: 768px){
+    .modal-eleccion-acc{
+        width: 95%;
+        .modelo-acc{
+            display: flex;
+            flex-wrap: nowrap;
+            width: 90%;
+            margin-bottom: 15px;
+            align-items: center;
+            font-weight: 600;
+            border-radius: 10px;    
+            .modelo-despcrip{
+                width: 50%;
+                justify-content: space-around;
+                img{
+                    width: 70px;
+                    margin-bottom: 5px;
+                }
+                p{
+                    font-size: 12px;
+                    width: auto;
+                }
+            }
+            .modelo-eleccion{
+                width: 50%;
+                justify-content: space-around;
+                select{
+                    width: 70px;
+                    height: 25px;
+                    border: 1px solid $color1;
+                    border-radius: 5px;
+                    font-size: 11px;
+                    font-weight: 500;
+                }
+                div{
+                    display: flex;
+                    align-items: center;
+                    width: 100px;
+                    justify-content: space-around;
+                    p{
+                        font-size: 11px;
+                        font-weight: 400;
+                    }
+                    input{
+                        width: 30px;
+                        height: 20px;
+                        border: 1px solid $color1;
+                        border-radius: 5px;
+                    }
+                }
+                button{
+                    border: none;
+                    background-color: transparent;
+                    font-size: 22px;
+                    color: $color1;
+                    cursor: pointer;
+                    transition: .3s ease-in all;
+                }
+            }
+        }
+        .acc-btn-comprar{
+            background-color: $color1;
+            color: $white;
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: .2s ease-in all;
+            margin-bottom: 15px;
+        }
+        .acc-btn-comprar:hover{
+            padding:8px 5px;
+        }
+        .notificacion{
+            display: none;
+        }
+        .on{
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            background-color: $color2;
+            padding: 0 15px;
+            right: 10px;
+            border-radius: 10px;
+            animation: noti 1s ease-in-out;
+            font-size: 12px;
+            color: $black;
+        }
+    
+    }
+
+}
+
+@media only screen and (min-width: 769px)and (max-width: 1024px){
+    .modal-eleccion-acc{
+        width: 95%;
+        .modelo-acc{
+            width: 90%;   
+            .modelo-despcrip{
+                width: 50%;
+                justify-content: space-around;
+                img{
+                    width: 80px;
+                }
+                p{
+                    font-size: 13px;
+                }
+            }
+            .modelo-eleccion{
+                width: 50%;
+                justify-content: space-around;
+                select{
+                    width: 80px;
+                    height: 25px;
+                    border: 1px solid $color1;
+                    border-radius: 5px;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+                div{
+                    display: flex;
+                    align-items: center;
+                    width: 100px;
+                    justify-content: space-around;
+                    p{
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                    input{
+                        width: 35px;
+                        height: 20px;
+                        border: 1px solid $color1;
+                        border-radius: 5px;
+                    }
+                }
+                button{
+                    border: none;
+                    background-color: transparent;
+                    font-size: 22px;
+                    color: $color1;
+                    cursor: pointer;
+                    transition: .3s ease-in all;
+                }
+            }
+        }
+        .acc-btn-comprar{
+            background-color: $color1;
+            color: $white;
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: .2s ease-in all;
+            margin-bottom: 15px;
+        }
+        .acc-btn-comprar:hover{
+            padding:8px 5px;
+        }
+        .notificacion{
+            display: none;
+        }
+        .on{
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            background-color: $color2;
+            padding: 0 15px;
+            right: 10px;
+            border-radius: 10px;
+            animation: noti 1s ease-in-out;
+            font-size: 12px;
+            color: $black;
+        }
+    
+    }
+}
