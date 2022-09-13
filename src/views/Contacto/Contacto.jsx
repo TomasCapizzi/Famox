@@ -4,12 +4,16 @@ import Form from 'components/Contacto/Form/Form';
 import Info from 'components/Contacto/Info/Info';
 import Notificacion from 'components/Contacto/Notificacion';
 import RedesSociales from 'components/RedesSociales/RedesSociales';
+import useEnviarConsulta from 'hooks/contacto/useEnviarConsulta';
+import useNotificacion from 'hooks/contacto/useNotificacion';
 import useResetValores from 'hooks/contacto/useResetValores';
 
 function Contacto() {
 
   const refNoti = useRef();
-  const {resetValores} = useResetValores()
+  const {resetValores} = useResetValores();
+  const {mostrarNotificacion} = useNotificacion();
+  const {generarConsulta} = useEnviarConsulta();
 
   function enviarConsulta(e){
     e.preventDefault();
@@ -21,7 +25,7 @@ function Contacto() {
       asunto: e.target.asunto.value,
       empresa: e.target.empresa.value,
       mensaje: e.target.mensaje.value
-    }
+    } // Crear hook para armar consulta en base a valores del form
     console.log(consulta);
     const request = {
         method: 'POST',
@@ -30,17 +34,9 @@ function Contacto() {
         },
         body: JSON.stringify(consulta),
     }
-    fetch('https://famox-api.herokuapp.com/formulario/contacto', request);
-    mostrarNotificacion();
+    fetch('https://famox-api.herokuapp.com/formulario/contacto', request); // Probar hook enviar consulta
+    mostrarNotificacion(refNoti);
     resetValores(e);
-}
-
-
-function mostrarNotificacion(){
-  refNoti.current.classList.toggle('on');
-  setTimeout(() => {
-    refNoti.current.classList.toggle('on');
-}, 4000);
 }
 
   return (
