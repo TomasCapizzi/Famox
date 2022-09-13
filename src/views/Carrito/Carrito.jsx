@@ -1,6 +1,7 @@
 import React, {useContext, useRef, useState} from 'react';
 
 import {CarritoContext} from 'store/carritoContext';
+import CarritoLleno from 'components/Carrito/CarritoLleno';
 import CarritoVacio from 'components/Carrito/CarritoVacio';
 import FormularioCotizacion from 'components/Carrito/FormularioCotizacion';
 import Tabla from 'components/Carrito/Tabla';
@@ -12,6 +13,8 @@ function Carrito() {
     const [formHandler, setFormHandler] = useState(false)
     const formRef = useRef();
     const navigate = useNavigate();// Funcion nueva del react router para redireccionar
+
+    console.log(carro);
 
     function habilitarForm(){
         setFormHandler(!formHandler);
@@ -45,11 +48,7 @@ function Carrito() {
         <div className='carrito-container'>
             {
                 carro.length === 0 ? <CarritoVacio/>
-                : 
-                <>
-                    <Tabla carro={carro}/>
-                    {formHandler ? null : <button onClick={habilitarForm}>Pedir Cotización</button> }                    
-                </>                
+                : <CarritoLleno carro={carro} formHandler={formHandler} habilitarForm={habilitarForm} />               
             }
             {carro.length ? <FormularioCotizacion pedirCotizacion={pedirCotizacion} habilitarForm={habilitarForm}  formRef={formRef} />: null}
         </div>  
