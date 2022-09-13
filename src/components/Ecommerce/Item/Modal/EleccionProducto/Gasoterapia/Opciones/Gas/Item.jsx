@@ -3,9 +3,8 @@ import React,{useRef} from 'react'
 function GasItem({item, seleccionarElemento}) {
 
     const divRef = useRef();
-
     function seleccionarItem(e){
-        seleccionarElemento(e, item[0].nombre)
+      seleccionarElemento(e, item[0].nombre)
     }
   return (
   

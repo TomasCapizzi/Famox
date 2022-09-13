@@ -28,7 +28,7 @@ function FormularioCotizacion({pedirCotizacion, habilitarForm, formRef}) {
           <input type="submit" value='Pedir cotización' className='btn-submit' />
         </div>
 
-        <button onClick={()=> habilitarForm()}>Seguir comprando</button>
+        <button className='btn-seguirComprando' onClick={()=> habilitarForm()}>Seguir comprando</button>
     </form>
   )
 }
