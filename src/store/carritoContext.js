@@ -8,7 +8,6 @@ export function CarritoContextProvider({children}){
 
     const obtenerDataLocalStorage = () => {
         const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'))
-        console.log(carrito);
         if(carrito){
             if(carrito.length){
                 setCarro(carrito)
@@ -127,6 +126,43 @@ export function CarritoContextProvider({children}){
 
     }
 
+    const agregarAccesorio = ({producto})=>{
+        const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
+        console.log(producto);
+        console.log(carrito);
+        if(carrito){
+            const coincidencia = carrito.find(
+                item => (item.codigo === producto.codigo)
+            );
+            if(coincidencia){     
+                console.log('Coinciden este elemento con otro igual');                    
+                const nuevoCarrito = carrito.filter(
+                        item=> item !== coincidencia
+                    )
+                const {nombre, img, _id, gas, codigo, accesorio} = producto
+                let nuevoProducto = {
+                    nombre,
+                    fecha: new Date(),
+                    img,
+                    codigo,
+                    accesorio,
+                    _id,
+                    gas,
+                    cantidad: producto.cantidad
+                }
+                localStorage.setItem('FamoxCarrito', JSON.stringify([...nuevoCarrito, nuevoProducto]));
+                setCarro([...nuevoCarrito, nuevoProducto])
+            } else{
+                localStorage.setItem('FamoxCarrito', JSON.stringify([...carrito, producto]));
+                setCarro([...carrito, producto])
+            }
+
+        } else{
+            localStorage.setItem('FamoxCarrito', JSON.stringify([producto]));
+            setCarro([producto])
+        }
+    }
+
     const removerItem = (producto)=>{
         localStorage.setItem('FamoxCarrito', JSON.stringify(carro.filter(
             item => item._id !== producto._id
@@ -144,7 +180,7 @@ export function CarritoContextProvider({children}){
     },0);
 
     return(
-        <CarritoContext.Provider value={{carro, agregarItemGasoterapia,agregarItemUnidSum, removerItem, borrarCarrito, costoTotal, obtenerDataLocalStorage}}>
+        <CarritoContext.Provider value={{carro, agregarItemGasoterapia,agregarItemUnidSum, removerItem, borrarCarrito, costoTotal, obtenerDataLocalStorage, agregarAccesorio}}>
             {children}
         </CarritoContext.Provider>
     )
