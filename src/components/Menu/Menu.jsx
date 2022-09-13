@@ -37,8 +37,7 @@ function Menu() {
           }
           </li>
           </Link>
-          <CgMenuGridR className='menu-hamb' onClick={useMenuHamb}/>
-          
+          <CgMenuGridR className='menu-hamb' onClick={useMenuHamb}/>          
       </div>
       <LinksResponsive menuUl={menuUl} useMenuHamb={useMenuHamb} />
       <Links carro={carro} />
