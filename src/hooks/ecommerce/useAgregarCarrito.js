@@ -43,9 +43,8 @@ const useAgregarCarrito = ({item}) => {
         producto => producto.codigo === codigo
       )       
       if(coincidencia){
-        console.log('MISMO ID PERO DIFERENTE PROD', coincidencia)
+        console.log('MISMO PROD', coincidencia)
         const nuevoID = (Math.random().toString(36)).split('.')[1];
-        console.log(nuevoID);
         const producto = {
           nombre,
           fecha: new Date(),
@@ -155,7 +154,37 @@ const useAgregarCarrito = ({item}) => {
       agregarItemUnidSum({producto})
     }
     }
-
+    function eliminarItem(item){
+      const itemMediaTension = valoresMediaTension.find(
+        valor=> valor === item
+      );
+      const itemBajaTension = valoresBajaTension.find(
+        valor=> valor === item
+      );
+      const itemIluminacion = valoresIluminacion.find(
+        valor=> valor === item
+      );
+      const itemConexion = conexiones.find(
+        valor => valor === item
+      );
+      if(itemMediaTension){
+        setValoresMediaTension(valoresMediaTension.filter(
+          valor => valor !== item
+        ))
+      } else if(itemBajaTension){
+        setValoresBajaTension(valoresBajaTension.filter(
+          valor => valor !== item
+        ))
+      } else if(itemIluminacion){
+        setValoresIluminacion(valoresIluminacion.filter(
+          valor => valor !== item
+        ))
+      } else if(itemConexion){
+        setConexiones(conexiones.filter(
+          valor => valor !== item
+        ))
+      }
+    }
 
     return {
         agregarAlCarrito,
@@ -178,7 +207,8 @@ const useAgregarCarrito = ({item}) => {
         setValoresBajaTension,
         setValoresIluminacion,
         setConexiones,
-        setLongitudPanel
+        setLongitudPanel,
+        eliminarItem
     }
 }
 
