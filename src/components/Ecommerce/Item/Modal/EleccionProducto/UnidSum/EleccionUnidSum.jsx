@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 
-import BajaTension from './Opciones/BajaTension';
+import BajaTension from './Opciones/BajaTension/BajaTension';
 import Botonera from '../Botonera'
 import ContainerSelecciones from './Selecciones/ContainerSelecciones';
-import GasConector from './Opciones/GasConector';
-import Iluminacion from './Opciones/Iluminacion';
-import LongitudPanel from './LongitudPanel';
-import MediaTension from './Opciones/MediaTension';
+import GasConector from './Opciones/ConexionGases/GasConector';
+import Iluminacion from './Opciones/Iluminacion/Iluminacion';
+import LongitudPanel from './Opciones/LongitudPanel/LongitudPanel';
+import MediaTension from './Opciones/MediaTension/MediaTension';
 import useAgregarCarrito from 'hooks/ecommerce/useAgregarCarrito';
 
 function EleccionUnidSum({item,toggleModal }) {
@@ -22,42 +22,13 @@ function EleccionUnidSum({item,toggleModal }) {
       setValoresBajaTension,
       setValoresIluminacion,
       setConexiones,
-      setLongitudPanel
+      setLongitudPanel,
+      eliminarItem
       } = useAgregarCarrito({item})   
 
     const [handlerInput, setHandlerInput] = useState(true)
     
-    function eliminarItem(item){
-      const itemMediaTension = valoresMediaTension.find(
-        valor=> valor === item
-      );
-      const itemBajaTension = valoresBajaTension.find(
-        valor=> valor === item
-      );
-      const itemIluminacion = valoresIluminacion.find(
-        valor=> valor === item
-      );
-      const itemConexion = conexiones.find(
-        valor => valor === item
-      );
-      if(itemMediaTension){
-        setValoresMediaTension(valoresMediaTension.filter(
-          valor => valor !== item
-        ))
-      } else if(itemBajaTension){
-        setValoresBajaTension(valoresBajaTension.filter(
-          valor => valor !== item
-        ))
-      } else if(itemIluminacion){
-        setValoresIluminacion(valoresIluminacion.filter(
-          valor => valor !== item
-        ))
-      } else if(itemConexion){
-        setConexiones(conexiones.filter(
-          valor => valor !== item
-        ))
-      }
-    }
+    
   return (
     <div className='modal-eleccion'>
         <div className='container' >
@@ -106,8 +77,5 @@ function EleccionUnidSum({item,toggleModal }) {
     </div>
   )
 }
-
-
-
 
 export default EleccionUnidSum;
