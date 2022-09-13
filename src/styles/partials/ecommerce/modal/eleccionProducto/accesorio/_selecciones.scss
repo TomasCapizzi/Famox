@@ -1,0 +1,53 @@
+@import 'styles/theme/theme.scss';
+
+
+.selecciones-acc{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    margin-bottom: 20px;
+    .seleccion-item{
+        border: 1px solid $color2;
+        width: 90%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 14px;
+        p{
+            padding: 0 10px;
+        }
+    
+        button{
+            background-color: transparent;
+            border: none;
+            color: $color1;
+            font-size: 1.4rem;
+            margin: 5px;
+        }
+        svg:hover{
+            cursor: pointer;
+            color: $black;
+        }
+        img{
+            width: 80px;
+        }
+
+        .img-gas{
+            width: 35px;
+        }
+        .acc-codigo{
+            background-color: $color1;
+            padding: 5px 10px;
+            color: $white;
+            border-radius: 8px;
+            margin-left: 10px;
+        }
+    }
+}
+
+
+.seleccionado{
+   
+}
