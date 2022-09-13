@@ -3,10 +3,8 @@ import {useState} from "react";
 const useCodigo = (nombre, gas, conector, rango, modelo)=> {
     const [codigo, setCodigo] = useState();
 
-    function derivarFuncion(){
-       // const {nombre, gas, conector, rango, modelo} = producto
-
-        
+    function derivarFuncion(gasAcc){
+     
         if(nombre === 'Caudalímetro'){
             return buscarCodigoCaudalimetro(gas, conector, rango)            
         } else if( nombre === 'Aspirador Venturi' ){
@@ -29,6 +27,25 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
             return buscarCodigoDeModelo(modelo)
         } else if(nombre === 'Máscara Nasal'){
             return buscarCodigoMascaraNasal(modelo.nombre)
+        } else if(nombre.includes('U. Terminal')){
+            return buscarCodigoUnidadTerminal(nombre,gasAcc)
+        } else if(nombre.includes('Conector recto roscado')){
+            return buscarCodigoConectorEntrada(nombre,gasAcc)
+        }
+        else if(nombre.includes('manguera')){
+            return buscarCodigoConectorManguera(nombre,gasAcc)
+        }
+        else if(nombre.includes('Toma doble')){
+            return buscarCodigoTomaDuplas(nombre,gasAcc)
+        }
+        else if(nombre.includes('bloque base')){
+            return buscarCodigoAdaptacion(nombre,gasAcc)
+        }
+        else if(nombre === 'Positiva' || nombre === 'Negativa'){
+            return buscarCodigoAlarmaGases(nombre)
+        }
+        else if(nombre === '16 Puestos' || nombre === '24 Puestos'){
+            return buscarCodigoCentralRep(nombre)
         }
     }
 
@@ -599,7 +616,7 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
         }
 
     }
-
+    // MASCARA NASAL
     const buscarCodigoMascaraNasal = (tamano) => {
         if(tamano === 'Tamaño M'){
             return 'PMA003'
@@ -608,11 +625,586 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
             return 'PMA002'
         }
     }
-
-
+    //MODELO
     const buscarCodigoDeModelo = (modelo)=> {
         return modelo.nombre;
     }
+
+    //ACCESORIOS
+    // Unidades Terminales
+    const buscarCodigoUnidadTerminal = (nombre, gas)=>{
+        if(nombre === 'U. Terminal M2 DISS'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'PUT064'
+            } else if(gas.toUpperCase() === 'AIRE'){
+                return 'PUT065'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'PUT066'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'PUT067'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'PUT068'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'PUT069'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'PUT070'
+            }
+            else if(gas.toUpperCase() === 'EVAC'){
+                return 'PUT071'
+            }
+        }
+        if(nombre === 'U. Terminal M2 AFNOR'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'PUT072'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'PUT073'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'PUT074'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'PUT075'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'PUT076'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'PUT077'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'PUT078'
+            }
+        }
+        if(nombre === 'U. Terminal M2 SS/AGA'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'PUT017'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'PUT018'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'PUT019'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'PUT020'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'PUT021'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'PUT022'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'PUT023'
+            }
+        }
+        if(nombre === 'U. Terminal M1 DISS'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'PUT001'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'PUT002'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'PUT003'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'PUT004'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'PUT005'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'PUT006'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'PUT008'
+            }
+            else if(gas.toUpperCase() === 'EVAC'){
+                return 'PUT009'
+            }
+        }
+
+
+    }
+    // Conectores de Entrada
+    const buscarCodigoConectorEntrada = (nombre, gas)=>{
+        if(nombre === 'Conector recto roscado DISS'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO001'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO002'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SCO003'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SCO004'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'SCO005'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SCO006'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'SCO007'
+            }
+            else if(gas.toUpperCase() === 'EVAC'){
+                return 'SCO008'
+            }
+        }
+        if(nombre === 'Conector recto roscado AFNOR'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO010'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO011'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SCO012'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SCO013'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'SCO014'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SCO015'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'SCO016'
+            }
+        }
+        if(nombre === 'Conector recto roscado SS/AGA'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO017'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO018'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SCO019'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SCO020'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'SCO021'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SCO022'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'SCO023'
+            }
+        }
+        if(nombre === 'Conector recto roscado OHMEDA'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO028'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO029'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SCO030'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SCO031'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SCO032'
+            }
+        }
+        if(nombre === 'Conector recto roscado ON'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO024'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO025'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SCO026'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SCO027'
+            }
+        }
+        if(nombre === 'Conector recto roscado IRAM'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO040'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO041'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SCO042'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'SCO043'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SCO043'
+            }
+        }
+        if(nombre === 'Conector recto roscado YUGO'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO044'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO045'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SCO046'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SCO047'
+            }
+        }
+    }
+    const buscarCodigoConectorManguera = (nombre, gas)=>{
+        if(nombre === 'Conector recto para manguera DISS Plástico'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO123'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO124'
+            }
+        }
+        if(nombre === 'Conector recto para manguera DISS Bronce'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO048'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO049'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SCO050'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SCO051'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'SCO052'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SCO053'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'SCO054'
+            }
+            else if(gas.toUpperCase() === 'EVAC'){
+                return 'SCO055'
+            }
+        }
+        if(nombre === 'Conector recto para manguera DISS'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO126'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO127'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SCO128'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SCO129'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'SCO130'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SCO131'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'SCO132'
+            }
+            else if(gas.toUpperCase() === 'EVAC'){
+                return 'SCO133'
+            }
+        }
+        if(nombre === 'Conector 90° para manguera DISS'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO057'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO058'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SCO059'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SCO060'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'SCO061'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SCO062'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'SCO063'
+            }
+            else if(gas.toUpperCase() === 'EVAC'){
+                return 'SCO064'
+            }
+        }
+        if(nombre === 'Conector recto para manguera AFNOR'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO135'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO136'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SCO137'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SCO138'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'SCO139'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SCO140'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'SCO141'
+            }
+        }
+        if(nombre === 'Conector 90° para manguera AFNOR'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SCO066'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SCO067'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SCO068'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SCO069'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'SCO070'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SCO071'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'SCO072'
+            }
+        }
+    }
+    const buscarCodigoTomaDuplas = (nombre, gas)=>{
+        if(nombre === 'Toma doble: Entrada DISS Salida DISS'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'PUT048'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'PUT049'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'PUT050'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'PUT051'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'PUT052'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'PUT053'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'PUT054'
+            }
+        }
+        if(nombre === 'Toma doble: Entrada DISS Salida AFNOR'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'PUT088'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'PUT089'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'PUT090'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'PUT091'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'PUT092'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'PUT093'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'PUT094'
+            }
+        }
+        if(nombre === 'Toma doble: Entrada AFNOR Salida AFNOR'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'PUT057'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'PUT058'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'PUT059'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'PUT060'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'PUT061'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'PUT062'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'PUT063'
+            }
+        }
+        if(nombre === 'Toma doble: Entrada AFNOR Salida DISS'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'PUT079'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'PUT080'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'PUT081'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'PUT082'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'PUT083'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'PUT084'
+            }
+            else if(gas.toUpperCase() === 'IAIRE'){
+                return 'PUT085'
+            }
+        }
+        if(nombre === 'Toma doble: Entrada O.N. Salida DISS'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'PUT130'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'PUT131'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'PUT132'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'PUT133'
+            }
+        }
+        if(nombre === 'Toma doble: Entrada SS/AGA Salida DISS'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'PUT134'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'PUT135'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'PUT136'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'PUT137'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'PUT138'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'PUT139'
+            }
+        }
+    }
+    const buscarCodigoAdaptacion = (nombre, gas)=>{
+        if(nombre === 'Conexión DISS M1 a bloque base AFNOR M1'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SUT096'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SUT097'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SUT098'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SUT099'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'SUT100'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SUT101'
+            }
+        }
+        if(nombre === 'Conexión DISS M1 a bloque base O.N.'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SUT114'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SUT115'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SUT116'
+            }
+        }
+        if(nombre === 'Conexión DISS M1 a bloque base AGA'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'SUT120'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'SUT121'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'SUT122'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'SUT123'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'SUT124'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'SUT125'
+            }
+            else if(gas.toUpperCase() === 'EVAC'){
+                return 'SUT126'
+            }
+        }
+    }
+    const buscarCodigoAlarmaGases = (nombre)=>{
+        if(nombre === 'Positiva'){
+            return 'PAG001'
+        } else if (nombre === 'Negativa'){
+            return 'PAG002'
+        }
+    }
+
+    const buscarCodigoCentralRep = (nombre)=>{
+        if(nombre === '16 Puestos'){
+            return 'PRL001'
+        } else if (nombre === '24 Puestos'){
+            return 'PRL004'
+        }
+    }
+
+
 
     return {
         codigo,
