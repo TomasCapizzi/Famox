@@ -1,6 +1,5 @@
 import {RiShoppingCart2Line, RiShoppingCartFill} from 'react-icons/ri';
 
-import {FaUser} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
 import MenuCategorias from './MenuCategorias';
 import React from 'react';
@@ -21,6 +20,9 @@ function Links({carro}) {
         <MenuCategorias/>
         <Link  to='/certificaciones'>
         <li>Certificaciones</li>            
+        </Link>
+        <Link  to='/obras'>
+        <li>Obras</li>
         </Link>
         <Link  to='/contacto'>
         <li>Contacto</li>
