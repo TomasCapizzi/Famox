@@ -65,6 +65,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 100;
             a{
                 display: flex;
                 align-items: center;
@@ -106,7 +107,7 @@
     }
 }
 
-@media only screen and (max-width: 640px){
+@media only screen and (max-width: 760px){
     .menu{
         display: flex;
         flex-wrap: wrap;
@@ -241,7 +242,7 @@
     }
 }
 
-@media only screen and(min-width: 640px) and (max-width: 768px){
+@media only screen and(min-width: 761px) and (max-width: 840px){
     
 .menu{
     display: flex;
