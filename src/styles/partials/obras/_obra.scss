@@ -1,0 +1,97 @@
+@import 'styles/theme/theme.scss';
+.obra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    border-bottom: 2px solid $color1;
+    img{
+        width: 100%;
+    }
+    div{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        h3{
+            width: 80%;
+        }
+        p{
+            width: 20%;
+            font-size: 14px;
+            background-color: $color1;
+            padding: 5px;
+            color: $white;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            font-weight: 700;
+        }
+    }
+    h5{
+        font-size: 18px;
+        margin-bottom: 0;
+        width: 100%;
+    }
+    ul{
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 0;
+    }
+    li{
+        margin: 0;
+        list-style: none;
+    }
+}
+
+@media only screen and (max-width: 568px){
+    .obra{
+        width: 100%;
+        div{
+            display: flex;
+            width: 100%;
+            h3{
+                width: 80%;
+                font-size: 16px;
+            }
+            p{
+                width: 20%;
+                font-size: 13px;
+            }
+        }
+        h5{
+            font-size: 14px;
+        }
+        li{
+            font-size: 13px;
+        }
+    }
+}
+@media only screen and(min-width: 568px) and (max-width: 768px){
+    .obra{
+        width: 90%;
+        div{
+            width: 100%;
+            h3{
+                width: 80%;
+                font-size: 18px;
+            }
+            p{
+                width: 20%;
+                font-size: 14px;
+            }
+        }
+        h5{
+            font-size: 16px;
+        }
+        li{
+            font-size: 15px;
+        }
+    }
+}
+
+@media only screen and(min-width: 768px) and (max-width: 1024px){
+    .obra{
+        width: 85%;
+    }
+}
