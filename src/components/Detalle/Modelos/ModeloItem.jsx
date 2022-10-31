@@ -6,7 +6,7 @@ function ModeloItem({item}) {
         <h3>{item.nombre}</h3>
         {
           item.img && 
-          <div>
+          <div className='img-container'>
               <img src={item.img} alt="modelo" />
           </div>
         }
@@ -15,6 +15,19 @@ function ModeloItem({item}) {
         }
         {
           item.rango && <p>{item.rango}</p>
+        }
+        {
+          item.modulos && 
+          <div className='modulos'>
+            <h4>Módulos</h4>
+            <ul className='modulos-lista'>
+              {
+                item.modulos.map(
+                  modulo => <li>{modulo}</li>
+                )
+              }
+            </ul>
+          </div>
         }
     </article>
   )
