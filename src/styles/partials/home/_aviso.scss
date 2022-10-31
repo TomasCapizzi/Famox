@@ -4,33 +4,54 @@
     position: relative;
     margin-bottom: 50px;
     justify-content: center;
-    width: 1050px;
-    background-repeat: no-repeat;
-    height: 255px;
-    button{
+    width: 1024px;
+    height: 220px;
+    //overflow: hidden;
+    img{
+        width: 95%;
+        object-fit: scale-down;
+        border-radius: 50px;
+        border: 5px solid $color1;
+    }
+    div{
         position: absolute;
-        right: 10px;
-        bottom: 15px;
-        background-color: $color1;
-        border: none;
-        padding: 8px;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 1.3rem;
-        transition: 0.3s ease-in-out all;
-        a{
-            text-decoration: none;
+        left: 0;
+        top: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        p{
+            background-color: $color1;
             color: $white;
+            font-weight: 600;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 26px;
+        }
+        button{
+            background-color: transparent;
+            border: none;
+            transition: 0.3s ease-in-out all;
+            a{
+                cursor: pointer;
+                text-decoration: none;
+                color: $color1;
+                background-color: $white;
+                border: 2px solid $color1;
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 18px;
+                transition: .3S ease-in all;
+                display: flex;
+                align-items: center;
+            }
+            a:hover{
+                color: $white;
+                background-color: $color1;
+            }
         }
     }
-    button:hover{
-        background-color: $white;
-        font-size: 1.2rem;
-        padding: 7px;
-        a{
-            color: $color1;
-        }
-    }
+
 }
 
 @media only screen and (max-width: 440px){
@@ -38,20 +59,31 @@
         margin-bottom: 50px;
         width: 320px;
         height: 160px;
-        background-image: url('../../../../public/img/Banners/Aviso-responsive.jpg');
-        button{
-            right: 10px; 
-            bottom: 15px;
-            padding: 6px;
-            border-radius: 5px;
-            font-size: 0.8rem;
+        img{
+            width: 95%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 3px solid $color1;
         }
-        button:hover{
-            background-color: $white;
-            font-size: 0.75rem;
-            padding: 5px;
-            a{
-                color: $color1;
+        div{
+            top: 25px;
+            p{
+                padding: 3px 8px;
+                border-radius: 3px;
+                font-size: 16px;
+            }
+            button{
+                a{
+                    border: 2px solid $color1;
+                    padding: 3px 5px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                }
+                a:hover{
+                    color: $white;
+                    background-color: $color1;
+                }
             }
         }
     }  
@@ -62,20 +94,31 @@
         margin-bottom: 50px;
         width: 420px;
         height: 178px;
-        background-image: url('../../../../public/img/Banners/Aviso-responsive2.jpg');
-        button{
-            right: 10px; 
-            bottom: 15px;
-            padding: 6px;
-            border-radius: 5px;
-            font-size: 0.85rem;
+        img{
+            width: 95%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 3px solid $color1;
         }
-        button:hover{
-            background-color: $white;
-            font-size: 0.8rem;
-            padding: 5px;
-            a{
-                color: $color1;
+        div{
+            top: 50px;
+            p{
+                padding: 3px 8px;
+                border-radius: 3px;
+                font-size: 16px;
+            }
+            button{
+                a{
+                    border: 2px solid $color1;
+                    padding: 3px 5px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                }
+                a:hover{
+                    color: $white;
+                    background-color: $color1;
+                }
             }
         }
     }  
@@ -86,20 +129,31 @@
         margin-bottom: 50px;
         width: 620px;
         height: 200px;
-        background-image: url('../../../../public/img/Banners/Aviso-responsive3.jpg');
-        button{
-            right: 10px; 
-            bottom: 15px;
-            padding: 6px;
-            border-radius: 5px;
-            font-size: 0.85rem;
+        img{
+            width: 95%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 30px;
+            border: 3px solid $color1;
         }
-        button:hover{
-            background-color: $white;
-            font-size: 0.8rem;
-            padding: 5px;
-            a{
-                color: $color1;
+        div{
+            top: 45px;
+            p{
+                padding: 3px 8px;
+                border-radius: 3px;
+                font-size: 16px;
+            }
+            button{
+                a{
+                    border: 2px solid $color1;
+                    padding: 3px 5px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                }
+                a:hover{
+                    color: $white;
+                    background-color: $color1;
+                }
             }
         }
     }  
@@ -110,57 +164,31 @@
         margin-bottom: 50px;
         width: 840px;
         height: 220px;
-        background-image: url('../../../../public/img/Banners/Aviso-responsive4.jpg');
-        button{
-            right: 10px; 
-            bottom: 15px;
-            padding: 6.5px;
-            border-radius: 5px;
-            font-size: 1rem;
+        img{
+            width: 95%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 40px;
+            border: 4px solid $color1;
         }
-        button:hover{
-            background-color: $white;
-            font-size: 0.95rem;
-            padding: 5.5px;
-            a{
-                color: $color1;
+        div{
+            top: 50px;
+            p{
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 20px;
             }
-        }
-    }  
-}
-
-@media only screen and (min-width: 1401px){
-    .aviso{
-        display: flex;
-        position: relative;
-        margin-bottom: 50px;
-        justify-content: center;
-        width: 1050px;
-        background-image: url('../../../../public/img/Banners/Aviso.jpg');
-        background-repeat: no-repeat;
-        height: 255px;
-        button{
-            position: absolute;
-            right: 10px;
-            bottom: 15px;
-            background-color: $color1;
-            border: none;
-            padding: 8px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 1.3rem;
-            transition: 0.3s ease-in-out all;
-            a{
-                text-decoration: none;
-                color: $white;
-            }
-        }
-        button:hover{
-            background-color: $white;
-            font-size: 1.2rem;
-            padding: 7px;
-            a{
-                color: $color1;
+            button{
+                a{
+                    border: 2px solid $color1;
+                    padding: 3px 5px;
+                    border-radius: 5px;
+                    font-size: 16px;
+                }
+                a:hover{
+                    color: $white;
+                    background-color: $color1;
+                }
             }
         }
     }  
