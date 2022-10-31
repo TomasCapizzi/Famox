@@ -26,6 +26,9 @@ function Carrusel() {
             <li id='slide7'>
                 <img src="img/Carrusel/7.jpg" alt="Carrusel 7" />
             </li>
+            <li id='slide8'>
+                <img src="img/Carrusel/8.jpg" alt="Carrusel 8" />
+            </li>
         </ul>
         <ul className='enlaces'>
             <li>
