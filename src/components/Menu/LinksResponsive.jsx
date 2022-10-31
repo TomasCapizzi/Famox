@@ -19,6 +19,9 @@ function LinksResponsive({menuUl, useMenuHamb}) {
         <Link  to='/certificaciones'>
         <li onClick={useMenuHamb}>Certificaciones</li>            
         </Link>
+        <Link  to='/obras'>
+        <li onClick={useMenuHamb}>Obras</li>            
+        </Link>
         <Link  to='/contacto'>
         <li onClick={useMenuHamb}>Contacto</li>
         </Link>
