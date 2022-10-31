@@ -19,7 +19,7 @@
         align-items: center;
         width: auto;
         margin-right: 20px;
-        div{
+        .img-container{
             width: 280px;
             height: auto;
             margin: 5px;
@@ -34,6 +34,21 @@
         p{
             font-size: 14px;
         }
+        .modulos{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            .modulos-lista{
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                li{
+                    list-style: none;
+                    margin-bottom: 5px;
+                    border-bottom: 1px solid $color1;
+                }
+            }
+        }
     }   
 }
 
@@ -44,18 +59,17 @@
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
-    
         border-top: 2px solid $color1;
         h4{
-            font-size: 1.2rem;
-        }
-    
+            font-size: 16px;
+        }    
         .modelo-item{
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            div{
+            margin-right:0;
+            .img-container{
                 width: 100%;
                 height: 220px;
                 margin: 5px;
@@ -66,6 +80,15 @@
                 height: 200px;
                 object-fit: contain;
             }
+            .modulos{
+                .modulos-lista{
+                    li{
+                        font-size: 12px;
+                        border: none;
+                    }
+                }
+            }
+
         }   
     }
 }
@@ -81,7 +104,6 @@
         h4{
             font-size: 1.4rem;
         }
-
         div{
             display: flex;
             flex-wrap: wrap;
@@ -101,6 +123,9 @@
                     object-fit: contain;
                     height: 120px;
                 }
+            }
+            .modulos{
+                width: 100%;
             }
             
         }   
@@ -148,7 +173,6 @@
     .modelos{
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
         width: 100%;    
         border-top: 2px solid $color1;
         h4{
@@ -157,7 +181,6 @@
         div{
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
         }    
         .modelo-item{
             display: flex;
@@ -193,7 +216,6 @@
         div{
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
         }
     
         .modelo-item{
