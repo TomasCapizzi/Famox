@@ -6,7 +6,7 @@ function Modelos({modelos}) {
     console.log(modelos);
   return (
     <article className='modelos'>
-        <h4>Modelos</h4>
+        <h3>Modelos</h3>
         <div>
             {
                 modelos.length > 0 ? 
