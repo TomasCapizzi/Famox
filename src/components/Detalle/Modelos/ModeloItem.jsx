@@ -23,7 +23,7 @@ function ModeloItem({item}) {
             <ul className='modulos-lista'>
               {
                 item.modulos.map(
-                  modulo => <li>{modulo}</li>
+                  modulo => <li key={modulo}>{modulo}</li>
                 )
               }
             </ul>
