@@ -7,7 +7,6 @@ const useListaAccesorios = () => {
     async function getAccesorios(api){
         const response = await fetch(api);
         const res = await response.json();
-        console.log(res.products);
         setAccesorios(res.products);
         setHandler(true);
       }

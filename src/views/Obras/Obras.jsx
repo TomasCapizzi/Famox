@@ -10,7 +10,6 @@ function Obras() {
         const response = await fetch('http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/api/products/obras');
         const res = await response.json();
         setObras(res.products);
-        console.log(res.products);
     }
     useEffect(()=>{
         getObras();

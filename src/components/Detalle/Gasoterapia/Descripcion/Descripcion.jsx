@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Descripcion({product}) {
-    console.log(product.rango);
+
   return (
     <div className='uso'>
         <div>

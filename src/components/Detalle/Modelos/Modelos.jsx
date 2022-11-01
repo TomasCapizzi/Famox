@@ -3,7 +3,7 @@ import React from 'react'
 import Spinner from 'components/Spinner/Spinner';
 
 function Modelos({modelos}) {
-    console.log(modelos);
+
   return (
     <article className='modelos'>
         <h3>Modelos</h3>

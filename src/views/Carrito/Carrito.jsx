@@ -13,9 +13,6 @@ function Carrito() {
     const [formHandler, setFormHandler] = useState(false)
     const formRef = useRef();
     const navigate = useNavigate();// Funcion nueva del react router para redireccionar
-
-    console.log(carro);
-
     function habilitarForm(){
         setFormHandler(!formHandler);
         formRef.current.classList.toggle('off')
