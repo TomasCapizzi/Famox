@@ -39,6 +39,7 @@ function Modelo({accesorio, seleccionAccesorio, activarNoti, gasesHandler}) {
     if(gas){
       setGases(Object.entries(gas).filter(item => item[1]))
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

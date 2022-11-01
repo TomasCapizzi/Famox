@@ -1,4 +1,3 @@
-import {MdKeyboardArrowDown} from 'react-icons/md';
 import React from 'react'
 
 function PregFrec() {

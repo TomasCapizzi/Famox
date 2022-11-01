@@ -1,9 +1,9 @@
 import {CONECTORES, GASES} from '../../../data/conexiones';
-import React, {useRef, useState} from 'react';
 
 import BAJATENSION from '../../../data/bajaTension';
 import ILUMINACION from '../../../data/iluminacion';
 import MEDIATENSION from '../../../data/mediaTension';
+import React from 'react';
 
 function FormUnidadSuministro({setHandler}) {
   console.log(GASES, CONECTORES);

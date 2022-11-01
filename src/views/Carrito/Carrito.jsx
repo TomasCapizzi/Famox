@@ -4,7 +4,6 @@ import {CarritoContext} from 'store/carritoContext';
 import CarritoLleno from 'components/Carrito/CarritoLleno';
 import CarritoVacio from 'components/Carrito/CarritoVacio';
 import FormularioCotizacion from 'components/Carrito/FormularioCotizacion';
-import Tabla from 'components/Carrito/Tabla';
 import {useNavigate} from 'react-router-dom';
 
 function Carrito() {

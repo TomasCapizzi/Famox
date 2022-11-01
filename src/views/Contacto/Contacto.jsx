@@ -13,7 +13,7 @@ function Contacto() {
   const refNoti = useRef();
   const {resetValores} = useResetValores();
   const {mostrarNotificacion} = useNotificacion();
-  const {generarConsulta} = useEnviarConsulta();
+ // const {generarConsulta} = useEnviarConsulta();
 
   function enviarConsulta(e){
     e.preventDefault();

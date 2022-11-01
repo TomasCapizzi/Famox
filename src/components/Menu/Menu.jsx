@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React, {useContext, useEffect, useRef} from 'react';
 import {RiShoppingCart2Line, RiShoppingCartFill} from 'react-icons/ri';
 
 import { CarritoContext } from 'store/carritoContext';
@@ -18,6 +18,7 @@ function Menu() {
   
   useEffect(()=>{
     obtenerDataLocalStorage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   
 

@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
-
 import GASES from 'data/gases';
+import React from 'react';
 
 function Gases({product}) {
 
-    const [img, setImg] = useState()
+//    const [img, setImg] = useState()
 
     return (
         <article className='gases'>
