@@ -5,7 +5,7 @@ function RangoSeleccion({rango, eliminarSeleccionRango}) {
   return (
     <div className='seleccionado'>
         <p>Rango: {rango}</p>
-        <button><TiDelete onClick={eliminarSeleccionRango} /></button>
+        <button name='Borrar seleccion rango'><TiDelete onClick={eliminarSeleccionRango} /></button>
     </div>
   )
 }

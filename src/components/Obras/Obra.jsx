@@ -7,7 +7,7 @@ function Obra({obra}) {
         <h3>{obra.obra}</h3>
         <p>Fecha: {obra.fecha}</p>
       </div>
-      <img src={obra.img} alt="" />
+      <img src={obra.img} alt="Obra" />
       <h5>Instalación</h5>
       <ul>
         {

@@ -15,9 +15,9 @@ function Botonera({agregarAlCarrito, toggleModal}) {
   return (
     <div className='botonera'>
         <div className='contador'>
-        <button disabled={cantidad === 0} onClick={descontar} ><AiOutlineMinusCircle/></button>
-        <p>{cantidad}</p>
-        <button onClick={incrementar} ><AiOutlinePlusCircle/></button>
+          <button disabled={cantidad === 0} onClick={descontar} name='Descontar' ><AiOutlineMinusCircle/></button>
+          <p>{cantidad}</p>
+          <button onClick={incrementar} name='Incrementar'><AiOutlinePlusCircle/></button>
         </div>
         <button className='confirmar' onClick={()=> comprar() } disabled={cantidad === 0} >Comprar</button>
     </div>

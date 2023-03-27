@@ -5,7 +5,7 @@ function ModeloSeleccion({nombre, eliminarSeleccionModelo}) {
   return (
     <div className='seleccionado modelo'>
         <p>{nombre}</p>
-        <button><TiDelete onClick={eliminarSeleccionModelo} /></button>
+        <button name='Borrar selección'><TiDelete onClick={eliminarSeleccionModelo} /></button>
     </div>
   )
 }

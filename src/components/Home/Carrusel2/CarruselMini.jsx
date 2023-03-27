@@ -17,7 +17,7 @@ function CarruselMini() {
     <section className='carrusel-mini'>
         <h2>Conocenos</h2>
         <article className='container' id='container' ref={containerRef}>
-            <button className='btn-img ant' ref={btnAnterior} onClick={()=>mover(1)}><MdOutlineArrowBackIosNew/></button>
+            <button className='btn-img ant' name='Anterior imagen' ref={btnAnterior} onClick={()=>mover(1)}><MdOutlineArrowBackIosNew/></button>
             <div className='contenido' id='contenido' ref={contenidoRef}>
                 <Imagen ruta={"img/CarruselMini/foto1.png"} />
                 <Imagen ruta={"img/CarruselMini/foto2.png"} />
@@ -40,7 +40,7 @@ function CarruselMini() {
                 <Imagen ruta={"img/CarruselMini/foto19.png"} /> 
                 <Imagen ruta={"img/CarruselMini/foto20.png"} />             
             </div>
-            <button className='btn-img sig' ref={btnSiguiente} onClick={()=>mover(2)}><MdOutlineArrowForwardIos/></button>
+            <button className='btn-img sig' name='Siguiente imagen' ref={btnSiguiente} onClick={()=>mover(2)}><MdOutlineArrowForwardIos/></button>
         </article>
     </section>
   )
