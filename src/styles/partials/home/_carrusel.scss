@@ -6,6 +6,7 @@
     ul{
         margin: 0;
         padding: 0;
+
         li{
             list-style: none;
         }
@@ -32,7 +33,6 @@
             }
         }
         #slide1{
-            position: relative;
             img{
                 object-fit: scale-down;
             }
@@ -89,15 +89,12 @@
         }
     
         .carrusel{
-            /*position: relative;*/
-            display: flex;
-            width: 800%;
-            animation: slider 30s infinite alternate linear;
             #slide1{
                 position: relative;
                 img{
                     object-fit: scale-down;
                     box-shadow: 5px 10px 16px rgba(0,0,0,0.1);
+                    height: auto;
                 }
             }
             li{
@@ -142,10 +139,6 @@
         }
     
         .carrusel{
-            /*position: relative;*/
-            display: flex;
-            width: 800%;
-            animation: slider 30s infinite alternate linear;
             #slide1{
                 position: relative;
                 img{
@@ -188,10 +181,6 @@
         }
     
         .carrusel{
-            /*position: relative;*/
-            display: flex;
-            width: 800%;
-            animation: slider 30s infinite alternate linear;
             #slide1{
                 position: relative;
                 img{
@@ -233,10 +222,6 @@
         }
     
         .carrusel{
-            /*position: relative;*/
-            display: flex;
-            width: 800%;
-            animation: slider 30s infinite alternate linear;
             #slide1{
                 position: relative;
                 img{
