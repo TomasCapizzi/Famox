@@ -17,7 +17,6 @@ function Modal({item, toggleModal}) {
         {
           item.gasoterapia ? <EleccionGasoterapia item={item} toggleModal={toggleModal} /> :  item.accesorio ? <EleccionAccesorio item={item} toggleModal={toggleModal} /> : <EleccionUnidSum item={item} toggleModal={toggleModal} />
         }
-
       </article>      
     </section>
   )

@@ -7,7 +7,7 @@ function ConectorSeleccion({conector, eliminarSeleccionConector}) {
     CONECTORES.map(
         item => item.nombre === conector ? 
           <div key={item.nombre} className='seleccionado'>
-            <img src={item.img} alt="" />
+            <img src={item.img} alt={item.nombre} />
             <p>{item.nombre}</p>
             <button><TiDelete onClick={eliminarSeleccionConector} /></button>
           </div>

@@ -6,7 +6,7 @@ function Item({product}) {
     <article className='accesorio'>
       {product.manual && <ManualBtn product={product} />}
       <div>
-        <img src={product.img} alt="accesorio" />
+        <img src={product.img} alt={"accesorio " + product.nombre } />
       </div>
       <div className='acc-descrip'>
           <h3>{product.nombre}</h3>

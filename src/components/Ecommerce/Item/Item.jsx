@@ -21,7 +21,7 @@ function Item({item}) {
     <>   
       <div className='item-ecom' >
         <h5>{item.nombre}</h5>
-        <img src={item.img} alt="" onClick={()=> toggleModal()} />        
+        <img src={item.img} alt={item.nombre} onClick={()=> toggleModal()} />        
       </div>
       <div className='modal-handler off' ref={modalRef}>
         <Modal item={item} toggleModal={toggleModal} />

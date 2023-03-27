@@ -5,7 +5,7 @@ function Categoria({titulo, img, link}) {
     <div className='categoria'>
         <h3>{titulo}</h3>
         <a href={link}>
-            <img src={img} alt="Categoria" />
+            <img src={img} alt="Categoria de producto" />
         </a>
     </div>
   )
