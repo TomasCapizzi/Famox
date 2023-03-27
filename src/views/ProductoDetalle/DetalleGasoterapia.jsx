@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import Conectores from 'components/Detalle/Gasoterapia/Descripcion/Conectores';
 import Descripcion from 'components/Detalle/Gasoterapia/Descripcion/Descripcion';
 import Gases from 'components/Detalle/Gasoterapia/Descripcion/Gases';
+import {Helmet} from 'react-helmet';
 import ManualBtn from 'components/Detalle/ManualBtn';
 import Modelos from 'components/Detalle/Modelos/Modelos';
 import Spinner from 'components/Spinner/Spinner';
@@ -25,6 +26,10 @@ function DetalleGasoterapia() {
 
   return(
     <section className='producto-container'>
+      <Helmet>
+        <title>{product.nombre}</title>
+        <meta name="description" content={product.uso} />
+      </Helmet>
         {
           handler ?
             <article className='producto'>

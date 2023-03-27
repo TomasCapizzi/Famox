@@ -1,5 +1,6 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useState} from 'react';
 
+import {Helmet} from 'react-helmet';
 import Obra from 'components/Obras/Obra';
 
 function Obras() {
@@ -17,6 +18,10 @@ function Obras() {
 
   return (
     <div className='obras-pagina'>
+        <Helmet>
+            <title>Obras</title>
+            <meta name="description" content="Algunas de las obras que realizamos para nuestros clientes. Priorizando siempre la calidad y brindando el mejor servicio." />
+        </Helmet>
         <h1>Obras</h1>
         <section className='obras-container'>
             {

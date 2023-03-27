@@ -1,18 +1,22 @@
-import React from 'react'
+import {Helmet} from 'react-helmet';
+import React from 'react';
 
 function PregFrec() {
     
   return (
     <section className='pregfrec'>
+        <Helmet>
+            <title>Preguntas frecuentes</title>
+        </Helmet>
         <h1>Preguntas Frecuentes</h1>
         <article className='seccion'>
             <h4>¿Como funciona nuestro ecommerce?</h4>
             <div className='res'>
                 <p>Las compras de nuestros productos no se pueden realizar de forma directa desde la página, nuestro ecommerce es el encargado de llevar a cabo la gestión de lo que el cliente necesita y poder generarle una cotización. Una vez generada esta cotización, la comunicación se traslada al correo electrónico</p>
                 <ul>
-                <li>1°:  Mirá nuestros productos: Navegá el catálogo y buscá lo que más te gusta, podes refinar tu búsqueda con nuestros filtros de productos.</li>
-                <li>2°: Agregá al carrito lo que más te guste: Seleccioná tus productos deseados y agregalos al carrito. Deberás elegir las características correspondientes para cada uno para poder agregarlos*</li>
-                <li>3°: Finaliza tu pedido: Una vez que hayas agregado tus productos avanzá al checkout ubicado en el carrito en la parte superior de la página. Completá el formulario con tus datos personales.</li>
+                    <li>1°:  Mirá nuestros productos: Navegá el catálogo y buscá lo que más te gusta, podes refinar tu búsqueda con nuestros filtros de productos.</li>
+                    <li>2°: Agregá al carrito lo que más te guste: Seleccioná tus productos deseados y agregalos al carrito. Deberás elegir las características correspondientes para cada uno para poder agregarlos*</li>
+                    <li>3°: Finaliza tu pedido: Una vez que hayas agregado tus productos avanzá al checkout ubicado en el carrito en la parte superior de la página. Completá el formulario con tus datos personales.</li>
                 </ul>
             </div>            
         </article>

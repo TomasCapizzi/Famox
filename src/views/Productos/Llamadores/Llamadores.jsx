@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 
 import Descripcion from 'components/Detalle/Gasoterapia/Descripcion/Descripcion';
+import {Helmet} from 'react-helmet';
 import ManualBtn from 'components/Detalle/ManualBtn';
 import Modelos from 'components/Detalle/Modelos/Modelos';
 import Spinner from 'components/Spinner/Spinner';
@@ -16,6 +17,10 @@ function Llamadores() {
     },[])
   return (
     <section className='producto-container'>
+      <Helmet>
+        <title>Llamadores de Enfermera</title>
+        <meta name="description" content="Llamador de enfermera Yanward,equipos importado con múltiples prestaciones y accesorios. Realiza tu consulta para saber mas sobre este equipo." />
+      </Helmet>
         {
             products[0] ?
             <article className='producto'>

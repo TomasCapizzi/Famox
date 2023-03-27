@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import Categoria from 'components/Ecommerce/Categoria/Categoria';
 import Filtro from 'components/Ecommerce/Filtro/Filtro';
+import {Helmet} from 'react-helmet';
 import Spinner from 'components/Spinner/Spinner';
 import useRandomKey from 'hooks/randomKey/useRandomKey';
 
@@ -28,6 +29,10 @@ function Ecommerce() {
 
   return (
     <section className='container-ecommerce'>
+      <Helmet>
+        <title>Ecommerce</title>
+        <meta name="description" content="Nuestro ecommerce web para que puedas elegir entre toda nuestra gama de productos. Desde equipos de gasoterapia, hasta paneles de cabecera y accesorios." />
+      </Helmet>
       <h1>Nuestro Ecommerce</h1>
       <div className='ecommerce'>
         <Filtro setGasoterapiaHandler={setGasoterapiaHandler} setUnidSumHandler={setUnidSumHandler} setAccesoriosHandler={setAccesoriosHandler} setHandler={setHandler}  />

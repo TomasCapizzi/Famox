@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 
 import Descripcion from 'components/Detalle/Gasoterapia/Descripcion/Descripcion';
+import {Helmet} from 'react-helmet';
 import ManualBtn from 'components/Detalle/ManualBtn';
 import Spinner from '../../components/Spinner/Spinner';
 import useDetalle from 'hooks/productos/useDetalle';
@@ -18,6 +19,9 @@ function DetalleUnidSum() {
     },[])
   return(
     <section className='producto2-container'>
+      <Helmet>
+        <title>{product.nombre}</title>
+      </Helmet>
       {
         handler ?
         <article className='producto'>

@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 
+import {Helmet} from 'react-helmet';
 import Item from 'components/ListaProductos/Gasoterapia/Item';
 import Spinner from 'components/Spinner/Spinner';
 import useListaProductos from 'hooks/productos/useListaProductos';
@@ -15,6 +16,11 @@ function Gasoterapia() {
 
     return(
         <section className='categoria'>
+            <Helmet>
+                <title>Gasoterapia</title>
+                <meta name="description" content="Gasoterpiaa" />
+                <meta name="keywords" content="gasoterapia, caudalimetro, mezclador de gases, oxigenoterapia, reguladora, flowmeter" />
+            </Helmet>
             <h1>Gasoterapia</h1>
             <div className='items-container'>
                 {

@@ -4,6 +4,7 @@ import {CarritoContext} from 'store/carritoContext';
 import CarritoLleno from 'components/Carrito/CarritoLleno';
 import CarritoVacio from 'components/Carrito/CarritoVacio';
 import FormularioCotizacion from 'components/Carrito/FormularioCotizacion';
+import {Helmet} from 'react-helmet';
 import {useNavigate} from 'react-router-dom';
 
 function Carrito() {
@@ -40,6 +41,10 @@ function Carrito() {
     }
   return (
     <section className='carrito'>
+        <Helmet>
+            <title>Carrito</title>
+            <meta name="description" content="Podrás visualizar los productos que hayas seleccionado en nuestro Ecommerce. Una vez tengas todo seleccionado, te enviaremos la cotización correspondiente." />
+        </Helmet>
         <h1>Carrito</h1>
         <div className='carrito-container'>
             {

@@ -1,6 +1,7 @@
 import React,{useRef} from 'react';
 
 import Form from 'components/Contacto/Form/Form';
+import {Helmet} from 'react-helmet';
 import Info from 'components/Contacto/Info/Info';
 import Notificacion from 'components/Contacto/Notificacion';
 import RedesSociales from 'components/RedesSociales/RedesSociales';
@@ -41,6 +42,10 @@ function Contacto() {
 
   return (
     <section className='contacto'>
+      <Helmet>
+        <title>Contacto</title>
+        <meta name="description" content="Nuestras vías de contacto, para responder cualquier consulta relacionada a nuestros servicios. ¡No dudes en escribirnos!" />
+      </Helmet>
         <h1 id='titulo'>¡Contactanos!</h1>
         <div className='data'>
             <Form enviarConsulta={enviarConsulta}/>

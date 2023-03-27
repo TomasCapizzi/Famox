@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 
+import {Helmet} from 'react-helmet';
 import Item from 'components/ListaProductos/Accesorios/Item'
 import Spinner from 'components/Spinner/Spinner';
 import useListaAccesorios from 'hooks/productos/useListaAccesorios';
@@ -16,6 +17,10 @@ function Accesorios() {
 
   return (
     <section className='accesorios'>
+      <Helmet>
+        <title>Accesorios</title>
+        <meta name="description" content="Los accesorios para nuestros productos" />
+      </Helmet>
       <h1>Accesorios</h1>
       <div>
         {
