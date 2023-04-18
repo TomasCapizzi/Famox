@@ -35,7 +35,7 @@ function Contacto() {
         },
         body: JSON.stringify(consulta),
     }
-    fetch('https://famox-api.herokuapp.com/formulario/contacto', request); // Probar hook enviar consulta
+    fetch('http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/formulario/contacto', request); // Probar hook enviar consulta
     mostrarNotificacion(refNoti);
     resetValores(e);
 }

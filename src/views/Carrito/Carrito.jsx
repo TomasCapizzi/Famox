@@ -33,7 +33,7 @@ function Carrito() {
             },
             body: JSON.stringify(pedido),
         }
-        fetch('https://famox-api.herokuapp.com/formulario/venta', request);
+        fetch('http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/formulario/venta', request);
         borrarCarrito();
         setTimeout(()=>{
             navigate('/checkout'); // Redirección al checkout y borrado del carrito previamente
