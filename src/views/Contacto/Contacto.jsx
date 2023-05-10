@@ -5,10 +5,10 @@ import {Helmet} from 'react-helmet';
 import Info from 'components/Contacto/Info/Info';
 import Notificacion from 'components/Contacto/Notificacion';
 import RedesSociales from 'components/RedesSociales/RedesSociales';
-import useEnviarConsulta from 'hooks/contacto/useEnviarConsulta';
 import useNotificacion from 'hooks/contacto/useNotificacion';
 import useResetValores from 'hooks/contacto/useResetValores';
 
+//import useEnviarConsulta from 'hooks/contacto/useEnviarConsulta';
 function Contacto() {
 
   const refNoti = useRef();
@@ -35,7 +35,7 @@ function Contacto() {
         },
         body: JSON.stringify(consulta),
     }
-    fetch('http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/formulario/contacto', request); // Probar hook enviar consulta
+    fetch('https://api.famox.com.ar/formulario/contacto', request); // Probar hook enviar consulta
     mostrarNotificacion(refNoti);
     resetValores(e);
 }

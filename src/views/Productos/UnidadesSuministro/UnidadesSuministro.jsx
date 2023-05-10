@@ -6,7 +6,7 @@ import Spinner from 'components/Spinner/Spinner';
 import useListaProductos from 'hooks/productos/useListaProductos';
 
 function UnidadesSuministro() {
-  const api = 'http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/api/products/unidades-suministro'
+  const api = 'https://api.famox.com.ar/api/products/unidades-suministro'
   const {getProducts, products} = useListaProductos();
 
   useEffect(()=>{

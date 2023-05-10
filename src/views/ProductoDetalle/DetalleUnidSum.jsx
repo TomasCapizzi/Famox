@@ -10,7 +10,7 @@ import {useParams} from 'react-router-dom';
 function DetalleUnidSum() {
     const {id} = useParams();
     const {getItem, product, handler} = useDetalle();
-    const api = 'http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/api/products/unidades-suministro/'
+    const api = 'https://api.famox.com.ar/api/products/unidades-suministro/'
 
 
     useEffect(()=>{

@@ -8,7 +8,7 @@ function Obras() {
     const [obras, setObras] = useState([])
 
     const getObras = async ()=> {
-        const response = await fetch('http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/api/products/obras');
+        const response = await fetch('https://api.famox.com.ar/api/products/obras');
         const res = await response.json();
         setObras(res.products);
     }

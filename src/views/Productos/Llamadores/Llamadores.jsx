@@ -8,7 +8,7 @@ import Spinner from 'components/Spinner/Spinner';
 import useListaProductos from 'hooks/productos/useListaProductos';
 
 function Llamadores() {
-    const api = 'http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/api/products/llamadores';
+    const api = 'https://api.famox.com.ar/api/products/llamadores';
     const {getProducts, products} = useListaProductos();
 
     useEffect(()=>{

@@ -7,9 +7,8 @@ function Aviso() {
       <img src="img/Banners/Catalogo.jpg" alt="Catálogo famox" />
       <div>
         <p>¡Nuevo Catálogo!</p>
-        <button name='Descarga de catálogo'><a href="http://famox-env.eba-8tvz54ez.sa-east-1.elasticbeanstalk.com/catalogo/Catalogo.pdf" target='_black'>Descargar <HiOutlineDownload/></a></button>
+        <button name='Descarga de catálogo'><a href="/catalogo/Catalogo-Famox.pdf" target='_black'>Descargar <HiOutlineDownload/></a></button>
       </div>
-        
     </article>
   )
 }
