@@ -7,7 +7,10 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
      
         if(nombre === 'Caudalímetro'){
             return buscarCodigoCaudalimetro(gas, conector, rango)            
-        } else if( nombre === 'Aspirador Venturi' ){
+        } else if( nombre === 'Caudalímetro Compacto' ){
+            return buscarCodigoCaudalimetroM3(gas, conector, rango)
+        }        
+        else if( nombre === 'Aspirador Venturi' ){
             return buscarCodigoAspiradorVenturi(gas, conector)
         } else if(nombre === 'Llave de Vacío' ){
             return buscarCodigoLlaveVacio(conector, modelo.nombre)
@@ -216,6 +219,97 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
         if(gas === 'AIRE' && conector === 'ON' && rango === '0-70 L/MIN' ){
             //setCodigo('PCA168')
             return 'PCA168'
+        }
+
+    }
+
+    // CAUDALIMETRO M3
+    const buscarCodigoCaudalimetroM3 = (gas, conector, rango)=> {
+
+        // Conector: DISS
+        if(gas === 'OXÍGENO' && conector === 'DISS' && rango === '0-3 L/MIN' ){
+            //setCodigo('PCA002')
+            return 'PCA006'
+        }
+        if(gas === 'OXÍGENO' && conector === 'DISS' && rango === '0-15 L/MIN' ){
+            //setCodigo('PCA014')
+            return 'PCA018'
+        }
+        if(gas === 'AIRE' && conector === 'DISS' && rango === '0-3 L/MIN' ){
+            //setCodigo('PCA008')
+            return 'PCA012'
+        }
+        if(gas === 'AIRE' && conector === 'DISS' && rango === '0-15 L/MIN' ){
+            //setCodigo('PCA020')
+            return 'PCA024'
+        }
+        // Conector: AFNOR
+        if(gas === 'OXÍGENO' && conector === 'AFNOR' && rango === '0-3 L/MIN' ){
+            //setCodigo('PCA026')
+            return 'PCA030'
+        }
+        if(gas === 'OXÍGENO' && conector === 'AFNOR' && rango === '0-15 L/MIN' ){
+            //setCodigo('PCA038')
+            return 'PCA042'
+        }
+        if(gas === 'AIRE' && conector === 'AFNOR' && rango === '0-3 L/MIN' ){
+            //setCodigo('PCA032')
+            return 'PCA036'
+        }
+        if(gas === 'AIRE' && conector === 'AFNOR' && rango === '0-15 L/MIN' ){
+            //setCodigo('PCA044')
+            return 'PCA048'
+        }
+        // Conector: SS/AGA
+        if(gas === 'OXÍGENO' && conector === 'SS/AGA' && rango === '0-3 L/MIN' ){
+            //setCodigo('PCA050')
+            return 'PCA054'
+        }
+        if(gas === 'OXÍGENO' && conector === 'SS/AGA' && rango === '0-15 L/MIN' ){
+            //setCodigo('PCA062')
+            return 'PCA066'
+        }
+        if(gas === 'AIRE' && conector === 'SS/AGA' && rango === '0-3 L/MIN' ){
+            //setCodigo('PCA056')
+            return 'PCA060'
+        }
+        if(gas === 'AIRE' && conector === 'SS/AGA' && rango === '0-15 L/MIN' ){
+            //setCodigo('PCA068')
+            return 'PCA072'
+        }
+        // Conector: OHMEDA
+        if(gas === 'OXÍGENO' && conector === 'OHMEDA' && rango === '0-3 L/MIN' ){
+            //setCodigo('PCA074')
+            return 'PCA078'
+        }
+        if(gas === 'OXÍGENO' && conector === 'OHMEDA' && rango === '0-15 L/MIN' ){
+            //setCodigo('PCA086')
+            return 'PCA090'
+        }
+        if(gas === 'AIRE' && conector === 'OHMEDA' && rango === '0-3 L/MIN' ){
+            //setCodigo('PCA080')
+            return 'PCA084'
+        }
+        if(gas === 'AIRE' && conector === 'OHMEDA' && rango === '0-15 L/MIN' ){
+            //setCodigo('PCA092')
+            return 'PCA096'
+        }
+        // Conector: ON
+        if(gas === 'OXÍGENO' && conector === 'ON' && rango === '0-3 L/MIN' ){
+            //setCodigo('PCA098')
+            return 'PCA102'
+        }
+        if(gas === 'OXÍGENO' && conector === 'ON' && rango === '0-15 L/MIN' ){
+            //setCodigo('PCA110')
+            return 'PCA114'
+        }
+        if(gas === 'AIRE' && conector === 'ON' && rango === '0-3 L/MIN' ){
+            //setCodigo('PCA104')
+            return 'PCA108'
+        }
+        if(gas === 'AIRE' && conector === 'ON' && rango === '0-15 L/MIN' ){
+            //setCodigo('PCA116')
+            return 'PCA120'
         }
 
     }
