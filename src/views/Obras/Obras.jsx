@@ -8,9 +8,9 @@ function Obras() {
     const [obras, setObras] = useState([])
 
     const getObras = async ()=> {
-        const response = await fetch('https://api.famox.com.ar/api/products/obras');
+        const response = await fetch('https://famox-api.vercel.app/api/products/obras');
         const res = await response.json();
-        setObras(res.products);
+        setObras(res.products.sort((a,b)=> b.fecha-a.fecha));
     }
     useEffect(()=>{
         getObras();

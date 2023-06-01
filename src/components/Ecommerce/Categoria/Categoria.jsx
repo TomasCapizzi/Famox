@@ -3,6 +3,8 @@ import React from 'react'
 
 function Categoria({items}) {
 
+  items.sort((a,b) => a.orden - b.orden)
+
   return (
     <article className='categoria'>
         {
