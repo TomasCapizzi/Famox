@@ -6,15 +6,15 @@ import useCarrusel2 from 'hooks/carrusel/useCarrusel2';
 
 function CarruselMini() {
 
-    const btnAnterior = useRef();
-    const btnSiguiente = useRef();
-    const containerRef = useRef();
-    const contenidoRef = useRef();
-    
-    const {mover} = useCarrusel2(contenidoRef, containerRef);
+  const btnAnterior = useRef();
+  const btnSiguiente = useRef();
+  const containerRef = useRef();
+  const contenidoRef = useRef();
+  
+  const {mover} = useCarrusel2(contenidoRef, containerRef);
     
   return (
-    <section className='carrusel-mini'>
+    <section className='carrusel-mini' >
         <h2>Conocenos</h2>
         <article className='container' id='container' ref={containerRef}>
             <button className='btn-img ant' name='Anterior imagen' ref={btnAnterior} onClick={()=>mover(1)}><MdOutlineArrowBackIosNew/></button>

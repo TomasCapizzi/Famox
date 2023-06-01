@@ -1,8 +1,8 @@
 import React from 'react'
 
-function UnidSum() {
+function UnidSum({isIntersecting}) {
   return (
-    <article className='tarea'>
+    <article className={isIntersecting ? 'tarea on' : 'tarea off'}>
         <p className='nro'>02</p>
         <div>
             <h2>Unidades de Suministro</h2>

@@ -1,9 +1,13 @@
 import {HiOutlineDownload} from 'react-icons/hi'
 import React from 'react';
+import useIntersection from 'hooks/intersectionObserver/useIntersection';
 
 function Aviso() {
+
+  const {isIntersecting, elementRef} = useIntersection({threshold: '0.7'});
+
   return (
-    <article className='aviso'>
+    <article className={isIntersecting? 'aviso in' : 'aviso out'} ref={elementRef} >
       <img src="img/Banners/Catalogo.jpg" alt="Catálogo famox" />
       <div>
         <p>¡Nuevo Catálogo!</p>

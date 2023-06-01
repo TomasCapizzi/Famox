@@ -1,0 +1,30 @@
+
+.in{
+    animation: intersection1 .7s ease-in;
+}
+
+.out{
+    opacity: 0;
+    animation: intersection2 .7s ease-in;
+}
+
+@keyframes intersection1 {
+    0%{
+        //margin-bottom: 30px;
+        opacity: 0;
+    }
+    100%{
+        //margin-bottom: 50px;
+        opacity: 1;
+    }
+}
+@keyframes intersection2 {
+    0%{
+        margin-bottom: 50px;
+        opacity: 1;
+    }
+    100%{
+        margin-bottom: 30px;
+        opacity: 0;
+    }
+}

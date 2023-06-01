@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Calidad() {
+function Calidad({isIntersecting}) {
   return (
-    <div className='tarea'>
+    <div className={isIntersecting ? 'tarea on' : 'tarea off'}>
         <p className='nro'>03</p>
         <div>
             <h2>Calidad</h2>

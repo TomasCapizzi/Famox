@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Instalaciones() {
+function Instalaciones({isIntersecting}) {
   return (
-    <div className='tarea'>
+    <div className={isIntersecting ? 'tarea on' : 'tarea off'}>
         <p className='nro'>04</p>
         <div>
             <h2>Instalaciones</h2>

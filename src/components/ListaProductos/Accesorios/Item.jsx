@@ -1,9 +1,13 @@
 import ManualBtn from 'components/Detalle/ManualBtn'
 import React from 'react'
+import useIntersection from 'hooks/intersectionObserver/useIntersection'
 
 function Item({product}) {
+
+  const {isIntersecting, elementRef} = useIntersection({})
+
   return (
-    <article className='accesorio'>
+    <article className={isIntersecting ? 'accesorio in' : 'accesorio out'} ref={elementRef}>
       {product.manual && <ManualBtn product={product} />}
       <div>
         <img src={product.img} alt={"accesorio " + product.nombre } />

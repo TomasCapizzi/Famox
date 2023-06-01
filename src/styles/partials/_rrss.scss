@@ -1,10 +1,12 @@
 @import 'styles/theme/theme.scss';
 
 .rrss{
+    padding: 20px;
+
     svg{
         width: 50px;
         font-size: 3.2rem;
-        margin: 0 15px;
+        margin: 50px 15px 0 0;
         cursor: pointer;
         transition: .15s ease-in all;
     }
@@ -23,6 +25,9 @@
         transform: scale(0.95);
     }
 }
+.int{
+    animation: intersection 1s ease-in-out;
+}
 @media only screen and (max-width: 375px){
     .rrss{
         svg{
@@ -33,6 +38,14 @@
     }
 
 }
-// linkedin #0A66C2
-//wpp #2CC54E
-// insta #D33F76
+
+@keyframes intersection {
+    0% {
+        padding: 0px;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        padding: 20px;
+    }
+}

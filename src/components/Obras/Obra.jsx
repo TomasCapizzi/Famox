@@ -1,9 +1,13 @@
 import FotoSlider from './FotoSlider'
 import React from 'react'
+import useIntersection from 'hooks/intersectionObserver/useIntersection'
 
 function Obra({obra}) {
+
+  const {isIntersecting, elementRef} = useIntersection({})
+
   return (
-    <article className='obra'>
+    <article className={isIntersecting ? 'obra in' : 'obra out'} ref={elementRef}>
       <div className='obra-descrip'>
         <h3>{obra.obra}</h3>
         <p>Fecha: {obra.fecha}</p>

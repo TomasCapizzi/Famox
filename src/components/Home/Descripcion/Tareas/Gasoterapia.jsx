@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Gasoterapia() {
+function Gasoterapia({isIntersecting}) {
   return (
-    <article className='tarea'>
+    <article className={isIntersecting ? 'tarea on' : 'tarea off'}>
         <p className='nro'>01</p>
         <div>
             <h2>Gasoterapia</h2>
