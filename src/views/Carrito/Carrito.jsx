@@ -33,7 +33,7 @@ function Carrito() {
             },
             body: JSON.stringify(pedido),
         }
-        fetch('https://api.famox.com.ar/formulario/venta', request);
+        fetch('https://famox-api.vercel.app/formulario/venta', request);
         borrarCarrito();
         setTimeout(()=>{
             navigate('/checkout'); // Redirección al checkout y borrado del carrito previamente

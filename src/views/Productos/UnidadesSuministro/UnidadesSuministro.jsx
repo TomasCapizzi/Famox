@@ -6,7 +6,7 @@ import Spinner from 'components/Spinner/Spinner';
 import useListaProductos from 'hooks/productos/useListaProductos';
 
 function UnidadesSuministro() {
-  const api = 'https://api.famox.com.ar/api/products/unidades-suministro'
+  const api = 'https://famox-api.vercel.app/api/products/unidades-suministro'
   const {getProducts, products} = useListaProductos();
 
   useEffect(()=>{

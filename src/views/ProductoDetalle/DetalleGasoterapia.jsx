@@ -16,7 +16,7 @@ function DetalleGasoterapia() {
 
     const {getItem, product, handler} = useDetalle();
 
-    const api = 'https://api.famox.com.ar/api/products/gasoterapia/';
+    const api = 'https://famox-api.vercel.app/api/products/gasoterapia/';
 
     useEffect(()=>{
       getItem(api, id);

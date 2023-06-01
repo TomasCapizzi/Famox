@@ -10,7 +10,7 @@ import {useParams} from 'react-router-dom';
 function DetalleUnidSum() {
     const {id} = useParams();
     const {getItem, product, handler} = useDetalle();
-    const api = 'https://api.famox.com.ar/api/products/unidades-suministro/'
+    const api = 'https://famox-api.vercel.app/api/products/unidades-suministro/'
 
 
     useEffect(()=>{

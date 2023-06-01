@@ -6,7 +6,7 @@ import Spinner from 'components/Spinner/Spinner';
 import useListaProductos from 'hooks/productos/useListaProductos';
 
 function Gasoterapia() {
-    const api = 'https://api.famox.com.ar/api/products/gasoterapia';
+    const api = 'https://famox-api.vercel.app/api/products/gasoterapia';
     const {getProducts, products} = useListaProductos();
     
     useEffect(()=>{

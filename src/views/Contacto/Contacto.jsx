@@ -35,7 +35,7 @@ function Contacto() {
         },
         body: JSON.stringify(consulta),
     }
-    fetch('https://api.famox.com.ar/formulario/contacto', request); // Probar hook enviar consulta
+    fetch('https://famox-api.vercel.app/formulario/contacto', request); // Probar hook enviar consulta
     mostrarNotificacion(refNoti);
     resetValores(e);
 }

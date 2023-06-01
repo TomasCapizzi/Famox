@@ -6,7 +6,7 @@ import Spinner from 'components/Spinner/Spinner';
 import useListaAccesorios from 'hooks/productos/useListaAccesorios';
 
 function Accesorios() {
-  const api = 'https://api.famox.com.ar/api/products/accesorios';
+  const api = 'https://famox-api.vercel.app/api/products/accesorios';
 
   const {getAccesorios, accesorios} = useListaAccesorios()
 

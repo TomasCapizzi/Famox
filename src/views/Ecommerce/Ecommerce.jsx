@@ -18,7 +18,7 @@ function Ecommerce() {
   const {getRandomKey} = useRandomKey();
  
   async function getAllProducts(){
-    const response = await fetch('https://api.famox.com.ar/api/products/listado');
+    const response = await fetch('https://famox-api.vercel.app/api/products/listado');
     const res = await response.json();
     setListadoProductos(res.products)
     setHandler(true)
