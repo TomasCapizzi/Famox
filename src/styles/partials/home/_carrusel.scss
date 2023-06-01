@@ -1,6 +1,6 @@
 .carrusel-container{
-    width: 1250px;
-    height: 620px;
+    width: 1000px;
+    height: 650px;
     overflow: hidden;
     margin-bottom: 60px;
     ul{
@@ -15,7 +15,7 @@
     .carrusel{
         /*position: relative;*/
         display: flex;
-        width: 800%;
+        width: 900%;
         animation: slider 36s infinite alternate linear;
         li{
            // position: absolute;
@@ -27,12 +27,12 @@
             background-color: white;           
             img{
                 width: 100%;
-                height: 620px;
+                height: 660px;
                 object-fit: cover;
                 box-shadow: 5px 10px 16px rgba(0,0,0,0.8);
             }
         }
-        #slide1{
+        #slide1, #slide2{
             img{
                 object-fit: scale-down;
             }
@@ -48,28 +48,32 @@
 
 @keyframes slider {
     0%{margin-left: 0;}
-    11%{margin-left: 0;}
+    15%{margin-left: 0;}
 
-    12%{margin-left: -100%;}
-    24%{margin-left: -100%;}
+    16%{margin-left: -100%;}
+    27%{margin-left: -100%;}
 
-    25%{margin-left: -200%;}
+    28%{margin-left: -200%;}
     37%{margin-left: -200%;}
 
     38%{margin-left: -300%;}
-    50%{margin-left: -300%;}
+    47%{margin-left: -300%;}
 
-    51%{margin-left: -400%;}
-    63%{margin-left: -400%;}
+    48%{margin-left: -400%;}
+    57%{margin-left: -400%;}
 
-    64%{margin-left: -500%;}
-    76%{margin-left: -500%;}
+    58%{margin-left: -500%;}
+    67%{margin-left: -500%;}
 
+    68%{margin-left: -600%;}
     77%{margin-left: -600%;}
-    89%{margin-left: -600%;}
 
-    90%{margin-left: -700%;}
-    100%{margin-left: -700%;}
+    78%{margin-left: -700%;}
+    84%{margin-left: -700%;}
+
+    85%{margin-left: -800%;}
+    100%{margin-left: -800%;}
+
 }
 
 
