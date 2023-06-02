@@ -1,13 +1,11 @@
 @import 'styles/theme/theme.scss';
 
 .slider-container{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
     display: flex;
     width: 90%;
+    height: 100%;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
     svg{
         color: $color1;
         cursor: pointer;
@@ -20,19 +18,20 @@
     }
     .slider{
         display: flex;
-        overflow: hidden;
-        width: 100%;
+        max-width: 100%;
         height: 100%;
         padding: 0px;
+        opacity: 0;
         align-items: center;
+        transition: opacity 0.5s ease-in;
         img{
             width: 100%;
             height: 100%;
             object-fit: cover;
             margin-left: 0px;
         }
-        img:first-child{
-            margin-left: 0;
-        }
+    }
+    .active {
+        opacity: 1;
     }
 }

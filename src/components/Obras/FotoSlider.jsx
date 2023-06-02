@@ -1,17 +1,22 @@
 import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 
 function FotoSlider({obra}) {
 
-    const sliderRef = useRef();
-    const firstImg = useRef();
+    const [actualImg, setActualImg] = useState(0);
+    const totalImages = obra.img.length
+
+    if(!Array.isArray(obra.img) || totalImages === 0) return;
+
 
     const moveLeft = ()=> {
-        sliderRef.current.scrollLeft += -firstImg.current.clientWidth
+        //sliderRef.current.scrollLeft += -firstImg.current.clientWidth
+        setActualImg(actualImg === 0 ? totalImages -1  : actualImg - 1);
     }
 
     const moveRight = ()=> {
-        sliderRef.current.scrollLeft += firstImg.current.clientWidth
+        //sliderRef.current.scrollLeft += firstImg.current.clientWidth
+        setActualImg(actualImg === totalImages - 1 ? 0 : actualImg + 1);
     }
 
   return (
@@ -19,13 +24,18 @@ function FotoSlider({obra}) {
         {
             obra.img.length > 1 ? <BsArrowLeftCircle onClick={moveLeft} /> : null
         }
-        <div className='slider' ref={sliderRef} >
-            {
-                obra.img.map(
-                    imgSrc => <img src={imgSrc} alt='slider' ref={firstImg} key={Math.floor(Math.random()*100)} />
-                )
-            }
-        </div>
+
+        {
+            obra.img.map(
+                (imgSrc, index) => {
+                    return (
+                        <div className={actualImg === index ? 'slider active' : 'slider'}>
+                            {actualImg === index && (<img src={imgSrc} alt='slider' key={Math.floor(Math.random()*100)} />)}
+                        </div>
+                    );
+                }
+            )
+        }
         {
             obra.img.length > 1 ? <BsArrowRightCircle onClick={moveRight} /> : null
         }
