@@ -1302,6 +1302,7 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
 
     return {
         codigo,
+        setCodigo,
         derivarFuncion
     }
 }
