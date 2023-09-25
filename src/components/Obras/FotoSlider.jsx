@@ -1,5 +1,5 @@
 import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
-import React, {useRef, useState} from 'react'
+import React, {useState} from 'react'
 
 function FotoSlider({obra}) {
 
