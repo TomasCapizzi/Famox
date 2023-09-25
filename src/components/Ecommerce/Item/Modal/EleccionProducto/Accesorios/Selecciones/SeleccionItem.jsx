@@ -1,11 +1,12 @@
-import GASES from 'data/gases';
+//import GASES from 'data/gases';
 import React from 'react';
 import {TiDelete} from 'react-icons/ti';
 
 function SeleccionItem({acc, eliminarSeleccion}) {
+  /*
   const gasImg = acc.gas? GASES.filter(
     gas => gas.nombre === acc.gas.toUpperCase()
-  ) : null
+  ) : null*/
   return (
     <div className='seleccion-item'>
       <img src={acc.img} alt="accesorio" />
