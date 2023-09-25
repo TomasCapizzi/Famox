@@ -1,10 +1,13 @@
 import React, {createContext, useState} from 'react';
+import useCompararDia from 'hooks/store/useCompararDia';
 
 export const CarritoContext = createContext();
 
 export function CarritoContextProvider({children}){  
       
     const [carro, setCarro] = useState([]);
+
+    //const {compararDia} = useCompararDia()
 
     const obtenerDataLocalStorage = () => {
         const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'))
@@ -20,7 +23,6 @@ export function CarritoContextProvider({children}){
             }
         }      
     }
-
     const compararDia = (dia, hora)=> {
         const fechaActual = new Date()
         const mes = parseInt(dia.split('-')[1]);
@@ -34,8 +36,8 @@ export function CarritoContextProvider({children}){
             // Comparar horario ya que el dia es el mismo
             compararHora(hora);
         }
+    } 
 
-    }
     const compararHora = (hora)=> {
         //Comparamos las horas, como es UTC la hora es 3 veces mayor. Si la hora actual es igual o mayor a la hora UTC + 2 entonces borramos todo
         const fechaActual = new Date()
@@ -44,6 +46,7 @@ export function CarritoContextProvider({children}){
             borrarCarrito();
         }
     }
+    
     
     const agregarItemGasoterapia = ({producto})=> {
 

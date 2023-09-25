@@ -38,13 +38,10 @@ function FormAccesorio({setHandler}) {
       <form action="" onSubmit={(e)=> validarForm(e)}>
           <label htmlFor="nombre">Nombre</label>
           <input type="text" id='nombre' required />
-
           <label htmlFor="descripcion">Descripción</label>
           <textarea name="" id="descripcion" cols="20" rows="5" required></textarea>
-          
           <label htmlFor="img">Imagen (ruta)</label>
           <input type="text" id='img' />
-
           <input type="submit" value='Enviar' className='form-submit' />
       </form>
     </section>

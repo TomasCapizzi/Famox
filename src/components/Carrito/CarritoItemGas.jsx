@@ -26,7 +26,7 @@ function CarritoItem({item}) {
           }
           {
             item.modelo &&
-                <li>{(item.nombre === 'Recipiente Colector' || item.nombre === 'Mezclador de Aire/Oxígeno') ?  item.modelo.rango : item.modelo.nombre}</li>
+                <li>{item.modelo.rango || item.modelo.nombre}</li>
           }
         </ul>
       </td>
