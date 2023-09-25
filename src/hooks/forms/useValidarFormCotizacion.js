@@ -40,7 +40,7 @@ const useValidarFormCotizacion = () => {
           }
     }
     const validarMail = (value)=>{
-        const formatoEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+        const formatoEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
         if(formatoEmail.test(value)){
          setMailError('');
          setHandlerMail(true);
