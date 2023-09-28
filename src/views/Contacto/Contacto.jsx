@@ -27,7 +27,6 @@ function Contacto() {
       empresa: e.target.empresa.value,
       mensaje: e.target.mensaje.value
     } // Crear hook para armar consulta en base a valores del form
-    console.log(consulta);
     const request = {
         method: 'POST',
         headers: {
