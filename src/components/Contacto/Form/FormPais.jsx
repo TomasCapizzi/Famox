@@ -4,7 +4,7 @@ function FormPais() {
   return (
     <div>
         <label htmlFor="">País</label>
-        <input type="text" id='pais' name='pais' required />
+        <input type="text" id='pais' name='pais'/>
     </div>
   )
 }
