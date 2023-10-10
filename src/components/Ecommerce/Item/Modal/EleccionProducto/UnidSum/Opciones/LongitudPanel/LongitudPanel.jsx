@@ -10,9 +10,9 @@ function LongitudPanel({setLongitudPanel, longitudPanel, handlerInput, setHandle
       
     return (
       <div className='longitud-panel'>
-        <p>Longitud de Panel</p>
+        <h4>Longitud de Panel</h4>
         <div>
-          <input type="number" min={0} onChange={(e)=> longitudPanelCabecera(e)} disabled={handlerInput} />
+          <input type="number" name='longitud' min={0} onChange={(e)=> longitudPanelCabecera(e)} disabled={handlerInput} />
           <select name="medidas" id="" ref={medidasRef} onChange={()=> controlarUnidadMedida()} >
             <option value="default">Elegir unidad de medida</option>
             <option value="mm">mm</option>
@@ -21,7 +21,7 @@ function LongitudPanel({setLongitudPanel, longitudPanel, handlerInput, setHandle
           </select>
         </div>
         {
-          longitudPanel ? <p>{`${longitudPanel}`}</p> : <p>Selecciona una unidad de medida. Longitud mínima 600mm / 60cm</p>
+          longitudPanel ? <p>Tamaño: {`${longitudPanel}`}</p> : <p>Selecciona una unidad de medida. Longitud mínima 600mm / 60cm</p>
         }
       </div>
   

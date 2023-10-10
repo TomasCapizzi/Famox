@@ -50,6 +50,9 @@
     .longitud-panel{
         display: flex;
         flex-direction: column;
+        h4{
+            width: 100%;
+        }
         p:nth-child(3){
             font-size: 0.8rem;
         }

@@ -3,7 +3,7 @@ import React from 'react'
 function FormPais() {
   return (
     <div>
-        <label htmlFor="">País</label>
+        <label htmlFor="pais" for="pais">País</label>
         <input type="text" id='pais' name='pais'/>
     </div>
   )

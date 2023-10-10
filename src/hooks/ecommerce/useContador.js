@@ -8,9 +8,9 @@ const useContador = () => {
         setCantidad(cantidad + 1);
       }
     function descontar(){
-    if(cantidad>=1){
-        setCantidad(cantidad-1);
-    }
+      if(cantidad>=1){
+          setCantidad(cantidad-1);
+      }
     }
 
   return {

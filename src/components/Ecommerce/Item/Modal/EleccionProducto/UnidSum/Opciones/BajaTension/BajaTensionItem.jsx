@@ -6,7 +6,7 @@ function BajaTensionItem({item, obtenerCantidadInput}) {
         <p>{item}</p>
         <div>
             <p>Cantidad: </p>
-            <input type="number" name="cantidad" id="" placeholder='0' min={0} onChange={(e)=>obtenerCantidadInput(e, item)} />
+            <input type="number" name="cantidad" placeholder='0' min={0} onChange={(e)=>obtenerCantidadInput(e, item)} />
         </div>
     </article>
   )

@@ -1,5 +1,5 @@
 import React, {createContext, useState} from 'react';
-import useCompararDia from 'hooks/store/useCompararDia';
+//import useCompararDia from 'hooks/store/useCompararDia';
 
 export const CarritoContext = createContext();
 
@@ -16,8 +16,7 @@ export function CarritoContextProvider({children}){
                 setCarro(carrito)
                 // Creamos la fecha para poder borrar el carrito 5 hs desp o cualquier otro día que no sea el mismo del primer item agregado
                 const diaInicioCarrito = carrito[0].fecha.split('T')[0]
-                const horaInicioCarrito = carrito[0].fecha.split('T')[1]
-    
+                const horaInicioCarrito = carrito[0].fecha.split('T')[1]    
                 // Comparar Dia
                 compararDia(diaInicioCarrito, horaInicioCarrito)
             }
@@ -47,9 +46,7 @@ export function CarritoContextProvider({children}){
         }
     }
     
-    
     const agregarItemGasoterapia = ({producto})=> {
-
         const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
         if(carrito){
             const coincidencia = carrito.find(
@@ -58,9 +55,9 @@ export function CarritoContextProvider({children}){
                 item => (item.nombre === producto.nombre) && (item.gas === producto.gas) && (item.conector === producto.conector) && (item.rango === producto.rango)*/
             );
             if(coincidencia){     
-                console.log('Coinciden este elemento con otro igual');                      
-               const nuevoCarrito = carrito.filter(
-                    item=> item !== coincidencia
+                console.log('Coinciden este elemento con otro igual');                 
+                const nuevoCarrito = carrito.filter(
+                    item=> item !== coincidencia    
                 )
                 //console.log('NUEVO CARRITO' ,nuevoCarrito);
                 const {nombre, img, _id, gas, conector, rango, modelo, codigo} = producto

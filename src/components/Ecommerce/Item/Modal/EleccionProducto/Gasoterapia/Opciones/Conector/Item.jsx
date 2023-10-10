@@ -10,7 +10,7 @@ function OpcionItem({item, seleccionarElemento}) {
   return (
     <div ref={divRef} className='conector' id={item[0].nombre} onClick={(e)=> seleccionarItem(e) } >
         <img src={item[0].img} alt="conector"/>
-        <label htmlFor="">{item[0].nombre}</label>
+        <p htmlFor="">{item[0].nombre}</p>
     </div>
   )
 }

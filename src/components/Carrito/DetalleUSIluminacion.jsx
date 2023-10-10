@@ -8,7 +8,7 @@ function DetalleUSIluminacion({item}) {
             {
                 item.iluminacion.map(
                     item =>
-                        <li className='propiedad'  key={item.nombre}>{item.nombre} Cantidad: {item.cantidad}</li>
+                        <li className='propiedad' key={item.nombre}>{item.nombre} Cantidad: {item.cantidad}</li>
                 )
             }
         </ul>

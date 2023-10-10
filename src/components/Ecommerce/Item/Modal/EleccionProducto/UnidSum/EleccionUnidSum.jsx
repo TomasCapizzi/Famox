@@ -60,7 +60,7 @@ function EleccionUnidSum({item,toggleModal }) {
               /> : null
           }
           { // Panel de Cabecera
-            item.nombre === 'Panel de Cabecera' && <LongitudPanel setLongitudPanel={setLongitudPanel} longitudPanel={longitudPanel} handlerInput={handlerInput} setHandlerInput={setHandlerInput} />
+            item.longitud && <LongitudPanel setLongitudPanel={setLongitudPanel} longitudPanel={longitudPanel} handlerInput={handlerInput} setHandlerInput={setHandlerInput} />
           }
           <ContainerSelecciones conexiones={conexiones} eliminarItem={eliminarItem} valoresBajaTension={valoresBajaTension} valoresIluminacion={valoresIluminacion} valoresMediaTension={valoresMediaTension} />
         </div>

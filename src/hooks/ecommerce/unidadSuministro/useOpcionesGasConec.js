@@ -20,7 +20,7 @@ const useOpcionesGasConec = (conexiones, setConexiones, mostrarConexion, conecto
             ...conexiones,
             conexion
           ])
-          mostrarConexion()
+          mostrarConexion();
         }
     
       }

@@ -5,7 +5,6 @@ import Carrito from 'views/Carrito/Carrito';
 import Certificaciones from 'views/Certificaciones/Certificaciones';
 import CheckOut from 'views/CheckOut/CheckOut';
 import Contacto from 'views/Contacto/Contacto';
-import CrearProducto from 'views/CrearProducto/CrearProducto';
 import DetalleGasoterapia from 'views/ProductoDetalle/DetalleGasoterapia';
 import DetalleUnidSum from 'views/ProductoDetalle/DetalleUnidSum';
 import Ecommerce from 'views/Ecommerce/Ecommerce';
@@ -40,13 +39,10 @@ function Rutas() {
             <Route path='/accesorios' element={<Accesorios/>}/>
             <Route path='/llamadores' element={<Llamadores/>}/>
 
-
             <Route path='/unidades-de-suministro/:id' element={<DetalleUnidSum/>} />
             <Route path='/gasoterapia/:id' element={<DetalleGasoterapia/>} />
 
             <Route path='/checkout' element={<CheckOut/>} />
-            <Route path='/crear-producto' element={<CrearProducto/>} />
-
           </Routes>
   )
 }

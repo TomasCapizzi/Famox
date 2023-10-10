@@ -24,6 +24,10 @@
             align-items: center;
             margin: 5px;
             transition: .2s ease-in all;
+            p{
+                font-weight: 400;
+                font-size: 16px;
+            }
         }
         .conector:hover{
             border-color: $color1;
@@ -51,7 +55,7 @@
     .modal-conectores{
         margin-bottom: 12px;
         p{
-            font-weight: 600;
+            font-weight: 400;
         }
         .opciones-conectores{
             display: none;
@@ -71,7 +75,7 @@
             img{
                 width: 50px;
             }
-            label{
+            p{
                 font-size: 0.9rem;
             }
         }

@@ -17,7 +17,6 @@ const useAgregarCarrito = ({item}) => {
     const [valoresBajaTension, setValoresBajaTension] = useState([]);
     const [valoresIluminacion, setValoresIluminacion] = useState([]);
     const [conexiones, setConexiones] = useState([]);
-    // Panel de Cabecera:
     const [longitudPanel, setLongitudPanel] = useState();
     //////////////////////////////////////////
 
@@ -77,7 +76,6 @@ const useAgregarCarrito = ({item}) => {
     }
 
     function buscarCoincidenciaModelo(cantidad){
-
       const {nombre, img} = item
       const codigo = derivarFuncion();
       // Hacer comparación x codigo
@@ -120,9 +118,9 @@ const useAgregarCarrito = ({item}) => {
 
     function buscarCoincidenciaUnidSum(cantidad){
       // destructuring de variables del ITEM
-      const {nombre, img} = item
+      const {nombre, img, longitud} = item
       // Panel contiene longitud lo que los demás no, por eso se aisla
-      if(nombre === 'Panel de Cabecera'){
+      if(longitud){
         const producto = {
           nombre,
           fecha: new Date(),
