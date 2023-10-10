@@ -90,7 +90,7 @@
     .notificacion{
         display: none;
     }
-    .on{
+    .noti-on{
         display: flex;
         position: absolute;
         bottom: 0;
@@ -190,23 +190,7 @@
         }
         .acc-btn-comprar:hover{
             padding:8px 5px;
-        }
-        .notificacion{
-            display: none;
-        }
-        .on{
-            display: flex;
-            position: absolute;
-            bottom: 0;
-            background-color: $color2;
-            padding: 0 15px;
-            right: 10px;
-            border-radius: 10px;
-            animation: noti 1s ease-in-out;
-            font-size: 12px;
-            color: $black;
-        }
-    
+        }   
     }
 
 }
@@ -284,22 +268,6 @@
         .acc-btn-comprar:hover{
             padding:8px 5px;
         }
-        .notificacion{
-            display: none;
-        }
-        .on{
-            display: flex;
-            position: absolute;
-            bottom: 0;
-            background-color: $color2;
-            padding: 0 15px;
-            right: 10px;
-            border-radius: 10px;
-            animation: noti 1s ease-in-out;
-            font-size: 12px;
-            color: $black;
-        }
-    
     }
 
 }
@@ -370,21 +338,5 @@
         .acc-btn-comprar:hover{
             padding:8px 5px;
         }
-        .notificacion{
-            display: none;
-        }
-        .on{
-            display: flex;
-            position: absolute;
-            bottom: 0;
-            background-color: $color2;
-            padding: 0 15px;
-            right: 10px;
-            border-radius: 10px;
-            animation: noti 1s ease-in-out;
-            font-size: 12px;
-            color: $black;
-        }
-    
     }
 }

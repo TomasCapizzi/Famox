@@ -3,7 +3,7 @@ import React,{useEffect, useRef, useState} from 'react';
 import {AiOutlinePlusCircle} from 'react-icons/ai';
 import useCodigo from 'hooks/codigos/useCodigos';
 
-function Modelo({accesorio, seleccionAccesorio, activarNoti, gasesHandler}) {
+function Modelo({accesorio, seleccionAccesorio, activarNoti, gasesHandler, refNoti}) {
   const {gas, nombre, img} = accesorio;
   const [gases, setGases] = useState();
   const gasRef = useRef();
@@ -13,7 +13,6 @@ function Modelo({accesorio, seleccionAccesorio, activarNoti, gasesHandler}) {
 
   function agregarAcc(){
     const cantidad = Number(inputRef.current.value)
-    console.log(gasesHandler);
     if(cantidad > 0){    
       gasesHandler ?   
         seleccionAccesorio({
@@ -31,7 +30,7 @@ function Modelo({accesorio, seleccionAccesorio, activarNoti, gasesHandler}) {
           codigo: derivarFuncion(),
           cantidad,
         })
-      activarNoti()
+      activarNoti(refNoti)
     }
   }
 
@@ -58,7 +57,6 @@ function Modelo({accesorio, seleccionAccesorio, activarNoti, gasesHandler}) {
               }
               </select> : null
           }
-
           <div>
             <p>Cantidad:</p>
             <input type="number" name="cantidad" id="cantidad" ref={inputRef} min={0}/>

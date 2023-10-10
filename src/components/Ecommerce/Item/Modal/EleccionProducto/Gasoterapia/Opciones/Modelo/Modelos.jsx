@@ -1,11 +1,13 @@
-import Item from './Item'
-import React from 'react'
+import useNotificacion from 'hooks/ecommerce/useNotificacion';
+import Item from './Item';
+import React from 'react';
 
-function Modelos({item, setModelo}) {
+function Modelos({item, setModelo, refNoti}) {
 
-  
+  const {activarNoti} = useNotificacion();
   function seleccionarElemento(id){
-    setModelo(id)
+    setModelo(id);
+    activarNoti(refNoti);
   }
 
   return (
@@ -22,7 +24,7 @@ function Modelos({item, setModelo}) {
           <tbody>
             {
               item.modelos_.map(
-                  modelo => <Item key={modelo._id} modelo={modelo} seleccionarElemento={seleccionarElemento} />
+                  modelo => <Item key={modelo._id} modelo={modelo} seleccionarElemento={seleccionarElemento} refNoti={refNoti}/>
               )            
             }
           </tbody>

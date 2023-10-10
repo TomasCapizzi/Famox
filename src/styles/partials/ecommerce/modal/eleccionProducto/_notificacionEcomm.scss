@@ -1,0 +1,28 @@
+@import 'styles/theme/theme.scss';
+
+.notificacion{
+    display: none;
+}
+.noti-on{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    background-color: $color2;
+    padding: 0 15px;
+    right: 10px;
+    border-radius: 10px;
+    animation: noti 1s ease-in-out;
+    font-size: 12px;
+    font-weight: 600;
+    color: $black;
+}
+@keyframes noti {
+    0%{
+        opacity: 0;
+        bottom: 60px;
+    }
+    100%{
+        opacity: 1;
+        bottom: 0px;
+    }
+}
