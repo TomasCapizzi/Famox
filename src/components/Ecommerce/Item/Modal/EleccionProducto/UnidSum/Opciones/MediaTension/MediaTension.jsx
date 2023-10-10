@@ -1,9 +1,9 @@
 import React,{useRef} from 'react';
 
-import {MdKeyboardArrowDown} from 'react-icons/md';
 import MediaTensionItem from 'components/Ecommerce/Item/Modal/EleccionProducto/UnidSum/Opciones/MediaTension/MediaTensionItem';
 import useMostrarOpciones from 'hooks/ecommerce/useMostrarOpciones';
 import useOpcionesMediaTension from 'hooks/ecommerce/unidadSuministro/useOpcionesMediaTension';
+import EncabezadoOpciones from '../../../EncabezadoOpciones';
 
 function MediaTension({items, valoresMediaTension,setValoresMediaTension }) {
 
@@ -18,21 +18,15 @@ function MediaTension({items, valoresMediaTension,setValoresMediaTension }) {
 
   return (
     <article className='modal-mediatension'>
-        <div className='encabezado'>
-            <p>Media Tensión</p>
-            <MdKeyboardArrowDown onClick={()=> mostrarMediaTension(opcionesRef)} />
-        </div>
+        <EncabezadoOpciones titulo="Media Tensión" mostrarOpcion={mostrarMediaTension} opcionesRef={opcionesRef}/>
         <article className='opciones' ref={opcionesRef}>
-            <button onClick={()=> confirmarItems()}>
-                Confirmar
-            </button>
+            <button onClick={()=> confirmarItems()}>Confirmar</button>
             {
                 items.map(
                     item => <MediaTensionItem item={item} key={item} obtenerCantidadInput={obtenerCantidadInput}/>
                 )
             }
         </article>
-
     </article>
   )
 }

@@ -2,8 +2,9 @@ import React, {useRef} from 'react';
 
 import CONECTORES from 'data/conectores';
 import Item from './Item';
-import {MdKeyboardArrowDown} from 'react-icons/md';
+
 import useMostrarOpciones from 'hooks/ecommerce/useMostrarOpciones';
+import EncabezadoOpciones from '../../../EncabezadoOpciones';
 
 function Conectores({items, setConector}) {
 
@@ -19,10 +20,7 @@ function Conectores({items, setConector}) {
 
   return (
       <div className='modal-conectores '>
-        <div className='encabezado'>
-            <p>Conectores</p>
-            <MdKeyboardArrowDown onClick={()=> mostrarConectores(opcionesRef)}/>
-        </div>
+        <EncabezadoOpciones titulo="Conectores" mostrarOpcion={mostrarConectores} opcionesRef={opcionesRef} />
         <article ref={opcionesRef} className='opciones-conectores'>
             {
                 items.map(

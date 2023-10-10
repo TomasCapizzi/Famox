@@ -1,9 +1,9 @@
 import React,{useRef} from 'react';
 
 import IluminacionItem from 'components/Ecommerce/Item/Modal/EleccionProducto/UnidSum/Opciones/Iluminacion/IluminacionItem';
-import {MdKeyboardArrowDown} from 'react-icons/md';
 import useMostrarOpciones from 'hooks/ecommerce/useMostrarOpciones';
 import useOpcionesIluminacion from 'hooks/ecommerce/unidadSuministro/useOpcionesIluminacion';
+import EncabezadoOpciones from '../../../EncabezadoOpciones';
 
 function Iluminacion({items,valoresIluminacion, setValoresIluminacion}) {
   const opcionesRef = useRef();    
@@ -17,10 +17,7 @@ function Iluminacion({items,valoresIluminacion, setValoresIluminacion}) {
 
   return (
     <article className='modal-iluminacion'>
-    <div className='encabezado'>
-        <p>Iluminación</p>
-        <MdKeyboardArrowDown onClick={()=> mostrarIluminacion(opcionesRef)} />
-    </div>
+    <EncabezadoOpciones titulo="Iluminación" mostrarOpcion={mostrarIluminacion} opcionesRef={opcionesRef} />
     <article className='opciones' ref={opcionesRef}>
             <button onClick={()=> confirmarItems()}>
                 Confirmar

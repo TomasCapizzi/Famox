@@ -1,9 +1,9 @@
 import React,{useRef} from 'react';
 
 import BajaTensionItem from 'components/Ecommerce/Item/Modal/EleccionProducto/UnidSum/Opciones/BajaTension/BajaTensionItem';
-import {MdKeyboardArrowDown} from 'react-icons/md';
 import useMostrarOpciones from 'hooks/ecommerce/useMostrarOpciones';
 import useOpcionesBajatension from 'hooks/ecommerce/unidadSuministro/useOpcionesBajaTension';
+import EncabezadoOpciones from '../../../EncabezadoOpciones';
 
 function BajaTension({items, valoresBajaTension , setValoresBajaTension}) {
   const opcionesRef = useRef();    
@@ -17,21 +17,15 @@ function BajaTension({items, valoresBajaTension , setValoresBajaTension}) {
 
 return (
   <article className='modal-bajatension'>
-      <div className='encabezado'>
-          <p>Baja Tensión</p>
-          <MdKeyboardArrowDown onClick={()=> mostrarBajaTension(opcionesRef)} />
-      </div>
+      <EncabezadoOpciones titulo="Baja Tensión" mostrarOpcion={mostrarBajaTension} opcionesRef={opcionesRef}/>
       <article className='opciones' ref={opcionesRef}>
-            <button onClick={()=> confirmarItems()}>
-                Confirmar
-            </button>
+            <button onClick={()=> confirmarItems()}>Confirmar</button>
             {
                 items.map(
                     item => <BajaTensionItem item={item} key={item} obtenerCantidadInput={obtenerCantidadInput}/>
                 )
             }
         </article>
-
   </article>
 )
 }

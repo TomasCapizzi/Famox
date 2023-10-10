@@ -1,8 +1,8 @@
 import React, {useRef} from 'react';
 
 import Item from './Item';
-import {MdKeyboardArrowDown} from 'react-icons/md';
 import useMostrarOpciones from 'hooks/ecommerce/useMostrarOpciones';
+import EncabezadoOpciones from '../../../EncabezadoOpciones';
 
 function Rango({item, setRango}){
 
@@ -18,10 +18,7 @@ function Rango({item, setRango}){
 
   return (
     <div className='modal-rangos'>
-        <div className='encabezado'> 
-            <p>Rangos</p>
-            <MdKeyboardArrowDown onClick={()=> mostrarRangos(opcionesRef)}/>
-        </div>
+        <EncabezadoOpciones titulo="Rangos" mostrarOpcion={mostrarRangos} opcionesRef={opcionesRef} />
         <article ref={opcionesRef} className='opciones-rangos'>
         {
           item.rangos && item.rangos.map(

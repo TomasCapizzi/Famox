@@ -2,8 +2,8 @@ import React, {useRef} from 'react';
 
 import GASES from 'data/gases';
 import Item from './Item';
-import {MdKeyboardArrowDown} from 'react-icons/md';
 import useMostrarOpciones from 'hooks/ecommerce/useMostrarOpciones';
+import EncabezadoOpciones from '../../../EncabezadoOpciones';
 
 function Gases({items, setGas}) {
 
@@ -20,10 +20,7 @@ function Gases({items, setGas}) {
 
   return (
       <div className='modal-gases'>
-        <div className='encabezado'> 
-            <p>Gases</p>
-            <MdKeyboardArrowDown onClick={()=> mostrarGases(opcionesRef)}/>
-        </div>     
+        <EncabezadoOpciones titulo="Gases" mostrarOpcion={mostrarGases} opcionesRef={opcionesRef} />
         <article className='opciones-gases' ref={opcionesRef}>
             {
                 items.map(
