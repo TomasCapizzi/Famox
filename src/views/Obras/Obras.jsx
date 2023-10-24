@@ -1,19 +1,15 @@
-import React,{useEffect, useState} from 'react';
+import React,{useEffect} from 'react';
 
 import {Helmet} from 'react-helmet';
 import Obra from 'components/Obras/Obra';
+import useListaObras from 'hooks/obras/useListaObras';
+import Spinner from 'components/Spinner/Spinner';
 
 function Obras() {
-
-    const [obras, setObras] = useState([])
-
-    const getObras = async ()=> {
-        const response = await fetch('https://famox-api.vercel.app/api/products/obras');
-        const res = await response.json();
-        setObras(res.products.sort((a,b)=> b.fecha-a.fecha));
-    }
+    const {getObras, obras} = useListaObras();
     useEffect(()=>{
         getObras();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
   return (
@@ -29,7 +25,7 @@ function Obras() {
                     obras.map(
                         obra => <Obra key={obra._id} obra={obra}/>
                     )
-                : null
+                : <Spinner/>
             }
         </section>
     </div>
