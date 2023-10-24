@@ -24,14 +24,7 @@ function LinksResponsive({menuUl, useMenuHamb}) {
         </Link>
         <Link  to='/contacto'>
         <li onClick={useMenuHamb}>Contacto</li>
-        </Link>
-        {
-          /*
-        <Link  to='/login'>
-          <li onClick={useMenuHamb}><FaUser/></li>
-        </Link> 
-          */
-        }           
+        </Link>          
     </ul>
   )
 }

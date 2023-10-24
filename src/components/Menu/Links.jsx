@@ -36,14 +36,7 @@ function Links({carro}) {
             null : <p>{carro.length}</p>
         }
         </li>
-        </Link>
-        {
-          /*
-        <Link  to='/login'>
-          <li><FaUser/></li>
-        </Link>   */
-        }
-          
+        </Link>   
     </ul>
   )
 }

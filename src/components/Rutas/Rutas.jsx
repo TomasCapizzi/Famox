@@ -12,7 +12,6 @@ import Gasoterapia from 'views/Productos/Gasoterapia/Gasoterapia';
 import Historia from 'views/Nosotros/Historia';
 import Home from 'views/Home/Home';
 import Llamadores from 'views/Productos/Llamadores/Llamadores';
-import Login from 'views/Login/Login';
 import Obras from 'views/Obras/Obras';
 import PregFrec from 'views/PregFrec/PregFrec';
 import Productos from 'views/Productos/Productos';
@@ -28,7 +27,6 @@ function Rutas() {
             <Route path='/certificaciones' element={<Certificaciones/>} />
             <Route path='/contacto' element={<Contacto/>} />
             <Route path='/productos' element={<Productos/>} />
-            <Route path='/login' element={<Login/>} />
             <Route path='/ecommerce' element={<Ecommerce/>} />
             <Route path='/obras' element={<Obras/>} />
             <Route path='/carrito' element={<Carrito/>} />
