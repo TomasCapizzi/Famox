@@ -12,8 +12,7 @@ function Ecommerce() {
 
   const [gasoterapiaHandler, setGasoterapiaHandler] = useState(true);
   const [unidSumHandler, setUnidSumHandler] = useState(true)
-  const [accesoriosHandler, setAccesoriosHandler] = useState(true)
-
+  const [accesoriosHandler, setAccesoriosHandler] = useState(true);
   const [handler, setHandler] = useState(false);
   const {getRandomKey} = useRandomKey();
  

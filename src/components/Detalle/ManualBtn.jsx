@@ -8,7 +8,6 @@ function ManualBtn({product}) {
             <a href={product.manual} target='_blank' rel='noreferrer'>Descargar manual <BiDownload/>
         </a>
     </button>
-
   )
 }
 
