@@ -7,7 +7,6 @@ function TablaConexion() {
           <th>Conector</th>
           <th>Gas</th>
           <th>Cantidad</th>
-          <th>Borrar</th>
         </tr>
     </thead>
   )

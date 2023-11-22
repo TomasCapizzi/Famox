@@ -10,7 +10,7 @@ function SeleccionContainer({gas, conector, rango, modelo, item, eliminarSelecci
         {
         gas || conector || rango || modelo ? <p>Tu selección</p> : null
         }
-        <div className='container'>
+        <div className='selecciones-container'>
         {
             conector && <ConectorSeleccion conector={conector} eliminarSeleccionConector={eliminarSeleccionConector} />
         }

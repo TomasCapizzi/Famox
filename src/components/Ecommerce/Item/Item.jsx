@@ -7,30 +7,18 @@ function Item({item}) {
   const modalRef = useRef()
 
   function toggleModal(e,containerModalRef, modalWinwowRef){
-    if(containerModalRef){
-      if(e.target === containerModalRef.current){
-        modalRef.current.classList.toggle('off');
-      }
-    } else{
-      modalRef.current.classList.toggle('off');
-    }
-    
+    console.log('modal'); 
   }
 
   return (
-    <>   
-      <div className='item-ecom' >
+    <div className='item-ecom'>
+      <div className='item-info'>
         <h5>{item.nombre}</h5>
         <img src={item.img} alt={item.nombre} onClick={()=> toggleModal()} />        
       </div>
-      <div className='modal-handler off' ref={modalRef}>
-        <Modal item={item} toggleModal={toggleModal} />
-      </div>
-
-    </>
+      <Modal item={item} toggleModal={toggleModal} />
+    </div>
   )
 }
 
-export default Item
-/*
-  */
+export default Item;

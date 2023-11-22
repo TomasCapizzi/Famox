@@ -11,7 +11,9 @@ import HabilitacionBotonera from './HabilitacionBotonera'
 
 function EleccionGasoterapia({item,toggleModal }) {
 
-  const refNoti = useRef();
+  const refNotificacionModelo = useRef();
+  const refNotificacionCompra = useRef();
+
   const {agregarAlCarrito, setConector, setGas, setModelo, setRango, modelo, conector, gas, rango} = useAgregarCarrito({item});
 
   const {eliminarSeleccionConector, eliminarSeleccionGas, eliminarSeleccionRango, eliminarSeleccionModelo} = useEliminarSelecciones(setConector, setGas, setRango, setModelo)
@@ -27,10 +29,12 @@ function EleccionGasoterapia({item,toggleModal }) {
         {
           item && 
           <div className='container' >
-            { item.conectores ? <Conectores items={item.conectores} setConector={setConector} /> : null }
-            { item.gases_.length > 1 ? <Gases items={item.gases_} setGas={setGas} /> : null }
-            { item.rangos ? <Rango item={item} setRango={setRango} />: null }
-            { item.modelos ? <Modelos item={item} setModelo={setModelo} refNoti={refNoti} /> : null }
+            <div className='container-opciones'>
+              { item.conectores ? <Conectores items={item.conectores} setConector={setConector} /> : null }
+              { item.gases_.length > 1 ? <Gases items={item.gases_} setGas={setGas} /> : null }
+              { item.rangos ? <Rango item={item} setRango={setRango} />: null }
+              { item.modelos ? <Modelos item={item} setModelo={setModelo} refNotificacionModelo={refNotificacionModelo} /> : null }
+            </div>
             { // Selecciones de Gas, Conectores, Modelos y Rangos
               item.gases_ || item.conectores || item.modelos || item.rangos ? 
                 <SeleccionContainer gas={gas} conector={conector} rango={rango} modelo={modelo} item={item} eliminarSeleccionConector={eliminarSeleccionConector} eliminarSeleccionGas={eliminarSeleccionGas} eliminarSeleccionRango={eliminarSeleccionRango} eliminarSeleccionModelo={eliminarSeleccionModelo} />
@@ -38,8 +42,8 @@ function EleccionGasoterapia({item,toggleModal }) {
               }
           </div> 
         }
-        <HabilitacionBotonera item={item} conector={conector} gas={gas} rango={rango} modelo={modelo} agregarAlCarrito={agregarAlCarrito} toggleModal={toggleModal}/>
-        <NotificacionAgregadoModelo refNoti={refNoti} />
+        <HabilitacionBotonera item={item} conector={conector} gas={gas} rango={rango} modelo={modelo} agregarAlCarrito={agregarAlCarrito} toggleModal={toggleModal} eliminarSeleccionConector={eliminarSeleccionConector} eliminarSeleccionGas={eliminarSeleccionGas} eliminarSeleccionRango={eliminarSeleccionRango} eliminarSeleccionModelo={eliminarSeleccionModelo} refNotificacionCompra={refNotificacionCompra}/>
+        <NotificacionAgregadoModelo refNotificacionModelo={refNotificacionModelo}/>
     </div>
   )
 }

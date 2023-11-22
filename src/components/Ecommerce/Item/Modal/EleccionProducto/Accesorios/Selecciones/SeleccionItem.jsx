@@ -9,10 +9,10 @@ function SeleccionItem({acc, eliminarSeleccion}) {
   ) : null*/
   return (
     <div className='seleccion-item'>
-      <img src={acc.img} alt="accesorio" />
+      {/*<img src={acc.img} alt="accesorio" />*/}
+      <p className='acc-codigo'>{acc.codigo}</p>
       <p>{acc.nombre.split('M2')[1]}</p>
       {/*<img src={gasImg[0].img} alt="gas" className='img-gas' />*/}
-      <p className='acc-codigo'>{acc.codigo}</p>
       <p>Cantidad: {acc.cantidad}</p>
       <button onClick={()=>eliminarSeleccion(acc.codigo)}><TiDelete/></button>
       {/* Aca igualar Gas con GASES para la img del gas */}

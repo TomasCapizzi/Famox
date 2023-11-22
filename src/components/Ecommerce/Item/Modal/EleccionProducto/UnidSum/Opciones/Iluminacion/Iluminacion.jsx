@@ -19,15 +19,15 @@ function Iluminacion({items,valoresIluminacion, setValoresIluminacion}) {
     <article className='modal-iluminacion'>
     <EncabezadoOpciones titulo="Iluminación" mostrarOpcion={mostrarIluminacion} opcionesRef={opcionesRef} />
     <article className='opciones' ref={opcionesRef}>
-            <button onClick={()=> confirmarItems()}>
-                Confirmar
-            </button>
-            {
-                items.map(
-                    item => <IluminacionItem item={item} key={item} obtenerCantidadInput={obtenerCantidadInput}/>
-                )
-            }
-        </article>
+      <button onClick={()=> confirmarItems()}>
+          Confirmar
+      </button>
+      {
+          items.map(
+              item => <IluminacionItem item={item} key={item} obtenerCantidadInput={obtenerCantidadInput}/>
+          )
+      }
+    </article>
 
 </article>
   )

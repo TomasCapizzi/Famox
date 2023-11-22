@@ -2,6 +2,8 @@ import React,{useRef, useState} from 'react';
 import EncabezadoOpciones from '../../../EncabezadoOpciones';
 import useMostrarOpciones from 'hooks/ecommerce/useMostrarOpciones';
 import useOpcionesGasConec from 'hooks/ecommerce/unidadSuministro/useOpcionesGasConec';
+import {FaPlusCircle} from 'react-icons/fa';
+
 
 function GasConector({item, conexiones, setConexiones}) {
   const opcionesRef = useRef();
@@ -15,6 +17,7 @@ function GasConector({item, conexiones, setConexiones}) {
   
   function mostrarConexion(){
     setHandler(!handler);
+    mostrarConexionGases(opcionesRef);
   }
   return (
     <article className='modal-gasconec'>
@@ -37,7 +40,7 @@ function GasConector({item, conexiones, setConexiones}) {
                 }
               </select>
               <input type="number" name='gasconec' min={0} placeholder='0' ref={cantidadRef} />
-              <button onClick={()=>agregarConexion()}>Agregar</button>
+              <FaPlusCircle onClick={()=>agregarConexion()}/>
             </div>
         }      
       </article>

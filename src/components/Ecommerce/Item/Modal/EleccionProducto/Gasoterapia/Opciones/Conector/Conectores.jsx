@@ -20,7 +20,7 @@ function Conectores({items, setConector}) {
 
   return (
       <div className='modal-conectores '>
-        <EncabezadoOpciones titulo="Conectores" mostrarOpcion={mostrarConectores} opcionesRef={opcionesRef} />
+        <EncabezadoOpciones titulo="Conectores" mostrarOpcion={mostrarConectores} opcionesRef={opcionesRef}/>
         <article ref={opcionesRef} className='opciones-conectores'>
             {
                 items.map(
