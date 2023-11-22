@@ -1,18 +1,24 @@
 @import 'styles/theme/theme.scss';
 
 .item-ecom{
-
-    width: 180px;
+    width: 100%;
     transition: .2s ease-in-out all;
     display: flex;
-    flex-direction: column;
     align-items: center;
     margin-top: 15px;
-
+    border-bottom: 1px solid #d9d9d9;
+    .item-info{
+        width: 25%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
     h5{
         height: 30px;
         width: 90%;
         text-align: center;
+        font-size: 16px;
     }
     img{
         object-fit: scale-down;
@@ -21,211 +27,102 @@
         cursor: pointer;
         transition: .2s ease-in all;
     }
+}
 
-    .botonera{
-        display: flex;
+@media only screen and (max-width: 420px){
+    .item-ecom{
         width: 100%;
         flex-direction: column;
-        align-items: center;
-
-        .contador{
+        justify-content: center;
+        border-bottom: 1px solid #d9d9d9;
+        .item-info{
             width: 100%;
-            justify-content: space-around;
             display: flex;
-            align-items: center;
-
-            p{
-                font-size: 1.2rem;
-                font-weight: 500;
-            }
-
-            button{
-                cursor: pointer;
-                border: none;
-                background-color: transparent;
-                font-size: 1.3rem;
-                color: $color1;
-            }
-            button:disabled{
-                color: $color2;
-            }
-        }
-
-        .confirmar{
-            cursor: pointer;
-            padding: 3px;
-            border: none;
-            background-color: $color1;
-            font-size: 1rem;
-            color: $white;
-            border-radius: 4px;
-            width: 90%;
-            transition: .3s ease-in-out all;
-        }
-        .confirmar:hover{
-            opacity: 0.8;
-            border-radius: 10px;
-        }
-        .confirmar:disabled{
-            cursor: not-allowed;
-            background-color: $color2;
-            color: $color1;
-        }
-    }
-
-}
-
-.item-ecom:hover{
-
-    h5{
-        transform: scale(1.1);
-    }
-    img{
-        transform: scale(0.9);
-    }
-
-}
-
-@media only screen and (max-width: 568px){
-    .item-ecom{
-
-        width: 50%;
-        margin-top: 15px;
-    
-        h5{
-            height: 30px;
-            font-size: 0.8rem;
-        }
-        img{
-            object-fit: scale-down;
-            width: 90px;
-            height: 80px;
-            cursor: pointer;
-            transition: .2s ease-in all;
-        }
-    
-        .botonera{
-            display: flex;
-            width: 100%;
+            flex-wrap: wrap;
             flex-direction: column;
             align-items: center;
-    
-            .contador{
-                width: 100%;
-                justify-content: space-around;
-                display: flex;
-                align-items: center;
-    
-                p{
-                    font-size: 1.2rem;
-                    font-weight: 500;
-                }
-    
-                button{
-                    cursor: pointer;
-                    border: none;
-                    background-color: transparent;
-                    font-size: 1.3rem;
-                    color: $color1;
-                }
-                button:disabled{
-                    color: $color2;
-                }
-            }
-    
-            .confirmar{
-                cursor: pointer;
-                padding: 3px;
-                border: none;
-                background-color: $color1;
-                font-size: 1rem;
-                color: $white;
-                border-radius: 4px;
-                width: 90%;
-                transition: .3s ease-in-out all;
-            }
-            .confirmar:hover{
-                opacity: 0.8;
-                border-radius: 10px;
-            }
-            .confirmar:disabled{
-                cursor: not-allowed;
-                background-color: $color2;
-                color: $color1;
-            }
         }
-    
-    }  
-}
-
-@media only screen and (min-width: 569px)and (max-width: 768px){
-    .item-ecom{
-
-        width: 30%;
-        margin-top: 15px;
-    
         h5{
-            height: 30px;
-            font-size: 0.8rem;
+            height: auto;
+            margin: 0 0 5px 0;
+            font-size: 14px;
         }
         img{
-            object-fit: scale-down;
             width: 90px;
-            height: 80px;
-            cursor: pointer;
-            transition: .2s ease-in all;
+            height: 90px;
         }
-    
-        .botonera{
-            display: flex;
+    }
+}
+
+@media only screen and (min-width: 421px)and (max-width: 600px){
+    .item-ecom{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        border-bottom: 1px solid #d9d9d9;
+        .item-info{
             width: 100%;
+            display: flex;
+            flex-wrap: wrap;
             flex-direction: column;
             align-items: center;
-    
-            .contador{
-                width: 100%;
-                justify-content: space-around;
-                display: flex;
-                align-items: center;
-    
-                p{
-                    font-size: 1.2rem;
-                    font-weight: 500;
-                }
-    
-                button{
-                    cursor: pointer;
-                    border: none;
-                    background-color: transparent;
-                    font-size: 1.3rem;
-                    color: $color1;
-                }
-                button:disabled{
-                    color: $color2;
-                }
-            }
-    
-            .confirmar{
-                cursor: pointer;
-                padding: 3px;
-                border: none;
-                background-color: $color1;
-                font-size: 1rem;
-                color: $white;
-                border-radius: 4px;
-                width: 90%;
-                transition: .3s ease-in-out all;
-            }
-            .confirmar:hover{
-                opacity: 0.8;
-                border-radius: 10px;
-            }
-            .confirmar:disabled{
-                cursor: not-allowed;
-                background-color: $color2;
-                color: $color1;
-            }
+            margin-top: 15px;
         }
-    
-    } 
+        h5{
+            height: auto;
+            margin: 10px 0 5px 0;
+            font-size: 16px;
+        }
+        img{
+            width: 120px;
+            height: 120px;
+        }
+    }
+}
+@media only screen and (min-width: 601px)and (max-width: 800px){
+    .item-ecom{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        border-bottom: 1px solid #d9d9d9;
+        .item-info{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+        }
+        h5{
+            height: auto;
+            margin: 8px 0 12px 0;
+            font-size: 18px;
+        }
+        img{
+            width: 130px;
+            height: 130px;
+        }
+    }
+}
+@media only screen and (min-width: 801px)and (max-width: 1024px){
+    .item-ecom{
+        width: 100%;
+        .item-info{
+            width: 25%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+        }
+        h5{
+            height: auto;
+            margin: 8px 0 12px 0;
+            font-size: 17px;
+        }
+        img{
+            width: 140px;
+            height: 140px;
+        }
+    }
 }

@@ -1,103 +1,114 @@
 @import 'styles/theme/theme.scss';
 
 .modal-eleccion{
-    width: 60%;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    width: 100%;
     display: flex;
-    margin-top: 25px;
-    flex-wrap: wrap;
-    justify-content: center;
-
+    justify-content: space-between;
+    flex-direction: row;
+    p{
+        font-size: 12px;
+    }
     .container{
         display: flex;
-        flex-direction: column;
         align-items: center;
+        justify-content: space-between;
+        width: 70%;
+        .container-opciones{
+            display: flex;
+            flex-direction: column;
+            width: 55%;
+            margin-bottom: 15px;
+        }
+        .selecciones{
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            align-items: center;
+            .selecciones-container{
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                p{
+                    margin: 0;
+                }
+                .seleccionado{
+                    border: 1px solid #c1c1c1;
+                    width: 90%;
+                    position: relative;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    padding: 1.5px;
+                    button{
+                        background-color: transparent;
+                        border: none;
+                        color: $color1;
+                        font-size: 1.2rem;
+                        margin: 0px;
+                    }
+                    svg:hover{
+                        cursor: pointer;
+                        color: $black;
+                    }
+                    img{
+                        width: 40px;
+                        height: 40px;
+                    }
+                    p{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    .container-unidsum{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
-        position: relative;
-        min-height: 80%;
-        align-items: center;
+        .container-opciones{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin-bottom: 15px;
+        }
+        .container-seleccion{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .botonera{
+                width: 90%;
+                margin-bottom: 10px;
+            }
+        }
     }
     .encabezado{
+        cursor: pointer;
+        position: relative;
         background-color: $color1;
         color: $white;
         display: flex;
         align-items: center;
         justify-content: space-around;
         border-radius: 5px;
-        width: 90%;
+        width: 230px;
+        margin-right: 5px;
         p{
-            width: 80%;
+            margin-left: 3px;
+            font-size: 14px;
+            font-weight: 600;
         }
         svg{
-            cursor: pointer;
             font-size: 1.5rem;
         }
-    }
-
-    .selecciones{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        .container{
-            width: 100%;
-            display: flex;
-            align-items: flex-start;
-        }
-
-    }
-
-    .longitud-panel{
-        display: flex;
-        flex-direction: column;
-        h4{
-            width: 100%;
-        }
-        p:nth-child(3){
-            font-size: 0.8rem;
-        }
-        select{
-            border: 1px solid $color1;
-            color: $color1;
-            font-weight: 700;
-        }
-    }
-}
-
-.seleccionado{
-    border: 1px solid $color2;
-    width: 50%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    p{
-        width: 85%;
-        padding-left: 10px;
-    }
-
-    button{
-        background-color: transparent;
-        border: none;
-        color: $color1;
-        font-size: 1.2rem;
-        margin: 5px;
-    }
-    svg:hover{
-        cursor: pointer;
-        color: $black;
-    }
-    img{
-        width: 40px;
-    }
-    p{
-        margin: 0;
     }
 }
 
 .modelo{
-    padding: 5px;
-    border: 1px solid $color2;
+    border: 2px solid $color2;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -113,70 +124,344 @@
     }
 }
 
-@media only screen and (max-width: 568px){
+@media only screen and (max-width: 420px){
     .modal-eleccion{
-        width: 90%;
-        overflow-x: hidden;
-        overflow-y: auto;    
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         .container{
             display: flex;
             flex-direction: column;
+            justify-content: center;
             width: 100%;
-            position: relative;
-            min-height: 80%;
+            .container-opciones{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-bottom: 10px;
+                .modal-modelos-container{
+                    .encabezado{
+                        width: 70%;
+                        margin-right: 0px;
+                        p{
+                            margin-left: 0px;
+                            font-size: 12px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            .selecciones{
+                width: 80%;
+                .selecciones-container{
+                    width: 90%;
+                    .seleccionado{
+                        width: 100%;
+                        padding: 1px;
+                        justify-content: space-between;
+                        button{
+                            display: flex;
+                            align-items: center;
+                        }
+                        svg:hover{
+                            cursor: pointer;
+                            color: $black;
+                        }
+                        img{
+                            width: 40px;
+                            height: 40px;
+                        }
+                        p{
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .container-unidsum{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .container-opciones{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .container-seleccion{
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
         }
         .encabezado{
-            background-color: $color1;
-            color: $white;
+            width: 70%;
+            margin-right: 0px;
+            p{
+                margin-left: 0px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+        }
+    }
+    .modelo{
+        border: 2px solid $color2;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        button{
+            background-color: transparent;
+            svg{
+                color: $color1;
+                cursor: pointer;
+            }
+            svg:hover{
+                color: $black;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 421px)and (max-width: 600px){
+    .modal-eleccion{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+        .container{
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            .container-opciones{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-bottom: 10px;
+                .modal-modelos-container{
+                    .encabezado{
+                        width: 85%;
+                        margin-right: 0px;
+                        p{
+                            margin-left: 0px;
+                            font-size: 13px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            .selecciones{
+                width: 90%;
+                .selecciones-container{
+                    width: 90%;
+                    .seleccionado{
+                        width: 100%;
+                        padding: 2px;
+                        justify-content: space-between;
+                        button{
+                            display: flex;
+                            align-items: center;
+                        }
+                        svg:hover{
+                            cursor: pointer;
+                            color: $black;
+                        }
+                        img{
+                            width: 40px;
+                            height: 40px;
+                        }
+                        p{
+                            margin: 0;
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+        .container-unidsum{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .container-opciones{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .container-seleccion{
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .encabezado{
+            width: 85%;
+            margin-right: 0px;
+            p{
+                margin-left: 0px;
+                font-size: 13px;
+                font-weight: 600;
+            }
+        }
+        .modelo{
+            border: 2px solid $color2;
+            display: flex;
+            justify-content: flex-start;
             align-items: center;
-            justify-content: space-around;
-            border-radius: 5px;
+            button{
+                background-color: transparent;
+                svg{
+                    color: $color1;
+                    cursor: pointer;
+                }
+                svg:hover{
+                    color: $black;
+                }
+            }
+        }
+    }
+    
+    .seleccionado{
+        border: 1px solid $color2;
+        width: 90%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        button{
+            background-color: transparent;
+            border: none;
+            color: $color1;
+            font-size: 1.2rem;
+            margin: 5px;
+        }
+        svg:hover{
+            cursor: pointer;
+            color: $black;
+        }
+        img{
+            width: 40px;
+            margin-right: 15px;
+        }
+        p{
+            margin: 0;
+            padding: 4px;
+        }
+    }
+    
+    .modelo{
+        padding: 0px;
+        border: 1px solid $color2;
+        font-weight: bold;
+        border-radius: 0px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+@media only screen and (min-width: 601px)and (max-width: 800px){
+    .modal-eleccion{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: start;
+            width: 100%;
+            .container-opciones{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-bottom: 10px;
+                align-items: center;
+                .modal-modelos-container{
+                    .encabezado{
+                        width: 90%;
+                        margin-right: 0px;
+                        p{
+                            margin-left: 0px;
+                            font-size: 13px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            .selecciones{
+                width: 90%;
+                flex-direction: column-reverse;
+                .selecciones-container{
+                    width: 90%;
+                    .seleccionado{
+                        width: 100%;
+                        padding: 2px;
+                        justify-content: space-between;
+                        button{
+                            display: flex;
+                            align-items: center;
+                        }
+                        svg:hover{
+                            cursor: pointer;
+                            color: $black;
+                        }
+                        img{
+                            width: 40px;
+                            height: 40px;
+                        }
+                        p{
+                            margin: 0;
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+        .container-unidsum{
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            .container-opciones{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 50%;
+                margin-bottom: 10px;
+            }
+            .container-seleccion{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+            }
+        }
+        .encabezado{
             width: 90%;
+            margin-right: 0px;
             p{
-                font-size: 0.9rem;
+                margin-left: 0px;
+                font-size: 13px;
+                font-weight: 600;
             }
-            svg{
-                cursor: pointer;
-                font-size: 1.4rem;
-            }
-    
         }
-    
-        .selecciones{
+        .modelo{
+            border: 2px solid $color2;
             display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin-bottom: 15px;
-    
-            .container{
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-    
-        }
-    
-        .longitud-panel{
-            display: flex;
-            width: 100%;
-            flex-direction: row;
-            flex-wrap: wrap;
-            p{
-                font-size: 0.8rem;
-                width: 100%;
-            }
-            input{
-                width: 45%;
-                border-radius: 6px;
-                border: 1px solid $color1;
-            }
-            select{
-                width: 45%;
-                font-size: 0.8rem;
-                margin-left: 5px;
+            justify-content: flex-start;
+            align-items: center;
+            button{
+                background-color: transparent;
+                svg{
+                    color: $color1;
+                    cursor: pointer;
+                }
+                svg:hover{
+                    color: $black;
+                }
             }
         }
     }
@@ -187,8 +472,6 @@
         position: relative;
         display: flex;
         align-items: center;
-        
-    
         button{
             background-color: transparent;
             border: none;
@@ -214,246 +497,358 @@
         padding: 0px;
         border: 1px solid $color2;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 0px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
     }
 }
-
-
-
-@media only screen and (min-width: 569px)and (max-width: 768px){
+@media only screen and (min-width: 801px)and (max-width: 1024px){
     .modal-eleccion{
-        width: 85%;
-        overflow-x: hidden;
-        overflow-y: auto;    
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        p{
+            font-size: 12px;
+        }
         .container{
             display: flex;
-            flex-direction: column;
+            align-items: start;
+            justify-content: space-between;
+            width: 80%;
+            .container-opciones{
+                display: flex;
+                flex-direction: column;
+                width: 45%;
+                margin-bottom: 0px;
+            }
+            .selecciones{
+                display: flex;
+                flex-direction: column-reverse;
+                width: 55%;
+                align-items: center;
+                .selecciones-container{
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    p{
+                        margin: 0;
+                    }
+                    .seleccionado{
+                        border: 1px solid #c1c1c1;
+                        width: 90%;
+                        position: relative;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        padding: 1.5px;
+                        button{
+                            background-color: transparent;
+                            border: none;
+                            color: $color1;
+                            font-size: 1.2rem;
+                            margin: 0px;
+                        }
+                        svg:hover{
+                            cursor: pointer;
+                            color: $black;
+                        }
+                        img{
+                            width: 40px;
+                            height: 40px;
+                        }
+                        p{
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .container-unidsum{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             width: 100%;
-            position: relative;
-            min-height: 80%;
+            .container-opciones{
+                display: flex;
+                flex-direction: column;
+                width: 40%;
+                margin-bottom: 0px;
+                .encabezado{
+                    width: 85%;
+                }
+            }
+            .container-seleccion{
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .botonera{
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+            }
         }
         .encabezado{
+            cursor: pointer;
+            position: relative;
             background-color: $color1;
             color: $white;
             display: flex;
             align-items: center;
             justify-content: space-around;
             border-radius: 5px;
-            width: 95%;
+            width: 100%;
+            margin-right: 5px;
             p{
-                font-size: 1rem;
+                font-size: 13px;
+                font-weight: 600;
+                margin: 8px 0;
             }
             svg{
-                cursor: pointer;
-                font-size: 1.4rem;
-            }
-    
-        }
-    
-        .selecciones{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin-bottom: 15px;
-            
-            .container{
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-    
-        }
-    
-        .longitud-panel{
-            display: flex;
-            width: 100%;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            p{
-                font-size: 0.9rem;
-                width: 100%;
-            }
-            input{
-                width: 55%;
-                border-radius: 6px;
-                border: 1px solid $color1;
-            }
-            select{
-                width: 30%;
-                font-size: 0.8rem;
-                margin-left: 5px;
+                font-size: 1.5rem;
             }
         }
-    }
-    
-    .seleccionado{
-        border: 1px solid $color2;
-        width: 90%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        button{
-            background-color: transparent;
-            border: none;
-            color: $color1;
-            font-size: 1.2rem;
-            margin: 5px;
-        }
-        svg:hover{
-            cursor: pointer;
-            color: $black;
-        }
-        img{
-            width: 40px;
-            margin-right: 15px;
-        }
-        p{
-            margin: 0;
-            padding: 4px;
-        }
-    }
-    
+    }   
     .modelo{
-        padding: 0px;
-        border: 1px solid $color2;
-        font-weight: bold;
-        border-radius: 10px;
+        border: 2px solid $color2;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-    }
-}
-
-
-@media only screen and (min-width: 769px)and (max-width: 1024px){
-    .modal-eleccion{
-        width: 85%;
-        overflow-x: hidden;
-        overflow-y: auto;    
-        .container{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            position: relative;
-            min-height: 80%;
-        }
-        .encabezado{
-            background-color: $color1;
-            color: $white;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            border-radius: 5px;
-            width: 95%;
-            p{
-                font-size: 1rem;
-                
-            }
-            svg{
-                cursor: pointer;
-                font-size: 1.4rem;
-            }
-    
-        }
-    
-        .selecciones{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin-bottom: 15px;
-            
-            .container{
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-    
-        }
-    
-        .longitud-panel{
-            display: flex;
-            width: 100%;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            p{
-                font-size: 0.9rem;
-                width: 100%;
-            }
-            input{
-                width: 55%;
-                border-radius: 6px;
-                border: 1px solid $color1;
-            }
-            select{
-                width: 30%;
-                font-size: 0.8rem;
-                margin-left: 5px;
-            }
-        }
-    }
-    
-    .seleccionado{
-        border: 1px solid $color2;
-        width: 90%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        
-    
         button{
             background-color: transparent;
-            border: none;
-            color: $color1;
-            font-size: 1.2rem;
-            margin: 5px;
+            svg{
+                color: $color1;
+                cursor: pointer;
+            }
+            svg:hover{
+                color: $black;
+            }
         }
-        svg:hover{
-            cursor: pointer;
-            color: $black;
-        }
-        img{
-            width: 40px;
-            margin-right: 15px;
-        }
-        p{
-            margin: 0;
-            padding: 4px;
-        }
-    }
-    
-    .modelo{
-        padding: 0px;
-        border: 1px solid $color2;
-        font-weight: bold;
-        border-radius: 10px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
     }
 }
-
 @media only screen and (min-width: 1025px)and (max-width: 1280px){
     .modal-eleccion{
-        width: 60%;
-        overflow-x: hidden;
-        overflow-y: auto;    
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        p{
+            font-size: 12px;
+        }
         .container{
             display: flex;
-            flex-direction: column;
+            align-items: start;
+            justify-content: space-between;
+            width: 80%;
+            .container-opciones{
+                display: flex;
+                flex-direction: column;
+                width: 45%;
+                margin-bottom: 0px;
+            }
+            .selecciones{
+                display: flex;
+                flex-direction: column-reverse;
+                width: 55%;
+                align-items: center;
+                .selecciones-container{
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    p{
+                        margin: 0;
+                    }
+                    .seleccionado{
+                        border: 1px solid #c1c1c1;
+                        width: 90%;
+                        position: relative;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        padding: 1.5px;
+                        button{
+                            background-color: transparent;
+                            border: none;
+                            color: $color1;
+                            font-size: 1.2rem;
+                            margin: 0px;
+                        }
+                        svg:hover{
+                            cursor: pointer;
+                            color: $black;
+                        }
+                        img{
+                            width: 40px;
+                            height: 40px;
+                        }
+                        p{
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .container-unidsum{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             width: 100%;
-            position: relative;
-            min-height: 80%;
+            .container-opciones{
+                display: flex;
+                flex-direction: column;
+                width: 40%;
+                margin-bottom: 0px;
+                .encabezado{
+                    width: 85%;
+                }
+            }
+            .container-seleccion{
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .botonera{
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+            }
         }
         .encabezado{
+            cursor: pointer;
+            position: relative;
+            background-color: $color1;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 5px;
+            width: 100%;
+            margin-right: 5px;
+            p{
+                font-size: 13px;
+                font-weight: 600;
+                margin: 8px 0;
+            }
+            svg{
+                font-size: 1.5rem;
+            }
+        }
+    }   
+    .modelo{
+        border: 2px solid $color2;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        button{
+            background-color: transparent;
+            svg{
+                color: $color1;
+                cursor: pointer;
+            }
+            svg:hover{
+                color: $black;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1281px)and (max-width: 1440px){
+    .modal-eleccion{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        p{
+            font-size: 12px;
+        }
+        .container{
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            width: 80%;
+            .container-opciones{
+                display: flex;
+                flex-direction: column;
+                width: 45%;
+                margin-bottom: 0px;
+            }
+            .selecciones{
+                display: flex;
+                flex-direction: column-reverse;
+                width: 55%;
+                align-items: center;
+                .selecciones-container{
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    p{
+                        margin: 0;
+                    }
+                    .seleccionado{
+                        border: 1px solid #c1c1c1;
+                        width: 90%;
+                        position: relative;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        padding: 1.5px;
+                        button{
+                            background-color: transparent;
+                            border: none;
+                            color: $color1;
+                            font-size: 1.2rem;
+                            margin: 0px;
+                        }
+                        svg:hover{
+                            cursor: pointer;
+                            color: $black;
+                        }
+                        img{
+                            width: 40px;
+                            height: 40px;
+                        }
+                        p{
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .container-unidsum{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            .container-opciones{
+                display: flex;
+                flex-direction: column;
+                width: 40%;
+                margin-bottom: 0px;
+                .encabezado{
+                    width: 85%;
+                }
+            }
+            .container-seleccion{
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .botonera{
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .encabezado{
+            cursor: pointer;
+            position: relative;
             background-color: $color1;
             color: $white;
             display: flex;
@@ -461,233 +856,30 @@
             justify-content: space-around;
             border-radius: 5px;
             width: 95%;
+            margin-right: 5px;
             p{
-                font-size: 1rem;
-                
+                font-size: 14px;
+                font-weight: 600;
             }
             svg{
+                font-size: 1.5rem;
+            }
+        }
+    }   
+    .modelo{
+        border: 2px solid $color2;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        button{
+            background-color: transparent;
+            svg{
+                color: $color1;
                 cursor: pointer;
-                font-size: 1.4rem;
             }
-    
-        }
-    
-        .selecciones{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin-bottom: 15px;
-            
-            .container{
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-    
-        }
-    
-        .longitud-panel{
-            display: flex;
-            width: 100%;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            p{
-                font-size: 0.9rem;
-                width: 100%;
-            }
-            input{
-                width: 55%;
-                border-radius: 6px;
-                border: 1px solid $color1;
-            }
-            select{
-                width: 30%;
-                font-size: 0.8rem;
-                margin-left: 5px;
+            svg:hover{
+                color: $black;
             }
         }
-    }
-    
-    .seleccionado{
-        border: 1px solid $color2;
-        width: 90%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        
-    
-        button{
-            background-color: transparent;
-            border: none;
-            color: $color1;
-            font-size: 1.2rem;
-            margin: 5px;
-        }
-        svg:hover{
-            cursor: pointer;
-            color: $black;
-        }
-        img{
-            width: 40px;
-            margin-right: 15px;
-        }
-        p{
-            margin: 0;
-            padding: 4px;
-        }
-    }
-    
-    .modelo{
-        padding: 0px;
-        border: 1px solid $color2;
-        font-weight: bold;
-        border-radius: 10px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-}
-
-@media only screen and (min-width: 1281px)and (max-width: 1440px){
-    .modal-eleccion{
-        .encabezado{
-            background-color: $color1;
-            color: $white;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            border-radius: 5px;
-            width: 90%;
-            p{
-                font-size: 1rem;
-                
-            }    
-        }
-    
-        .selecciones{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin-bottom: 15px;
-            
-            .container{
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-    
-        }
-    
-        .longitud-panel{
-            display: flex;
-            width: 100%;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            p{
-                font-size: 0.9rem;
-                width: 100%;
-            }
-            input{
-                width: 55%;
-                border-radius: 6px;
-                border: 1px solid $color1;
-            }
-            select{
-                width: 30%;
-                font-size: 0.8rem;
-                margin-left: 5px;
-            }
-        }
-    }
-    
-    .seleccionado{
-        border: 1px solid $color2;
-        width: 90%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        
-    
-        button{
-            background-color: transparent;
-            border: none;
-            color: $color1;
-            font-size: 1.2rem;
-            margin: 5px;
-        }
-        svg:hover{
-            cursor: pointer;
-            color: $black;
-        }
-        img{
-            width: 40px;
-            margin-right: 15px;
-        }
-        p{
-            margin: 0;
-            padding: 4px;
-        }
-    }
-    
-    .modelo{
-        padding: 0px;
-        border: 1px solid $color2;
-        font-weight: bold;
-        border-radius: 10px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-}
-
-@media only screen and (min-width: 1441px)and (max-width: 1980px){
-    .modal-eleccion{
-        .encabezado{
-            p{
-                font-size: 1.05rem;                
-            }    
-        }    
-    
-        .longitud-panel{
-            display: flex;
-            width: 100%;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            p{
-                font-size: 0.9rem;
-                width: 100%;
-            }
-            input{
-                width: 55%;
-                border-radius: 6px;
-                border: 1px solid $color1;
-            }
-            select{
-                width: 30%;
-                font-size: 0.8rem;
-                margin-left: 5px;
-            }
-        }
-    }
-    
-    .modelo{
-        padding: 0px;
-        border: 1px solid $color2;
-        font-weight: bold;
-        border-radius: 5px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
     }
 }

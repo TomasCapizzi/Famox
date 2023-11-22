@@ -5,25 +5,26 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
-    p{
-        font-weight: 600;
-        font-size: 1.1rem;
-    }
+    position: relative;
     .opciones{
-        display: none;        
-        width: 100%;
-        position: relative;
-        padding-top: 30px;
-
+        display: none;
+        top: 50px;
+        flex-direction: column;
+        width: 270px;
+        height: 220px;
+        overflow: scroll;
+        position: absolute;
+        background-color: $white;
+        border: 2px solid $color1;
+        overflow-x: hidden;
+        box-shadow: 8px 10px 17px #bebebe;
         button{
-            position: absolute;
-            top: 10px;
-            right: 5px;
             background-color: $color1;
             border: none;
             color: $white;
             border-radius: 6px;
             padding: 4px;
+            margin: 5px;
             cursor: pointer;
             transition: .3s ease-in all;
             font-size: 0.8rem;
@@ -31,15 +32,15 @@
         button:hover{
             color: $color2;
             opacity: 0.9;
-        }
-        
+        }        
         .luz{
+            border: 1px solid transparent;
+            border-bottom: 1px solid #d9d9d9;
             display: flex;
-            min-width: 90%;
+            justify-content: space-around;
+            width: 100%;
             align-items: center;
-            margin: 5px;
-            margin-right: 10px;
-            justify-content:space-between;
+            transition: .2s ease-in all;
             p{
                 font-size: 0.8rem;
                 margin: 0;
@@ -59,53 +60,34 @@
     }
     .on{
         display: flex;
-        flex-wrap: wrap;
-        
-        align-items: center;
+        z-index: 10;
     }
 }
 
-@media only screen and (max-width: 568px){
+@media only screen and (max-width: 420px){
     .modal-iluminacion{
-        width: 100%;
+        margin-bottom: 10px;
         display: flex;
         flex-direction: column;
-        margin-bottom: 15px;
-        p{
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
+        align-items: center;
+        width: 100%;
         .opciones{
-            display: none;        
-            width: 100%;
-            position: relative;
-            padding-top: 30px;
-    
+            top: 40px;
+            width: 75%;
+            height: 240px;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;
+            align-items: center;
             button{
-                position: absolute;
-                top: 10px;
-                right: 5px;
-                background-color: $color1;
-                border: none;
-                color: $white;
-                border-radius: 6px;
-                padding: 4px;
-                cursor: pointer;
-                transition: .3s ease-in all;
-                font-size: 0.75rem;
+                width: 80%;
             }
-            button:hover{
-                color: $color2;
-                opacity: 0.9;
-            }
-            
             .luz{
                 display: flex;
-                min-width: 90%;
+                width: 90%;
                 align-items: center;
                 margin: 5px;
                 margin-right: 10px;
-                justify-content:space-between;
+                justify-content: space-between;
                 p{
                     font-size: 0.7rem;
                     margin: 0;
@@ -129,214 +111,50 @@
         }
         .on{
             display: flex;
-            flex-wrap: wrap;
-            
             align-items: center;
         }
     }  
 }
 
-@media only screen and (min-width: 569px)and (max-width: 768px){
+@media only screen and (min-width: 421px)and (max-width: 600px){
     .modal-iluminacion{
-        width: 100%;
+        margin-bottom: 10px;
         display: flex;
         flex-direction: column;
-        margin-bottom: 15px;
-        p{
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        .opciones{
-            display: none;        
-            width: 100%;
-            position: relative;
-            padding-top: 30px;
-    
-            button{
-                position: absolute;
-                top: 10px;
-                right: 5px;
-                background-color: $color1;
-                border: none;
-                color: $white;
-                border-radius: 6px;
-                padding: 4px;
-                cursor: pointer;
-                transition: .3s ease-in all;
-                font-size: 0.75rem;
-            }
-            button:hover{
-                color: $color2;
-                opacity: 0.9;
-            }
-            
-            .luz{
-                display: flex;
-                min-width: 90%;
-                align-items: center;
-                margin: 5px;
-                margin-right: 10px;
-                justify-content:space-between;
-                p{
-                    font-size: 0.85rem;
-                    margin: 0;
-                }
-                div{
-                    display: flex;
-                    margin-left: 10px;
-                    align-items: center;
-                    p{
-                        font-size: 0.8;
-                        font-weight: 400;
-                    }
-                    input{
-                        width: 25px;
-                        height: 25px;
-                        border-radius: 10px;
-                        border: 1px solid $color1;
-                    }
-                } 
-            }
-        }
-        .on{
-            display: flex;
-            flex-wrap: wrap;
-            
-            align-items: center;
-        }
-    }  
-}
-
-@media only screen and (min-width: 769px)and (max-width: 1280px){
-    .modal-iluminacion{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 15px;
-        p{
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        .opciones{
-            display: none;        
-            width: 100%;
-            position: relative;
-            padding-top: 30px;
-    
-            button{
-                position: absolute;
-                top: 10px;
-                right: 5px;
-                background-color: $color1;
-                border: none;
-                color: $white;
-                border-radius: 6px;
-                padding: 4px;
-                cursor: pointer;
-                transition: .3s ease-in all;
-                font-size: 0.75rem;
-            }
-            button:hover{
-                color: $color2;
-                opacity: 0.9;
-            }
-            
-            .luz{
-                display: flex;
-                min-width: 90%;
-                align-items: center;
-                margin: 5px;
-                margin-right: 10px;
-                justify-content:space-between;
-                p{
-                    font-size: 0.9rem;
-                    margin: 0;
-                }
-                div{
-                    display: flex;
-                    margin-left: 10px;
-                    align-items: center;
-                    p{
-                        font-size: 0.85;
-                        font-weight: 400;
-                    }
-                    input{
-                        width: 25px;
-                        height: 25px;
-                        border-radius: 10px;
-                        border: 1px solid $color1;
-                    }
-                } 
-            }
-        }
-        .on{
-            display: flex;
-            flex-wrap: wrap;
-            
-            align-items: center;
-        }
-    }  
-}
-
-
-@media only screen and (min-width: 1281px)and (max-width: 1440px){
-    .modal-iluminacion{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 15px;
         align-items: center;
-        p{
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
+        width: 100%;
         .opciones{
-            display: none;        
-            width: 95%;
-            position: relative;
-            padding-top: 30px;
-    
+            top: 45px;
+            width: 85%;
+            height: 240px;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;
             button{
-                position: absolute;
-                top: 10px;
-                right: 5px;
-                background-color: $color1;
-                border: none;
-                color: $white;
-                border-radius: 6px;
-                padding: 4px;
-                cursor: pointer;
-                transition: .3s ease-in all;
-                font-size: 0.75rem;
+                width: 80%;
             }
-            button:hover{
-                color: $color2;
-                opacity: 0.9;
-            }
-            
             .luz{
                 display: flex;
-                min-width: 90%;
+                width: 90%;
                 align-items: center;
                 margin: 5px;
                 margin-right: 10px;
-                justify-content:space-between;
+                justify-content: space-between;
                 p{
-                    font-size: 0.9rem;
-                    margin: 0;
+                    font-size: 11px;
+                    margin-left: 5px;
+                }
+                label{
+                    font-size: 11px;
+                    font-weight: 300;
                 }
                 div{
                     display: flex;
                     margin-left: 10px;
                     align-items: center;
-                    p{
-                        font-size: 0.85;
-                        font-weight: 400;
-                    }
                     input{
                         width: 25px;
                         height: 25px;
-                        border-radius: 10px;
+                        border-radius: 5px;
                         border: 1px solid $color1;
                     }
                 } 
@@ -344,31 +162,154 @@
         }
         .on{
             display: flex;
-            flex-wrap: wrap;
-            
             align-items: center;
         }
-    }
+    } 
 }
-
-@media only screen and (min-width: 1441px)and (max-width: 1980px){
+@media only screen and (min-width: 601px)and (max-width: 800px){
     .modal-iluminacion{
-        align-items: center;
-        .opciones{       
-            width: 95%;
-            padding-top: 35px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .opciones{
+            top: 45px;
+            width: 90%;
+            height: 240px;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;
+            button{
+                width: 80%;
+            }
             .luz{
-                min-width: 95%;
+                display: flex;
+                width: 90%;
+                align-items: center;
+                margin: 5px;
+                margin-right: 10px;
+                justify-content: space-between;
                 p{
-                    font-size: 0.9rem;
+                    font-size: 11px;
+                    margin-left: 5px;
+                }
+                label{
+                    font-size: 11px;
+                    font-weight: 300;
                 }
                 div{
-                    p{
-                        font-size: 0.85;
-                        font-weight: 400;
+                    display: flex;
+                    margin-left: 10px;
+                    align-items: center;
+                    input{
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 5px;
+                        border: 1px solid $color1;
                     }
                 } 
             }
         }
-    }
+        .on{
+            display: flex;
+            align-items: center;
+        }
+    }  
+}
+@media only screen and (min-width: 801px)and (max-width: 1024px){
+    .modal-iluminacion{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .opciones{
+            top: 32px;
+            width: 228px;
+            height: 240px;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;
+            button{
+                width: 80%;
+            }
+            .luz{
+                display: flex;
+                width: 90%;
+                align-items: center;
+                margin: 5px;
+                margin-right: 10px;
+                justify-content: space-between;
+                p{
+                    font-size: 11px;
+                    margin-left: 5px;
+                }
+                label{
+                    font-size: 11px;
+                    font-weight: 300;
+                }
+                div{
+                    display: flex;
+                    margin-left: 10px;
+                    align-items: center;
+                    input{
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 5px;
+                        border: 1px solid $color1;
+                    }
+                } 
+            }
+        }
+        .on{
+            display: flex;
+            align-items: center;
+        }
+    } 
+}
+@media only screen and (min-width: 1025px)and (max-width: 1280px){
+    .modal-iluminacion{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .opciones{
+            top: 35px;
+            width: 240px;
+            height: 240px;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;
+            button{
+                width: 80%;
+            }
+            .luz{
+                display: flex;
+                width: 90%;
+                align-items: center;
+                margin: 5px;
+                margin-right: 10px;
+                justify-content: space-between;
+                p{
+                    font-size: 11px;
+                    margin-left: 5px;
+                }
+                label{
+                    font-size: 11px;
+                    font-weight: 300;
+                }
+                div{
+                    display: flex;
+                    margin-left: 10px;
+                    align-items: center;
+                    input{
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 5px;
+                        border: 1px solid $color1;
+                    }
+                } 
+            }
+        }
+        .on{
+            display: flex;
+            align-items: center;
+        }
+    } 
 }
