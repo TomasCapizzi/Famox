@@ -1,8 +1,8 @@
 import React from 'react'
 
-function NotificacionAgregadoModelo({refNoti}) {
+function NotificacionAgregadoModelo({refNotificacionModelo}) {
   return (
-    <div className='notificacion' ref={refNoti}>
+    <div className='notificacion' ref={refNotificacionModelo}>
         <p>Modelo seleccionado</p>
     </div>
   )

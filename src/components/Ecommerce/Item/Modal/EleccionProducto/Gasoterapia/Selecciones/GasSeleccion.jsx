@@ -8,11 +8,11 @@ function GasSeleccion({gas, eliminarSeleccionGas, gases}) {
     GASES.map(
         item => item.nombre === gas ? 
             <div key={item.nombre} className='seleccionado' >
-            <img src={item.img} alt={item.nombre} />
-            <p>{item.nombre}</p>
-            {
-              gases.length > 1 ? <button><TiDelete onClick={eliminarSeleccionGas} /></button> : null
-            }
+              <img src={item.img} alt={item.nombre} />
+              <p>{item.nombre}</p>
+              {
+                gases.length > 1 ? <button><TiDelete onClick={eliminarSeleccionGas} /></button> : null
+              }
             </div>
         : null
     )

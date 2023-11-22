@@ -22,12 +22,16 @@ function EleccionAccesorio({item, toggleModal}) {
 
   return (
     <article className='modal-eleccion-acc'>
-            {item.modelos.map(
-                acc => <Modelo accesorio={acc} seleccionAccesorio={seleccionAccesorio} activarNoti={activarNoti} gasesHandler={gasesHandler} refNoti={refNoti}  key={acc.nombre} />
-            )}
-            <Selecciones accesorios={accesorios} eliminarSeleccion={eliminarSeleccion} />
-            <BotonComprar accesorios={accesorios} setAccesorios={setAccesorios} agregarAlCarrito={agregarAlCarrito} toggleModal={toggleModal} />
-            <NotificacionAgregado refNoti={refNoti}/>
+      <div className='acc-container'>
+        {item.modelos.map(
+            acc => <Modelo accesorio={acc} seleccionAccesorio={seleccionAccesorio} activarNoti={activarNoti} gasesHandler={gasesHandler} refNoti={refNoti}  key={acc.nombre} />
+        )}
+      </div>
+      <div className='acc-selecc-container'>
+        <Selecciones accesorios={accesorios} eliminarSeleccion={eliminarSeleccion} />
+        <BotonComprar accesorios={accesorios} setAccesorios={setAccesorios} agregarAlCarrito={agregarAlCarrito} toggleModal={toggleModal} />
+      </div>
+      <NotificacionAgregado refNoti={refNoti}/>
     </article>
 
   )

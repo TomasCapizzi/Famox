@@ -35,7 +35,7 @@
         }
     }
 }
-@media only screen and (min-width: 376px)and (max-width: 768px){
+@media only screen and (min-width: 376px)and (max-width: 860px){
     .container-ecommerce{
         width: 85%;
         h1{
@@ -49,18 +49,17 @@
         }
     }
 }
-
-@media only screen and (min-width: 769px) and (max-width: 1024px){
+@media only screen and (min-width: 861px)and (max-width: 1024px){
     .container-ecommerce{
-        width: 85%;
+        width: 95%;
         h1{
-            width: 100%;
+            width: 90%;
         }    
         .ecommerce{
             display: flex;
+            flex-direction: column;
             width: 100%;
-            justify-content: space-between
-            ;
+            align-items: center;
         }
     }
 }

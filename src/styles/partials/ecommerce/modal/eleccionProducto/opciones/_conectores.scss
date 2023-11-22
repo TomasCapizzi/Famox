@@ -5,44 +5,49 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+    position: relative;
     p{
         font-weight: 600;
         font-size: 1.1rem;
     }
     .opciones-conectores{
         display: none;
-        width: 100%;
-
+        top: 50px;
+        width: 250px;
+        height: 300px;
+        overflow: scroll;
+        position: absolute;
+        background-color: $white;
+        border: 2px solid $color1;
+        overflow-x: hidden;
+        box-shadow: 8px 10px 7px #bebebe;
         .conector{
             cursor: pointer;
-            border: 2px solid transparent;
-            border-radius: 5px;
-            padding: 5px;
+            border: 1px solid transparent;
+            border-bottom: 1px solid #d9d9d9;
             display: flex;
-            flex-direction: column;
-            width: 25%;
+            justify-content: space-around;
+            width: 100%;
             align-items: center;
-            margin: 5px;
             transition: .2s ease-in all;
             p{
-                font-weight: 400;
-                font-size: 16px;
+                font-weight: 600;
+                font-size: 14px;
             }
         }
         .conector:hover{
             border-color: $color1;
             box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.5);
         }
-
         img{
             width: 60px;
         }
     }
     .on{
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        flex-direction: column;
         align-items: center;
+        z-index: 10;
     }
 
     .bloqueado{
@@ -51,39 +56,196 @@
     }
 }
 
-@media only screen and (max-width: 375px){
+@media only screen and (max-width: 420px){
     .modal-conectores{
-        margin-bottom: 12px;
-        p{
-            font-weight: 400;
-        }
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
         .opciones-conectores{
-            display: none;
-            width: 100%;    
+            top: 40px;
+            width: 75%;
+            height: 240px;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;   
             .conector{
                 cursor: pointer;
-                border: 2px solid transparent;
-                border-radius: 5px;
-                padding: 5px;
-                display: flex;
-                flex-direction: column;
-                width: 25%;
-                align-items: center;
-                margin: 5px;
-                transition: .2s ease-in all;
             }
             img{
-                width: 50px;
+                width: 40px;
             }
             p{
-                font-size: 0.9rem;
+                font-size: 14px;
             }
         }
         .on{
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
+        }
+    
+        .bloqueado{
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+    }
+}
+@media only screen and (min-width: 421px)and (max-width: 600px){
+    .modal-conectores{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .opciones-conectores{
+            top: 45px;
+            width: 85%;
+            height: 240px;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;   
+            .conector{
+                cursor: pointer;
+            }
+            img{
+                width: 50px;
+                height: 55px;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+        .on{
+            display: flex;
+        }
+    
+        .bloqueado{
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+    }
+}
+@media only screen and (min-width: 601px)and (max-width: 800px){
+    .modal-conectores{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .opciones-conectores{
+            top: 45px;
+            width: 90%;
+            height: 240px;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;   
+            .conector{
+                cursor: pointer;
+                img{
+                    width: 50px;
+                    height: 55px;
+                }
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+        }
+    
+        .bloqueado{
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+    }
+}
+@media only screen and (min-width: 801px)and (max-width: 1024px){
+    .modal-conectores{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .opciones-conectores{
+            top: 35px;
+            width: 100%;
+            height: auto;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;   
+            .conector{
+                cursor: pointer;
+                img{
+                    width: 40px;
+                    height: 45px;
+                }
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+        }
+    
+        .bloqueado{
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+    }
+}
+@media only screen and (min-width: 1025px)and (max-width: 1280px){
+    .modal-conectores{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .opciones-conectores{
+            top: 35px;
+            width: 240px;
+            height: auto;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;   
+            .conector{
+                cursor: pointer;
+                img{
+                    width: 40px;
+                    height: 45px;
+                }
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+        }
+    
+        .bloqueado{
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+    }
+}
+@media only screen and (min-width: 1281px)and (max-width: 1440px){
+    .modal-conectores{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .opciones-conectores{
+            width: 270px;
+            height: auto;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;   
+            .conector{
+                cursor: pointer;
+                img{
+                    width: 40px;
+                    height: 45px;
+                }
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+        .on{
+            display: flex;
         }
     
         .bloqueado{

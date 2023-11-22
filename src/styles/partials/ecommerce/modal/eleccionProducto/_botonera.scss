@@ -2,7 +2,7 @@
 
 .botonera{
     display: flex;
-    width: 100%;
+    width: 30%;
     flex-direction: column;
     align-items: center;
 
@@ -12,14 +12,14 @@
         display: flex;
         align-items: center;
         p{
-            font-size: 1.2rem;
+            font-size: 16px;
             font-weight: 500;
         }
         button{
             cursor: pointer;
             border: none;
             background-color: transparent;
-            font-size: 1.3rem;
+            font-size: 20px;
             color: $color1;
         }
         button:disabled{
@@ -32,7 +32,7 @@
         padding: 3px;
         border: none;
         background-color: $color1;
-        font-size: 1rem;
+        font-size: 14px;
         color: $white;
         border-radius: 4px;
         width: 90%;
@@ -48,55 +48,81 @@
         color: $color1;
     }
 }
+.botonera-adv{
+    display: flex;
+    width: 30%;
+}
 
-@media only screen and (max-width: 375px){
+@media only screen and (max-width: 420px){
     .botonera{
-        display: flex;
         width: 100%;
-        flex-direction: column;
-        align-items: center;
-    
+        margin-bottom: 15px;    
         .contador{
-            width: 100%;
-            justify-content: space-around;
-            display: flex;
-            align-items: center;
             p{
-                font-size: 1rem;
-                font-weight: 500;
+                font-size: 14px;
+                font-weight: 600;
             }
             button{
-                cursor: pointer;
-                border: none;
-                background-color: transparent;
-                font-size: 1rem;
-                color: $color1;
+                font-size: 18px;
             }
-            button:disabled{
-                color: $color2;
-            }
-        }
-    
+        }    
         .confirmar{
-            cursor: pointer;
-            padding: 3px;
-            border: none;
-            background-color: $color1;
-            font-size: 0.8rem;
-            color: $white;
-            border-radius: 4px;
             width: 70%;
-            transition: .3s ease-in-out all;
-        }
-        .confirmar:hover{
-            opacity: 0.8;
-            border-radius: 10px;
-        }
-        .confirmar:disabled{
-            cursor: not-allowed;
-            background-color: $color2;
-            color: $color1;
+            font-size: 13px;
         }
     }
-    
+    .botonera-adv{
+        display: flex;
+        width: 80%;
+        justify-content: center;
+    } 
+}
+
+@media only screen and (min-width: 421px)and (max-width: 600px){
+    .botonera{
+        width: 85%;
+        margin-bottom: 15px;    
+        .contador{
+            p{
+                font-size: 14px;
+                font-weight: 600;
+            }
+            button{
+                font-size: 18px;
+            }
+        }    
+        .confirmar{
+            width: 100%;
+            font-size: 13px;
+        }
+    }
+    .botonera-adv{
+        display: flex;
+        width: 80%;
+        justify-content: center;
+    } 
+}
+@media only screen and (min-width: 601px)and (max-width: 800px){
+    .botonera{
+        width: 85%;
+        margin: 15px 0;    
+        .contador{
+            p{
+                font-size: 14px;
+                font-weight: 600;
+            }
+            button{
+                font-size: 18px;
+            }
+        }    
+        .confirmar{
+            width: 100%;
+            font-size: 13px;
+        }
+    }
+    .botonera-adv{
+        display: flex;
+        width: 80%;
+        justify-content: center;
+    } 
 }

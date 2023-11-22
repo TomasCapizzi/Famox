@@ -1,59 +1,35 @@
 import Conexiones from './Conexiones';
 import React from 'react';
 import Selecciones from './Selecciones';
-import Tabla from 'components/Ecommerce/Item/Modal/EleccionProducto/UnidSum/Selecciones/Tabla';
-import TablaConexion from 'components/Ecommerce/Item/Modal/EleccionProducto/UnidSum/Selecciones/TablaConexion';
 
-function ContainerSelecciones({conexiones, eliminarItem, valoresBajaTension, valoresIluminacion, valoresMediaTension}) {
+function ContainerSelecciones({conexiones, eliminarItem, valoresBajaTension, valoresIluminacion, valoresMediaTension, longitudPanel}) {
     
   return (
-    <div className='selecciones-container'>
-        {
-        conexiones.length >= 1 ?
-        <>
-            <p>Conexiones</p>
-            <table className='seleccion-conex'>
-            <TablaConexion/>
-            <Conexiones conexiones={conexiones} eliminarItem={eliminarItem} />
-            </table>
-        </>
-
+    <div className='selecciones-container-us'>
+      {conexiones.length >= 1 && <h6>Conexiones</h6>}
+      {
+      conexiones.length >= 1 ? <Conexiones conexiones={conexiones} eliminarItem={eliminarItem}/> : null
+      }
+      {valoresMediaTension.length >= 1 && <h6>Media Tensión</h6>}
+      {
+      valoresMediaTension.length >= 1 ? <Selecciones valores={valoresMediaTension} eliminarItem={eliminarItem} /> : null
+      }
+      {valoresBajaTension.length >= 1 && <h6>Baja Tensión</h6>}
+      {
+      valoresBajaTension.length >= 1 ? <Selecciones valores={valoresBajaTension} eliminarItem={eliminarItem} /> : null
+      }
+      {valoresIluminacion.length >= 1 && <h6>Iluminación</h6>}
+      {
+      valoresIluminacion.length >= 1 ? <Selecciones valores={valoresIluminacion} eliminarItem={eliminarItem} /> : null
+      }
+      {longitudPanel && <h6>Longitud</h6>}
+      {
+        longitudPanel ? 
+        <div className='seleccion-unidSum-longitud'>
+            <p>Longitud: {longitudPanel}</p>
+        </div>
         : null
-        }
-        {
-        valoresMediaTension.length >= 1 ?
-        <>
-            <p>Media Tension</p>
-            <table className='seleccion'>
-            <Tabla/>
-            <Selecciones valores={valoresMediaTension} eliminarItem={eliminarItem} />
-            </table>
-        </>
-
-            : null
-        }
-        {
-        valoresBajaTension.length >= 1 ?
-        <>
-            <p>Baja Tension</p>
-            <table className='seleccion'>                    
-            <Tabla/>
-            <Selecciones valores={valoresBajaTension} eliminarItem={eliminarItem} />
-            </table>
-        </>
-            : null
-        }
-        {
-        valoresIluminacion.length >= 1 ?
-        <>
-            <p>Iluminación</p>
-            <table className='seleccion'>
-            <Tabla/>
-            <Selecciones valores={valoresIluminacion} eliminarItem={eliminarItem} />
-            </table>
-        </>                
-            : null
-        }
+      }
     </div>
   )
 }

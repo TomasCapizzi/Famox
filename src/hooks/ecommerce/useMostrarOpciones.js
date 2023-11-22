@@ -17,7 +17,11 @@ const useMostrarOpciones = () => {
         setOpcionesHandler(false);
         ref.current.classList.toggle('on');
     }
-
+    //////// MODELOS ////////////////////////
+    function mostrarModelos(ref){
+        setOpcionesHandler(false);
+        ref.current.classList.toggle('on')
+    }
     //////// UNID SUM ////////////////////////
     function mostrarMediaTension(ref){
         setOpcionesHandler(false);
@@ -35,6 +39,16 @@ const useMostrarOpciones = () => {
         setOpcionesHandler(false);
         ref.current.classList.toggle('on');
     }
+    function mostrarLongitudPanel(ref){
+        setOpcionesHandler(false);
+        ref.current.classList.toggle('on');
+    }
+
+    //////// ACCESORIOS ////////////////////////
+    function mostrarAccesorios(ref){
+        setOpcionesHandler(false);
+        ref.current.classList.toggle('on');
+    }
 
     return {
     mostrarConectores,
@@ -42,10 +56,13 @@ const useMostrarOpciones = () => {
     setOpcionesHandler,
     mostrarGases,
     mostrarRangos,
+    mostrarModelos,
     mostrarMediaTension,
     mostrarBajaTension,
     mostrarIluminacion,
-    mostrarConexionGases
+    mostrarConexionGases,
+    mostrarLongitudPanel,
+    mostrarAccesorios
     }
 }
 
