@@ -15,15 +15,15 @@ function FormularioCotizacion({pedirCotizacion, habilitarForm, formRef}) {
 
   return (
     <form action='' className='form-cotizacion off' ref={formRef} onSubmit={(e)=> pedirCotizacion(e)} >
-        <label htmlFor="nombre" for="nombre">Nombre</label>
+        <label htmlFor="nombre">Nombre</label>
         <input type="text" name='nombre' id='nombre' required onChange={(e)=>validarNombre(e.target.value)}  />
-        <label htmlFor="nombre" for="nombre" className='error'>{nombreError}</label>
-        <label htmlFor="nombre" for="empresa">Empresa / Hospital</label>
+        <label htmlFor="nombre" className='error'>{nombreError}</label>
+        <label htmlFor="nombre">Empresa / Hospital</label>
         <input type="text" name='empresa' id='empresa' required onChange={(e)=>validarEmpresa(e.target.value)} />
-        <label htmlFor="nombre" for="empresa" className='error'>{empresaError}</label>
-        <label htmlFor="mail" for="mail">Mail</label>
+        <label htmlFor="nombre" className='error'>{empresaError}</label>
+        <label htmlFor="mail">Mail</label>
         <input type="text" id='mail' name='mail' placeholder='correo@gmail.com' required onChange={(e)=>validarMail(e.target.value)} />
-        <label htmlFor="nombre" for="mail" className='error'>{mailError}</label>
+        <label htmlFor="nombre" className='error'>{mailError}</label>
         <div className={handlerSubmit? '':'disabled'}>
           <input type="submit" value='Pedir cotización' className='btn-submit' />
         </div>
