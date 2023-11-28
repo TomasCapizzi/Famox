@@ -1,0 +1,245 @@
+.eleccion-equiposDig{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    position: relative;
+    p{
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+    .opciones{
+        display: none;
+        top: 50px;
+        width: 300px;
+        height: auto;
+        overflow: scroll;
+        position: absolute;
+        background-color: $white;
+        border: 2px solid $color1;
+        overflow-x: hidden;
+        box-shadow: 8px 10px 17px #bebebe;
+        .modelo{
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-bottom: 1px solid #d9d9d9;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            align-items: center;
+            transition: .2s ease-in all;
+            p{
+                font-weight: 600;
+                font-size: 14px;
+                width: auto;
+                text-align: center;
+            }
+            div{
+                width: 30%;
+                display: flex;
+                justify-content: space-between;
+                p{
+                    font-size: 12px;
+                }
+                input{
+                    width: 30px;
+                }
+            }
+            button{
+                border: none;
+                svg{
+                    font-size: 17px;
+                }
+            }
+        }
+        .modelo:hover{
+            border-color: $color1;
+            box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.5);
+        }
+    }
+    .on{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 10;
+    }
+    .bloqueado{
+        background-color: #ccc;
+        opacity: 0.7;
+    }
+}
+@media only screen and (max-width: 420px){
+    .eleccion-equiposDig{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .opciones{
+            top: 40px;
+            width: 75%;
+            height: auto;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;   
+            .modelo{
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+        }
+
+        .bloqueado{
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+    }
+}
+@media only screen and (min-width: 421px)and (max-width: 600px){
+    .eleccion-equiposDig{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .opciones{
+            top: 45px;
+            width: 85%;
+            height: 240px;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;   
+            .modelo{
+                cursor: pointer;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+        .on{
+            display: flex;
+        }
+    
+        .bloqueado{
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+    }
+}
+@media only screen and (min-width: 601px)and (max-width: 800px){
+    .eleccion-equiposDig{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .opciones{
+            top: 45px;
+            width: 90%;
+            height: 240px;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;   
+            .modelo{
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+        }
+    
+        .bloqueado{
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+    }
+}
+@media only screen and (min-width: 801px)and (max-width: 1024px){
+    .eleccion-equiposDig{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .opciones{
+            top: 35px;
+            width: 100%;
+            height: auto;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;   
+            .modelo{
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+        }
+    
+        .bloqueado{
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+    }
+}
+@media only screen and (min-width: 1025px)and (max-width: 1280px){
+    .eleccion-equiposDig{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .opciones{
+            top: 35px;
+            width: 240px;
+            height: auto;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;   
+            .modelo{
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+        }
+    
+        .bloqueado{
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+    }
+}
+@media only screen and (min-width: 1281px)and (max-width: 1440px){
+    .modal-conectores{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .opciones-conectores{
+            width: 270px;
+            height: auto;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;   
+            .conector{
+                cursor: pointer;
+                img{
+                    width: 40px;
+                    height: 45px;
+                }
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+        }
+    
+        .bloqueado{
+            background-color: #ccc;
+            opacity: 0.7;
+        }
+    }
+}
