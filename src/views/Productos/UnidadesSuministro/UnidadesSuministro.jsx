@@ -22,14 +22,14 @@ function UnidadesSuministro() {
       </Helmet>
       <h1>Unidades de Suministro</h1>
       <div className='items-container'>
-                {
-                    products.length>0 ?
-                        products.map(
-                            item => <Item key={item._id} product={item} />
-                        )
-                    : <Spinner/>
-                }
-            </div>
+        {
+          products.length>0 ?
+              products.map(
+                  item => <Item key={item._id} product={item} />
+              )
+          : <Spinner/>
+        }
+      </div>
 
     </section>
   )
