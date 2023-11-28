@@ -20,7 +20,7 @@ function GasConector({item, conexiones, setConexiones}) {
     mostrarConexionGases(opcionesRef);
   }
   return (
-    <article className='modal-gasconec'>
+    <article className='eleccion-gasconec'>
       <EncabezadoOpciones titulo="Conexion de Gas" mostrarOpcion={mostrarConexionGases} opcionesRef={opcionesRef}/>
       <article className='opciones' ref={opcionesRef}>
         {

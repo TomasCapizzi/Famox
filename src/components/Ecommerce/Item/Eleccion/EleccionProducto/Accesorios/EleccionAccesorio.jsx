@@ -9,7 +9,7 @@ import useBorrarSeleccion from 'hooks/ecommerce/accesorio/useBorrarSeleccion';
 import useSeleccionarAccesorio from 'hooks/ecommerce/accesorio/useSeleccionarAccesorio';
 import useNotificacion from 'hooks/ecommerce/useNotificacion';
 
-function EleccionAccesorio({item, toggleModal}) {
+function EleccionAccesorio({item}) {
 
 
   const [accesorios, setAccesorios] = useState([]);
@@ -21,7 +21,7 @@ function EleccionAccesorio({item, toggleModal}) {
   const {activarNoti} = useNotificacion();
 
   return (
-    <article className='modal-eleccion-acc'>
+    <article className='eleccion-accesorio'>
       <div className='acc-container'>
         {item.modelos.map(
             acc => <Modelo accesorio={acc} seleccionAccesorio={seleccionAccesorio} activarNoti={activarNoti} gasesHandler={gasesHandler} refNoti={refNoti}  key={acc.nombre} />
@@ -29,11 +29,10 @@ function EleccionAccesorio({item, toggleModal}) {
       </div>
       <div className='acc-selecc-container'>
         <Selecciones accesorios={accesorios} eliminarSeleccion={eliminarSeleccion} />
-        <BotonComprar accesorios={accesorios} setAccesorios={setAccesorios} agregarAlCarrito={agregarAlCarrito} toggleModal={toggleModal} />
+        <BotonComprar accesorios={accesorios} setAccesorios={setAccesorios} agregarAlCarrito={agregarAlCarrito}/>
       </div>
       <NotificacionAgregado refNoti={refNoti}/>
     </article>
-
   )
 }
 

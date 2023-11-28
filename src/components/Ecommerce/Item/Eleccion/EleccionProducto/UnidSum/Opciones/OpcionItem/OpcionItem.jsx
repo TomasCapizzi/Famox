@@ -1,8 +1,8 @@
 import React from 'react'
 
-function BajaTensionItem({item, obtenerCantidadInput}) {
+function OpcionItem({item, obtenerCantidadInput}) {
   return (
-    <article className='bajatension'>
+    <article className='opcion-item'>
         <p>{item}</p>
         <div>
             <p>Cantidad: </p>
@@ -12,4 +12,4 @@ function BajaTensionItem({item, obtenerCantidadInput}) {
   )
 }
 
-export default BajaTensionItem
+export default OpcionItem

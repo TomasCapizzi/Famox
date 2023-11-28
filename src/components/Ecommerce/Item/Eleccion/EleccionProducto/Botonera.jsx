@@ -4,14 +4,13 @@ import React from 'react';
 import useContador from 'hooks/ecommerce/useContador';
 import useNotificacion from 'hooks/ecommerce/useNotificacion';
 
-function Botonera({agregarAlCarrito, toggleModal, borrarSelecciones, refNotificacionCompra}) {
+function Botonera({agregarAlCarrito, borrarSelecciones, refNotificacionCompra}) {
 
     const {cantidad, incrementar, descontar} = useContador();
     const {activarNoti} = useNotificacion();
 
     function comprar(){
       agregarAlCarrito(cantidad);
-      toggleModal();
       borrarSelecciones && borrarSelecciones();
       //activarNoti(refNotificacionCompra);
     }

@@ -1,6 +1,7 @@
 import Conexiones from './Conexiones';
 import React from 'react';
 import Selecciones from './Selecciones';
+import Longitud from './Longitud';
 
 function ContainerSelecciones({conexiones, eliminarItem, valoresBajaTension, valoresIluminacion, valoresMediaTension, longitudPanel}) {
     
@@ -24,11 +25,7 @@ function ContainerSelecciones({conexiones, eliminarItem, valoresBajaTension, val
       }
       {longitudPanel && <h6>Longitud</h6>}
       {
-        longitudPanel ? 
-        <div className='seleccion-unidSum-longitud'>
-            <p>Longitud: {longitudPanel}</p>
-        </div>
-        : null
+        longitudPanel ? <Longitud longitudPanel={longitudPanel} eliminarItem={eliminarItem}/> : null
       }
     </div>
   )

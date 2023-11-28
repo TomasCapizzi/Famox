@@ -34,6 +34,7 @@ function Modelo({accesorio, seleccionAccesorio, activarNoti, gasesHandler, refNo
         })
       activarNoti(refNoti)
     }
+    mostrarAccesorios(opcionesRef);
   }
 
   useEffect(()=>{

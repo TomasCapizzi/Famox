@@ -9,7 +9,7 @@ import SeleccionContainer from './Selecciones/SeleccionContainer'
 import NotificacionAgregadoModelo from './Opciones/Modelo/NotificacionAgregadoModelo'
 import HabilitacionBotonera from './HabilitacionBotonera'
 
-function EleccionGasoterapia({item,toggleModal }) {
+function EleccionGasoterapia({item}) {
 
   const refNotificacionModelo = useRef();
   const refNotificacionCompra = useRef();
@@ -25,7 +25,7 @@ function EleccionGasoterapia({item,toggleModal }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
-    <div className='modal-eleccion'>
+    <div className='eleccion-producto'>
         {
           item && 
           <div className='container' >
@@ -42,7 +42,7 @@ function EleccionGasoterapia({item,toggleModal }) {
               }
           </div> 
         }
-        <HabilitacionBotonera item={item} conector={conector} gas={gas} rango={rango} modelo={modelo} agregarAlCarrito={agregarAlCarrito} toggleModal={toggleModal} eliminarSeleccionConector={eliminarSeleccionConector} eliminarSeleccionGas={eliminarSeleccionGas} eliminarSeleccionRango={eliminarSeleccionRango} eliminarSeleccionModelo={eliminarSeleccionModelo} refNotificacionCompra={refNotificacionCompra}/>
+        <HabilitacionBotonera item={item} conector={conector} gas={gas} rango={rango} modelo={modelo} agregarAlCarrito={agregarAlCarrito} eliminarSeleccionConector={eliminarSeleccionConector} eliminarSeleccionGas={eliminarSeleccionGas} eliminarSeleccionRango={eliminarSeleccionRango} eliminarSeleccionModelo={eliminarSeleccionModelo} refNotificacionCompra={refNotificacionCompra}/>
         <NotificacionAgregadoModelo refNotificacionModelo={refNotificacionModelo}/>
     </div>
   )
