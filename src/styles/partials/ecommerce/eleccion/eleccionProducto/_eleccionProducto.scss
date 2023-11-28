@@ -1,6 +1,6 @@
 @import 'styles/theme/theme.scss';
 
-.modal-eleccion{
+.eleccion-producto{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -44,7 +44,7 @@
                         background-color: transparent;
                         border: none;
                         color: $color1;
-                        font-size: 1.2rem;
+                        font-size: 18px;
                         margin: 0px;
                     }
                     svg:hover{
@@ -125,7 +125,7 @@
 }
 
 @media only screen and (max-width: 420px){
-    .modal-eleccion{
+    .eleccion-producto{
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -225,7 +225,7 @@
     }
 }
 @media only screen and (min-width: 421px)and (max-width: 600px){
-    .modal-eleccion{
+    .eleccion-producto{
         flex-direction: column;
         justify-content: center;
         align-items: center;    
@@ -323,8 +323,7 @@
                 }
             }
         }
-    }
-    
+    }    
     .seleccionado{
         border: 1px solid $color2;
         width: 90%;
@@ -351,7 +350,7 @@
             padding: 4px;
         }
     }
-    
+   
     .modelo{
         padding: 0px;
         border: 1px solid $color2;
@@ -363,7 +362,7 @@
     }
 }
 @media only screen and (min-width: 601px)and (max-width: 800px){
-    .modal-eleccion{
+    .eleccion-producto{
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -464,8 +463,7 @@
                 }
             }
         }
-    }
-    
+    } 
     .seleccionado{
         border: 1px solid $color2;
         width: 90%;
@@ -491,8 +489,7 @@
             margin: 0;
             padding: 4px;
         }
-    }
-    
+    }   
     .modelo{
         padding: 0px;
         border: 1px solid $color2;
@@ -504,7 +501,7 @@
     }
 }
 @media only screen and (min-width: 801px)and (max-width: 1024px){
-    .modal-eleccion{
+    .eleccion-producto{
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -631,7 +628,7 @@
     }
 }
 @media only screen and (min-width: 1025px)and (max-width: 1280px){
-    .modal-eleccion{
+    .eleccion-producto{
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -758,7 +755,7 @@
     }
 }
 @media only screen and (min-width: 1281px)and (max-width: 1440px){
-    .modal-eleccion{
+    .eleccion-producto{
         width: 100%;
         display: flex;
         justify-content: space-between;

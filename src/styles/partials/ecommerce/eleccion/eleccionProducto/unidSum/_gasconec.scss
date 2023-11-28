@@ -1,6 +1,6 @@
 @import 'styles/theme/theme.scss';
 
-.modal-gasconec{
+.eleccion-gasconec{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -48,30 +48,6 @@
                 color: $white;
             }
         }
-        
-        .bajatension{
-            display: flex;
-            width: 90%;
-            align-items: center;
-            margin: 5px;
-            margin-right: 10px;
-            justify-content: space-between;
-            p{
-                font-size: 0.8rem;
-                margin: 0;
-            }
-            div{
-                display: flex;
-                align-items: center;
-                margin-left: 10px;
-                input{
-                    width: 25px;
-                    height: 25px;
-                    border-radius: 10px;
-                    border: 1px solid $color1;
-                }
-            }             
-        }
     }
     .on{
         display: flex;
@@ -83,7 +59,7 @@
 
 
 @media only screen and (max-width: 420px){
-    .modal-gasconec{
+    .eleccion-gasconec{
         margin-bottom: 10px;
         display: flex;
         flex-direction: column;
@@ -127,7 +103,7 @@
 
 
 @media only screen and (min-width: 421px)and (max-width: 600px){
-    .modal-gasconec{
+    .eleccion-gasconec{
         margin-bottom: 10px;
         display: flex;
         flex-direction: column;
@@ -172,7 +148,7 @@
 }
 
 @media only screen and (min-width: 601px)and (max-width: 800px){
-    .modal-gasconec{
+    .eleccion-gasconec{
         margin-bottom: 10px;
         display: flex;
         flex-direction: column;
@@ -215,7 +191,7 @@
     } 
 }
 @media only screen and (min-width: 801px)and (max-width: 1024px){
-    .modal-gasconec{
+    .eleccion-gasconec{
         margin-bottom: 10px;
         display: flex;
         width: 100%;
@@ -256,7 +232,7 @@
     } 
 }
 @media only screen and (min-width: 1025px)and (max-width: 1280px){
-    .modal-gasconec{
+    .eleccion-gasconec{
         margin-bottom: 10px;
         display: flex;
         width: 100%;

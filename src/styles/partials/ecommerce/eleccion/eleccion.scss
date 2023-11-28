@@ -1,53 +1,48 @@
 @import 'styles/theme/theme.scss';
 
-.modal-container{
+.elecciones-container{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 75%;
     flex-wrap: wrap;
-    .modal{
+    .elecciones{
         display: flex;
         width: 100%;
         flex-wrap: wrap;
     }
 }
-
 @media only screen and (max-width: 420px){
-    .modal-container{
+    .elecciones-container{
         width: 100%;
-        .modal{
+        .elecciones{
             justify-content: center;
         }
     }
 }
-
-
 @media only screen and (min-width: 421px)and (max-width: 600px){
-    .modal-container{
+    .elecciones-container{
         display: flex;
         align-items: center;
         justify-content: center;
-        .modal{
+        .elecciones{
             justify-content: center;
         }
     }
 }
-
-
 @media only screen and (min-width: 601px)and (max-width: 800px){
-    .modal-container{
+    .elecciones-container{
         display: flex;
         width: 100%;
         align-items: center;
         justify-content: center;
-        .modal{
+        .elecciones{
             justify-content: center;
         }
     }
 }
 @media only screen and (min-width: 801px)and (max-width: 1440px){
-    .modal-container{
+    .elecciones-container{
         display: flex;
         width: 75%;
     }

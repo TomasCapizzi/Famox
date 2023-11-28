@@ -1,6 +1,6 @@
 @import 'styles/theme/theme.scss';
 
-.modal-rangos{
+.modal-gases{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -10,18 +10,18 @@
         font-weight: 600;
         font-size: 1.1rem;
     }
-    .opciones-rangos{
+    .opciones-gases{
         display: none;        
         top: 50px;
         width: 250px;
-        height: auto;
+        height: 300px;
         overflow: scroll;
         position: absolute;
         background-color: $white;
         border: 2px solid $color1;
         overflow-x: hidden;
         box-shadow: 8px 10px 7px #bebebe;
-        .rango{
+        .gas{
             cursor: pointer;
             border: 1px solid transparent;
             border-bottom: 1px solid #d9d9d9;
@@ -30,13 +30,18 @@
             width: 100%;
             align-items: center;
             transition: .2s ease-in all;
+            p{
+                font-weight: 600;
+                font-size: 14px;
+            }
         }
-        .rango:hover{
+        .gas:hover{
             border-color: $color1;
             box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.5);
         }
+
         img{
-            width: 60px;
+            width: 45px;
         }
     }
     .on{
@@ -45,127 +50,191 @@
         align-items: center;
         z-index: 10;
     }
-
-    .bloqueado{
-        background-color: #ccc;
-        opacity: 0.7;
-    }
 }
 
 @media only screen and (max-width: 420px){
-    .modal-rangos{
+    .modal-gases{
         margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         width: 100%;
-        .opciones-rangos{
+        .opciones-gases{
             top: 40px;
             width: 75%;
-            height: 240px;
+            height: auto;
             box-shadow: 8px 10px 15px #bebebe;
             flex-direction: column; 
-            .rango{
+            .gas{
                 cursor: pointer;
-                p{
-                    font-size: 14px;
-                }
+                padding: 3px;
+            }
+            .gas:hover{
+                border-color: $color1;
+                box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.5);
+            }
+    
+            img{
+                width: 35px;
+                height: 35px;
+            }
+            p{
+                font-size: 12px;
             }
         }
-    }
+    } 
 }
 @media only screen and (min-width: 421px)and (max-width: 600px){
-    .modal-rangos{
+    .modal-gases{
         margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         width: 100%;
-        .opciones-rangos{
+        .opciones-gases{
             top: 45px;
             width: 85%;
             height: auto;
             box-shadow: 8px 10px 15px #bebebe;
             flex-direction: column; 
-            .rango{
+            .gas{
                 cursor: pointer;
-                p{
-                    font-size: 14px;
-                }
+                padding: 3px;
+            }
+            .gas:hover{
+                border-color: $color1;
+                box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.5);
+            }
+            img{
+                width: 50px;
+                height: 50px;
+            }
+            p{
+                font-size: 13px;
             }
         }
-    }
+    } 
 }
 @media only screen and (min-width: 601px)and (max-width: 800px){
-    .modal-rangos{
+    .modal-gases{
         margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        .opciones-rangos{
+        .opciones-gases{
             top: 45px;
             width: 90%;
             height: auto;
             box-shadow: 8px 10px 15px #bebebe;
             flex-direction: column; 
-            .rango{
+            .gas{
                 cursor: pointer;
-                justify-content: space-around;
+                padding: 3px;
+                img{
+                    width: 50px;
+                    height: 50px;
+                }
                 p{
-                    font-size: 14px;
+                    font-size: 12px;
                 }
             }
+            .gas:hover{
+                border-color: $color1;
+                box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.5);
+            }
+
         }
-    }
+    } 
 }
 @media only screen and (min-width: 801px)and (max-width: 1024px){
-    .modal-rangos{
+    .modal-gases{
         margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        .opciones-rangos{
+        .opciones-gases{
             top: 35px;
             width: 100%;
             height: auto;
             box-shadow: 8px 10px 15px #bebebe;
             flex-direction: column; 
-            .rango{
+            .gas{
                 cursor: pointer;
-                justify-content: space-around;
+                padding: 3px;
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
                 p{
-                    font-size: 14px;
+                    font-size: 12px;
                 }
             }
+            .gas:hover{
+                border-color: $color1;
+                box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.5);
+            }
+
         }
-    }
+    } 
 }
 @media only screen and (min-width: 1025px)and (max-width: 1280px){
-    .modal-rangos{
+    .modal-gases{
         margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        .opciones-rangos{
+        .opciones-gases{
             top: 35px;
             width: 240px;
+            height: auto;
             box-shadow: 8px 10px 15px #bebebe;
             flex-direction: column; 
-            .rango{
+            .gas{
                 cursor: pointer;
-                justify-content: space-around;
+                padding: 3px;
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
                 p{
-                    font-size: 14px;
+                    font-size: 12px;
                 }
             }
+            .gas:hover{
+                border-color: $color1;
+                box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.5);
+            }
+
         }
-    }
+    } 
 }
 @media only screen and (min-width: 1281px)and (max-width: 1440px){
-    .modal-rangos{
+    .modal-gases{
         margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        .opciones-rangos{
+        .opciones-gases{
             width: 270px;
+            height: auto;
             box-shadow: 8px 10px 15px #bebebe;
             flex-direction: column; 
-            .rango{
+            .gas{
                 cursor: pointer;
-                justify-content: space-around;
+                padding: 3px;
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
                 p{
-                    font-size: 14px;
+                    font-size: 12px;
                 }
             }
+            .gas:hover{
+                border-color: $color1;
+                box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.5);
+            }
+
         }
-    }
+    } 
 }
