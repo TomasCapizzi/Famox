@@ -1,10 +1,10 @@
 import React from 'react'
 
-function FiltroItem({text, id}) {
+function FiltroItem({text, reference}) {
   return (
     <div>
-        <input type="checkbox" id={id} defaultChecked />
-        <label htmlFor={id}>{text}</label>
+        <input type="checkbox" ref={reference} defaultChecked />
+        <label>{text}</label>
     </div>
   )
 }

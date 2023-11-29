@@ -1,14 +1,22 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import {BiSearch} from 'react-icons/bi';
 import FiltroItem from './FiltroItem';
+// USAR REF
+function FiltroForm({filtrar, setGasoterapiaHandler, setUnidSumHandler, setAccesoriosHandler, setEquiposDigitalesHandler, setHandler}) {
 
-function FiltroForm({filtrar, setGasoterapiaHandler, setUnidSumHandler, setAccesoriosHandler, setHandler}) {
+  const filtroGasoterapiaRef = useRef();
+  const filtroUnidSumRef = useRef();
+  const filtroAccesoriosRef = useRef();
+  const filtroEquiposDigRef = useRef();
+
+
   return (
-    <form action="" onSubmit={(e)=> filtrar(e, setGasoterapiaHandler, setUnidSumHandler, setAccesoriosHandler, setHandler)} >
+    <form action="" onSubmit={(e)=> filtrar(e, setGasoterapiaHandler, setUnidSumHandler, setAccesoriosHandler, setEquiposDigitalesHandler, setHandler, filtroGasoterapiaRef, filtroUnidSumRef, filtroAccesoriosRef, filtroEquiposDigRef)} >
         <div className='filtro'>
-            <FiltroItem text='Gasoterapia' id='gasoterapia'/>
-            <FiltroItem text='Unidades de Suministro' id='unidsuministro'/>
-            <FiltroItem text='Accesorios' id='accesorios'/>       
+            <FiltroItem text='Gasoterapia' reference={filtroGasoterapiaRef}/>
+            <FiltroItem text='Unidades de Suministro' reference={filtroUnidSumRef}/>
+            <FiltroItem text='Accesorios' reference={filtroAccesoriosRef}/>
+            <FiltroItem text='Equipos Digitales' reference={filtroEquiposDigRef}/>     
         </div>
         <button type='submit' className='submit-btn'>
             Buscar <BiSearch/>
