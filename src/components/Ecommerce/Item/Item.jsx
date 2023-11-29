@@ -1,22 +1,18 @@
-import React,{useRef} from 'react';
+import React from 'react';
 
-import Modal from './Modal/Modal';
+import EleccionesContainer from './Eleccion/EleccionesContainer';
+import Descripcion from './Eleccion/Descripcion';
+import useIntersection from 'hooks/intersectionObserver/useIntersection'
+
 
 function Item({item}) {
 
-  const modalRef = useRef()
-
-  function toggleModal(e,containerModalRef, modalWinwowRef){
-    console.log('modal'); 
-  }
+  const {isIntersecting, elementRef} = useIntersection({});
 
   return (
-    <div className='item-ecom'>
-      <div className='item-info'>
-        <h5>{item.nombre}</h5>
-        <img src={item.img} alt={item.nombre} onClick={()=> toggleModal()} />        
-      </div>
-      <Modal item={item} toggleModal={toggleModal} />
+    <div ref={elementRef} className={isIntersecting ? 'item-ecom in' : 'item-ecom out'}>
+      <Descripcion item={item}/>
+      <EleccionesContainer item={item}/>
     </div>
   )
 }

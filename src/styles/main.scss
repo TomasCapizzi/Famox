@@ -46,24 +46,21 @@
 @import './partials/ecommerce/item';
 @import './partials/ecommerce/busqueda';
 //Modal
-@import './partials/ecommerce/modal/eleccionProducto/botonera';
-@import './partials/ecommerce/modal/eleccionProducto/eleccionProducto';
-@import './partials/ecommerce/modal/eleccionProducto/notificacionEcomm';
-@import './partials/ecommerce/modal/eleccionProducto/accesorio/accesorio';
-@import './partials/ecommerce/modal/eleccionProducto/accesorio/selecciones';
-@import './partials/ecommerce/modal/eleccionProducto/opciones/conectores';
-@import './partials/ecommerce/modal/eleccionProducto/opciones/gases';
-@import './partials/ecommerce/modal/eleccionProducto/opciones/rangos';
-@import './partials/ecommerce/modal/descripcion/descripcion';
-@import './partials/ecommerce/modal/modal';
-@import './partials/ecommerce/modal/eleccionProducto/opciones/modelos';
-@import './partials/ecommerce/modal/eleccionProducto/unidSum/eleccion';
-@import './partials/ecommerce/modal/eleccionProducto/unidSum/gasconec';
-@import './partials/ecommerce/modal/eleccionProducto/unidSum/mediaTension';
-@import './partials/ecommerce/modal/eleccionProducto/unidSum/bajaTension';
-@import './partials/ecommerce/modal/eleccionProducto/unidSum/iluminacion';
-@import './partials/ecommerce/modal/eleccionProducto/unidSum/longitudPanel';
-
+@import './partials/ecommerce/eleccion/eleccionProducto/botonera';
+@import './partials/ecommerce/eleccion/eleccionProducto/eleccionProducto';
+@import './partials/ecommerce/eleccion/eleccionProducto/notificacionEcomm';
+@import './partials/ecommerce/eleccion/eleccionProducto/accesorio/accesorio';
+@import './partials/ecommerce/eleccion/eleccionProducto/accesorio/selecciones';
+@import './partials/ecommerce/eleccion/eleccionProducto/gasoterapia/conectores';
+@import './partials/ecommerce/eleccion/eleccionProducto/gasoterapia/gases';
+@import './partials/ecommerce/eleccion/eleccionProducto/gasoterapia/rangos';
+@import './partials/ecommerce/eleccion/eleccion';
+@import './partials/ecommerce/eleccion/eleccionProducto/unidSum/eleccionUnidSum';
+@import './partials/ecommerce/eleccion/eleccionProducto/gasoterapia/modelos';
+@import './partials/ecommerce/eleccion/eleccionProducto/unidSum/seleccion';
+@import './partials/ecommerce/eleccion/eleccionProducto/unidSum/gasconec';
+@import './partials/ecommerce/eleccion/eleccionProducto/unidSum/longitudPanel';
+@import './partials/ecommerce/eleccion/eleccionProducto/equipoDigital/eleccionEquipodigital';
 //Obras
 @import './partials/obras/obras';
 @import './partials/obras/obra';
