@@ -128,8 +128,6 @@ export function CarritoContextProvider({children}){
 
     const agregarAccesorio = ({producto})=>{
         const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
-        console.log(producto);
-        console.log(carrito);
         if(carrito){
             const coincidencia = carrito.find(
                 item => (item.codigo === producto.codigo)
@@ -163,6 +161,50 @@ export function CarritoContextProvider({children}){
         }
     }
 
+    const agregarEquipoDigital = ({producto})=>{
+        const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
+
+        if(carrito){
+            const coincidencia = buscarCoincidenciaEquipoDigital(producto);
+            if(coincidencia){     
+                console.log('Coinciden este elemento con otro igual');                    
+                const nuevoCarrito = carrito.filter(
+                        item=> item.codigo !== coincidencia.codigo
+                    )
+                console.log(nuevoCarrito);
+                const {nombre, img, _id, codigo, equipoDigital, modelo} = producto
+                let nuevoProducto = {
+                    nombre,
+                    fecha: new Date(),
+                    codigo,
+                    img,
+                    equipoDigital,
+                    _id,
+                    modelo,
+                    cantidad: producto.cantidad + coincidencia.cantidad
+                }
+                localStorage.setItem('FamoxCarrito', JSON.stringify([...nuevoCarrito, nuevoProducto]));
+                setCarro([...nuevoCarrito, nuevoProducto])
+            } else{
+                localStorage.setItem('FamoxCarrito', JSON.stringify([...carrito, producto]));
+                setCarro([...carrito, producto])
+            }
+
+        } else{
+            localStorage.setItem('FamoxCarrito', JSON.stringify([producto]));
+            setCarro([producto])
+        }
+    }
+
+    const buscarCoincidenciaEquipoDigital = (producto)=> {
+        console.log(producto.nombre);
+        const coincidenciaCodigo = carro.find(
+            prod => prod.codigo === producto.codigo
+          );
+        if(coincidenciaCodigo) return coincidenciaCodigo
+        return null
+    }
+
     const removerItem = (producto)=>{
         localStorage.setItem('FamoxCarrito', JSON.stringify(carro.filter(
             item => item._id !== producto._id
@@ -180,7 +222,7 @@ export function CarritoContextProvider({children}){
     },0);
 
     return(
-        <CarritoContext.Provider value={{carro, agregarItemGasoterapia,agregarItemUnidSum, removerItem, borrarCarrito, costoTotal, obtenerDataLocalStorage, agregarAccesorio}}>
+        <CarritoContext.Provider value={{carro, agregarItemGasoterapia,agregarItemUnidSum, removerItem, borrarCarrito, costoTotal, obtenerDataLocalStorage, agregarAccesorio, agregarEquipoDigital}}>
             {children}
         </CarritoContext.Provider>
     )

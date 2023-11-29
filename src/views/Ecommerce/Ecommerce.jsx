@@ -9,10 +9,10 @@ import useRandomKey from 'hooks/randomKey/useRandomKey';
 function Ecommerce() {
 
   const [listadoProductos, setListadoProductos] = useState([]);
-
   const [gasoterapiaHandler, setGasoterapiaHandler] = useState(true);
   const [unidSumHandler, setUnidSumHandler] = useState(true)
   const [accesoriosHandler, setAccesoriosHandler] = useState(true);
+  const [equiposDigitalesHandler, setEquiposDigitalesHandler] = useState(true);
   const [handler, setHandler] = useState(false);
   const {getRandomKey} = useRandomKey();
  
@@ -30,20 +30,21 @@ function Ecommerce() {
     <section className='container-ecommerce'>
       <Helmet>
         <title>Ecommerce</title>
-        <meta name="description" content="Nuestro ecommerce web para que puedas elegir entre toda nuestra gama de productos. Desde equipos de gasoterapia, hasta paneles de cabecera y accesorios." />
+        <meta name="description" content="Nuestro ecommerce web para que puedas elegir entre toda nuestra gama de productos. Desde equipos de gasoterapia, unidades de suministro, equipos digitales y accesorios." />
       </Helmet>
       <h1>Nuestro Ecommerce</h1>
       <div className='ecommerce'>
-        <Filtro setGasoterapiaHandler={setGasoterapiaHandler} setUnidSumHandler={setUnidSumHandler} setAccesoriosHandler={setAccesoriosHandler} setHandler={setHandler}  />
+        <Filtro setGasoterapiaHandler={setGasoterapiaHandler} setUnidSumHandler={setUnidSumHandler} setAccesoriosHandler={setAccesoriosHandler} setEquiposDigitalesHandler={setEquiposDigitalesHandler} setHandler={setHandler}  />
         <article className='categorias'>
             {
               handler ? 
-              <>
-                {gasoterapiaHandler ? <Categoria items={listadoProductos.gasoterapia} key={listadoProductos.gasoterapia}/> : null}
-                {unidSumHandler? <Categoria items={listadoProductos.unidadesSuministro} key={listadoProductos.unidadesSuministro}/> : null}
-                {accesoriosHandler ? <Categoria items={listadoProductos.accesorios} key={listadoProductos.accesorios + getRandomKey()} /> : null}
-              </>
-              : <Spinner/>
+                <>
+                  {gasoterapiaHandler ? <Categoria items={listadoProductos.gasoterapia} key={listadoProductos.gasoterapia}/> : null}
+                  {unidSumHandler? <Categoria items={listadoProductos.unidadesSuministro} key={listadoProductos.unidadesSuministro}/> : null}
+                  {accesoriosHandler ? <Categoria items={listadoProductos.accesorios} key={listadoProductos.accesorios + getRandomKey()} /> : null}
+                  {equiposDigitalesHandler ? <Categoria items={listadoProductos.equiposDigitales} key={listadoProductos.equiposDigitales + getRandomKey()} /> : null}
+                </>
+                : <Spinner/>
             }
         </article>
       </div>

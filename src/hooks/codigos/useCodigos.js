@@ -44,11 +44,11 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
         else if(nombre.includes('bloque base')){
             return buscarCodigoAdaptacion(nombre,gasAcc)
         }
-        else if(nombre === 'Positiva' || nombre === 'Negativa'){
-            return buscarCodigoAlarmaGases(nombre)
+        else if(modelo === 'Positiva' || modelo === 'Negativa'){
+            return buscarCodigoAlarmaGases(modelo)
         }
-        else if(nombre === '16 Puestos' || nombre === '24 Puestos'){
-            return buscarCodigoCentralRep(nombre)
+        else if(modelo === '16 Puestos' || modelo === '24 Puestos'){
+            return buscarCodigoCentralRep(modelo)
         }
     }
 
@@ -1282,18 +1282,18 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
             }
         }
     }
-    const buscarCodigoAlarmaGases = (nombre)=>{
-        if(nombre === 'Positiva'){
+    const buscarCodigoAlarmaGases = (modelo)=>{
+        if(modelo === 'Positiva'){
             return 'PAG001'
-        } else if (nombre === 'Negativa'){
+        } else if (modelo === 'Negativa'){
             return 'PAG002'
         }
     }
 
-    const buscarCodigoCentralRep = (nombre)=>{
-        if(nombre === '16 Puestos'){
+    const buscarCodigoCentralRep = (modelo)=>{
+        if(modelo === '16 Puestos'){
             return 'PRL001'
-        } else if (nombre === '24 Puestos'){
+        } else if (modelo === '24 Puestos'){
             return 'PRL004'
         }
     }

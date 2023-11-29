@@ -10,7 +10,7 @@ function MenuCategorias() {
           <Link to='/gasoterapia'><li>Gasoterapia</li></Link>
           <Link to='/unidades-de-suministro'><li>Unidades de Suministro</li></Link>
           <Link to='/accesorios'><li>Accesorios</li></Link>
-          <Link to='/llamadores'><li>Llamadores</li></Link>
+          <Link to='/equipos-digitales'><li>Equipos Digitales</li></Link>
         </div>
     </div>
   )

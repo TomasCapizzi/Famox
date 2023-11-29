@@ -2,7 +2,7 @@ const useNotificacion = () => {
     const activarNoti = (refNoti)=> {
         refNoti.current.classList.toggle('noti-on')
         setTimeout(()=>{
-          refNoti.current.classList.toggle('noti-on')
+          refNoti.current && refNoti.current.classList.toggle('noti-on')
         }, 2000)
       }
 

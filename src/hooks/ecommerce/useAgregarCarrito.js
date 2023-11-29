@@ -181,6 +181,8 @@ const useAgregarCarrito = ({item}) => {
         setConexiones(conexiones.filter(
           valor => valor !== item
         ))
+      } else if(longitudPanel){
+        setLongitudPanel();
       }
     }
 

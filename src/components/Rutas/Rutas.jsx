@@ -11,7 +11,7 @@ import Ecommerce from 'views/Ecommerce/Ecommerce';
 import Gasoterapia from 'views/Productos/Gasoterapia/Gasoterapia';
 import Historia from 'views/Nosotros/Historia';
 import Home from 'views/Home/Home';
-import Llamadores from 'views/Productos/Llamadores/Llamadores';
+import EquiposDigitales from 'views/Productos/EquiposDigitales/EquiposDigitales';
 import Obras from 'views/Obras/Obras';
 import PregFrec from 'views/PregFrec/PregFrec';
 import Productos from 'views/Productos/Productos';
@@ -35,7 +35,7 @@ function Rutas() {
             <Route path='/gasoterapia' element={<Gasoterapia/>}/>
             <Route path='/unidades-de-suministro' element={<UnidadesSuministro/>}/>
             <Route path='/accesorios' element={<Accesorios/>}/>
-            <Route path='/llamadores' element={<Llamadores/>}/>
+            <Route path='/equipos-digitales' element={<EquiposDigitales/>}/>
 
             <Route path='/unidades-de-suministro/:id' element={<DetalleUnidSum/>} />
             <Route path='/gasoterapia/:id' element={<DetalleGasoterapia/>} />
