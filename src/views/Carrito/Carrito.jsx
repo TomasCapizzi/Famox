@@ -51,7 +51,12 @@ function Carrito() {
                 carro.length === 0 ? <CarritoVacio/>
                 : <CarritoLleno carro={carro} formHandler={formHandler} habilitarForm={habilitarForm} />               
             }
-            {carro.length ? <FormularioCotizacion pedirCotizacion={pedirCotizacion} habilitarForm={habilitarForm}  formRef={formRef} />: null}
+            {carro.length ? 
+                <>
+                    <h3>Realiza tu Pedido</h3>
+                    <FormularioCotizacion pedirCotizacion={pedirCotizacion} habilitarForm={habilitarForm}  formRef={formRef} />
+                </>
+                : null}
         </div>  
     </section>
   )
