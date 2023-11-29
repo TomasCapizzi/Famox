@@ -1,11 +1,11 @@
 
 .in{
-    animation: intersection1 .7s ease-in;
+    animation: intersection1 .9s ease-in;
 }
 
 .out{
     opacity: 0;
-    animation: intersection2 .7s ease-in;
+    animation: intersection2 .9s ease-in;
 }
 
 @keyframes intersection1 {
@@ -20,11 +20,11 @@
 }
 @keyframes intersection2 {
     0%{
-        margin-bottom: 50px;
+        //margin-bottom: 50px;
         opacity: 1;
     }
     100%{
-        margin-bottom: 30px;
+        //margin-bottom: 30px;
         opacity: 0;
     }
 }
