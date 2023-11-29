@@ -11,7 +11,7 @@ function LongitudPanel({setLongitudPanel, longitudPanel, handlerInput, setHandle
   const opcionesRef = useRef();
   const longitudRef = useRef();
   const {longitudPanelCabecera, controlarUnidadMedida, resetValores} = useLongitudPanel(medidasRef, setLongitudPanel, setHandlerInput)
-  const {mostrarLongitudPanel, opcionesHandler, setOpcionesHandler} = useMostrarOpciones();
+  const {mostrarLongitudPanel} = useMostrarOpciones();
       
   function confirmarItems(){
     resetValores(longitudRef);

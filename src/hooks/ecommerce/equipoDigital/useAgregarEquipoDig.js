@@ -1,6 +1,5 @@
 import { CarritoContext } from 'store/carritoContext';
 import { useContext, useState } from "react";
-import useCodigo from 'hooks/codigos/useCodigos';
 
 const useAgregarEquipoDig = ({item}) => {
     const {carro, agregarEquipoDigital} = useContext(CarritoContext);
@@ -52,7 +51,7 @@ const useAgregarEquipoDig = ({item}) => {
           agregarEquipoDigital({producto})
         }
       }
-
+/*
     function agregarACarrito(equipo){
         const coincidencia = carro.find(
             prod => prod.codigo === equipo.codigo
@@ -81,7 +80,7 @@ const useAgregarEquipoDig = ({item}) => {
             }
             agregarEquipoDigital({producto})
         }
-    }
+    }*/
 
 
     return{

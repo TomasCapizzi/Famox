@@ -1,6 +1,5 @@
-import React,{useRef} from 'react';
+import React from 'react';
 import {FaPlusCircle} from 'react-icons/fa';
-import useCodigo from 'hooks/codigos/useCodigos';
 
 function Modelo({item, agregarEquipoDigital}) {
   return (

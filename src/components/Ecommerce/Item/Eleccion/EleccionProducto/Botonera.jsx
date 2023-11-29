@@ -2,12 +2,12 @@ import {AiOutlineMinusCircle, AiOutlinePlusCircle} from 'react-icons/ai';
 
 import React from 'react';
 import useContador from 'hooks/ecommerce/useContador';
-import useNotificacion from 'hooks/ecommerce/useNotificacion';
+//import useNotificacion from 'hooks/ecommerce/useNotificacion';
 
 function Botonera({agregarAlCarrito, borrarSelecciones, refNotificacionCompra}) {
 
     const {cantidad, incrementar, descontar} = useContador();
-    const {activarNoti} = useNotificacion();
+    //const {activarNoti} = useNotificacion();
 
     function comprar(){
       agregarAlCarrito(cantidad);

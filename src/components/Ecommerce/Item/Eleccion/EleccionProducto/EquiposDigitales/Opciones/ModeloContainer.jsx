@@ -2,7 +2,7 @@ import React,{useRef} from 'react';
 import EncabezadoOpciones from '../../EncabezadoOpciones';
 import Modelo from './Modelo';
 import useMostrarOpciones from 'hooks/ecommerce/useMostrarOpciones';
-import useNotificacion from 'hooks/ecommerce/useNotificacion';
+//import useNotificacion from 'hooks/ecommerce/useNotificacion';
 
 function ModeloContainer({item, setModelo}) {
 
@@ -10,7 +10,7 @@ function ModeloContainer({item, setModelo}) {
 
     const {mostrarModelos,opcionesHandler, setOpcionesHandler} = useMostrarOpciones();
 
-    const {activarNoti} = useNotificacion();
+    //const {activarNoti} = useNotificacion();
 
     function agregarEquipoDigital(e){
         setOpcionesHandler(!opcionesHandler);
