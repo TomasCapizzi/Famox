@@ -44,6 +44,9 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
         else if(nombre.includes('bloque base')){
             return buscarCodigoAdaptacion(nombre,gasAcc)
         }
+        else if(nombre.includes('Gabinete Expuesto')){
+            return buscarCodigoKit(nombre, gasAcc)
+        }
         else if(modelo === 'Positiva' || modelo === 'Negativa'){
             return buscarCodigoAlarmaGases(modelo)
         }
@@ -1289,12 +1292,54 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
             return 'PAG002'
         }
     }
-
     const buscarCodigoCentralRep = (modelo)=>{
         if(modelo === '16 Puestos'){
             return 'PRL001'
         } else if (modelo === '24 Puestos'){
             return 'PRL004'
+        }
+    }
+    //KIT
+    const buscarCodigoKit = (nombre, gas)=>{
+        if(nombre === 'Kit Gabinete Expuesto U.T.DISS'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'KIT058'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'KIT059'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'KIT060'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'KIT061'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'KIT062'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'KIT063'
+            }
+        }
+        if(nombre === 'Kit Gabinete Expuesto U.T. AFNOR'){
+            if(gas.toUpperCase() === 'OXIGENO'){
+                return 'KIT065'
+            } 
+            else if(gas.toUpperCase() === 'AIRE'){
+                return 'KIT066'
+            }
+            else if(gas.toUpperCase() === 'VACIO'){
+                return 'KIT067'
+            }
+            else if(gas.toUpperCase() === 'N2O'){
+                return 'KIT068'
+            }
+            else if(gas.toUpperCase() === 'N2'){
+                return 'KIT069'
+            }
+            else if(gas.toUpperCase() === 'CO2'){
+                return 'KIT070'
+            }
         }
     }
 

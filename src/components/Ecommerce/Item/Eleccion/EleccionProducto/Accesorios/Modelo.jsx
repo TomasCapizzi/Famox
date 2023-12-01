@@ -48,20 +48,20 @@ function Modelo({accesorio, seleccionAccesorio, activarNoti, gasesHandler, refNo
     <div className='modelo-acc'>
       <EncabezadoAccesorios item={accesorio} mostrarOpcion={mostrarAccesorios} opcionesRef={opcionesRef}/>
       <article ref={opcionesRef} className='opciones-accesorios'>
-      {
-            gases ? 
-              <select name="gas" id="gas" ref={gasRef}>
-                {gases.map(
-                  item => item[1] ? <option value={item[0]} key={item[0]} >{item[0].toUpperCase()}</option> : null
-                ) 
-                }
-              </select> : null
-          }
-          <div>
-            <p>Cantidad:</p>
-            <input type="number" name="cantidad" id="cantidad" ref={inputRef} min={0}/>
-          </div>        
-          <button onClick={()=> agregarAcc()}><FaPlusCircle/></button>
+        {
+          gases ? 
+            <select name="gas" id="gas" ref={gasRef}>
+              {gases.map(
+                item => item[1] ? <option value={item[0]} key={item[0]} >{item[0].toUpperCase()}</option> : null
+              ) 
+              }
+            </select> : null
+        }
+        <div>
+          <p>Cantidad:</p>
+          <input type="number" name="cantidad" id="cantidad" ref={inputRef} min={0}/>
+        </div>        
+        <button onClick={()=> agregarAcc()}><FaPlusCircle/></button>
       </article>
     </div>
   )

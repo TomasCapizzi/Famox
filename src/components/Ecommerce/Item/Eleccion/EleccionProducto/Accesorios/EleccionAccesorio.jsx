@@ -8,28 +8,43 @@ import useAgregarAccesorio from 'hooks/ecommerce/accesorio/useAgregarAccesorio';
 import useBorrarSeleccion from 'hooks/ecommerce/accesorio/useBorrarSeleccion';
 import useSeleccionarAccesorio from 'hooks/ecommerce/accesorio/useSeleccionarAccesorio';
 import useNotificacion from 'hooks/ecommerce/useNotificacion';
+import ModeloUnidSum from './ModeloUnidSum';
+import Botonera from './Botonera';
 
 function EleccionAccesorio({item}) {
-
-
   const [accesorios, setAccesorios] = useState([]);
-  const {agregarAlCarrito} = useAgregarAccesorio({item});
-  const {seleccionAccesorio} = useSeleccionarAccesorio(setAccesorios, accesorios);
+  const {agregarAlCarrito, agregarAlCarritoUS} = useAgregarAccesorio({item});
+  const {seleccionAccesorio, seleccionAccesorioUS} = useSeleccionarAccesorio(setAccesorios, accesorios);
   const {eliminarSeleccion} = useBorrarSeleccion(setAccesorios, accesorios);
   const refNoti = useRef();
   const gasesHandler = item.gases
+  const accesoriosUSHandler = item.accesorioUS;
   const {activarNoti} = useNotificacion();
 
   return (
     <article className='eleccion-accesorio'>
       <div className='acc-container'>
-        {item.modelos.map(
-            acc => <Modelo accesorio={acc} seleccionAccesorio={seleccionAccesorio} activarNoti={activarNoti} gasesHandler={gasesHandler} refNoti={refNoti}  key={acc.nombre} />
-        )}
+        {
+          item.gases &&
+            item.modelos.map(
+              acc => <Modelo accesorio={acc} seleccionAccesorio={seleccionAccesorio} activarNoti={activarNoti} gasesHandler={gasesHandler} refNoti={refNoti}  key={acc.nombre} />
+            )
+        }
+        {
+          item.accesorioUS &&
+            item.modelos.map(
+              acc => <ModeloUnidSum key={acc.nombre} accesorio={acc} seleccionAccesorioUS={seleccionAccesorioUS} accesoriosUSHandler={accesoriosUSHandler} activarNoti={activarNoti} refNoti={refNoti}/>
+            )
+        }
       </div>
       <div className='acc-selecc-container'>
         <Selecciones accesorios={accesorios} eliminarSeleccion={eliminarSeleccion} />
-        <BotonComprar accesorios={accesorios} setAccesorios={setAccesorios} agregarAlCarrito={agregarAlCarrito}/>
+        {
+          item.gases ?
+          <BotonComprar accesorios={accesorios} setAccesorios={setAccesorios} agregarAlCarrito={agregarAlCarrito}/>
+          : <Botonera accesorios={accesorios} setAccesorios={setAccesorios} agregarAlCarrito={agregarAlCarritoUS}/>
+        }
+
       </div>
       <NotificacionAgregado refNoti={refNoti}/>
     </article>
