@@ -28,17 +28,19 @@ function Menu() {
         <img src="img/Logo.png" alt="Logo Famox" />
       </Link>
       <div className='responsive-menu'>
-        <Link to='/carrito' className='carrito-responsive' >
-          <li className='carrito'>{
-              carro.length > 0 ? <RiShoppingCartFill/> : <RiShoppingCart2Line/>
-          }
-          {
-              carro.length === 0 ?
-              null : <p>{carro.length}</p>
-          }
-          </li>
-          </Link>
-          <CgMenuGridR className='menu-hamb' onClick={useMenuHamb}/>          
+        <Link to='/carrito' className='carrito-responsive' aria-label='Carro de compras'>
+          <ul>
+            <li className='carrito'>{
+                carro.length > 0 ? <RiShoppingCartFill/> : <RiShoppingCart2Line/>
+            }
+            {
+                carro.length === 0 ?
+                null : <p>{carro.length}</p>
+            }
+            </li>
+          </ul>
+        </Link>
+        <CgMenuGridR className='menu-hamb' onClick={useMenuHamb}/>       
       </div>
       <LinksResponsive menuUl={menuUl} useMenuHamb={useMenuHamb} />
       <Links carro={carro} />

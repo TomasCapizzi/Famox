@@ -10,7 +10,7 @@ function Item({product}) {
     <article className={isIntersecting ? 'accesorio in' : 'accesorio out'} ref={elementRef}>
       {product.manual && <ManualBtn product={product} />}
       <div className='acc-img'>
-        <img src={product.img} alt={"accesorio " + product.nombre } />
+        <img src={product.img} alt={"accesorio " + product.nombre } loading='lazy' />
       </div>
       <div className='acc-descrip'>
           <h3>{product.nombre}</h3>

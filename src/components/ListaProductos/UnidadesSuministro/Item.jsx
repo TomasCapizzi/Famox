@@ -13,7 +13,7 @@ function Item({product}) {
         </Link>        
       </div>        
         <Link to={'/unidades-de-suministro/' + product._id}>
-          <img src={product.img} alt={"equipo " + product.nombre} />
+          <img src={product.img} alt={"equipo " + product.nombre} loading='lazy' />
         </Link>
     </div>
   )

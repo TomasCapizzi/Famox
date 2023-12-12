@@ -13,7 +13,7 @@ function Item({product}) {
         </Link>        
       </div>
       <Link to={'/gasoterapia/' + product._id}>
-        <img src={product.img} alt={"equipo " + product.nombre} />
+        <img src={product.img} loading='lazy' alt={"equipo " + product.nombre} />
       </Link>
     </div>
   )

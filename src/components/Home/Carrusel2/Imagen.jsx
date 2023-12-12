@@ -5,7 +5,7 @@ function Imagen({ruta}) {
     <div className="carrusel">
         <div>
             <picture>
-                <img src={ruta} alt="imagen"/>
+                <img src={ruta} alt="imagen" loading='lazy'/>
             </picture>
         </div>
     </div>

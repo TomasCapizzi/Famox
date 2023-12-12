@@ -30,7 +30,7 @@ function FotoSlider({obra}) {
                 (imgSrc, index) => {
                     return (
                         <div className={actualImg === index ? 'slider active' : 'slider'}>
-                            {actualImg === index && (<img src={imgSrc} alt='slider' key={Math.floor(Math.random()*100)} />)}
+                            {actualImg === index && (<img src={imgSrc} alt='slider' loading='lazy' key={Math.floor(Math.random()*100)} />)}
                         </div>
                     );
                 }
