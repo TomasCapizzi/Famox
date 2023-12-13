@@ -37,12 +37,12 @@ function DetalleGasoterapia() {
               <ManualBtn product={product}/>
               <div className='info-producto'>
                 <div className='img-container'>
-                  <img src={product.img} alt="producto" />
+                  <img src={product.img} alt={`producto ${product.nombre}`} />
                 </div>
                 <Descripcion product={product} />
               </div>
               {
-                product.gases_ && <Gases product={product.gases_} />
+                product.gas && <Gases product={product.gases_} />
               }
               {
                 product.conectores && <Conectores product={product.conectores} />
