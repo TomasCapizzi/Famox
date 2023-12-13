@@ -8,7 +8,7 @@ function Aviso() {
 
   return (
     <article className={isIntersecting? 'aviso in' : 'aviso out'} ref={elementRef} >
-      <img src="img/Banners/Catalogo.jpg" alt="Catálogo famox" />
+      <img src="img/Banners/Catalogo.webp" alt="Catálogo famox" />
       <div>
         <p>¡Nuevo Catálogo!</p>
         <button name='Descarga de catálogo'><a href="/catalogo/Catalogo-Famox.pdf" target='_black'>Descargar <HiOutlineDownload/></a></button>

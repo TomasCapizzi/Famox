@@ -1,34 +1,34 @@
 const CONECTORES = [
     {
-        img: 'img/Conectores/PAG-DISS.png',
+        img: 'img/Conectores/PAG-DISS.webp',
         nombre: 'DISS',
     },
     {
-        img: 'img/Conectores/PAG-AFNOR.png',
+        img: 'img/Conectores/PAG-AFNOR.webp',
         nombre: 'AFNOR',
     },
     {
-        img: 'img/Conectores/PAG-SSAGA.png',
+        img: 'img/Conectores/PAG-SSAGA.webp',
         nombre: 'SS/AGA',
     },
     {
-        img: 'img/Conectores/PAG-OHMEDA.png',
+        img: 'img/Conectores/PAG-OHMEDA.webp',
         nombre: 'OHMEDA',
     },
     {
-        img: 'img/Conectores/PAG-ON.png',
+        img: 'img/Conectores/PAG-ON.webp',
         nombre: 'ON',
     },
     {
-        img: 'img/Conectores/PAG-CentralUni.png',
+        img: 'img/Conectores/PAG-CentralUni.webp',
         nombre: 'CU',
     },
     {
-        img: 'img/Conectores/IRAM.png',
+        img: 'img/Conectores/IRAM.webp',
         nombre: 'IRAM',
     },
     {
-        img: 'img/Conectores/YUGO.png',
+        img: 'img/Conectores/YUGO.webp',
         nombre: 'YUGO',
     },
 ];

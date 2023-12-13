@@ -4,10 +4,10 @@ import React from 'react'
 function Categorias() {
   return (
     <div className='categorias-container'>
-        <Categoria titulo='Unidades de Suministro' img='img/Categorias/unidadesSuministro.jpg' link='/unidades-de-suministro' />
-        <Categoria titulo='Gasoterapia' img='img/Categorias/gasoterapia.jpg' link='/gasoterapia' />
-        <Categoria titulo='Accesorios' img='img/Categorias/accesorios.jpg' link='accesorios' />
-        <Categoria titulo='Equipos Digitales' img='img/Categorias/llamadores.jpg' link='/equipos-digitales'/>
+        <Categoria titulo='Unidades de Suministro' img='img/Categorias/unidadesSuministro.webp' link='/unidades-de-suministro' />
+        <Categoria titulo='Gasoterapia' img='img/Categorias/gasoterapia.webp' link='/gasoterapia' />
+        <Categoria titulo='Accesorios' img='img/Categorias/accesorios.webp' link='accesorios' />
+        <Categoria titulo='Equipos Digitales' img='img/Categorias/llamadores.webp' link='/equipos-digitales'/>
     </div>
   )
 }
