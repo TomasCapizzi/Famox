@@ -27,7 +27,7 @@ function Links({carro}) {
         <Link  to='/contacto'>
         <li>Contacto</li>
         </Link>
-        <Link to='/carrito' >
+        <Link to='/carrito' aria-label='Carro de compras' >
         <li className='carrito'>{
             carro.length > 0 ? <RiShoppingCartFill/> : <RiShoppingCart2Line/>
         }

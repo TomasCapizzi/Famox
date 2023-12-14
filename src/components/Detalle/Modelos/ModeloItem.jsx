@@ -7,7 +7,7 @@ function ModeloItem({item}) {
         {
           item.img && 
           <div className='img-container'>
-              <img src={item.img} alt="modelo" />
+              <img src={item.img} alt="modelo" loading='lazy'/>
           </div>
         }
         {
