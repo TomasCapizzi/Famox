@@ -18,7 +18,7 @@ function Gasoterapia() {
         <section className='categoria'>
             <Helmet>
                 <title>Gasoterapia</title>
-                <meta name="description" content="Gasoterapia" />
+                <meta name="description" content="Equipos de Gasoterapia" />
                 <meta name="keywords" content="gasoterapia, caudalimetro, mezclador de gases, oxigenoterapia, reguladora, flowmeter" />
             </Helmet>
             <h1>Gasoterapia</h1>

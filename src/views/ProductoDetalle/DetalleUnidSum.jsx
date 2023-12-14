@@ -21,7 +21,7 @@ function DetalleUnidSum() {
     <section className='producto2-container'>
       <Helmet>
         <title>{product.nombre}</title>
-        <meta name="description" content={product.uso} />
+        <meta name="description" content={product.nombre + ': ' + product.uso} />
       </Helmet>
       {
         handler ?

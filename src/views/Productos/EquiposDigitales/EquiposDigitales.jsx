@@ -18,7 +18,8 @@ function Llamadores() {
     <section className='accesorios'>
       <Helmet>
         <title>Equipos Digitales</title>
-        <meta name="description" content="Llamador de enfermera Yanward,alarma digital de gases y central repetidora" />
+        <meta name="description" content="Nuestros equipos digitales son: Llamador de enfermera Yanward,alarma digital de gases y central repetidora" />
+        <meta name="keywords" content="Llamador de enfermera, alarma digital de gases, central repetidora" />
       </Helmet>
       <h1>Equipos Digitales</h1>
       <div>

@@ -17,7 +17,7 @@ function UnidadesSuministro() {
     <section className='categoria'>
       <Helmet>
         <title>Unidades de Suministro</title>
-        <meta name="description" content="Nuestros equipos" />
+        <meta name="description" content="Nuestros equipos de unidades de suministro" />
         <meta name="keywords" content="panel de cabecera, ducto, unidad suministro" />
       </Helmet>
       <h1>Unidades de Suministro</h1>

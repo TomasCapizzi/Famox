@@ -12,7 +12,7 @@ function Home() {
   <div className='home'>
     <Helmet>
       <title>Famox - Inicio</title>
-      <meta name="description" content="Somos una empresa argentina moderna e innovadora, con mas de 20 años de experiencia en el ámbito hospitalario como fabricantes de productos médicos de alta calidad." />
+      <meta name="description" content="Famox es una empresa argentina moderna e innovadora, con mas de 20 años de experiencia en el ámbito hospitalario como fabricantes de productos médicos de alta calidad." />
     </Helmet>
     <Carrusel/>
     <Aviso/>

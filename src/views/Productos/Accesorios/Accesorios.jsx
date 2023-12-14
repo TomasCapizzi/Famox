@@ -19,7 +19,7 @@ function Accesorios() {
     <section className='accesorios'>
       <Helmet>
         <title>Accesorios</title>
-        <meta name="description" content="Los accesorios para nuestros productos" />
+        <meta name="description" content="Todos los accesorios para nuestros productos, conectores, unidades terminales, soportes, bandejas y mucho mas" />
       </Helmet>
       <h1>Accesorios</h1>
       <div>
