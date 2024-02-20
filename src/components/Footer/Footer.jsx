@@ -21,6 +21,10 @@ function Footer() {
           <Link to='/productos'>
             <p>Nuestros productos</p>
           </Link>
+
+          <Link to='/catalogo/Catalogo-Famox.pdf'>
+            <p>Catálogo</p>
+          </Link>
         </div>
         <div className='footer-contacto'>
           <h5>Contáctanos</h5>
