@@ -1,12 +1,9 @@
 import React from 'react';
-import useIntersection from 'hooks/intersectionObserver/useIntersection';
 import ImageWithText from './ImageWithText';
 import ImageWithLink from './ImageWithLink';
 import Image from './Image';
 
 function Carrusel() {
-
-    const {isIntersecting, elementRef} = useIntersection({threshold: '0.7'});
 
   return (
       <div className='carrusel-container'>

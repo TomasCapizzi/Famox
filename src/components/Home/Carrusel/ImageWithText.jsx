@@ -5,7 +5,7 @@ function ImageWithText({id,title, linkText, linkRef, imageRoute}) {
   const {isIntersecting, elementRef} = useIntersection({threshold: '0.7'});
 
   return (
-    <li id={id}>
+    <li id={id} className='carruselImgText'>
         <div ref={elementRef} className={isIntersecting? 'in' : 'out'}>
             <h4>{title}</h4>
             <a href={linkRef} target='_blank' rel="noreferrer">{linkText}</a>
