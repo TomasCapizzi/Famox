@@ -1,6 +1,6 @@
 .carrusel-container{
-    width: 1000px;
-    height: 650px;
+    width: 1080px;
+    height: 503px;
     overflow: hidden;
     margin-bottom: 60px;
     ul{
@@ -15,8 +15,8 @@
     .carrusel{
         /*position: relative;*/
         display: flex;
-        width: 900%;
-        animation: slider 36s infinite alternate linear;
+        width: 800%;
+        animation: slider 40s infinite linear;
         li{
            // position: absolute;
             left: 0;
@@ -27,19 +27,150 @@
             background-color: white;           
             img{
                 width: 100%;
-                height: 660px;
+                height: 500px;
                 object-fit: cover;
-                box-shadow: 5px 10px 16px rgba(0,0,0,0.8);
-            }
-        }
-        #slide1, #slide2{
-            img{
                 object-fit: scale-down;
             }
         }
+        #slide1{
+            position: relative;
+            div{
+                position: absolute;
+                background-color: $white;
+                right: 10%;
+                bottom: 10%;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border: 6px solid $color1;
+                h4{
+                    font-size: 36px;
+                    margin: 12px;
+                }
+                a{
+                    background-color: $color1;
+                    border: none;
+                    margin: 12px;
+                    padding: 3px;
+                    width: 40%;
+                    color: $white;
+                    font-size: 20px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                    -webkit-box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                    -moz-box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                }
+                a:hover{
+                    box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+                    -webkit-box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+                    -moz-box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+                }
+            }
+        }
+        #slide2{
+            position: relative;
+            a{
+                position: absolute;
+                width: 100px;
+                background-color: $white;
+                right: 10%;
+                bottom: 10%;
+                padding: 8px 15px;
+                border: none;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                -webkit-box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                -moz-box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                font-size: 20px;
+                cursor: pointer;
+                text-decoration: none;
+                color: $color1;
+            }
+            a:hover{
+                box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+                -webkit-box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+                -moz-box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+            }
+        }
+        #slide3{
+            position: relative;
+            a{
+                position: absolute;
+                width: 100px;
+                background-color: $white;
+                left: 10%;
+                bottom: 10%;
+                padding: 8px 15px;
+                border: none;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                -webkit-box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                -moz-box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                font-size: 20px;
+                cursor: pointer;
+                text-decoration: none;
+                color: $color1;
+            }
+            a:hover{
+                box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+                -webkit-box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+                -moz-box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+            }
+        }
+        #slide4{
+            position: relative;
+            div{
+                position: absolute;
+                background-color: $white;
+                right: 5%;
+                bottom: 10%;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border: 6px solid $color1;
+                h4{
+                    font-size: 26px;
+                    margin: 12px;
+                }
+                a{
+                    background-color: $color1;
+                    border: none;
+                    margin: 12px;
+                    padding: 3px;
+                    width: 30%;
+                    color: $white;
+                    font-size: 18px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                    -webkit-box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                    -moz-box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                }
+                a:hover{
+                    box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+                    -webkit-box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+                    -moz-box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+                }
+            }
+        }
     }
-
-
     .enlaces{
         display: none;
     }
@@ -48,32 +179,28 @@
 
 @keyframes slider {
     0%{margin-left: 0;}
-    15%{margin-left: 0;}
+    13%{margin-left: 0;}
 
-    16%{margin-left: -100%;}
+    14%{margin-left: -100%;}
     27%{margin-left: -100%;}
 
     28%{margin-left: -200%;}
-    37%{margin-left: -200%;}
+    40%{margin-left: -200%;}
 
-    38%{margin-left: -300%;}
-    47%{margin-left: -300%;}
+    41%{margin-left: -300%;}
+    52%{margin-left: -300%;}
 
-    48%{margin-left: -400%;}
-    57%{margin-left: -400%;}
+    53%{margin-left: -400%;}
+    64%{margin-left: -400%;}
 
-    58%{margin-left: -500%;}
-    67%{margin-left: -500%;}
+    65%{margin-left: -500%;}
+    76%{margin-left: -500%;}
 
-    68%{margin-left: -600%;}
     77%{margin-left: -600%;}
+    88%{margin-left: -600%;}
 
-    78%{margin-left: -700%;}
-    84%{margin-left: -700%;}
-
-    85%{margin-left: -800%;}
-    100%{margin-left: -800%;}
-
+    89%{margin-left: -700%;}
+    100%{margin-left: -700%;}
 }
 
 

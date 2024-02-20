@@ -1,5 +1,4 @@
-import Aviso from 'components/Home/Aviso';
-import Carrusel from 'components/Home/Carrusel';
+import Carrusel from 'components/Home/Carrusel/Carrusel';
 import CarruselMini from 'components/Home/Carrusel2/CarruselMini';
 import Categorias from 'components/Home/Categorias';
 import DescripcionTareas from 'components/Home/Descripcion/DescripcionTareas';
@@ -15,7 +14,6 @@ function Home() {
       <meta name="description" content="Famox es una empresa argentina moderna e innovadora, con mas de 20 años de experiencia en el ámbito hospitalario como fabricantes de productos médicos de alta calidad." />
     </Helmet>
     <Carrusel/>
-    <Aviso/>
     <Categorias />
     <DescripcionTareas />
     <CarruselMini/>
