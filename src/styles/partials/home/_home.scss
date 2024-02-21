@@ -12,6 +12,12 @@
         display: flex;
         border-top: 2px solid $color1;
         border-bottom: 2px solid $color1;
+        .off {
+            opacity: 0.01;
+        }
+        .on {
+            animation: intersection 0.5s ease-in;
+        }
     }
 
     .categoria{
@@ -36,6 +42,16 @@
         display: flex;
         justify-content: center;
         margin: 30px 0;
+    }
+}
+@keyframes intersection {
+    0%{
+        opacity: 0.15;
+        margin-top: 20px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0px;
     }
 }
 
