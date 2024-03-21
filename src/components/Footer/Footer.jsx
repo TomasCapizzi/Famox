@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer>
       <div className='footer-cabecera'>
-        <img src="img/Logo.png" alt="logo famox" />
+        <img src="/img/Logo.png" alt="logo famox" />
       </div>
       <div className='footer-info'>
         <div className='footer-links'>
