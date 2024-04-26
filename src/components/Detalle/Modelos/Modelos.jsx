@@ -6,8 +6,8 @@ function Modelos({modelos}) {
 
   return (
     <article className='modelos'>
-        <h3>Modelos</h3>
-        <div>
+        <h4>Modelos</h4>
+        <div className='modelo-info'>
             {
                 modelos.length > 0 ? 
                     modelos.map(

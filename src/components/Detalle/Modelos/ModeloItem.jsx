@@ -2,19 +2,16 @@ import React from 'react'
 
 function ModeloItem({item}) {
   return (
-    <article className='modelo-item'>
-        <h3>{item.nombre}</h3>
+    <article className='modelo'>
         {
-          item.img && 
-          <div className='img-container'>
-              <img src={item.img} alt="modelo" loading='lazy'/>
-          </div>
+          item.img && <img src={item.img} alt="modelo" loading='lazy'/>
         }
+        <h5>{item.nombre}</h5>
         {
           item.uso && <p>{item.uso}</p>
         }
         {
-          item.rango && <p>{item.rango}</p>
+          item.rango && <p>Rango: {item.rango}</p>
         }
         {
           item.modulos && 
