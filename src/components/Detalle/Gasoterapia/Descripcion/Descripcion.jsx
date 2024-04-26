@@ -1,25 +1,28 @@
 import React from 'react';
+import Gases from './Gases';
 
 function Descripcion({product}) {
 
   return (
     <div className='uso'>
-        <div>
+        <div className='descripcion'>
             <h2>Uso Previsto</h2>
             <p>{product.uso}</p>
         </div>
         {
-            product.rango !== undefined &&         
-            <div>
+            (product.rango !== null ) &&         
+            <div className='rango'>
                 <h2>Rango de uso</h2>
                 <p>{product.rango}</p>
             </div>
         }
         {
+            product.gas && <Gases product={product.gases_} />
+        }
+        {
             product.anmat ?
-                <div>
-                    <h2>A.N.M.A.T</h2>
-                    <p>Considerado Producto Médico por el organismo.</p>
+                <div className='anmat'>
+                    <p>Considerado Producto Médico por ANMAT</p>
                 </div>
             : null
         }
