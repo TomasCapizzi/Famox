@@ -10,9 +10,9 @@ function Conectores({product}) {
             {
                 product.map(
                     item => 
-                    <div key={item}>
-                        <h5>{item}</h5>
+                    <div className='conector' key={item}>
                         <img src={'/' + CONECTORES.filter(conec=> conec.nombre === item)[0].img} alt={item.nombre} />
+                        <h5>{item}</h5>
                     </div>
                 )
             }

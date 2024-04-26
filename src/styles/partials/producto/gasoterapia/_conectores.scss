@@ -4,94 +4,98 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    padding-top: 40px;
     border-top: 2.5px solid $color1;
     h4{
-        font-size: 1.6rem;
+        font-size: 24px;
+        margin: 20px 0;
     }
 
     .conec-info{
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        div{
+        .conector{
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-right: 15px;
+            margin-bottom: 15px;
+            background-color: #f8f8f8;
+            border-radius: 12px;
+            border: 1.5px solid #d9d9d9;
             h5{
-                font-size: 1.4rem;
+                font-size: 18px;
                 margin: 10px;
             }
             img{
-                margin-right: 20px;
-                width: 140px;
+                width: 130px;
+                height: 110px;
             }
         }
     }
 }
 
-@media only screen and (max-width: 568px){
+@media only screen and (max-width: 440px){
     .conectores{
         display: flex;
         width: 100%;
         flex-direction: column;
         align-items: center;
-        padding-top: 40px;
         border-top: 2.5px solid $color1;
         h4{
-            font-size: 1.2rem;
+            font-size: 18px;
         }
-    
         .conec-info{
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            div{
+            justify-content: flex-start;
+            .conector{
                 display: flex;
                 width: 45%;
-                flex-direction: column;
-                align-items: center;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                justify-content: space-between;
                 h5{
-                    font-size: 1.1rem;
+                    font-size: 18px;
                     margin: 0px;
                 }
                 img{
                     margin-right: 20px;
-                    width: 80px;
+                    width: 70px;
+                    height: auto;
                 }
             }
         }
     } 
 }
 
-@media only screen and (min-width: 569px) and (max-width: 768px){
+@media only screen and (min-width: 440px) and (max-width: 768px){
     .conectores{
         display: flex;
         width: 100%;
         flex-direction: column;
-        padding-top: 30px;
         border-top: 2.5px solid $color1;
         h4{
-            font-size: 1.4rem;
-        }
-    
+            font-size: 18px;
+        }    
         .conec-info{
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            div{
+            justify-content: flex-start;
+            .conector{
                 display: flex;
-                width: 33%;
-                flex-direction: column;
-                align-items: center;
+                width: 30%;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                justify-content: space-between;
                 h5{
-                    font-size: 1.1rem;
+                    font-size: 18px;
                     margin: 0px;
                 }
                 img{
-                    margin-right: 20px;
-                    width: 110px;
+                    margin-right: 0px;
+                    width: 90px;
+                    height: 80px;
                 }
             }
         }
@@ -103,94 +107,60 @@
         display: flex;
         width: 100%;
         flex-direction: column;
-        padding-top: 30px;
         border-top: 2.5px solid $color1;
         h4{
-            font-size: 1.4rem;
-        }
-    
+            font-size: 20px;
+        }    
         .conec-info{
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            div{
+            justify-content: flex-start;
+            .conector{
                 display: flex;
-                width: 33%;
-                flex-direction: column;
-                align-items: center;
+                width: 23%;
+                margin-right: 5px;
+                margin-bottom: 5px;
                 h5{
-                    font-size: 1.1rem;
+                    font-size: 18px;
                     margin: 0px;
                 }
                 img{
-                    margin-right: 20px;
-                    width: 110px;
+                    margin-right: 0px;
+                    width: 100px;
+                    height: 95px;
                 }
             }
         }
     }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1280px){
+@media only screen and (min-width: 1024px) and (max-width: 1440px){
     .conectores{
         display: flex;
         width: 100%;
         flex-direction: column;
-        padding-top: 30px;
         border-top: 2.5px solid $color1;
         h4{
-            font-size: 1.6rem;
+            font-size: 22px;
         }
-    
         .conec-info{
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
-            div{
+            .conector{
                 display: flex;
-                width: 25%;
-                flex-direction: column;
-                align-items: center;
+                justify-content: space-between;
+                width: 23%;
+                margin-right: 8px;
+                margin-bottom: 8px;
                 h5{
-                    font-size: 1.2rem;
-                    margin: 0px;
+                    font-size: 18px;
+                    margin: 3px;
                 }
                 img{
-                    margin-right: 20px;
-                    width: 110px;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1280px) and (max-width: 1440px){
-    .conectores{
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        padding-top: 30px;
-        border-top: 2.5px solid $color1;
-        h4{
-            font-size: 1.6rem;
-        }
-    
-        .conec-info{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            div{
-                display: flex;
-                width: auto;
-                flex-direction: column;
-                align-items: center;
-                h5{
-                    font-size: 1.2rem;
-                    margin: 0px;
-                }
-                img{
-                    margin-right: 20px;
-                    width: 140px;
+                    margin-right: 0px;
+                    width: 70%;
+                    height: 65%;
                 }
             }
         }
