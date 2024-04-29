@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 
-import Descripcion from 'components/Detalle/Gasoterapia/Descripcion/Descripcion';
+import Descripcion from 'components/Detalle/UnidSum/Descripcion';
 import {Helmet} from 'react-helmet';
 import ManualBtn from 'components/Detalle/ManualBtn';
 import Spinner from '../../components/Spinner/Spinner';

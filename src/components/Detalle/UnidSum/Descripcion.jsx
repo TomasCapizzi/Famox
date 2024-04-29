@@ -1,5 +1,5 @@
 import React from 'react';
-import Gases from './Gases';
+
 
 function Descripcion({product}) {
 
@@ -9,16 +9,6 @@ function Descripcion({product}) {
             <h2>Uso Previsto</h2>
             <p>{product.uso}</p>
         </div>
-        {
-            (product.rango !== null ) &&         
-                <div className='rango'>
-                    <h2>Rango de uso</h2>
-                    <p>{product.rango}</p>
-                </div>
-        }
-        {
-            product.gas && <Gases product={product.gases_} />
-        }
         {
             product.anmat ?
                 <div className='anmat'>

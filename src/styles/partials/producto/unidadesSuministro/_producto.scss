@@ -27,17 +27,13 @@
                 text-decoration: none;
             }
         }
-        h1{
-            font-size: 2.2rem;
-        }
         .info-producto{
             display: flex;
             justify-content: space-around;
-            align-items: center;
-            padding: 30px 0;
-            margin-bottom: 25px;
+            padding: 25px 0;
+            margin-bottom: 15px;
             border-top: 2.5px solid $color1;
-            border-bottom: 2.5px solid $color1;
+            //border-bottom: 2.5px solid $color1;
             .img-container{
                 width: 50%;
                 display: flex;
@@ -54,21 +50,33 @@
                 width: 50%;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                margin-bottom: 15px;
-                div{
+                align-items: flex-start;
+                .descripcion{
                     width: 100%;
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
                     flex-direction: column;
-
-                    h4{
-                        font-size: 1.6rem;
+                    h2{
+                        font-size: 20px;
+                        text-align: center;
                     }
                     p{
-                        font-size: 1.1rem;
-                        text-align: center;
+                        width: 100%;
+                        font-size: 16px;
+                        text-align: justify;
+                        color: $black;
+                        margin: 0;
+                    }
+                }
+                .anmat{
+                    padding: 7px 12px;
+                    border-radius: 10px;
+                    width: auto;
+                    border: 2px solid $color1;
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+                    p{
+                        font-size: 14px;
                         color: $black;
                         margin: 0;
                     }
@@ -80,7 +88,7 @@
 }
 
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 568px){
     .producto2-container{
         display: flex;
         flex-wrap: wrap;
@@ -93,7 +101,29 @@
             width: 90%;
             justify-content: center;
             margin-top: 50px;
-            
+            .manual-btn{
+                position: absolute;
+                width: auto;
+                right: 0;
+                top: -30px;
+                background-color: $color1;
+                border: none;
+                border-radius: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+                a{
+                    display: flex;
+                    align-items: center;
+                    color: $white;
+                    font-size: 12px;
+                    text-decoration: none;
+
+                    svg{
+                        margin-left: 5px;
+                        font-size: 16px;
+                    }
+                }
+            }
             .info-producto{
                 display: flex;
                 flex-direction: column;
@@ -117,22 +147,31 @@
     
                 .uso{
                     width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    div{
+                    .descripcion{
                         width: 100%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         flex-direction: column;
-    
-                        h4{
-                            font-size: 1.2rem;
+                        h2{
+                            font-size: 16px;
                         }
                         p{
-                            font-size: 0.9rem;
-                            text-align: center;
+                            font-size: 13px;
+                            color: $black;
+                            margin: 0;
+                            width: 95%;
+                        }
+                    }
+                    .anmat{
+                        max-width: 95%;
+                        margin-top: 30px;
+                        padding: 5px;
+                        position: relative;
+                        right: 0px;
+                        bottom: 0px;
+                        p{
+                            font-size: 13px;
                             color: $black;
                             margin: 0;
                         }
@@ -143,65 +182,117 @@
         }
     }
 }
-
-
-@media only screen and (min-width: 769px) and (max-width: 1024px){
+@media only screen and (min-width: 569px) and (max-width: 768px){
     .producto2-container{
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        justify-content: center;
-
         .producto{
-            display: flex;
-            flex-wrap: wrap;
-            width: 85%;
-            justify-content: center;
-            margin-top: 50px;
-            .info-producto{
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                padding: 25px 0;
-                margin-bottom: 15px;
-                border-top: 2.5px solid $color1;
-                .img-container{
-                    width: 50%;
+            width: 90%;
+            .manual-btn{
+                top: -20px;
+                a{
                     display: flex;
-                    justify-content: center;
+                    flex-wrap: wrap;
+                    flex-direction: column;
                     align-items: center;
-                    height: 370px;
+                    color: $white;
+                    font-size: 12px;
+                    text-decoration: none;
+                    svg{
+                        font-size: 16px;
+                    }
+                }
+            }
+            .info-producto{
+                align-items: center;
+                .img-container{
+                    height: 320px;
                     img{
                         width: auto;
-                        height: 80%;
+                        height: 100%;
                         max-width: 90%;
                     }
                 }
-
                 .uso{
-                    width: 50%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    div{
+                    .descripcion{
                         width: 100%;
-                        display: flex;
                         justify-content: center;
                         align-items: center;
-                        flex-direction: column;
-
-                        h4{
-                            font-size: 1.4rem;
+                        h2{
+                            font-size: 17px;
                         }
                         p{
-                            font-size: 1rem;
-                            text-align: center;
-                            color: $black;
-                            margin: 0;
+                            font-size: 13px;
+                            width: 95%;
+                        }
+                    }
+                    .anmat{
+                        max-width: 95%;
+                        margin-top: 30px;
+                        padding: 5px;
+                        position: relative;
+                        right: 0px;
+                        bottom: 0px;
+                        p{
+                            font-size: 13px;
                         }
                     }
                 }
+            }
+        }
+    }
+}
 
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    .producto2-container{
+        .producto{
+            width: 85%;
+            .manual-btn{
+                top: -10px;
+                a{
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    text-decoration: none;
+                    svg{
+                        font-size: 20px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+            .info-producto{
+                align-items: center;
+                .img-container{
+                    height: 370px;
+                    img{
+                        width: auto;
+                        height: 100%;
+                        max-width: 90%;
+                    }
+                }
+                .uso{
+                    .descripcion{
+                        width: 100%;
+                        justify-content: center;
+                        align-items: center;
+                        h2{
+                            font-size: 18px;
+                        }
+                        p{
+                            font-size: 14px;
+                            width: 95%;
+                        }
+                    }
+                    .anmat{
+                        max-width: 95%;
+                        margin-top: 30px;
+                        padding: 7px;
+                        position: relative;
+                        right: 0px;
+                        bottom: 0px;
+                        p{
+                            font-size: 14px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -213,7 +304,6 @@
         flex-wrap: wrap;
         width: 100%;
         justify-content: center;
-
         .producto{
             display: flex;
             flex-wrap: wrap;
@@ -235,29 +325,35 @@
                     height: 420px;
                     img{
                         width: auto;
-                        height: 80%;
+                        height: 100%;
                         max-width: 90%;
                     }
                 }
-
                 .uso{
                     width: 50%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    div{
+                    .descripcion{
                         width: 100%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         flex-direction: column;
-
-                        h4{
-                            font-size: 1.6rem;
+                        h2{
+                            font-size: 20px;
                         }
                         p{
-                            font-size: 1rem;
-                            text-align: center;
+                            font-size: 15px;
+                            color: $black;
+                            margin: 0;
+                            width: 95%;
+                        }
+                    }
+                    .anmat{
+                        max-width: 95%;
+                        margin-top: 30px;
+                        padding: 7px;
+
+                        p{
+                            font-size: 14px;
                             color: $black;
                             margin: 0;
                         }
