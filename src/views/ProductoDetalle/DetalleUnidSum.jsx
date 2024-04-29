@@ -6,6 +6,7 @@ import ManualBtn from 'components/Detalle/ManualBtn';
 import Spinner from '../../components/Spinner/Spinner';
 import useDetalle from 'hooks/productos/useDetalle';
 import {useParams} from 'react-router-dom';
+import Volver from 'components/Volver/Volver';
 
 function DetalleUnidSum() {
     const {id} = useParams();
@@ -28,6 +29,7 @@ function DetalleUnidSum() {
         <article className='producto'>
           <h1>{product.nombre}</h1>
           <ManualBtn product={product} />
+          <Volver link={'/unidades-de-suministro'}/>
           <div className='info-producto'>
             <div className='img-container'>
               <img src={product.img} alt="producto" />

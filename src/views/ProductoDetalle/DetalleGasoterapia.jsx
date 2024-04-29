@@ -9,6 +9,7 @@ import Modelos from 'components/Detalle/Modelos/Modelos';
 import Spinner from 'components/Spinner/Spinner';
 import useDetalle from 'hooks/productos/useDetalle';
 import {useParams} from 'react-router-dom';
+import Volver from 'components/Volver/Volver';
 
 function DetalleGasoterapia() {
 
@@ -35,6 +36,7 @@ function DetalleGasoterapia() {
             <article className='producto'>
               <h1>{product.nombre}</h1>
               <ManualBtn product={product}/>
+              <Volver link={'/gasoterapia'}/>
               <div className='info-producto'>
                 <div className='img-container'>
                   <img src={product.img} alt={`producto ${product.nombre}`} />

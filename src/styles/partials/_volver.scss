@@ -1,0 +1,49 @@
+@import 'styles/theme/theme.scss';
+
+.btnVolver{
+    position: absolute;
+    left: 30px;
+
+    svg{
+        font-size: 28px;
+        text-decoration: none;
+        color: $color1;
+    }
+}
+
+@media only screen and (max-width: 568px){
+    .btnVolver{
+        left: 5px;
+        top: -30px;
+        svg{
+            font-size: 24px;
+        }
+    }
+}
+@media only screen and (min-width: 568px) and (max-width: 768px){
+    .btnVolver{
+        left: 10px;
+        top: -20px;
+        svg{
+            font-size: 26px;
+        }
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    .btnVolver{
+        left: 15px;
+        top: -10px;
+        svg{
+            font-size: 26px;
+        }
+    }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1280px){
+    .btnVolver{
+        left: 15px;
+        top: 0px;
+        svg{
+            font-size: 27px;
+        }
+    }
+}
