@@ -28,7 +28,7 @@ function Footer() {
         </div>
         <div className='footer-contacto'>
           <h5>Contáctanos</h5>
-          <p>6073-6020</p>
+          <p>11 6073-6020 // 11 6967-4273</p>
           <p>info@famox.com.ar</p>
           <p>atencion.cliente@famox.com.ar</p>
         </div>

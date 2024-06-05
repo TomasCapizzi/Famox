@@ -11,6 +11,9 @@ function Links({carro}) {
         <Link to='/'>
         <li>Famox</li>
         </Link>
+        <a className='menu-catalogo' href='https://www.famox.com.ar/catalogo/Catalogo-Famox.pdf' target='_blank' rel="noreferrer">
+          <li>Catálogo</li>
+        </a>
         <Link  to='/ecommerce'>
         <li>Ecommerce</li>
         </Link>

@@ -9,6 +9,9 @@ function LinksResponsive({menuUl, useMenuHamb}) {
         <Link to='/'>
         <li onClick={useMenuHamb}>Famox</li>
         </Link>
+        <a className='menu-catalogo' href='https://www.famox.com.ar/catalogo/Catalogo-Famox.pdf' target='_blank' rel="noreferrer">
+          <li>Catálogo</li>
+        </a>
         <Link  to='/ecommerce'>
         <li onClick={useMenuHamb}>Ecommerce</li>
         </Link>

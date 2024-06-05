@@ -70,7 +70,10 @@
             a{
                 display: flex;
                 align-items: center;
-            }          
+            } 
+            ul{
+                padding-left: 0;
+            }         
             li{
                 cursor: pointer;
             }
@@ -91,7 +94,7 @@
             border: 2px solid $color2;
             border-radius: 5px;
             width: auto;
-            padding: 0px 15px;
+            padding-left: 0;
             a{
                 padding: 10px;
                 border-top: 1px solid $color2;
@@ -191,7 +194,7 @@
                 align-items: center;
                 justify-content: center;
                 width: 80%;
-                margin: 25px 0;
+                margin: 20px 0;
                 a{
                     display: flex;
                     align-items: center;
