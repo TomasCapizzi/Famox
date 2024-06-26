@@ -15,7 +15,7 @@
     .carrusel{
         /*position: relative;*/
         display: flex;
-        width: 800%;
+        width: 900%;
         animation: slider 40s infinite linear;
         li{
            // position: absolute;
@@ -40,26 +40,25 @@
         position: relative;
         div{
             position: absolute;
-            background-color: $white;
-            right: 5%;
+            background-color: transparent;
+            left: 5%;
             bottom: 10%;
             border-radius: 5px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: 6px solid $color1;
             h4{
-                font-size: 26px;
-                margin: 12px;
+                font-size: 22px;
+                margin: 8px;
+                color: $white;
             }
             a{
                 background-color: $color1;
-                border: none;
-                margin: 12px;
-                padding: 3px;
+                margin: 0px;
+                padding: 6px 10px;
                 width: auto;
                 color: $white;
-                font-size: 18px;
+                font-size: 14px;
                 cursor: pointer;
                 text-decoration: none;
                 display: flex;
@@ -82,8 +81,8 @@
         a{
             position: absolute;
             width: 100px;
-            background-color: $white;
-            right: 10%;
+            background-color: $color1;
+            left: 10%;
             bottom: 10%;
             padding: 8px 15px;
             border: none;
@@ -97,7 +96,7 @@
             font-size: 20px;
             cursor: pointer;
             text-decoration: none;
-            color: $color1;
+            color: $white;
         }
         a:hover{
             box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
@@ -105,33 +104,77 @@
             -moz-box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
         }
     }
+    .carruselImgTitle{
+        position: relative;
+        div{
+            position: absolute;
+            background-color: transparent;
+            left: 5%;
+            bottom: 40%;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h3{
+                font-size: 32px;
+                margin: 8px;
+                color: $white;
+                width: 400px;
+            }
+            a{
+                background-color: $color1;
+                margin: 0px;
+                padding: 6px 10px;
+                width: auto;
+                color: $white;
+                font-size: 14px;
+                cursor: pointer;
+                text-decoration: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                -webkit-box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+                -moz-box-shadow: 7px 7px 22px -7px rgba(0,0,0,0.72);
+            }
+            a:hover{
+                box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+                -webkit-box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+                -moz-box-shadow: 4px 13px 35px -6px rgba(0,0,0,0.37) inset;
+            }
+        }
+    }
 
 }
 
 @keyframes slider {
     0%{margin-left: 0;}
-    13%{margin-left: 0;}
+    10%{margin-left: 0;}
 
-    14%{margin-left: -100%;}
-    27%{margin-left: -100%;}
+    11%{margin-left: -100%;}
+    21%{margin-left: -100%;}
 
-    28%{margin-left: -200%;}
-    40%{margin-left: -200%;}
+    22%{margin-left: -200%;}
+    32%{margin-left: -200%;}
 
-    41%{margin-left: -300%;}
-    52%{margin-left: -300%;}
+    33%{margin-left: -300%;}
+    43%{margin-left: -300%;}
 
-    53%{margin-left: -400%;}
-    64%{margin-left: -400%;}
+    44%{margin-left: -400%;}
+    54%{margin-left: -400%;}
 
+    55%{margin-left: -500%;}
     65%{margin-left: -500%;}
-    76%{margin-left: -500%;}
 
-    77%{margin-left: -600%;}
-    88%{margin-left: -600%;}
+    66%{margin-left: -600%;}
+    76%{margin-left: -600%;}
 
-    89%{margin-left: -700%;}
-    100%{margin-left: -700%;}
+    77%{margin-left: -700%;}
+    87%{margin-left: -700%;}
+
+    88%{margin-left: -800%;}
+    100%{margin-left: -800%;}
 }
 
 @media only screen and (max-width: 440px){
