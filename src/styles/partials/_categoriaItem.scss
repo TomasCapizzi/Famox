@@ -1,95 +1,76 @@
+@import 'styles/theme/theme.scss';
+
 .item{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 25%;
-    margin-top: 20px;
-    div{
-        width: 90%;
+    width: 20%;
+    background-color: $white;
+    .item-container{
         display: flex;
+        width: 95%;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        border: 1px solid $color2;
+        margin-right: 25px;
+        box-shadow: -4px -3px 40px -3px rgba(220,220,220,0.50) inset;
+        -webkit-box-shadow: -4px -3px 40px -3px rgba(220,220,220,0.50) inset;
+        -moz-box-shadow: -4px -3px 40px -3px rgba(220,220,220,0.50) inset;
         h3{
             display: flex;
-            align-items: center;
-            justify-content: center;
             width: 90%;
-            font-size: 20px;
+            justify-content: center;
+            font-size: 15.5px;
+            margin: 5px 0;
+            text-align: center;
         }
         a{
             color: $color1;
-        }
-        svg{
-            margin-left: 10px;
-            cursor: pointer;
-            transition: .3s ease-in;
-            font-size: 24px;
-        }
-        svg:hover{
-            color: $black;
-        }
-    }
-
-    img{
-        max-width: 95%;
-        height: 260px;
-        cursor: pointer;
-        object-fit: scale-down;
-    }
-    img:hover{
-        transition: .3s ease-in-out all;
-        transform: scale(0.9);
-    }
-}
-
-
-@media only screen and (max-width: 375px){
-    .item{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 90%;
-        border-bottom: 2px solid $color1;
-        margin-bottom: 20px;
-        div{
-            width: 100%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            h3{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 90%;
-            }
-            a{
-                color: $color1;
-            }
-            svg{
-                margin-left: 10px;
-                cursor: pointer;
-                transition: .3s ease-in;
-            }
-            svg:hover{
-                color: $black;
-                transform: scale(0.9);
-            }
-        }
-        a{
-            img{
-                border: none;
-            }
+            width: 100%;
+            text-decoration: none;
         }
     
         img{
-            max-width: 95%;
-            height: 260px;
+            width: 65%;
+            height: 240px;
             cursor: pointer;
             object-fit: scale-down;
         }
         img:hover{
             transition: .3s ease-in-out all;
             transform: scale(0.95);
+        }
+    }
+
+}
+
+
+@media only screen and (max-width: 375px){
+    .item{
+        width: 90%;
+        margin-bottom: 20px;
+        .item-container{
+            margin-top: 8px;
+            margin-right: 0px;
+            border-radius: 8px;
+            h3{
+                font-size: 14px;
+                margin: 5px 0;
+            }        
+            img{
+                width: auto;
+                height: 120px;
+                margin-bottom: 10px;
+                cursor: pointer;
+                object-fit: scale-down;
+                border: none;
+            }
+            img:hover{
+                transition: .3s ease-in-out all;
+                transform: scale(0.95);
+            }
         }
     }
 }
@@ -97,98 +78,60 @@
 @media only screen and (min-width: 375px) and (max-width: 568px){
     .item{
         width: 90%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-bottom: 2px solid $color1;
-        margin: 0px;
-        div{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        margin-bottom: 10px;
+        .item-container{
+            margin-top: 8px;
+            margin-right: 0px;
+            border-radius: 8px;
             h3{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 90%;
-            }
-            a{
-                color: $color1;
-            }
-            svg{
-                margin-left: 10px;
-                cursor: pointer;
-                transition: .3s ease-in;
-            }
-            svg:hover{
-                color: $black;
-                transform: scale(0.9);
-            }
-        }
-        a{
+                font-size: 14.5px;
+                margin: 5px 0;
+            }        
             img{
+                width: auto;
+                height: 135px;
+                margin-bottom: 8px;
+                cursor: pointer;
+                object-fit: scale-down;
                 border: none;
             }
+            img:hover{
+                transition: .3s ease-in-out all;
+                transform: scale(0.95);
+            }
         }
-    
-        img{
-            max-width: 95%;
-            height: 260px;
-            cursor: pointer;
-            object-fit: scale-down;
-        }
-        img:hover{
-            transition: .3s ease-in-out all;
-            transform: scale(0.95);
-        }
+    }
+    .item:hover{
+        width: 88%;
+        transition: .3s ease-in all;
     }
 }
 
 
 @media only screen and (min-width: 568px) and (max-width: 768px){
     .item{
-        width: 48%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-bottom: 2px solid $color1;
-        margin-top: 20px;
-        div{
-            width: 80%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        width: 50%;
+        margin-top: 8px;
+        .item-container{
+            margin-top: 8px;
+            margin-right: 0px;
+            border-radius: 8px;
             h3{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 90%;
-                height: 25px;
-            }
-            a{
-                color: $color1;
-            }
-            svg{
-                margin-left: 10px;
+                font-size: 14.5px;
+                margin: 5px 0;
+            }        
+            img{
+                width: auto;
+                height: 135px;
+                margin-bottom: 8px;
                 cursor: pointer;
-                transition: .3s ease-in;
+                object-fit: scale-down;
+                border: none;
             }
-            svg:hover{
-                color: $black;
-                transform: scale(0.9);
+            img:hover{
+                transition: .3s ease-in-out all;
+                transform: scale(0.95);
             }
-        }
-    
-        img{
-            max-width: 90%;
-            height: 260px;
-            cursor: pointer;
-            object-fit: scale-down;
-        }
-        img:hover{
-            transition: .3s ease-in-out all;
-            transform: scale(0.95);
         }
     }
 }
@@ -196,101 +139,61 @@
 
 @media only screen and (min-width: 768px) and (max-width: 1024px){
     .item{
-        width: 33%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-bottom: 2px solid $color1;
-        margin-top: 20px;
-        div{
-            width: 80%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        width: 33.3%;
+        margin-top: 8px;
+        .item-container{
+            margin-top: 8px;
+            margin-right: 0px;
+            border-radius: 8px;
             h3{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 90%;
-                height: 25px;
-            }
-            a{
-                color: $color1;
-            }
-            svg{
-                margin-left: 10px;
+                font-size: 14.5px;
+                margin: 5px 0;
+            }        
+            img{
+                width: auto;
+                height: 135px;
+                margin-bottom: 8px;
                 cursor: pointer;
-                transition: .3s ease-in;
-                font-size: 1.35rem;
+                object-fit: scale-down;
+                border: none;
             }
-            svg:hover{
-                color: $black;
-                transform: scale(0.9);
+            img:hover{
+                transition: .3s ease-in-out all;
+                transform: scale(0.95);
             }
-        }
-    
-        img{
-            max-width: 90%;
-            height: 260px;
-            cursor: pointer;
-            object-fit: scale-down;
-        }
-        img:hover{
-            transition: .3s ease-in-out all;
-            transform: scale(0.95);
         }
     }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1280px){
     .item{
-        width: 33%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 10px;
-        div{
-            width: 80%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        width: 33.3%;
+        margin-top: 8px;
+        .item-container{
+            margin-top: 8px;
+            margin-right: 0px;
+            border-radius: 8px;
             h3{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 90%;
-                height: 25px;
-                font-size: 1.4rem;
-            }
-            a{
-                color: $color1;
-            }
-            svg{
-                margin-left: 10px;
+                font-size: 14.5px;
+                margin: 5px 0;
+            }        
+            img{
+                width: auto;
+                height: 135px;
+                margin-bottom: 8px;
                 cursor: pointer;
-                transition: .3s ease-in;
-                font-size: 1.5rem;
+                object-fit: scale-down;
+                border: none;
             }
-            svg:hover{
-                color: $black;
-                transform: scale(0.9);
+            img:hover{
+                transition: .3s ease-in-out all;
+                transform: scale(0.95);
             }
-        }
-    
-        img{
-            max-width: 90%;
-            height: 260px;
-            cursor: pointer;
-            object-fit: scale-down;
-        }
-        img:hover{
-            transition: .3s ease-in-out all;
-            transform: scale(0.95);
         }
     }
 }
 
-
+/*
 @media only screen and (min-width: 1280px) and (max-width: 1440px){
     .item{
         width: 25%;
@@ -337,4 +240,4 @@
             transform: scale(0.95);
         }
     }
-}
+}*/

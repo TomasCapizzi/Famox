@@ -6,15 +6,14 @@ function Item({product}) {
 
   return(
     <div className='item'>
-      <div>
-        <h3>{product.nombre}</h3>
+      <div className='item-container'>
         <Link to={'/gasoterapia/' + product._id}>
-          <IoMdOpen/>
-        </Link>        
+          <img src={product.img} loading='lazy' alt={"equipo " + product.nombre} />
+        </Link>
+        <Link to={'/gasoterapia/' + product._id}>
+          <h3>{product.nombre}</h3>
+        </Link>
       </div>
-      <Link to={'/gasoterapia/' + product._id}>
-        <img src={product.img} loading='lazy' alt={"equipo " + product.nombre} />
-      </Link>
     </div>
   )
 }
