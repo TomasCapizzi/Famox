@@ -28,7 +28,10 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
             return buscarCodigoReguladorPreajustadoCaudalimetro(gas, conector, rango)
         } else if(nombre === 'Recipiente Colector' || nombre === 'Mezclador de Aire/Oxígeno'){
             return buscarCodigoDeModelo(modelo)
-        } else if(nombre === 'Máscara Nasal'){
+        } else if(nombre=== 'Regulador de Baja Presión con Caudalímetro'){
+            return buscarCodigoRegBajaCaudalimetro(gas, conector)
+        } 
+        else if(nombre === 'Máscara Nasal'){
             return buscarCodigoMascaraNasal(modelo.nombre)
         } else if(nombre.includes('U. Terminal')){
             return buscarCodigoUnidadTerminal(nombre,gasAcc)
@@ -405,23 +408,23 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
             return 'PRB019'
         }
         // Conector: ON
-        if(gas === 'OXÍGENO' && conector === 'DISS'){
+        if(gas === 'OXÍGENO' && conector === 'ON'){
             //setCodigo('PRB020')
             return 'PRB020'
         }
-        if(gas === 'AIRE' && conector === 'DISS'){
+        if(gas === 'AIRE' && conector === 'ON'){
             //setCodigo('PRB021')
             return 'PRB021'
         }
-        if(gas === 'N2O' && conector === 'DISS'){
+        if(gas === 'N2O' && conector === 'ON'){
             //setCodigo('PRB022')
             return 'PRB022'
         }
-        if(gas === 'N2' && conector === 'DISS'){
+        if(gas === 'N2' && conector === 'ON'){
             //setCodigo('')
             return ''
         }
-        if(gas === 'CO2' && conector === 'DISS'){
+        if(gas === 'CO2' && conector === 'ON'){
             //setCodigo('')
             return ''
         }
@@ -634,6 +637,52 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
         if(gas === 'CO2' && conector === 'YUGO' ){
             //setCodigo('PRP010')
             return 'PRP010'
+        }
+    }
+
+    // REGULADOR DE PRESION PREAJUSTADO CAUDALÍMETRO
+    const buscarCodigoRegBajaCaudalimetro = (gas, conector)=> {
+        // Conector: DISS
+        if(gas === 'OXÍGENO' && conector === 'DISS'){
+            return 'PRB027'
+        }
+        if(gas === 'AIRE' && conector === 'DISS'){
+            return 'PRB028'
+        }
+        // Conector: AFNOR
+        if(gas === 'OXÍGENO' && conector === 'AFNOR'){
+            return 'PRB029'
+        }
+        if(gas === 'AIRE' && conector === 'AFNOR'){
+            return 'PRB030'
+        }
+        // Conector: SS/AGA
+        if(gas === 'OXÍGENO' && conector === 'SS/AGA'){
+            return 'PRB031'
+        }
+        if(gas === 'AIRE' && conector === 'SS/AGA'){
+            return 'PRB032'
+        }
+        // Conector: OHMEDA
+        if(gas === 'OXÍGENO' && conector === 'OHMEDA'){
+            return 'PRB033'
+        }
+        if(gas === 'AIRE' && conector === 'OHMEDA'){
+            return 'PRB034'
+        }
+        // Conector: ON
+        if(gas === 'OXÍGENO' && conector === 'ON'){
+            return 'PRB035'
+        }
+        if(gas === 'AIRE' && conector === 'ON'){
+            return 'PRB036'
+        }
+        // Conector: CU
+        if(gas === 'OXÍGENO' && conector === 'CU'){
+            return 'PRB037'
+        }
+        if(gas === 'AIRE' && conector === 'CU'){
+            return 'PRB038'
         }
     }
 
@@ -1342,9 +1391,6 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
             }
         }
     }
-
-
-
     return {
         codigo,
         setCodigo,
