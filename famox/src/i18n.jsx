@@ -220,11 +220,11 @@ i18n
                     certif: {
                         title: 'Certifications',
                         c1:{
-                            title: 'ISO 9001:2015 Certification',
+                            title: 'IRAM ISO 9001:2015 Certification',
                             txt: 'We maintain a quality management system certified under ISO 9001:2015 guidelines. This international standard specifies requirements for a quality management system applicable for internal use, certification, or contractual purposes. It focuses on the effectiveness of the quality management system in meeting customer requirements.'
                         },
                         c2: {
-                            title: 'ISO 13485:2016 Certification',
+                            title: 'IRAM ISO 13485:2019 Certification',
                             txt: 'We maintain a quality management system certified under ISO 13485:2016 guidelines. This standard specifies the requirements for a quality management system where an organization needs to demonstrate its ability to provide medical devices and related services that consistently meet customer and regulatory requirements.'
                         },
                         c3: {
@@ -543,12 +543,12 @@ i18n
                     certif: {
                         title: 'Certificaciones',
                         c1:{
-                            title: 'Certificado ISO 9001:2015',
+                            title: 'Certificado IRAM ISO 9001:2015',
                             txt: 'Contamos con un sistema de gestión de calidad certificado bajo los línemientos de ISO 9001:2015. Esta norma internacional especifica los requisitos para un sistema de gestión de la calidad que puedan utilizarse para su aplicación interna por las organizaciones, para certificación o con fines contractuales. Se centra en la eficacia del sistema de gestión de la calidad para dar cumplimiento a los requisitos del cliente.'
                         },
                         c2: {
-                            title: 'Certificado ISO 13485:2016',
-                            txt: 'Contamos con un sistema de gestión de calidad certificado bajo los líneamientos de ISO 13485:2016. Esta norma internacional especifica los requisitos de un sistema de gestión de la calidad cuando una organización precisa demostrar su capacidad de proporcionar productos sanitarios y servicios relacionados que cumplen de forma coherente requisitos del cliente y requisitos reglamentarios aplicables a los productos sanitarios y a los servicios relacionados.'
+                            title: 'Certificado IRAM ISO 13485:2019',
+                            txt: 'Contamos con un sistema de gestión de calidad certificado bajo los líneamientos de ISO 13485:2019. Esta norma internacional especifica los requisitos de un sistema de gestión de la calidad cuando una organización precisa demostrar su capacidad de proporcionar productos sanitarios y servicios relacionados que cumplen de forma coherente requisitos del cliente y requisitos reglamentarios aplicables a los productos sanitarios y a los servicios relacionados.'
                         },
                         c3: {
                             title: 'Certificado A.N.M.A.T.',
@@ -836,12 +836,12 @@ i18n
                         certif: {
                             title: 'Certificações',
                             c1:{
-                                title: 'Certificação  ISO 9001:2015',
+                                title: 'Certificação  IRAM ISO 9001:2015',
                                 txt: 'Mantemos um sistema de gestão da qualidade certificado sob as diretrizes da norma ISO 9001:2015. Esta norma internacional define os requisitos de um sistema de gestão da qualidade aplicável para uso interno, certificação ou fins contratuais, com foco na eficácia do sistema em atender aos requisitos dos clientes.'
                             },
                             c2: {
-                                title: 'Certificação  ISO 13485:2016',
-                                txt: 'Mantemos um sistema de gestão da qualidade certificado sob as diretrizes da norma ISO 13485:2016. Esta norma estabelece os requisitos de um sistema de gestão da qualidade para organizações que necessitam demonstrar sua capacidade de fornecer dispositivos médicos e serviços correlatos que atendam consistentemente aos requisitos regulamentares e dos clientes.'
+                                title: 'Certificação  IRAM ISO 13485:2019',
+                                txt: 'Mantemos um sistema de gestão da qualidade certificado sob as diretrizes da norma IRAM ISO 13485:2019. Esta norma estabelece os requisitos de um sistema de gestão da qualidade para organizações que necessitam demonstrar sua capacidade de fornecer dispositivos médicos e serviços correlatos que atendam consistentemente aos requisitos regulamentares e dos clientes.'
                             },
                             c3: {
                                 title: 'Certificação  A.N.M.A.T.',
