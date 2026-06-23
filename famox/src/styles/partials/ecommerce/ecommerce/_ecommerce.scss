@@ -1,0 +1,64 @@
+@use '../../../theme/index' as *;
+.container-ecommerce{
+    display: flex;
+    width: 85%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+        width: 85%;
+        padding-bottom: 15px;
+        border-bottom: 2px solid $color1;
+        text-align: center;
+    }
+
+    .ecommerce{
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    .container-ecommerce{
+        width: 90%;
+        h1{
+            width: 100%;
+        }    
+        .ecommerce{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+    }
+}
+@media only screen and (min-width: 376px)and (max-width: 860px){
+    .container-ecommerce{
+        width: 85%;
+        h1{
+            width: 100%;
+        }    
+        .ecommerce{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+    }
+}
+@media only screen and (min-width: 861px)and (max-width: 1024px){
+    .container-ecommerce{
+        width: 95%;
+        h1{
+            width: 90%;
+        }    
+        .ecommerce{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+    }
+}

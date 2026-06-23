@@ -1,0 +1,52 @@
+
+// theme
+@use './theme/theme' as *;
+
+// Parciales generales
+@use './partials/accesorios/accesorios' as *;
+@use './partials/app/app' as *;
+@use './partials/carrito/index' as *;
+@use './partials/categoria/index' as *;
+@use './partials/certificaciones/certificaciones' as *;
+@use './partials/checkout/checkout' as *;
+@use './partials/contacto/contacto' as *;
+@use './partials/footer/footer' as *;
+@use './partials/historia/historia' as *;
+@use './partials/intersectionObs/intersectionObs' as *;
+@use './partials/listaProductos/listaProductos' as *;
+@use './partials/login/login' as *;
+@use './partials/menu/menu' as *;
+@use './partials/notificacionContacto/notificacionContacto' as *;
+@use './partials/pregfrec/pregfrec' as *;
+@use './partials/rrss/rrss' as *;
+@use './partials/spinner/spinner' as *;
+@use './partials/volver/volver' as *;
+
+// Home
+@use './partials/home/index' as *;
+
+// Products
+@use './partials/producto/gasoterapia/index' as *;
+@use './partials/producto/modelos' as *;
+@use './partials/producto/unidadesSuministro/producto' as *;
+
+// Forms
+@use './partials/formularios/index' as *;
+
+// Ecommerce
+@use './partials/ecommerce/busqueda/busqueda' as *;
+@use './partials/ecommerce/categoria/categoria' as *;
+@use './partials/ecommerce/ecommerce/ecommerce' as *;
+@use './partials/ecommerce/filtro/filtro' as *;
+@use './partials/ecommerce/item/item' as *;
+@use './partials/ecommerce/eleccion/eleccion' as *;
+@use './partials/ecommerce/eleccion/eleccionProducto/accesorio/index' as *;
+@use './partials/ecommerce/eleccion/eleccionProducto/botonera/botonera' as *;
+@use './partials/ecommerce/eleccion/eleccionProducto/eleccionProducto/eleccionProducto' as *;
+@use './partials/ecommerce/eleccion/eleccionProducto/equipoDigital/equipoDigital' as *;
+@use './partials/ecommerce/eleccion/eleccionProducto/gasoterapia/index' as *;
+@use './partials/ecommerce/eleccion/eleccionProducto/notificacionEcomm/notificacionEcomm' as *;
+@use './partials/ecommerce/eleccion/eleccionProducto/unidSum/index' as *;
+
+// Obras
+@use './partials/obras/index' as *;

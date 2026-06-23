@@ -1,0 +1,67 @@
+import {useRef} from 'react';
+
+import Form from 'components/Contacto/Form/Form';
+import {Helmet} from 'react-helmet-async';
+import Info from 'components/Contacto/Info/Info';
+import Notificacion from 'components/Contacto/Notificacion';
+import RedesSociales from 'components/RedesSociales/RedesSociales';
+import useNotificacion from 'hooks/contacto/useNotificacion';
+import useResetValores from 'hooks/contacto/useResetValores';
+import { useTranslation } from 'react-i18next';
+
+//import useEnviarConsulta from 'hooks/contacto/useEnviarConsulta';
+function Contacto() {
+
+  const refNoti = useRef();
+  const {resetValores} = useResetValores();
+  const {mostrarNotificacion} = useNotificacion();
+ // const {generarConsulta} = useEnviarConsulta();
+  const {t} = useTranslation();
+
+  function enviarConsulta(e, honeypot){
+    e.preventDefault();
+    // Enviar mail de contacto, de esta manera que lo hacemos no redirecciona a la API
+
+    //HONEYPOT - evitar SPAM
+    if(!honeypot){
+      const consulta = {
+        nombre:e.target.nombre.value,
+        email: e.target.mail.value,
+        pais: e.target.pais.value,
+        asunto: e.target.asunto.value,
+        empresa: e.target.empresa.value,
+        mensaje: e.target.mensaje.value,
+        extra_field: e.target.extra_field.value
+      } // Crear hook para armar consulta en base a valores del form
+      const request = {
+          method: 'POST',
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(consulta),
+      }
+      fetch('https://famox-api.vercel.app/formulario/contacto', request); // Probar hook enviar consulta
+      mostrarNotificacion(refNoti);
+      resetValores(e);
+    } else console.log('SPAM');
+    
+  }
+
+  return (
+    <section className='contacto'>
+      <Helmet>
+        <title>Contacto</title>
+        <meta name="description" content="Nuestras vías de contacto, para responder cualquier consulta relacionada a nuestros servicios. ¡No dudes en escribirnos!" />
+      </Helmet>
+        <h1 id='titulo'>{t("contacto.title")}</h1>
+        <div className='data'>
+            <Form enviarConsulta={enviarConsulta}/>
+            <Info/>
+            <Notificacion refNoti={refNoti}/>
+        </div>
+        <RedesSociales/>
+    </section>
+  )
+}
+
+export default Contacto

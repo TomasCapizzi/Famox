@@ -1,0 +1,478 @@
+@use '../../theme/index' as *;
+.carrusel-container{
+    width: 1080px;
+    height: 503px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    img{
+        //max-width: 500px;
+        width: 100%;
+        height: 500px;
+        opacity: 0;
+        transition: 1s;
+        &.loaded {
+            opacity: 1;
+          }
+    }
+    .white{
+        color: #fff;
+    }
+    .t-left{
+        position: absolute;
+        text-align: center;
+        left: 50px;
+        width: 180px;
+    }
+    .t-right{
+        position: absolute;
+        text-align: center;
+        right: 50px;
+        width: 180px;
+    }
+    .top{
+        top: 50px;
+    }
+    .bottom{
+        bottom: 50px;
+    }
+    .leftArrowStyle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 45%;
+        left: -60px;
+        font-size: 35px;
+        color: $color1;
+        z-index: 1;
+        cursor: pointer;
+        background-color: rgba($color2, 0.65);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: none;
+        transition: 0.15s ease-in all;
+    }
+    .leftArrowStyle:hover{
+        font-size: 34px;
+    }
+    .rightArrowStyle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 45%;
+        right: -60px;
+        font-size: 35px;
+        color: $color1;
+        z-index: 1;
+        cursor: pointer;
+        background-color: rgba($color2, 0.65);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: none;
+        transition: 0.15s ease-in all;
+    }
+    .rightArrowStyle:hover{
+        font-size: 34px;
+    }
+}
+.dotsContainerStyles{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    margin: 15px 0;
+    .dotStyleOn{
+        margin: 0 3px;
+        cursor: pointer;
+        font-size: 26px;
+    }
+    .dotStyleOff{
+        margin: 0 3px;
+        cursor: pointer;
+        font-size: 26px;
+        color: #c6c6c6;
+    }
+}
+
+@media only screen and (max-width: 440px){
+    .carrusel-container{
+        width: 90%;
+        height: 220px;
+        img{
+            //max-width: 500px;
+            width: 100%;
+            height: 100%;
+        }
+        .dotsContainerStyles{
+            margin-top: 20px;
+        }
+        .leftArrowStyle{
+            display: none;
+        }
+        .rightArrowStyle{
+            display: none;
+        }
+        .t-left{
+            left: 5px;
+            width: 40%;
+            h1{
+                font-size: 16px;
+            }
+        }
+        .t-right{
+            right: 5px;
+            width: 40%;
+            h1{
+                font-size: 16px;
+            }
+        }
+        .top{
+            top: 10px;
+        }
+        .bottom{
+            bottom: 10px;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 440px) and (max-width: 568px){
+    .carrusel-container{
+        width: 100%;
+        height: auto;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            margin-bottom: 15px;
+        }
+        .dotsContainerStyles{
+            margin-top: 0px;
+        }
+        .leftArrowStyle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 42%;
+            left: 0%;
+            font-size: 30px;
+            background-color: rgba($color2, 0.7);
+            padding: 0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .leftArrowStyle:hover{
+            font-size: 28.5px;
+        }
+        .rightArrowStyle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 42%;
+            right: 0%;
+            font-size: 30px;
+            padding: 0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .rightArrowStyle:hover{
+            font-size: 28.5px;
+        }
+        .t-left{
+            left: 10px;
+            width: 40%;
+            h1{
+                font-size: 20px;
+            }
+        }
+        .t-right{
+            right: 10px;
+            width: 40%;
+            h1{
+                font-size: 20px;
+            }
+        }
+        .top{
+            top: 20px;
+        }
+        .bottom{
+            bottom: 20px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 568px) and (max-width: 800px){
+    .carrusel-container{
+        width: 95%;
+        height: auto;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+        } 
+        .leftArrowStyle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 45%;
+            left: 0%;
+            font-size: 30px;
+            background-color: rgba($color2, 0.7);
+            padding: 0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .leftArrowStyle:hover{
+            font-size: 28.5px;
+            width: 39px;
+            height: 39px;
+        }
+        .rightArrowStyle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 45%;
+            right: 0%;
+            font-size: 30px;
+            background-color: rgba($color2, 0.65);
+            padding: 0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .rightArrowStyle:hover{
+            font-size: 28.5px;
+            width: 39px;
+            height: 39px;
+        }
+        .t-left{
+            left: 15px;
+            width: 30%;
+            h1{
+                font-size: 22px;
+            }
+        }
+        .t-right{
+            right: 15px;
+            width: 30%;
+            h1{
+                font-size: 22px;
+            }
+        }
+        .top{
+            top: 25px;
+        }
+        .bottom{
+            bottom: 25px;
+        }
+    }
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px){
+    .carrusel-container{
+        .leftArrowStyle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 45%;
+            left: 10px;
+            font-size: 30px;
+            background-color: rgba($color2, 0.7);
+            padding: 0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .leftArrowStyle:hover{
+            font-size: 28.5px;
+            width: 39px;
+            height: 39px;
+        }
+        .rightArrowStyle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 45%;
+            right: 10px;
+            font-size: 30px;
+            background-color: rgba($color2, 0.65);
+            padding: 0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .rightArrowStyle:hover{
+            font-size: 28.5px;
+            width: 39px;
+            height: 39px;
+        }
+        .t-left{
+            left: 15px;
+            width: 40%;
+            h1{
+                font-size: 28px;
+            }
+        }
+        .t-right{
+            right: 15px;
+            width: 40%;
+            h1{
+                font-size: 28px;
+            }
+        }
+        .top{
+            top: 25px;
+        }
+        .bottom{
+            bottom: 25px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1180px){
+    .carrusel-container{
+        height: auto;
+        display: flex;
+        align-items: center;
+        img{
+            width: 90%;
+            max-width: 1080px;
+            height: 100%;
+            object-fit: scale-down;
+        }
+        .leftArrowStyle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 45%;
+            left: 10px;
+            font-size: 30px;
+            background-color: rgba($color2, 0.7);
+            padding: 0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .leftArrowStyle:hover{
+            font-size: 28.5px;
+            width: 39px;
+            height: 39px;
+        }
+        .rightArrowStyle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 45%;
+            right: 10px;
+            font-size: 30px;
+            background-color: rgba($color2, 0.65);
+            padding: 0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .rightArrowStyle:hover{
+            font-size: 28.5px;
+            width: 39px;
+            height: 39px;
+        }
+        .t-left{
+            left: 60px;
+            width: 180px;
+            h1{
+                font-size: 32px;
+            }
+        }
+        .t-right{
+            right: 60px;
+            width: 180px;
+            h1{
+                font-size: 32px;
+            }
+        }
+        .top{
+            top: 30px;
+        }
+        .bottom{
+            bottom: 30px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1181px) and (max-width: 1366px){
+    .carrusel-container{
+        align-items: center;
+        img{
+            width: 90%;
+            max-width: 1080px;
+            height: 100%;
+            object-fit: scale-down;
+        }
+        .leftArrowStyle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 45%;
+            left: 0%;
+            font-size: 30px;
+            background-color: rgba($color2, 0.7);
+            padding: 0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .leftArrowStyle:hover{
+            font-size: 28.5px;
+            width: 39px;
+            height: 39px;
+        }
+        .rightArrowStyle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 45%;
+            right: 0%;
+            font-size: 30px;
+            background-color: rgba($color2, 0.65);
+            padding: 0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .rightArrowStyle:hover{
+            font-size: 28.5px;
+            width: 39px;
+            height: 39px;
+        }
+        .t-left{
+            left: 65px;
+            width: 180px;
+            h1{
+                font-size: 32px;
+            }
+        }
+        .t-right{
+            right: 65px;
+            width: 180px;
+            h1{
+                font-size: 32px;
+            }
+        }
+        .top{
+            top: 40px;
+        }
+        .bottom{
+            bottom: 40px;
+        }
+    }
+    .dotsContainerStyles{
+        width: 100%;
+    }
+}

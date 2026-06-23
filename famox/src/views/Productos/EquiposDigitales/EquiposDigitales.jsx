@@ -1,0 +1,39 @@
+import React, {useEffect} from 'react';
+
+
+import {Helmet} from 'react-helmet-async';
+import Spinner from 'components/Spinner/Spinner';
+import useListaProductos from 'hooks/productos/useListaProductos';
+import Item from 'components/ListaProductos/Accesorios/Item';
+import { useTranslation } from 'react-i18next';
+
+function Llamadores() {
+    const api = 'https://famox-api.vercel.app/api/products/equipos-digitales';
+    const {getProducts, products} = useListaProductos();
+    const {t} = useTranslation();
+    useEffect(()=>{
+        getProducts(api);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
+  return (
+    <section className='accesorios'>
+      <Helmet>
+        <title>Equipos Digitales</title>
+        <meta name="description" content="Nuestros equipos digitales son: Llamador de enfermera Yanward,alarma digital de gases y central repetidora" />
+        <meta name="keywords" content="Llamador de enfermera, alarma digital de gases, central repetidora" />
+      </Helmet>
+      <h1>{t("home.categorias.d")}</h1>
+      <div>
+        {
+          products.length>0 ?
+            products.map(
+              item => <Item key={item._id} product={item}/>
+            )
+            : <Spinner/>
+        }
+      </div>
+    </section>
+  )
+}
+
+export default Llamadores

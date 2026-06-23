@@ -1,0 +1,60 @@
+@use '../../../theme/index' as *;
+.categorias{
+    width: 70%;
+    flex-direction: column;
+    .categoria{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: auto;
+        justify-content: flex-start;
+    }
+}
+
+@media only screen and (max-width: 420px){
+    .categorias{
+        width: 100%;
+        .categoria{
+            width: 100%;
+            margin-top: 30px;
+        }
+    }
+}
+
+@media only screen and (min-width: 421px)and (max-width: 600px){
+    .categorias{
+        width: 90%;
+        .categoria{
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+}
+
+@media only screen and (min-width: 601px)and (max-width: 800px){
+    .categorias{
+        width: 95%;
+        .categoria{
+            width: 100%;
+            margin-top: 10px;
+        }
+    } 
+}
+@media only screen and (min-width: 801px)and (max-width: 1024px){
+    .categorias{
+        width: 95%;
+        .categoria{
+            width: 100%;
+            margin-top: 10px;
+        }
+    } 
+}
+@media only screen and (min-width: 1025px)and (max-width: 1440px){
+    .categorias{
+        width: 80%;
+        .categoria{
+            width: 100%;
+            margin-top: 10px;
+        }
+    } 
+}

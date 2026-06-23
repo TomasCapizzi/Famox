@@ -1,0 +1,273 @@
+@use '../../../../../theme/index' as *;
+.eleccion-gasconec{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    position: relative;
+    .opciones{
+        display: none;
+        top: 50px;
+        width: 270px;
+        height: 60px;
+        overflow: scroll;
+        position: absolute;
+        background-color: $white;
+        border: 2px solid $color1;
+        overflow-x: hidden;
+        box-shadow: 8px 10px 15px #bebebe;
+        svg{
+            cursor: pointer;
+        }
+        .conexiones{
+            display: flex;
+            width: 90%;
+            align-items: center;
+            justify-content: space-between;
+            margin: 5px;
+            select{
+                width: 25%;
+                border-radius: 5px;
+                text-align: center;
+                background-color: $white;
+                border-color: $color1;
+                font-size: 12px;
+            }
+            input{
+                width: 10%;
+                border-radius: 5px;
+                border: 2px solid;
+                border-color: $color1;
+            }
+            button{
+                width: 15%;
+                border-radius: 5px;
+                border: none;
+                background-color: $color1;
+                color: $white;
+            }
+        }
+    }
+    .on{
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 10;
+        align-items: center;
+    }
+}
+
+
+@media only screen and (max-width: 420px){
+    .eleccion-gasconec{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .opciones{
+            top: 40px;
+            width: 75%;
+            height: 110px;
+            box-shadow: 8px 10px 15px #bebebe;
+            flex-direction: column;
+            .conexiones{
+                margin: 0px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                select{
+                    width: 80%;
+                    border-radius: 5px;
+                    margin: 5px 0;
+                    font-size: 11px;
+                }
+                input{
+                    width: 80%;
+                    padding: 0;
+                    margin: 5px 0;
+                }
+                svg{
+                    margin: 5px 0;
+                    font-size: 18px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 421px)and (max-width: 600px){
+    .eleccion-gasconec{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .opciones{
+            top: 45px;
+            width: 85%;
+            height: 110px;
+            box-shadow: 8px 10px 17px #bebebe;
+            flex-direction: column;
+            .conexiones{
+                margin: 0px;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                select{
+                    width: 80%;
+                    border-radius: 0px;
+                    margin: 5px 0;
+                    font-size: 12px;
+                    padding: 3px;
+                }
+                input{
+                    width: 120px;
+                    padding: 0;
+                    margin: 5px 0;
+                }
+                svg{
+                    margin: 5px 15px;
+                    font-size: 18px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+@media only screen and (min-width: 601px)and (max-width: 800px){
+    .eleccion-gasconec{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .opciones{
+            top: 45px;
+            width: 90%;
+            height: 110px;
+            box-shadow: 8px 10px 17px #bebebe;
+            flex-direction: column;
+            .conexiones{
+                margin: 0px;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                select{
+                    width: 80%;
+                    border-radius: 0px;
+                    margin: 5px 0;
+                    font-size: 12px;
+                    padding: 3px;
+                }
+                input{
+                    width: 120px;
+                    padding: 0;
+                    margin: 5px 0;
+                }
+                svg{
+                    margin: 5px 15px;
+                    font-size: 18px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+            align-items: center;
+        }
+    } 
+}
+@media only screen and (min-width: 801px)and (max-width: 1024px){
+    .eleccion-gasconec{
+        margin-bottom: 10px;
+        display: flex;
+        width: 100%;
+        .opciones{
+            top: 35px;
+            width: 228px;
+            height: 110px;
+            box-shadow: 8px 10px 17px #bebebe;
+            .conexiones{
+                margin: 0px;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                select{
+                    width: 80%;
+                    border-radius: 0px;
+                    margin: 5px 0;
+                    font-size: 12px;
+                    padding: 3px;
+                }
+                input{
+                    width: 120px;
+                    padding: 0;
+                    margin: 5px 0;
+                }
+                svg{
+                    margin: 5px 15px;
+                    font-size: 18px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+            align-items: center;
+        }
+    } 
+}
+@media only screen and (min-width: 1025px)and (max-width: 1280px){
+    .eleccion-gasconec{
+        margin-bottom: 10px;
+        display: flex;
+        width: 100%;
+        .opciones{
+            top: 35px;
+            width: 240px;
+            height: 110px;
+            box-shadow: 8px 10px 17px #bebebe;
+            .conexiones{
+                margin: 0px;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                select{
+                    width: 80%;
+                    border-radius: 0px;
+                    margin: 5px 0;
+                    font-size: 12px;
+                    padding: 3px;
+                }
+                input{
+                    width: 120px;
+                    padding: 0;
+                    margin: 5px 0;
+                }
+                svg{
+                    margin: 5px 15px;
+                    font-size: 18px;
+                }
+            }
+        }
+        .on{
+            display: flex;
+            align-items: center;
+        }
+    } 
+}
