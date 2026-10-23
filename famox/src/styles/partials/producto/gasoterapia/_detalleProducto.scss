@@ -1,0 +1,614 @@
+
+@use "../../../theme/index" as *;
+
+.detalle-producto {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 95px 24px 115px;
+  background: #fff;
+  color: #17211c;
+
+  &__container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  // ENCABEZADO
+
+  &__header {
+    max-width: 1000px;
+
+    h1 {
+      margin: 0;
+      color: #17211c;
+      font-size: clamp(2.3rem, 4vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      text-align: left;
+    }
+  }
+
+  &__eyebrow {
+    display: block;
+    margin-bottom: 18px;
+    color: $color1;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  // NAVEGACIÓN Y DOCUMENTACIÓN
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 28px 0 38px;
+  }
+
+    &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #00893c;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    span {
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    &:hover {
+        color: #006f31;
+    }
+    }
+
+  &__manual {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  &__manual .manual-btn {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    background: $color1;
+    cursor: pointer;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      min-height: 44px;
+      padding: 10px 20px;
+
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: #007332;
+    }
+  }
+
+  // FOTOGRAFÍA Y DESCRIPCIÓN
+
+  &__principal {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.05fr)
+      minmax(0, 0.95fr);
+    align-items: start;
+    gap: clamp(30px, 5vw, 75px);
+    width: 100%;
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    width: 100%;
+    min-height: 440px;
+    padding: 30px;
+
+    border-radius: 8px;
+    background: #f4f4f4;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 440px;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__content {
+    min-width: 0;
+    padding: 10px 0;
+  }
+
+  // INFORMACIÓN TÉCNICA
+
+  .uso {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 26px;
+    width: 100%;
+
+    h2 {
+      margin: 0 0 15px;
+      color: #17211c;
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    p {
+      margin: 0;
+      color: #626b66;
+      font-size: 1rem;
+      line-height: 1.8;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+
+    .descripcion {
+      width: 100%;
+    }
+
+    .rango {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 20px 24px;
+      border: 1px solid #e8ece9;
+      border-radius: 6px;
+      background: #f4f4f4;
+
+      h2 {
+        margin-bottom: 7px;
+        font-size: 1rem;
+      }
+
+      p {
+        color: #17211c;
+        font-weight: 500;
+      }
+    }
+
+    .anmat {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 16px 20px;
+      border-left: 3px solid $color1;
+      border-radius: 0 5px 5px 0;
+      background: #f4f4f4;
+
+      p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+    }
+
+    // GASES
+
+    .gases {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: transparent;
+
+      h2 {
+        margin-bottom: 15px;
+        font-size: 1rem;
+      }
+
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+      }
+
+      &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 70px;
+        min-height: 70px;
+        box-sizing: border-box;
+        padding: 10px;
+        border-radius: 6px;
+        background: #f4f4f4;
+
+        img {
+          display: block;
+          max-width: 65px;
+          max-height: 55px;
+          object-fit: contain;
+        }
+
+        span {
+          color: #17211c;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  // SECCIONES EXCLUSIVAS DE GASOTERAPIA
+
+  &__extra {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    margin-top: 70px;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .conectores,
+  .modelos {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding-top: 38px;
+    border-top: 1px solid #e4e9e5;
+
+    > h2,
+    > h4 {
+      margin: 0 0 28px;
+      color: #17211c;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: left;
+    }
+  }
+
+  // CONECTORES
+
+  .conectores .conec-info {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .conectores .conector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 175px;
+    margin: 0;
+    padding: 18px 12px;
+
+    border: 1px solid #e8ece9;
+    border-radius: 8px;
+    background: #f4f4f4;
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 135px;
+      height: 100px;
+      object-fit: contain;
+    }
+
+    h3 {
+      margin: 0;
+      color: #17211c;
+      font-size: 0.93rem;
+      font-weight: 600;
+      line-height: 1.4;
+      text-align: center;
+    }
+  }
+
+  // MODELOS
+
+  .modelos .modelo-info {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .modelos .modelo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    margin: 0;
+    padding: 20px;
+
+    border: 1px solid #e8ece9;
+    border-radius: 8px;
+    background: #fff;
+
+    > img {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      height: 190px;
+      margin: 0 0 20px;
+      padding: 12px;
+      border-radius: 5px;
+      background: #f4f4f4;
+      object-fit: contain;
+    }
+
+    h5 {
+      width: 100%;
+      margin: 0 0 14px;
+      color: #17211c;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.4;
+      text-align: left;
+    }
+
+    p {
+      width: 100%;
+      margin: 0 0 12px;
+      color: #626b66;
+      font-size: 0.94rem;
+      line-height: 1.65;
+      text-align: left;
+    }
+
+    .modulos {
+      width: 100%;
+      margin-top: 12px;
+
+      h4 {
+        margin: 0 0 10px;
+        color: #17211c;
+        font-size: 0.95rem;
+        text-align: left;
+      }
+
+      .modulos-lista {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          width: 100%;
+          margin: 0;
+          padding: 0 0 8px;
+          border-bottom: 1px solid #e8ece9;
+          color: #626b66;
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  // TABLET
+
+  @media (max-width: 1000px) {
+    &__principal {
+      gap: 30px;
+    }
+
+    &__image {
+      min-height: 360px;
+      padding: 20px;
+
+      img {
+        height: 360px;
+      }
+    }
+
+    .conectores .conec-info {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .modelos .modelo-info {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  // CELULAR
+
+  @media (max-width: 700px) {
+    padding: 65px 20px 85px;
+
+    &__header h1 {
+      font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    &__actions {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 15px;
+      margin: 22px 0 28px;
+    }
+
+    &__principal {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    &__image {
+      min-height: 300px;
+      padding: 15px;
+
+      img {
+        height: 310px;
+      }
+    }
+
+    &__content {
+      padding: 0;
+    }
+
+    .uso {
+      gap: 22px;
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.97rem;
+      }
+    }
+
+    &__extra {
+      gap: 40px;
+      margin-top: 45px;
+    }
+
+    .conectores,
+    .modelos {
+      padding-top: 28px;
+    }
+
+    .conectores .conec-info {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .conectores .conector {
+      min-height: 150px;
+      padding: 12px;
+
+      img {
+        height: 85px;
+      }
+    }
+
+    .modelos .modelo-info {
+      grid-template-columns: 1fr;
+    }
+
+    .modelos .modelo {
+      padding: 16px;
+    }
+  }
+}
+
+.detalle-producto__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+
+/* Ajuste de tarjetas de modelos */
+
+.detalle-producto .modelos {
+  width: 100%;
+
+  .modelo-info {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: stretch;
+    align-items: stretch;
+  }
+
+  .modelo-info > .modelo {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    margin: 0;
+    padding: 22px;
+
+    border: 1px solid #e8ece9;
+    border-radius: 8px;
+    background: #fff;
+
+    > img {
+      width: 100%;
+      height: 210px;
+      margin: 0 0 20px;
+      padding: 15px;
+      box-sizing: border-box;
+      object-fit: contain;
+      background: #f4f4f4;
+      border-radius: 5px;
+    }
+
+    h5 {
+      width: 100%;
+      margin: 0 0 12px;
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    p {
+      width: 100%;
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .modelo-info {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
+    .modelo-info {
+      grid-template-columns: 1fr;
+    }
+  }
+}

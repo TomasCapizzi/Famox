@@ -1,26 +1,33 @@
-import ModeloItem from './ModeloItem';
-import Spinner from 'components/Spinner/Spinner';
-import { useTranslation } from 'react-i18next';
 
-function Modelos({modelos, lang}) {
+import ModeloItem from "./ModeloItem";
+import { useTranslation } from "react-i18next";
 
-    const {t} = useTranslation();   
+function Modelos({ modelos, lang }) {
+  const { t } = useTranslation();
+
+  if (!Array.isArray(modelos) || modelos.length === 0) {
+    return null;
+  }
 
   return (
-    <article className='modelos'>
-        <h4>{t("ecomm.categorias.b")}</h4>
-        <div className='modelo-info'>
-            {
-                modelos.length > 0 ? 
-                    modelos.map(
-                        item => <ModeloItem item={item} key={item.nombre} lang={lang} />
-                    )
-                : <Spinner />
-            }
-        </div>
+    <section className="modelos">
+      <h4>{t("ecomm.categorias.b")}</h4>
 
-    </article>
-  )
+      <div className="modelo-info">
+        {modelos.map((item, index) => (
+          <ModeloItem
+            item={item}
+            key={
+              item._id ||
+              `${item.nombre?.es || "modelo"}-${index}`
+            }
+            lang={lang}
+          />
+        ))}
+      </div>
+    </section>
+  );
 }
 
-export default Modelos
+export default Modelos;
+

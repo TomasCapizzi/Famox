@@ -15,20 +15,25 @@ const useValidarFormContacto = () => {
     const [handlerEmpresa, setHandlerEmpresa] = useState(false);
     const [handlerCaptcha, setHandlerCaptcha] = useState(false);
 
-    const [handlerSubmit, setHandlerSubmit] = useState(false);
+    const handlerSubmit =
+      handlerNombre &&
+      handlerEmpresa &&
+      handlerMail &&
+      handlerAsunto &&
+      handlerMensaje;
 
 
     const validarNombre = (value)=> {
         if(value.length <= 2){
           setHandlerNombre(false);
           setNombreError('Este campo debe estar completo');
-          setHandlerSubmit(false);          
+          //setHandlerSubmit(false);          
           //checkSubmit();  
         } else{
           setNombreError('');
           setHandlerNombre(true);
           if(handlerEmpresa && handlerMail && handlerAsunto && handlerMensaje){
-            setHandlerSubmit(true);
+            //setHandlerSubmit(true);
           }
           //checkSubmit();
         }
@@ -39,12 +44,12 @@ const useValidarFormContacto = () => {
       if(value.length <= 2){
         setEmpresaError('Este campo debe estar completo');
         setHandlerEmpresa(false);
-        setHandlerSubmit(false);
+        //setHandlerSubmit(false);
       } else{
         setEmpresaError('');
         setHandlerEmpresa(true);
         if(handlerNombre && handlerMail && handlerAsunto && handlerMensaje){
-          setHandlerSubmit(true);
+          //setHandlerSubmit(true);
         }
       }
       //checkSubmit();
@@ -55,12 +60,12 @@ const useValidarFormContacto = () => {
       if(value.length <= 2){
         setAsuntoError('Este campo debe estar completo');
         setHandlerAsunto(false);
-        setHandlerSubmit(false);
+        //setHandlerSubmit(false);
       } else{
         setAsuntoError('');
         setHandlerAsunto(true);
         if(handlerEmpresa && handlerMail && handlerNombre && handlerMensaje){
-          setHandlerSubmit(true);
+          //setHandlerSubmit(true);
         }
       }
       //checkSubmit()
@@ -72,13 +77,13 @@ const useValidarFormContacto = () => {
        setMailError('');
        setHandlerMail(true);
        if(handlerEmpresa && handlerNombre && handlerAsunto && handlerMensaje){
-        setHandlerSubmit(true);
+        //setHandlerSubmit(true);
       }
        //checkSubmit();
       } else{
         setMailError('Mail inválido');
         setHandlerMail(false);
-        setHandlerSubmit(false);
+        //setHandlerSubmit(false);
         //checkSubmit();
       }
       //checkSubmit();
@@ -88,13 +93,13 @@ const useValidarFormContacto = () => {
       if(value.length < 5){
         setHandlerMensaje(false);
         setMensajeError('Este campo debe tener al menos 5 caracteres');
-        setHandlerSubmit(false);
+        //setHandlerSubmit(false);
         //checkSubmit();
       } else{
         setHandlerMensaje(true);
         setMensajeError('');
         if(handlerEmpresa && handlerMail && handlerAsunto && handlerNombre){
-          setHandlerSubmit(true);
+      //    setHandlerSubmit(true);
         }
         //checkSubmit();
       }
@@ -105,11 +110,11 @@ const useValidarFormContacto = () => {
       if (!value) {
             alert("Por favor, verifica el reCAPTCHA.");
             return;
-          } else handlerCaptcha(true)
+          } else setHandlerCaptcha(true)
     }
 
     const reiniciarValores = ()=> {
-      setHandlerSubmit(false);
+      //setHandlerSubmit(false);
       setHandlerAsunto(false);
       setHandlerEmpresa(false);
       setHandlerMail(false);
@@ -132,7 +137,7 @@ const useValidarFormContacto = () => {
     asuntoError,
     empresaError,
     handlerSubmit,
-    setHandlerSubmit,
+    //setHandlerSubmit,
     reiniciarValores
   }
 }

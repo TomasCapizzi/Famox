@@ -1,50 +1,45 @@
-@use '../../theme/index' as *;
-.rrss{
-    padding: 20px;
 
-    svg{
-        width: 50px;
-        font-size: 3.2rem;
-        margin: 50px 15px 0 0;
-        cursor: pointer;
-        transition: .15s ease-in all;
-    }
-    #wpp{
-        color: #2CC54E;
-    }
-    #lin{
-        color:#0A66C2;
-    }
-    #insta{
-        color: #D33F76;
-    }
+.footer-rrss {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
 
-    svg:hover{
-        opacity: 0.85;
-        transform: scale(0.95);
-    }
-}
-.int{
-    animation: intersection 1s ease-in-out;
-}
-@media only screen and (max-width: 375px){
-    .rrss{
-        svg{
-            width: 40px;
-            font-size: 2.2rem;
-            margin: 0 15px;
-        }
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    color: #bdc8c0;
+    text-decoration: none;
+
+    transition:
+      color 0.25s ease,
+      background 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease;
+
+    svg {
+      width: 19px;
+      height: 19px;
     }
 
-}
+    &:hover {
+      color: #fff;
+      background: #00893c;
+      border-color: #00893c;
+      transform: translateY(-3px);
+    }
 
-@keyframes intersection {
-    0% {
-        padding: 0px;
-        opacity: 0;
+    &:focus-visible {
+      outline: 2px solid #54c582;
+      outline-offset: 3px;
     }
-    100% {
-        opacity: 1;
-        padding: 20px;
-    }
+  }
 }

@@ -1,23 +1,49 @@
-import {BiReset} from 'react-icons/bi';
 
-import useFiltro from 'hooks/ecommerce/useFiltro';
-import FiltroForm from './FiltroForm';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
-function Filtro({setGasoterapiaHandler, setUnidSumHandler, setAccesoriosHandler, setEquiposDigitalesHandler, setHandler}) {
+function Filtro({
+  grupos,
+  seleccionadas,
+  onToggle,
+  onReset
+}) {
+  const { t } = useTranslation();
 
-    const {filtrar, reset} = useFiltro();
-    const {t} = useTranslation();
+  return (
+    <aside className="tienda-filtros">
+      <div className="tienda-filtros__header">
+        <h2>{t("tienda.filtros")}</h2>
+        <p>{t("tienda.filtrarPor")}</p>
+      </div>
 
-    return (
-        <article className='filtro-container'>
-            <div className='filtro-wrap'>
-                <FiltroForm filtrar={filtrar} setGasoterapiaHandler={setGasoterapiaHandler} setUnidSumHandler={setUnidSumHandler} setAccesoriosHandler={setAccesoriosHandler} setEquiposDigitalesHandler={setEquiposDigitalesHandler} setHandler={setHandler} />
-                <button onClick={()=>reset(setGasoterapiaHandler, setUnidSumHandler, setAccesoriosHandler, setEquiposDigitalesHandler, setHandler)} >{t("ecomm.menu.val2")} <BiReset/></button>
-            </div>
+      <div className="tienda-filtros__opciones">
+        {grupos.map((grupo) => (
+          <label
+            className="tienda-filtros__opcion"
+            key={grupo.id}
+          >
+            <input
+              type="checkbox"
+              checked={seleccionadas[grupo.id]}
+              onChange={(e) =>
+                onToggle(grupo.id, e.target.checked)
+              }
+            />
 
-        </article>
-    )
+            <span>{grupo.nombre}</span>
+          </label>
+        ))}
+      </div>
+
+      <button
+        type="button"
+        className="tienda-filtros__reset"
+        onClick={onReset}
+      >
+        {t("tienda.restablecer")}
+      </button>
+    </aside>
+  );
 }
 
 export default Filtro;

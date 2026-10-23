@@ -1,128 +1,223 @@
-@use '../../theme/index' as *;
-.productos{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    align-items: center;
-}
-.categorias-container{
+
+@use "../../theme/index" as *;
+
+.productos {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 100px 24px 115px;
+  background: #fff;
+  color: #17211c;
+
+  &__container {
     width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  // ENCABEZADO
+
+  &__header {
+    max-width: 850px;
+    margin-bottom: 48px;
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 4.2vw, 4.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      color: #17211c;
+    }
+
+    p {
+      max-width: 650px;
+      margin: 25px 0 0;
+      font-size: 1.06rem;
+      line-height: 1.75;
+      color: #626b66;
+    }
+  }
+
+  &__eyebrow {
+    display: block;
+    margin-bottom: 20px;
+    color: $color1;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  // GRILLA DE CATEGORÍAS
+
+  .categorias-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+
+  // TARJETAS
+
+  .productos__categoria {
+    position: relative;
+    display: block;
+    height: 370px;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f4f4f4;
+    color: #fff;
+    text-decoration: none;
+    isolation: isolate;
+
+    > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+
+    &:hover > img {
+      transform: scale(1.045);
+    }
+
+    &:hover .productos__categoria-arrow {
+      background: $color1;
+      border-color: $color1;
+      transform: translateY(-3px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid $color1;
+      outline-offset: 4px;
+    }
+  }
+
+  .productos__categoria-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.22) 45%,
+      transparent 80%
+    );
+  }
+
+  .productos__categoria-content {
+    position: absolute;
+    z-index: 2;
+    bottom: 28px;
+    left: 28px;
+    right: 28px;
+
     display: flex;
     align-items: center;
-    border-top: 2px solid $color1;
-    border-bottom: 2px solid $color1;
-    padding: 25px 0;
-    .categoria{
-        width: 25%;
-        text-align: center;
-        h3{
-            color: $color1;
-            height: 60px;
-            margin: 30px 0 60px;
-        }
-        a{
-            width: 100%;
-            img{
-                object-fit: cover;
-                width: 90%;
-                height: 170px;
-                margin-bottom: 25px;
-                cursor: pointer;
-                box-shadow: 1px 5px 10px rgba(0,0,0,0.6);
-                border-radius: 5px;
-                transition: .3s ease-in-out all;
-            }
-            img:hover{            
-                transform: scale(0.9)
-            }
-        }
-        
+    justify-content: space-between;
+    gap: 20px;
+
+    h3 {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      font-weight: 600;
+      line-height: 1.2;
     }
+  }
+
+  .productos__categoria-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 46px;
+    height: 46px;
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 50%;
+
+    color: #fff;
+    font-size: 1.3rem;
+
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  // TABLET
+
+  @media (max-width: 900px) {
+    padding: 80px 20px;
+
+    &__header {
+      margin-bottom: 35px;
+    }
+
+    .categorias-container {
+      gap: 18px;
+    }
+
+    .productos__categoria {
+      height: 320px;
+    }
+  }
+
+  // CELULAR
+
+  @media (max-width: 650px) {
+    padding: 65px 20px 80px;
+
+    &__header {
+      margin-bottom: 32px;
+
+      h1 {
+        font-size: clamp(2rem, 8vw, 2.6rem);
+        line-height: 1.12;
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 0.98rem;
+        line-height: 1.7;
+      }
+    }
+
+    .categorias-container {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .productos__categoria {
+      height: 290px;
+    }
+
+    .productos__categoria-content {
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+
+      h3 {
+        font-size: 1.35rem;
+      }
+    }
+
+    .productos__categoria-arrow {
+      width: 40px;
+      height: 40px;
+    }
+  }
 }
 
-
-
-@media only screen and (max-width: 568px){
-    
-.productos{
-    width: 90%;
-
-    .categorias-container{
-        width: 100%;
-        flex-direction: column;
-        margin-bottom: 25px;
-    }
-
-    .categoria{
-        width: 100%;
-        h3{
-            color: $color1;
-            height: 60px;
-            margin: 10px 0 0;
-        }
-        img{
-            width: 70%;
-        }
-    }
-}
-}
-
-@media only screen and (min-width: 569px) and (max-width: 768px){
-    .productos{
-        width: 90%;
-    
-        .categorias-container{
-            width: 100%;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-        }
-    
-        .categoria{
-            width: 50%;
-            h3{
-                width: 100%;
-                font-size: 1rem;
-                margin: 30px 0 0px;
-            }
-            img{
-                width: 85%;
-            }
-        }
-    }
-
-}
-@media only screen and (min-width: 769px) and (max-width: 1024px){
-    .productos{
-        width: 90%;
-    
-        .categorias-container{
-            width: 100%;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-        }
-    
-        .categoria{
-            width: 33%;
-            h3{
-                width: 100%;
-                font-size: 1.2rem;
-            }
-            img{
-                width: 85%;
-            }
-        }
-    }
-
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1280px){
-    .productos{
-        width: 85%;
-        .categoria{
-            h3{
-                width: 100%;
-                font-size: 22px;
-            }
-        }
-    }
+@media (prefers-reduced-motion: reduce) {
+  .productos .productos__categoria img,
+  .productos .productos__categoria-arrow {
+    transition: none;
+  }
 }

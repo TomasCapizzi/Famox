@@ -1,0 +1,163 @@
+@use '../../theme/index' as *;
+
+.home-fabricacion {
+  padding: 85px 24px;
+  background: #f4f4f4;
+
+  &__container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+  }
+
+  &__image {
+    height: 520px;
+    overflow: hidden;
+    border-radius: 8px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+  }
+
+  &__eyebrow {
+    color: #00893c;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  &__content {
+    h2 {
+      margin: 18px 0 24px;
+      font-size: clamp(2.2rem, 3.5vw, 3.7rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      color: #17211c;
+    }
+
+    p {
+      max-width: 520px;
+      color: #626b66;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 34px;
+    }
+  }
+
+  &__steps {
+    border-top: 1px solid #d8ded9;
+  }
+
+  &__step {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid #d8ded9;
+    color: #17211c;
+    font-weight: 600;
+  }
+
+  &__number {
+    color: #00893c;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+    color: #00893c;
+    font-weight: 700;
+    text-decoration: none;
+
+    span {
+      transition: transform 0.25s ease;
+    }
+
+    &:hover span {
+      transform: translateX(5px);
+    }
+  }
+
+  @media (max-width: 900px) {
+    padding: 80px 20px;
+
+    &__container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    &__image {
+      height: 400px;
+    }
+  }
+
+
+    @media (max-width: 600px) {
+      padding: 60px 20px;
+
+      &__container {
+        gap: 30px;
+      }
+
+      &__image {
+        height: 270px;
+        border-radius: 6px;
+      }
+
+      &__eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+      }
+
+      &__content {
+        h2 {
+          margin: 14px 0 18px;
+          font-size: clamp(1.9rem, 7.8vw, 2.2rem);
+          line-height: 1.12;
+        }
+
+        p {
+          margin: 0 0 28px;
+          font-size: 0.98rem;
+          line-height: 1.7;
+        }
+      }
+
+      &__step {
+        gap: 16px;
+        padding: 15px 0;
+        font-size: 0.92rem;
+        line-height: 1.5;
+      }
+
+      &__number {
+        flex-shrink: 0;
+        width: 20px;
+        font-size: 0.8rem;
+      }
+
+      &__link {
+        margin-top: 25px;
+        font-size: 0.95rem;
+      }
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-fabricacion__link span {
+    transition: none;
+  }
+}

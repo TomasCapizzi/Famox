@@ -21,8 +21,14 @@ function CarritoItemAcc({item}) {
                 }
             </ul>
         </td>
-        <td><p>{item.codigo}</p></td>
-        <td><p>{item.cantidad}</p></td>
+
+        <td data-label={t("cart.tabla.t3")}>
+          <p>{item.codigo}</p>
+        </td>
+
+        <td data-label={t("cart.tabla.t4")}>
+          <p>{item.cantidad}</p>
+        </td>
         <td><BsTrashFill onClick={()=> removerItem(item)} /></td>    
     </tr>
   )

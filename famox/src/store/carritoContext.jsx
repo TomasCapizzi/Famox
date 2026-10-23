@@ -10,20 +10,100 @@ export function CarritoContextProvider({children}){
     const [carro, setCarro] = useState([]);
 
     //const {compararDia} = useCompararDia()
+    
+    const agregarOAcumular = (producto, sonIguales) => {
+        const carritoActual = JSON.parse(
+            localStorage.getItem("FamoxCarrito") || "[]"
+        );
+
+        const indice = carritoActual.findIndex((item) =>
+            sonIguales(item, producto)
+        );
+
+        let nuevoCarrito;
+
+        if (indice === -1) {
+            nuevoCarrito = [...carritoActual, producto];
+        } else {
+            nuevoCarrito = [...carritoActual];
+
+            const existente = nuevoCarrito[indice];
+
+            nuevoCarrito[indice] = {
+            ...existente,
+            cantidad:
+                Number(existente.cantidad) +
+                Number(producto.cantidad)
+            };
+        }
+
+        localStorage.setItem(
+            "FamoxCarrito",
+            JSON.stringify(nuevoCarrito)
+        );
+
+        setCarro(nuevoCarrito);
+    };
+
+
 
     const obtenerDataLocalStorage = () => {
-        const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'))
-        if(carrito){
-            if(carrito.length){
-                setCarro(carrito)
-                // Creamos la fecha para poder borrar el carrito 5 hs desp o cualquier otro día que no sea el mismo del primer item agregado
-                const diaInicioCarrito = carrito[0].fecha.split('T')[0]
-                const horaInicioCarrito = carrito[0].fecha.split('T')[1]    
-                // Comparar Dia
-                compararDia(diaInicioCarrito, horaInicioCarrito)
-            }
-        }      
+    try {
+        const datos = localStorage.getItem("FamoxCarrito");
+
+        if (!datos) {
+        setCarro([]);
+        return;
+        }
+
+        const carritoGuardado = JSON.parse(datos);
+
+        if (
+        !Array.isArray(carritoGuardado) ||
+        carritoGuardado.length === 0
+        ) {
+        setCarro([]);
+        return;
+        }
+
+        const fechas = carritoGuardado
+        .map((item) => new Date(item.fecha).getTime())
+        .filter((fecha) => Number.isFinite(fecha));
+
+        // Si algún artículo carece de fecha válida,
+        // no podemos determinar su caducidad.
+        if (fechas.length !== carritoGuardado.length) {
+        localStorage.removeItem("FamoxCarrito");
+        setCarro([]);
+        return;
+        }
+
+        const fechaInicio = new Date(Math.min(...fechas));
+        const ahora = new Date();
+
+        const cincoHoras = 5 * 60 * 60 * 1000;
+
+        const pasaronCincoHoras =
+        ahora.getTime() - fechaInicio.getTime() >= cincoHoras;
+
+        const cambioDeDia =
+        ahora.toDateString() !== fechaInicio.toDateString();
+
+        if (pasaronCincoHoras || cambioDeDia) {
+        localStorage.removeItem("FamoxCarrito");
+        setCarro([]);
+        return;
+        }
+
+        setCarro(carritoGuardado);
+
+    } catch (error) {
+        console.error("Error al recuperar el carrito:", error);
+        localStorage.removeItem("FamoxCarrito");
+        setCarro([]);
     }
+    };
+
     const compararDia = (dia, hora)=> {
         const fechaActual = new Date()
         const mes = parseInt(dia.split('-')[1]);
@@ -48,90 +128,86 @@ export function CarritoContextProvider({children}){
         }
     }
     
-    const agregarItemGasoterapia = ({producto})=> {
-        console.log('lo que se agrega: ',producto);
-        
-        const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
-        if(carrito){
-            const coincidencia = carrito.find(
-                item => (item.nombre.es === producto.nombre.es) && (item.codigo === producto.codigo)
-                /*
-                item => (item.nombre === producto.nombre) && (item.gas === producto.gas) && (item.conector === producto.conector) && (item.rango === producto.rango)*/
-            );
-            if(coincidencia){     
-                console.log('Coinciden este elemento con otro igual');                 
-                const nuevoCarrito = carrito.filter(
-                    item=> item !== coincidencia    
-                )
-                //console.log('NUEVO CARRITO' ,nuevoCarrito);
-                const {nombre, img, _id, gas, conector, rango, modelo, codigo} = producto
 
-                let nuevoProducto = {
-                    nombre,
-                    fecha: new Date(),
-                    img,
-                    codigo,
-                    _id,
-                    conector,
-                    gas,
-                    rango,
-                    modelo,
-                    cantidad: producto.cantidad + coincidencia.cantidad
-                }
-                //console.log('el nuevo',nuevoProducto);
-                
-                localStorage.setItem('FamoxCarrito', JSON.stringify([...nuevoCarrito, nuevoProducto]));
-                setCarro([...nuevoCarrito, nuevoProducto])
-            } else{
-                localStorage.setItem('FamoxCarrito', JSON.stringify([...carrito, producto]));
-                setCarro([...carro, producto])
+    const agregarItemGasoterapia = ({ producto }) => {
+        const sonIguales = (item, nuevo) => {
+            // Evitar coincidencias con otras categorías
+            if (
+            item.accesorio ||
+            item.equipoDigital ||
+            Array.isArray(item.bajaTension)
+            ) {
+            return false;
             }
 
-        } else{
-            localStorage.setItem('FamoxCarrito', JSON.stringify([producto]));
-            setCarro([producto])
+            // Debe ser el mismo producto
+            if (item.nombre?.es !== nuevo.nombre?.es) {
+            return false;
+            }
+
+            const codigoActual = String(item.codigo ?? "").trim();
+            const codigoNuevo = String(nuevo.codigo ?? "").trim();
+
+            // Si ambos tienen código, lo utilizamos
+            if (codigoActual && codigoNuevo) {
+            return codigoActual === codigoNuevo;
+            }
+
+            // Sin código, comparar toda la configuración
+            return (
+            item.gas === nuevo.gas &&
+            item.conector === nuevo.conector &&
+            item.rango === nuevo.rango &&
+            JSON.stringify(item.modelo ?? null) ===
+                JSON.stringify(nuevo.modelo ?? null)
+            );
+        };
+
+        agregarOAcumular(producto, sonIguales);
+    };
+
+
+
+    const agregarItemUnidSum = ({ producto }) => {
+    const normalizarOpciones = (opciones) => {
+        return JSON.stringify(
+        [...(opciones || [])]
+            .map((opcion) => JSON.stringify(opcion))
+            .sort()
+        );
+    };
+
+    const sonIguales = (item, nuevo) => {
+        // Solo comparar Unidades de Suministro
+        if (!Array.isArray(item.bajaTension)) {
+        return false;
         }
-       // setCarro([...carro, producto]);
 
-    }
+        if (item.nombre?.es !== nuevo.nombre?.es) {
+        return false;
+        }
 
-    const agregarItemUnidSum = ({producto})=> {
-                //console.log(producto);
-                const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
-                if(carrito){
-                    const coincidencia = carrito.find(
-                        item => item === producto
-                    );
-                    if(coincidencia){                    
-                       const nuevoCarrito = carrito.filter(
-                            item=> item !== coincidencia
-                        )
-                        const {nombre, img, _id, bajaTension, mediaTension, iluminacion, conexiones} = producto
-                        let nuevoProducto = {
-                            nombre,
-                            fecha: new Date(),
-                            img,
-                            _id,
-                            mediaTension,
-                            bajaTension,
-                            iluminacion,
-                            conexiones,
-                            cantidad: producto.cantidad + coincidencia.cantidad
-                        }
-                        localStorage.setItem('FamoxCarrito', JSON.stringify([...nuevoCarrito, nuevoProducto]));
-                        setCarro([...nuevoCarrito, nuevoProducto])
-                    } else{
-                        localStorage.setItem('FamoxCarrito', JSON.stringify([...carrito, producto]));
-                        setCarro([...carro, producto])
-                    }
-        
-                } else{
-                    localStorage.setItem('FamoxCarrito', JSON.stringify([producto]));
-                    setCarro([producto])
-                }
-               // setCarro([...carro, producto]);
+        return (
+        normalizarOpciones(item.bajaTension) ===
+            normalizarOpciones(nuevo.bajaTension) &&
 
-    }
+        normalizarOpciones(item.mediaTension) ===
+            normalizarOpciones(nuevo.mediaTension) &&
+
+        normalizarOpciones(item.iluminacion) ===
+            normalizarOpciones(nuevo.iluminacion) &&
+
+        normalizarOpciones(item.conexiones) ===
+            normalizarOpciones(nuevo.conexiones) &&
+
+        String(item.longitud ?? "") ===
+            String(nuevo.longitud ?? "")
+        );
+    };
+
+    agregarOAcumular(producto, sonIguales);
+    };
+
 
     const agregarAccesorio = ({producto})=>{
         const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
@@ -168,51 +244,32 @@ export function CarritoContextProvider({children}){
         }
     }
 
-    const agregarEquipoDigital = ({producto})=>{
-        console.log(producto);
-        
-        const carrito = JSON.parse(localStorage.getItem('FamoxCarrito'));
 
-        if(carrito){
-            const coincidencia = buscarCoincidenciaEquipoDigital(producto);
-            if(coincidencia){     
-                console.log('Coinciden este elemento con otro igual');                    
-                const nuevoCarrito = carrito.filter(
-                        item=> item.codigo !== coincidencia.codigo
-                    )
-                console.log(nuevoCarrito);
-                const {nombre, img, _id, codigo, equipoDigital, modelo} = producto
-                let nuevoProducto = {
-                    nombre,
-                    fecha: new Date(),
-                    codigo,
-                    img,
-                    equipoDigital,
-                    _id,
-                    modelo,
-                    cantidad: producto.cantidad + coincidencia.cantidad
-                }
-                localStorage.setItem('FamoxCarrito', JSON.stringify([...nuevoCarrito, nuevoProducto]));
-                setCarro([...nuevoCarrito, nuevoProducto])
-            } else{
-                localStorage.setItem('FamoxCarrito', JSON.stringify([...carrito, producto]));
-                setCarro([...carrito, producto])
+    const agregarEquipoDigital = ({ producto }) => {
+        const sonIguales = (item, nuevo) => {
+            if (item.equipoDigital !== true) {
+            return false;
             }
 
-        } else{
-            localStorage.setItem('FamoxCarrito', JSON.stringify([producto]));
-            setCarro([producto])
-        }
-    }
+            if (item.nombre?.es !== nuevo.nombre?.es) {
+            return false;
+            }
 
-    const buscarCoincidenciaEquipoDigital = (producto)=> {
-        console.log(producto.nombre);
-        const coincidenciaCodigo = carro.find(
-            prod => prod.codigo === producto.codigo
-          );
-        if(coincidenciaCodigo) return coincidenciaCodigo
-        return null
-    }
+            const codigoActual = String(item.codigo ?? "").trim();
+            const codigoNuevo = String(nuevo.codigo ?? "").trim();
+
+            if (codigoActual && codigoNuevo) {
+            return codigoActual === codigoNuevo;
+            }
+
+            return (
+            JSON.stringify(item.modelo ?? null) ===
+            JSON.stringify(nuevo.modelo ?? null)
+            );
+        };
+
+    agregarOAcumular(producto, sonIguales);
+    };
 
     const removerItem = (producto)=>{
         localStorage.setItem('FamoxCarrito', JSON.stringify(carro.filter(

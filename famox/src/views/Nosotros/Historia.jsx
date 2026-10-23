@@ -13,7 +13,13 @@ function Historia() {
         <title>Famox SA</title>
         <meta name="description" content="Conoce la historia de Famox, una joven empresa que se ha posicionado en el mercado local y Sudamérica como fabricante de equipos de Gasoterpia y Unidades de Suministro." />
       </Helmet>
-      <h1>{t("nosotros.title")}</h1>
+      <header className="historia__header">
+        <span className="historia__eyebrow">
+          {t("nosotros.page.eyebrow")}
+        </span>
+        <h1>{t("nosotros.page.title")}</h1>
+        <p>{t("nosotros.page.description")}</p>
+      </header>
       <Bienvenida/>
       <Nosotros/>
       <Mision/>

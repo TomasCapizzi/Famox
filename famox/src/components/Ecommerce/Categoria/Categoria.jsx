@@ -1,19 +1,22 @@
-import Item from '../Item/Item';
-import React from 'react'
 
-function Categoria({items}) {
+import Item from "../Item/Item";
 
-  items.sort((a,b) => a.orden - b.orden)
+function Categoria({ items = [], tipo }) {
+  const ordenados = [...items].sort(
+    (a, b) => (a.orden || 0) - (b.orden || 0)
+  );
 
   return (
-    <article className='categoria'>
-        {
-            items.map(
-                item=> <Item item={item} key={item._id} />
-            )
-        }
-    </article>
-  )
+    <div className="categoria">
+      {ordenados.map((item) => (
+        <Item
+          key={item._id}
+          item={item}
+          tipo={tipo}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default Categoria
+export default Categoria;

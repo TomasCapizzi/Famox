@@ -1,5 +1,5 @@
 import {Route, Routes} from 'react-router-dom'
-
+import { Navigate } from "react-router-dom";
 import Accesorios from 'views/Productos/Accesorios/Accesorios';
 import Carrito from 'views/Carrito/Carrito';
 import Certificaciones from 'views/Certificaciones/Certificaciones';
@@ -17,6 +17,7 @@ import PregFrec from 'views/PregFrec/PregFrec';
 import Productos from 'views/Productos/Productos';
 import React from 'react';
 import UnidadesSuministro from 'views/Productos/UnidadesSuministro/UnidadesSuministro';
+import ObraDetalle from "views/ObraDetalle/ObraDetalle";
 
 function Rutas() {
   return (
@@ -27,7 +28,11 @@ function Rutas() {
             <Route path='/certificaciones' element={<Certificaciones/>} />
             <Route path='/contacto' element={<Contacto/>} />
             <Route path='/productos' element={<Productos/>} />
-            <Route path='/ecommerce' element={<Ecommerce/>} />
+            <Route path="/tienda" element={<Ecommerce />} />
+            <Route
+              path="/ecommerce"
+              element={<Navigate to="/tienda" replace />}
+            />
             <Route path='/obras' element={<Obras/>} />
             <Route path='/carrito' element={<Carrito/>} />
             <Route path='/preguntas-frecuentes' element={<PregFrec/>} />
@@ -36,6 +41,15 @@ function Rutas() {
             <Route path='/unidades-de-suministro' element={<UnidadesSuministro/>}/>
             <Route path='/accesorios' element={<Accesorios/>}/>
             <Route path='/equipos-digitales' element={<EquiposDigitales/>}/>
+
+            <Route
+              path="/obras/swiss-medical-nordelta"
+              element={<ObraDetalle />}
+            />
+            <Route
+              path="/obras/:slug"
+              element={<ObraDetalle />}
+            />
 
             <Route path='/unidades-de-suministro/:id' element={<DetalleUnidSum/>} />
             <Route path='/gasoterapia/:id' element={<DetalleGasoterapia/>} />

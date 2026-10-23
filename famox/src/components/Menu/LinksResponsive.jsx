@@ -5,17 +5,20 @@ import { useTranslation } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
 
 
-function LinksResponsive({menuUl, useMenuHamb}) {
+function LinksResponsive({ menuAbierto, useMenuHamb }) {
   const {t} = useTranslation();
   return (
-    <ul className='responsive' ref={menuUl}>
+    <ul
+      id="menu-mobile"
+      className={`responsive ${menuAbierto ? "on" : ""}`}
+    >
         <Link to='/'>
         <li onClick={useMenuHamb}>{t("menu.link1")}</li>
         </Link>
         <a className='menu-catalogo' href='https://www.famox.com.ar/catalogo/Catalogo-Famox.pdf' target='_blank' rel="noreferrer">
           <li>{t("menu.link2")}</li>
         </a>
-        <Link  to='/ecommerce'>
+        <Link  to='/tienda'>
         <li onClick={useMenuHamb}>{t("menu.link3")}</li>
         </Link>
         <Link to='/nosotros'>

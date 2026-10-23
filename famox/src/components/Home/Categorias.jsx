@@ -1,18 +1,45 @@
-import Categoria from './Categoria/Categoria'
-import useIntersection from 'hooks/intersectionObserver/useIntersection'
-import { useTranslation } from 'react-i18next';
+
+import Categoria from "./Categoria/Categoria";
+import { useTranslation } from "react-i18next";
 
 function Categorias() {
-  const {t} = useTranslation();
-  const {isIntersecting, elementRef} = useIntersection();
+  const { t } = useTranslation();
+
+  const categorias = [
+    {
+      key: "a",
+      img: "/img/Categorias/unidades-suministro.webp",
+      link: "/unidades-de-suministro",
+    },
+    {
+      key: "b",
+      img: "/img/Categorias/gasoterapia2.webp",
+      link: "/gasoterapia",
+    },
+    {
+      key: "c",
+      img: "/img/Categorias/accesorios2.webp",
+      link: "/accesorios",
+    },
+    {
+      key: "d",
+      img: "/img/Categorias/equipos-digitales.webp",
+      link: "/equipos-digitales",
+    },
+  ];
+
   return (
-    <div className='categorias-container' ref={elementRef}>
-        <Categoria titulo={t("home.categorias.a")} img='img/Categorias/unidadesSuministro.webp' link='/unidades-de-suministro' isIntersecting={isIntersecting}/>
-        <Categoria titulo={t("home.categorias.b")} img='img/Categorias/gasoterapia.webp' link='/gasoterapia' isIntersecting={isIntersecting}/>
-        <Categoria titulo={t("home.categorias.c")} img='img/Categorias/accesorios.webp' link='accesorios' isIntersecting={isIntersecting}/>
-        <Categoria titulo={t("home.categorias.d")} img='img/Categorias/llamadores.webp' link='/equipos-digitales' isIntersecting={isIntersecting}/>
+    <div className="categorias-container">
+      {categorias.map((categoria) => (
+        <Categoria
+          key={categoria.key}
+          titulo={t(`home.categorias.${categoria.key}`)}
+          img={categoria.img}
+          link={categoria.link}
+        />
+      ))}
     </div>
-  )
+  );
 }
 
-export default Categorias
+export default Categorias;

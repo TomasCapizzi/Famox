@@ -1,26 +1,46 @@
-import ManualBtn from 'components/Detalle/ManualBtn'
-import React from 'react'
-import useIntersection from 'hooks/intersectionObserver/useIntersection'
-import { useTranslation } from 'react-i18next';
 
-function Item({product}) {
+import { useTranslation } from "react-i18next";
+import ManualBtn from "components/Detalle/ManualBtn";
+
+function Item({ product }) {
   const { i18n } = useTranslation();
-  const lang = i18n.language;  
-  const {isIntersecting, elementRef} = useIntersection({})
-  console.log(product);
-  
+
+  const idioma =
+    i18n.resolvedLanguage?.split("-")[0] || "es";
+
+  const nombre =
+    product.nombre?.[idioma] ||
+    product.nombre?.es ||
+    "";
+
+  const descripcion =
+    product.descripcion?.[idioma] ||
+    product.descripcion?.es ||
+    "";
+
   return (
-    <article className={isIntersecting ? 'accesorio in' : 'accesorio out'} ref={elementRef}>
-      {product.manual && <ManualBtn product={product} />}
-      <div className='acc-img'>
-        <img src={product.img} alt={"accesorio " + product.nombre } loading='lazy' />
+    <article className="accesorio">
+      <div className="acc-img">
+        <img
+          src={product.img}
+          alt={nombre}
+          loading="lazy"
+        />
       </div>
-      <div className='acc-descrip'>
-          <h3>{product.nombre[lang]}</h3>
-          <p>{product.descripcion[lang]}</p>
+
+      <div className="acc-descrip">
+        <h2>{nombre}</h2>
+
+        {descripcion && <p>{descripcion}</p>}
+
+        {product.manual && (
+          <div className="acc-manual">
+            <ManualBtn product={product} />
+          </div>
+        )}
       </div>
     </article>
-  )
+  );
 }
 
-export default Item
+export default Item;

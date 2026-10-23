@@ -1,73 +1,177 @@
-import React, {useContext, useRef, useState} from 'react';
 
-import {CarritoContext} from 'store/carritoContext';
-import CarritoLleno from 'components/Carrito/CarritoLleno';
-import CarritoVacio from 'components/Carrito/CarritoVacio';
-import FormularioCotizacion from 'components/Carrito/FormularioCotizacion';
-import {Helmet} from 'react-helmet-async';
-import {useNavigate} from 'react-router-dom';
+import { useContext, useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { CarritoContext } from "store/carritoContext";
+import CarritoLleno from "components/Carrito/CarritoLleno";
+import CarritoVacio from "components/Carrito/CarritoVacio";
+import FormularioCotizacion from "components/Carrito/FormularioCotizacion";
+
 function Carrito() {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
 
-    const { t } = useTranslation();
+  const { carro, borrarCarrito } = useContext(CarritoContext);
 
-    const {carro, borrarCarrito} = useContext(CarritoContext);
-    const [formHandler, setFormHandler] = useState(false)
-    const formRef = useRef();
-    const navigate = useNavigate();// Funcion nueva del react router para redireccionar
-    function habilitarForm(){
-        setFormHandler(!formHandler);
-        formRef.current.classList.toggle('off')
+  const [formHandler, setFormHandler] = useState(false);
+  const [enviando, setEnviando] = useState(false);
+  const [errorEnvio, setErrorEnvio] = useState(false);
+  const envioEnCurso = useRef(false);
+
+  const cantidadArticulos = carro.length;
+
+  async function pedirCotizacion(e) {
+    e.preventDefault();
+
+    if (envioEnCurso.current || carro.length === 0) {
+      return;
     }
-    async function pedirCotizacion(e){
-        // Enviar mail con los datos del pedido. De esta manera evitamos que se redireccione a la API        
-        e.preventDefault()
-        const pedido = {
-            nombre: e.target.nombre.value,
-            empresa: e.target.empresa.value,
-            email: e.target.mail.value,
-            carro
-        }
-        console.log(pedido);
-        const request = {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(pedido),
-        }
-        const res = await fetch('https://famox-api.vercel.app/formulario/venta', request);
 
-        if(res.ok) {
-            borrarCarrito();
-            navigate('/checkout');
-        } else {
-            console.error("Error enviando pedido");
-            alert("Hubo un error al enviar el pedido. Intente nuevamente.");
+    const form = e.currentTarget;
+
+    const pedido = {
+      nombre: form.elements.namedItem("nombre").value,
+      empresa: form.elements.namedItem("empresa").value,
+      email: form.elements.namedItem("mail").value,
+      carro
+    };
+
+    envioEnCurso.current = true;
+    setEnviando(true);
+    setErrorEnvio(false);
+
+    try {
+      const res = await fetch(
+        "https://famox-api.vercel.app/formulario/venta",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(pedido)
         }
+      );
+
+      if (!res.ok) {
+        throw new Error("Error al enviar la cotización");
+      }
+
+      borrarCarrito();
+      navigate("/checkout");
+
+    } catch (error) {
+      console.error("Error de cotización:", error);
+      setErrorEnvio(true);
+
+    } finally {
+      envioEnCurso.current = false;
+      setEnviando(false);
     }
+  }
+
   return (
-    <section className='carrito'>
-        <Helmet>
-            <title>Carrito</title>
-            <meta name="description" content="Podrás visualizar los productos que hayas seleccionado en nuestro Ecommerce. Una vez tengas todo seleccionado, te enviaremos la cotización correspondiente." />
-        </Helmet>
-        <h1>{t("cart.title")}</h1>
-        <div className='carrito-container'>
-            {
-                carro.length === 0 ? <CarritoVacio/>
-                : <CarritoLleno carro={carro} formHandler={formHandler} habilitarForm={habilitarForm} />               
-            }
-            {carro.length ? 
-                <>
-                    <h3>{t("cart.form.title")}</h3>
-                    <FormularioCotizacion pedirCotizacion={pedirCotizacion} habilitarForm={habilitarForm}  formRef={formRef} />
-                </>
-                : null}
-        </div>  
-    </section>
-  )
+    <main className="carrito">
+      <Helmet>
+        <title>{t("cart.page.title")} | Famox</title>
+        <meta
+          name="description"
+          content={t("cart.page.description")}
+        />
+      </Helmet>
+
+      <div className="carrito__container">
+        <header className="carrito__header">
+          <span className="carrito__eyebrow">
+            {t("cart.page.eyebrow")}
+          </span>
+
+          <h1>{t("cart.page.title")}</h1>
+
+          <p>{t("cart.page.description")}</p>
+        </header>
+
+        <div className="carrito-container">
+          {cantidadArticulos === 0 ? (
+            <div className="carrito__empty">
+              <CarritoVacio />
+
+              <Link
+                to="/tienda"
+                className="carrito__primary"
+              >
+                {t("cart.page.continueShopping")}
+              </Link>
+            </div>
+          ) : (
+            <>
+              <section className="carrito__products">
+                <div className="carrito__section-header">
+                  <h2>{t("cart.page.productsTitle")}</h2>
+
+                  <span>
+                    {cantidadArticulos}{" "}
+                    {t("cart.page.items")}
+                  </span>
+                </div>
+
+                <CarritoLleno carro={carro} />
+
+                <div className="carrito__actions">
+                  <Link
+                    to="/tienda"
+                    className="carrito__secondary"
+                  >
+                    {t("cart.page.continueShopping")}
+                  </Link>
+
+                  {!formHandler && (
+                    <button
+                      type="button"
+                      className="carrito__primary"
+                      onClick={() => setFormHandler(true)}
+                    >
+                      {t("cart.page.requestQuote")}
+                    </button>
+                  )}
+                </div>
+              </section>
+
+              {formHandler && (
+                <section className="carrito__quote">
+                  <div className="carrito__quote-header">
+                    <h2>{t("cart.form.title")}</h2>
+
+                    <p>{t("cart.page.formDescription")}</p>
+                  </div>
+
+                  <FormularioCotizacion
+                    pedirCotizacion={pedirCotizacion}
+                    habilitarForm={() => {
+                      if (!enviando) {
+                        setFormHandler(false);
+                      }
+                    }}
+                    enviando={enviando}
+                  />
+
+                  {errorEnvio && (
+                    <p
+                      className="carrito__error"
+                      role="alert"
+                    >
+                      {t("cart.page.sendError")}
+                    </p>
+                  )}
+                </section>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+    </main>
+  );
 }
 
-export default Carrito
+export default Carrito;

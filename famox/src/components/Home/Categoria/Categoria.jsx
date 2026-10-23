@@ -1,14 +1,29 @@
-import React from 'react';
 
-function Categoria({titulo, img, link, isIntersecting}) {
+import { Link } from "react-router-dom";
+
+function Categoria({ titulo, img, link }) {
   return (
-    <div className={isIntersecting ? 'categoria on':'categoria off'}>
+    <Link to={link} className="productos__categoria">
+      <img src={img} alt={titulo} loading="lazy" />
+
+      <div
+        className="productos__categoria-overlay"
+        aria-hidden="true"
+      />
+
+      <div className="productos__categoria-content">
         <h3>{titulo}</h3>
-        <a href={link}>
-            <img src={img} alt="Categoria de producto" />
-        </a>
-    </div>
-  )
+
+        <span
+          className="productos__categoria-arrow"
+          aria-hidden="true"
+        >
+          ↗
+        </span>
+      </div>
+    </Link>
+  );
 }
 
 export default Categoria;
+

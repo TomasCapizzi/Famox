@@ -1,168 +1,141 @@
-@use '../../theme/index' as *;
-.form-cotizacion{
+
+@use "../../theme/index" as *;
+
+.carrito .form-cotizacion {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  .form-cotizacion__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    width: 100%;
+  }
+
+  .form-cotizacion__field {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+  }
+
+  .form-cotizacion__field--full {
+    grid-column: 1 / -1;
+  }
+
+  label {
+    display: block;
+    margin: 0 0 9px;
+    color: #17211c;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  input {
+    box-sizing: border-box;
     width: 100%;
-    padding: 15px;
+    min-height: 48px;
+    margin: 0;
+    padding: 12px 14px;
+
+    border: 1px solid #d7e0da;
+    border-radius: 5px;
+    background: #fff;
+
+    color: #17211c;
+    font-family: inherit;
+    font-size: 0.95rem;
+
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $color1;
+      box-shadow: 0 0 0 3px rgba(0, 137, 60, 0.1);
+    }
+  }
+
+  .error {
+    margin: 7px 0 0;
+    color: #b42318;
+    font-size: 0.83rem;
+    line-height: 1.5;
+  }
+
+  .form-cotizacion__actions {
+    display: flex;
     align-items: center;
-    input{
-        margin-bottom: 15px;
-        border-radius: 8px;
-        padding: 5px;
-        border: 1px solid $color1;
-        width: 80%;
-    }
-    .btn-submit{
-        background-color: $black;
-        color: $white;
-        font-weight: 700;
-        font-size: 16px;
-        width: 180px;
-        cursor: pointer;
-        transition: .3s ease-in-out all;
-    }
-    .btn-submit:hover{
-        background-color: $color2;
-        color: $color1;
-    }
-    .disabled{
-        cursor: not-allowed;
-        input{
-            pointer-events: none;
-            background-color: $color2;
-            color: $black;
-        }
-    }
-    .btn-seguirComprando{
-        background-color: $color1;
-        color: $white;
-        border: none;
-        font-weight: 700;
-        font-size: 16px;
-        width: 180px;
-        cursor: pointer;
-        transition: .3s ease-in-out all;
-        margin-bottom: 15px;
-        border-radius: 8px;
-        padding: 5px;
-        border: 1px solid $color1;
-    }
-    .error{
-        font-size: 0.8rem;
-        margin: 0;
-        color: red;
-    }
-}
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+  }
 
-@media only screen and (max-width: 375px){
-    .form-cotizacion{
-        padding: 5px;
-        label{
-            font-size: 0.8rem;
-            margin-bottom: 2px;
-        }
-        input{
-            margin-bottom: 10px;
-            border-radius: 5px;
-            padding: 2px;
-            width: 70%;
-        }
-        .btn-submit{
-            margin-top: 20px;
-            font-weight: 500;
-            font-size: 12px;
-            width: 120px;
-        }
-        .btn-seguirComprando{
-            font-weight: 500;
-            font-size: 12px;
-            width: 120px;
-        }
-    }   
-}
+  .btn-submit,
+  .btn-seguirComprando {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-@media only screen and (min-width: 376px)and (max-width: 568px){
-    .form-cotizacion{
-        padding: 5px;
-        label{
-            font-size: 0.8rem;
-            margin-bottom: 2px;
-        }
-        input{
-            margin-bottom: 10px;
-            border-radius: 5px;
-            padding: 2px;
-            width: 70%;
-        }
-        .btn-submit{
-            font-weight: 500;
-            font-size: 14px;
-            width: 120px;
-        }
-        .btn-seguirComprando{
-            font-weight: 500;
-            font-size: 14px;
-            width: 120px;
-        }
-    }   
-}
+    width: auto;
+    min-height: 48px;
+    margin: 0;
+    padding: 12px 24px;
 
-@media only screen and (min-width: 569px)and (max-width: 768px){
-    .form-cotizacion{
-        padding: 5px;
-        label{
-            font-size: 1rem;
-            margin-bottom: 2px;
-        }
-        input{
-            margin-bottom: 10px;
-            border-radius: 5px;
-            padding: 2px;
-            width: 75%;
-        }
-        .btn-submit{
-            font-weight: 500;
-            font-size: 14px;
-            width: 130px;
-            padding: 6px 8px;
-        }
-        .btn-seguirComprando{
-            font-weight: 500;
-            font-size: 14px;
-            width: 130px;
-            padding: 6px 8px;
-        }
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    cursor: pointer;
+  }
+
+  .btn-submit {
+    border: 1px solid $color1;
+    background: $color1;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background: #007332;
     }
-}
-@media only screen and (min-width: 769px) and (max-width: 1024px){
-    .form-cotizacion{
-        .btn-submit{
-            font-weight: 500;
-            font-size: 16px;
-            width: 130px;
-            padding: 6px 8px;
-        }
-        .btn-seguirComprando{
-            font-weight: 500;
-            font-size: 16px;
-            width: 130px;
-            padding: 6px 8px;
-        }
+  }
+
+  .btn-seguirComprando {
+    border: 1px solid #cbd6ce;
+    background: #fff;
+    color: #17211c;
+
+    &:hover:not(:disabled) {
+      border-color: $color1;
+      color: $color1;
     }
-}
-@media only screen and (min-width: 1025px) and (max-width: 1280px){
-    .form-cotizacion{
-        .btn-submit{
-            font-weight: 500;
-            font-size: 16px;
-            width: 150px;
-            padding: 6px 8px;
-        }
-        .btn-seguirComprando{
-            font-weight: 500;
-            font-size: 16px;
-            width: 150px;
-            padding: 6px 8px;
-        }
+  }
+
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 650px) {
+    .form-cotizacion__grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
     }
+
+    .form-cotizacion__actions {
+      flex-direction: column-reverse;
+      align-items: stretch;
+    }
+
+    .btn-submit,
+    .btn-seguirComprando {
+      width: 100%;
+    }
+  }
 }

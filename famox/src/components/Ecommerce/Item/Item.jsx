@@ -1,18 +1,19 @@
-import EleccionesContainer from './Eleccion/EleccionesContainer';
-import Descripcion from './Eleccion/Descripcion';
-import useIntersection from 'hooks/intersectionObserver/useIntersection'
 
+import EleccionesContainer from "./Eleccion/EleccionesContainer";
+import Descripcion from "./Eleccion/Descripcion";
 
-function Item({item}) {
-
-  const {isIntersecting, elementRef} = useIntersection({});
-
+function Item({ item, tipo }) {
   return (
-    <div ref={elementRef} className={isIntersecting ? 'item-ecom in' : 'item-ecom out'}>
-      <Descripcion item={item}/>
-      <EleccionesContainer item={item}/>
-    </div>
-  )
+    <article className="item-ecom tienda-producto">
+      <Descripcion item={item} />
+
+      <EleccionesContainer
+        item={item}
+        tipo={tipo}
+      />
+    </article>
+  );
 }
 
 export default Item;
+

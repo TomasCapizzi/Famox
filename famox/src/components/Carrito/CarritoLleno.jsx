@@ -1,13 +1,19 @@
-import React from 'react'
-import Tabla from './Tabla'
 
-function CarritoLleno({carro, formHandler, habilitarForm}) {
+import Tabla from "./Tabla";
+
+function CarritoLleno({ carro }) {
   return (
-    <article className='carro-lleno'>
+    <article className="carro-lleno">
+      <div
+        className="carrito__tabla-scroll"
+        role="region"
+        aria-label="Productos seleccionados"
+        tabIndex={0}
+      >
         <Tabla carro={carro} />
-        {/*formHandler ? null : <button onClick={habilitarForm}>Pedir Cotización</button> */}
+      </div>
     </article>
-  )
+  );
 }
 
-export default CarritoLleno
+export default CarritoLleno;

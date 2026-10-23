@@ -1,22 +1,38 @@
-import Categorias from 'components/Home/Categorias'
-import {Helmet} from 'react-helmet-async';
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+
+import React from "react";
+import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
+
+import Categorias from "components/Home/Categorias";
 
 function Productos() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
+
   return (
-    <section className='productos'>
-        <Helmet>
-          <title>Productos</title>
-          <meta name="description" content="Aquí podra observar nuestros productos en sus 4 categorías. Gasoterapia, Unidades de Suministro, Accesorios y Equipos Digitales." />
-        </Helmet>
-        <h1>{t("productos.title")}</h1>
-        <div>
-            <Categorias/>
-        </div>
-    </section>
-  )
+    <main className="productos">
+      <Helmet>
+        <title>{t("productos.title")} | Famox</title>
+        <meta
+          name="description"
+          content={t("productos.detalle.description")}
+        />
+      </Helmet>
+
+      <div className="productos__container">
+        <header className="productos__header">
+          <span className="productos__eyebrow">
+            {t("productos.detalle.eyebrow")}
+          </span>
+
+          <h1>{t("productos.detalle.heading")}</h1>
+
+          <p>{t("productos.detalle.description")}</p>
+        </header>
+
+        <Categorias />
+      </div>
+    </main>
+  );
 }
 
-export default Productos
+export default Productos;

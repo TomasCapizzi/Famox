@@ -9,7 +9,7 @@ import FormSubmit from './FormSubmit';
 import { useTranslation } from 'react-i18next';
 
 
-function Form({enviarConsulta}) {
+function Form({ enviarConsulta, enviando }) {
 
   //const [captchaToken, setCaptchaToken] = useState('');
   const {t} = useTranslation()
@@ -26,11 +26,21 @@ function Form({enviarConsulta}) {
     asuntoError, 
     empresaError,
     handlerSubmit,
+    reiniciarValores
   } = useValidarFormContacto(); // Hook de validación
 
     
   return (
-    <form action="" method='POST' onSubmit={(e)=> enviarConsulta(e, e.target.extra_field.value)} >
+    <form
+      method="POST"
+      onSubmit={(e) =>
+        enviarConsulta(
+          e,
+          e.currentTarget.elements.namedItem("extra_field").value,
+          reiniciarValores
+        )
+      }
+    >
       <p>{t("contacto.form.title")}</p>
       <FormNombre validarNombre={validarNombre} nombreError={nombreError} />
       <FormEmpresa validarEmpresa={validarEmpresa} empresaError={empresaError} />
@@ -54,7 +64,10 @@ function Form({enviarConsulta}) {
           overflow: "hidden",
         }}
       />
-      <FormSubmit handlerSubmit={handlerSubmit}/>
+      <FormSubmit
+        handlerSubmit={handlerSubmit}
+        enviando={enviando}
+  />
     </form>
   )
 }

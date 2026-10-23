@@ -16,7 +16,7 @@ function Links({carro}) {
         <a className='menu-catalogo' href='https://www.famox.com.ar/catalogo/Catalogo-Famox.pdf' target='_blank' rel="noreferrer">
           <li>{t("menu.link2")}</li>
         </a>
-        <Link  to='/ecommerce'>
+        <Link  to='/tienda'>
         <li>{t("menu.link3")}</li>
         </Link>
         <Link to='/nosotros'>

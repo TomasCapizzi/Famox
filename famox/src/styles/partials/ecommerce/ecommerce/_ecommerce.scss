@@ -1,64 +1,1105 @@
-@use '../../../theme/index' as *;
-.container-ecommerce{
+
+@use "../../../theme/index" as *;
+
+.container-ecommerce.tienda {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 95px 24px 110px;
+
+  background: #fff;
+  color: #17211c;
+
+  .tienda__container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  // ENCABEZADO
+
+  .tienda__header {
+    max-width: 850px;
+    margin-bottom: 55px;
+
+    .tienda__eyebrow {
+      display: block;
+      margin-bottom: 20px;
+
+      color: $color1;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      border: none;
+      color: #17211c;
+      font-size: clamp(2.5rem, 4.2vw, 4.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      text-align: left;
+    }
+
+    p {
+      max-width: 680px;
+      margin: 25px 0 0;
+
+      color: #626b66;
+      font-size: 1.06rem;
+      line-height: 1.75;
+    }
+  }
+
+  // DISTRIBUCIÓN
+
+  .tienda__layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    align-items: start;
+    gap: 35px;
+    width: 100%;
+  }
+
+  .tienda__resultados {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .tienda__estado {
     display: flex;
-    width: 85%;
-    flex-wrap: wrap;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 
-    h1{
-        width: 85%;
-        padding-bottom: 15px;
-        border-bottom: 2px solid $color1;
-        text-align: center;
+    min-height: 250px;
+    margin: 0;
+    color: #626b66;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  // FILTROS
+
+  .tienda-filtros {
+    position: sticky;
+    top: 100px;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 28px 24px;
+
+    border: 1px solid #e8ece9;
+    border-radius: 8px;
+    background: #f4f4f4;
+  }
+
+  .tienda-filtros__header {
+    h2 {
+      margin: 0 0 8px;
+      color: #17211c;
+      font-size: 1.35rem;
+      line-height: 1.3;
     }
 
-    .ecommerce{
-        display: flex;
-        justify-content: flex-start;
+    p {
+      margin: 0;
+      color: #626b66;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+  }
+
+  .tienda-filtros__opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px 0;
+  }
+
+  .tienda-filtros__opcion {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    cursor: pointer;
+
+    input {
+      flex-shrink: 0;
+      width: 17px;
+      height: 17px;
+      margin: 2px 0 0;
+
+      accent-color: $color1;
+      cursor: pointer;
+    }
+
+    span {
+      color: #17211c;
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+  }
+
+  .tienda-filtros__reset {
+    width: 100%;
+    min-height: 43px;
+    padding: 10px 14px;
+
+    border: 1px solid #ced8d1;
+    border-radius: 5px;
+    background: transparent;
+
+    color: #17211c;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      border-color: $color1;
+      color: $color1;
+    }
+  }
+
+  // GRUPOS DE PRODUCTOS
+
+  .tienda__grupo {
+    width: 100%;
+    margin-bottom: 55px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .tienda__grupo-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e8ece9;
+
+    h2 {
+      margin: 0;
+      color: #17211c;
+      font-size: clamp(1.45rem, 2.2vw, 2rem);
+      line-height: 1.3;
+    }
+
+    span {
+      color: #7b8580;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+  }
+
+  // ANULAR ESTILOS DE CATEGORÍA DEL DISEÑO ANTERIOR
+
+  .categoria {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  // TARJETAS CONFIGURABLES
+
+  .tienda-producto {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(0, 190px) minmax(0, 1fr);
+    align-items: start;
+    gap: 25px;
+
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 22px;
+
+    border: 1px solid #e8ece9;
+    border-radius: 8px;
+    background: #fff;
+
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+
+    &:hover {
+      border-color: #cbdacf;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.045);
+    }
+
+    // FOTO Y NOMBRE
+
+    .item-info {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 15px;
+
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+
+      h5 {
+        order: 2;
         width: 100%;
+        height: auto;
+        margin: 0;
+
+        color: #17211c;
+        font-size: 1.1rem;
+        font-weight: 700;
+        line-height: 1.4;
+        text-align: left;
+      }
+
+      img {
+        order: 1;
+        display: block;
+
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        height: 190px;
+        margin: 0;
+        padding: 12px;
+
+        border-radius: 5px;
+        background: #f4f4f4;
+        object-fit: contain;
+
+        cursor: default;
+      }
     }
+
+    // ÁREA DE CONFIGURACIÓN
+
+    .elecciones-container {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+    }
+
+    .elecciones {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .eleccion-producto {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+
+  // TABLET
+
+  @media (max-width: 1100px) {
+    .tienda__layout {
+      grid-template-columns: 225px minmax(0, 1fr);
+      gap: 22px;
+    }
+
+    .tienda-producto {
+      grid-template-columns: 1fr;
+      gap: 22px;
+
+      .item-info {
+        flex-direction: row;
+        align-items: center;
+
+        img {
+          width: 155px;
+          height: 150px;
+          flex-shrink: 0;
+        }
+
+        h5 {
+          flex: 1;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    padding: 75px 20px 90px;
+
+    .tienda__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .tienda-filtros {
+      position: static;
+      padding: 25px;
+    }
+
+    .tienda-filtros__opciones {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin: 22px 0;
+    }
+
+    .tienda-producto {
+      .eleccion-producto {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .eleccion-producto .container,
+      .eleccion-producto .container-unidsum {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        width: 100%;
+      }
+
+      .eleccion-producto .container-opciones,
+      .eleccion-producto .selecciones,
+      .eleccion-producto .container-seleccion {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  // CELULAR
+
+  @media (max-width: 600px) {
+    padding: 65px 20px 80px;
+
+    .tienda__header {
+      margin-bottom: 35px;
+
+      h1 {
+        font-size: clamp(2rem, 8vw, 2.7rem);
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 0.98rem;
+      }
+    }
+
+    .tienda-filtros {
+      padding: 22px 18px;
+    }
+
+    .tienda-filtros__opciones {
+      grid-template-columns: 1fr;
+    }
+
+    .tienda__grupo {
+      margin-bottom: 40px;
+    }
+
+    .tienda__grupo-header {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .tienda-producto {
+      padding: 16px;
+      gap: 22px;
+
+      .item-info {
+        align-items: flex-start;
+        flex-direction: column;
+
+        img {
+          width: 100%;
+          height: 220px;
+        }
+
+        h5 {
+          width: 100%;
+          font-size: 1.15rem;
+        }
+      }
+
+      .eleccion-producto .encabezado {
+        max-width: 100%;
+      }
+    }
+  }
 }
 
-@media only screen and (max-width: 375px){
-    .container-ecommerce{
-        width: 90%;
-        h1{
-            width: 100%;
-        }    
-        .ecommerce{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            align-items: center;
-        }
+
+/* AJUSTES INTERNOS DEL CONFIGURADOR DE TIENDA */
+
+.container-ecommerce.tienda {
+
+  .tienda-producto {
+
+    .elecciones-container,
+    .elecciones {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      margin: 0;
     }
+
+    .eleccion-producto {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 18px;
+
+      width: 100%;
+      min-width: 0;
+    }
+
+    // OPCIONES Y SELECCIONES
+
+    .eleccion-producto > .container,
+    .eleccion-producto > .container-unidsum {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+      align-items: start;
+      gap: 20px;
+
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+    }
+
+    .container-opciones,
+    .selecciones,
+    .container-seleccion {
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+    }
+
+    .selecciones {
+      align-items: flex-start;
+    }
+
+    .selecciones-container {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    // BOTONES DESPLEGABLES
+
+    .eleccion-producto .encabezado {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 260px;
+      min-height: 44px;
+      margin: 0;
+      padding: 8px 15px;
+
+      justify-content: space-between;
+      gap: 12px;
+
+      p {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+    }
+
+    // MENSAJES DE CONFIGURACIÓN INCOMPLETA
+
+    .eleccion-producto > .botonera-adv {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
+      padding: 12px 16px;
+
+      border-radius: 5px;
+      background: #f4f4f4;
+
+      color: #626b66;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    // CONTROLES PARA AGREGAR AL CARRITO
+
+    .eleccion-producto > .botonera {
+      align-self: flex-end;
+      width: 100%;
+      max-width: 260px;
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .eleccion-producto > .container,
+      .eleccion-producto > .container-unidsum {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .eleccion-producto .encabezado {
+        max-width: 100%;
+      }
+
+      .eleccion-producto > .botonera {
+        align-self: stretch;
+        max-width: 100%;
+      }
+    }
+  }
 }
-@media only screen and (min-width: 376px)and (max-width: 860px){
-    .container-ecommerce{
-        width: 85%;
-        h1{
-            width: 100%;
-        }    
-        .ecommerce{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            align-items: center;
-        }
+
+/* DESPLEGABLES DE CONFIGURACIÓN - TIENDA */
+
+.container-ecommerce.tienda {
+
+  .tienda-producto {
+
+    .elecciones-container,
+    .elecciones {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
     }
+
+    .modal-conectores,
+    .modal-gases,
+    .modal-rangos,
+    .modal-modelos-container {
+      width: 100%;
+      min-width: 0;
+      align-items: stretch;
+      margin-bottom: 12px;
+    }
+
+    // Las opciones ocupan espacio real dentro de la tarjeta
+
+    .modal-conectores .opciones-conectores,
+    .modal-gases .opciones-gases,
+    .modal-rangos .opciones-rangos,
+    .modal-modelos-container .opciones-modelos {
+      position: static;
+      top: auto;
+
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      margin-top: 6px;
+
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      border: 1px solid #dce6df;
+      border-radius: 5px;
+      background: #fff;
+      box-shadow: none;
+    }
+
+    // Conservamos la apertura controlada por React
+
+    .modal-conectores .opciones-conectores.on,
+    .modal-gases .opciones-gases.on,
+    .modal-rangos .opciones-rangos.on,
+    .modal-modelos-container .opciones-modelos.on {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    // Cada opción del desplegable
+
+    .opciones-conectores .conector,
+    .opciones-gases .gas,
+    .opciones-rangos .rango,
+    .opciones-modelos .modal-modelo {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      min-height: 65px;
+      padding: 10px 12px;
+
+      border: none;
+      border-bottom: 1px solid #e8ece9;
+      background: #fff;
+
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: #f4f8f5;
+        box-shadow: none;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      img {
+        max-width: 55px;
+        max-height: 55px;
+        object-fit: contain;
+      }
+
+      p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
+    }
+
+    // Avisos debajo del configurador
+
+    .eleccion-producto > .botonera-adv {
+      max-width: 100%;
+      margin-top: 5px;
+      padding: 14px 16px;
+      line-height: 1.6;
+    }
+  }
 }
-@media only screen and (min-width: 861px)and (max-width: 1024px){
-    .container-ecommerce{
-        width: 95%;
-        h1{
-            width: 90%;
-        }    
-        .ecommerce{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            align-items: center;
-        }
+
+/* TIENDA - DESPLEGABLES DE UNIDADES DE SUMINISTRO */
+
+.container-ecommerce.tienda {
+
+  .tienda-producto {
+
+    .eleccion-unidsum,
+    .eleccion-gasconec,
+    .longitud-panel {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      width: 100%;
+      min-width: 0;
+      margin-bottom: 12px;
     }
+
+    // Evitar que las opciones se superpongan
+    // a los demás productos
+
+    .eleccion-unidsum > .opciones,
+    .eleccion-gasconec > .opciones,
+    .longitud-panel > .opciones {
+      position: static;
+      top: auto;
+      left: auto;
+      right: auto;
+
+      box-sizing: border-box;
+      display: none;
+      flex-direction: column;
+
+      width: 100%;
+      min-width: 0;
+      height: auto;
+      max-height: 270px;
+
+      margin: 6px 0 0;
+      padding: 12px;
+
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      background: #fff;
+      border: 1px solid #dce6df;
+      border-radius: 5px;
+      box-shadow: none;
+    }
+
+    // React sigue controlando qué selector
+    // está abierto mediante la clase "on"
+
+    .eleccion-unidsum > .opciones.on,
+    .eleccion-gasconec > .opciones.on,
+    .longitud-panel > .opciones.on {
+      display: flex;
+    }
+
+    // CAMPOS DE CONEXIONES DE GASES
+
+    .eleccion-gasconec .conexiones {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        55px
+        25px;
+
+      align-items: center;
+      gap: 10px;
+
+      width: 100%;
+      margin: 0;
+
+      select,
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        min-height: 34px;
+        margin: 0;
+
+        border: 1px solid #dce6df;
+        border-radius: 5px;
+        background: #fff;
+
+        font-size: 0.85rem;
+      }
+
+      svg {
+        cursor: pointer;
+        color: #00893c;
+        font-size: 1.2rem;
+      }
+    }
+
+    // LONGITUD DE PANEL
+
+    .longitud-panel > .opciones {
+      gap: 10px;
+
+      input,
+      select {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 38px;
+        margin: 0;
+        padding: 8px;
+
+        border: 1px solid #dce6df;
+        border-radius: 5px;
+        font-size: 0.9rem;
+      }
+
+      button {
+        width: 100%;
+        min-height: 40px;
+        margin: 0;
+        padding: 9px 14px;
+
+        background: #00893c;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+
+    // CELULAR
+
+    @media (max-width: 650px) {
+
+      .eleccion-gasconec .conexiones {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+        input {
+          width: 100%;
+        }
+
+        svg {
+          justify-self: center;
+        }
+      }
+
+      .eleccion-unidsum > .opciones,
+      .eleccion-gasconec > .opciones,
+      .longitud-panel > .opciones {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+/* TIENDA - ACCESORIOS Y EQUIPOS DIGITALES */
+
+.container-ecommerce.tienda {
+
+  .tienda-producto {
+
+    // ACCESORIOS: DISTRIBUCIÓN PRINCIPAL
+
+    .eleccion-accesorio {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+      align-items: start;
+      gap: 20px;
+
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+    }
+
+    .eleccion-accesorio .acc-container,
+    .eleccion-accesorio .acc-selecc-container {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+    }
+
+    // ACCESORIOS: CONTENEDORES DE CADA OPCIÓN
+
+    .eleccion-accesorio .modelo-acc,
+    .eleccion-accesorio .modelo-acc-us {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0;
+      margin: 0 0 12px;
+    }
+
+    .eleccion-accesorio .encabezado-acc {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      padding: 8px 12px;
+
+      border: 1px solid #00893c;
+      border-radius: 5px;
+      cursor: pointer;
+
+      p {
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      img {
+        flex-shrink: 0;
+        width: 55px;
+        height: 55px;
+        object-fit: contain;
+      }
+
+      svg {
+        flex-shrink: 0;
+      }
+    }
+
+    // DESPLEGABLES DE ACCESORIOS
+
+    .eleccion-accesorio .modelo-acc > .opciones-accesorios,
+    .eleccion-accesorio .modelo-acc-us > .opciones-accesorios {
+      position: static;
+      top: auto;
+      left: auto;
+      right: auto;
+
+      box-sizing: border-box;
+      display: none;
+
+      width: 100%;
+      min-width: 0;
+      height: auto;
+      max-height: 270px;
+      margin: 7px 0 0;
+      padding: 12px;
+
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      border: 1px solid #dce6df;
+      border-radius: 5px;
+      background: #fff;
+      box-shadow: none;
+    }
+
+    // Accesorios con gas y cantidad
+
+    .eleccion-accesorio
+    .modelo-acc > .opciones-accesorios.on {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    // Accesorios con varios modelos
+
+    .eleccion-accesorio
+    .modelo-acc-us > .opciones-accesorios.on {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .eleccion-accesorio .modelo-acc-us .modal-modelo {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      padding: 10px;
+
+      border-bottom: 1px solid #e8ece9;
+
+      img {
+        width: 55px;
+        height: 55px;
+        object-fit: contain;
+      }
+
+      p {
+        flex: 1;
+        min-width: 0;
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    // EQUIPOS DIGITALES
+
+    .eleccion-equiposDig {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      width: 100%;
+      min-width: 0;
+      margin: 0 0 15px;
+    }
+
+    .eleccion-equiposDig > .opciones {
+      position: static;
+      top: auto;
+      left: auto;
+      right: auto;
+
+      box-sizing: border-box;
+      display: none;
+
+      width: 100%;
+      min-width: 0;
+      height: auto;
+      max-height: 280px;
+      margin: 7px 0 0;
+      padding: 0;
+
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      border: 1px solid #dce6df;
+      border-radius: 5px;
+      background: #fff;
+      box-shadow: none;
+    }
+
+    .eleccion-equiposDig > .opciones.on {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .eleccion-equiposDig .opciones .modelo {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      padding: 13px 15px;
+
+      border: none;
+      border-bottom: 1px solid #e8ece9;
+      background: #fff;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background: #f4f8f5;
+        box-shadow: none;
+      }
+
+      p {
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        text-align: left;
+      }
+    }
+
+    // RESPONSIVE
+
+    @media (max-width: 700px) {
+
+      .eleccion-accesorio {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .eleccion-accesorio .acc-container,
+      .eleccion-accesorio .acc-selecc-container {
+        width: 100%;
+      }
+
+      .eleccion-equiposDig > .opciones,
+      .eleccion-accesorio .modelo-acc > .opciones-accesorios,
+      .eleccion-accesorio .modelo-acc-us > .opciones-accesorios {
+        max-height: 240px;
+      }
+    }
+  }
 }

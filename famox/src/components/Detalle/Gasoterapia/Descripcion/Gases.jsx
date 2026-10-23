@@ -1,24 +1,41 @@
-import GASES from 'data/gases';
-import React from 'react';
-import { useTranslation } from 'react-i18next';
 
-function Gases({product}) {
-    const {t} = useTranslation();
-//    const [img, setImg] = useState()
-    return (
+import GASES from "data/gases";
+import { useTranslation } from "react-i18next";
 
-        <article className='gases'>
-            <h4>{t("productos.detalle.op2")}</h4>
-            <div>
-                {product &&
-                    product.map(
-                        item => <img src={'/'+ GASES.filter(gas => gas.nombre === item)[0].img} alt={item} key={item} />
-                    )
-                }
-                
+function Gases({ product }) {
+  const { t } = useTranslation();
+
+  return (
+    <section className="gases">
+      <h2>{t("productos.detalle.op2")}</h2>
+
+      <div className="gases__list">
+        {product.map((nombre, index) => {
+          const gas = GASES.find(
+            (item) => item.nombre === nombre
+          );
+
+          return (
+            <div
+              className="gases__item"
+              key={`${nombre}-${index}`}
+            >
+              {gas?.img ? (
+                <img
+                  src={`/${gas.img.replace(/^\/+/, "")}`}
+                  alt={nombre}
+                  title={nombre}
+                  loading="lazy"
+                />
+              ) : (
+                <span>{nombre}</span>
+              )}
             </div>
-        </article>    
-    )
+          );
+        })}
+      </div>
+    </section>
+  );
 }
 
 export default Gases;

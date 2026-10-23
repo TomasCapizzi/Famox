@@ -10,6 +10,10 @@ function CarritoItem({item}) {
   const {t} = useTranslation();
   const { i18n } = useTranslation();
   const lang = i18n.language; 
+
+  if (item.nombre?.es === "Llave de Vacío") {
+    console.log("Llave de Vacío:", item);
+  }
    
   return (
     <tr className='carrito-item'>
@@ -37,8 +41,13 @@ function CarritoItem({item}) {
           }
         </ul>
       </td>
-      <td><p>{item.codigo? item.codigo :item.modelo.nombre[lang]}</p></td>
-      <td><p>{item.cantidad}</p></td>
+      <td data-label={t("cart.tabla.t3")}>
+        <p>{item.codigo || item.modelo?.codigo || "—"}</p>
+      </td>
+
+      <td data-label={t("cart.tabla.t4")}>
+        <p>{item.cantidad}</p>
+      </td>
       <td><BsTrashFill onClick={()=> removerItem(item)} /></td>    
     </tr>
   )

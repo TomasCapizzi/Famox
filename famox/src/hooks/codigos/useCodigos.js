@@ -13,7 +13,7 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
         else if( nombre.es === 'Aspirador Venturi' ){
             return buscarCodigoAspiradorVenturi(gas, conector)
         } else if(nombre.es === 'Llave de Vacío' ){
-            return buscarCodigoLlaveVacio(conector, modelo.nombre)
+            return buscarCodigoLlaveVacio(conector, modelo.nombre.es)
         } else if(nombre.es === 'Regulador de Baja Presión' ){
             return buscarCodigoReguladorBaja(gas, conector)
         } else if(nombre.es === 'Regulador de Vacío' ){
@@ -435,49 +435,49 @@ const useCodigo = (nombre, gas, conector, rango, modelo)=> {
         //Conector: DISS
         if(conector === 'DISS' && modelo === 'Con Vacuómetro'){
             //setCodigo('PLV002')
-            return 'PLV002'
+            return 'PLV022'
         }
         if(conector === 'DISS' && modelo === 'Sin Vacuómetro'){
             //setCodigo('PLV001')
-            return 'PLV001'
+            return 'PLV021'
         }
 
         //Conector: AFNOR
         if(conector === 'AFNOR' && modelo === 'Con Vacuómetro'){
             //setCodigo('PLV004')
-            return 'PLV004'
+            return 'PLV024'
         }
         if(conector === 'AFNOR' && modelo === 'Sin Vacuómetro'){
             //setCodigo('PLV003')
-            return 'PLV003'
+            return 'PLV023'
         }
 
         //Conector: SS/AGA
         if(conector === 'SS/AGA' && modelo === 'Con Vacuómetro'){
             //setCodigo('PLV006')
-            return 'PLV006'
+            return 'PLV026'
         }
         if(conector === 'SS/AGA' && modelo === 'Sin Vacuómetro'){
             //setCodigo('PLV005')
-            return 'PLV005'
+            return 'PLV025'
         }
         //Conector: OHMEDA
         if(conector === 'OHMEDA' && modelo === 'Con Vacuómetro'){
             //setCodigo('PLV008')
-            return 'PLV008'
+            return 'PLV028'
         }
         if(conector === 'OHMEDA' && modelo === 'Sin Vacuómetro'){
             //setCodigo('PLV007')
-            return 'PLV007'
+            return 'PLV027'
         }
         //Conector: ON
         if(conector === 'ON' && modelo === 'Con Vacuómetro'){
             //setCodigo('PLV010')
-            return 'PLV010'
+            return 'PLV030'
         }
         if(conector === 'ON' && modelo === 'Sin Vacuómetro'){
             //setCodigo('PLV009')
-            return 'PLV009'
+            return 'PLV029'
         }
     }
 

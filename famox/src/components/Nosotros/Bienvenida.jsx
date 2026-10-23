@@ -5,7 +5,11 @@ function Bienvenida() {
   const {t} = useTranslation();
   return (
     <div className='seccion1'>
-        <img src="img/Nosotros/nos1.jpg" alt="Mezclador de gases" />
+        <img
+          src="/img/Nosotros/nos1.jpg"
+          alt="Mezclador de gases Famox"
+          loading="lazy"
+        />
         <p>{t("nosotros.txt1")}</p>
     </div>
   )

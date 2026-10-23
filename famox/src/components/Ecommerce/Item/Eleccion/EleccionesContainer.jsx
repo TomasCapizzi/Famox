@@ -1,22 +1,36 @@
-import {useRef} from 'react'
 
-import EleccionAccesorio from './EleccionProducto/Accesorios/EleccionAccesorio';
-import EleccionGasoterapia from './EleccionProducto/Gasoterapia/EleccionGasoterapia';
-import EleccionUnidSum from './EleccionProducto/UnidSum/EleccionUnidSum';
-import EleccionEquipoDigital from './EleccionProducto/EquiposDigitales/EleccionEquipoDigital';
+import EleccionAccesorio from "./EleccionProducto/Accesorios/EleccionAccesorio";
+import EleccionGasoterapia from "./EleccionProducto/Gasoterapia/EleccionGasoterapia";
+import EleccionUnidSum from "./EleccionProducto/UnidSum/EleccionUnidSum";
+import EleccionEquipoDigital from "./EleccionProducto/EquiposDigitales/EleccionEquipoDigital";
 
-function EleccionesContainer({item}) {
-  const containerModalRef = useRef();
-  const modalWinwowRef = useRef()
+function EleccionesContainer({ item, tipo }) {
+  function mostrarEleccion() {
+    switch (tipo) {
+      case "gasoterapia":
+        return <EleccionGasoterapia item={item} />;
+
+      case "accesorios":
+        return <EleccionAccesorio item={item} />;
+
+      case "digitales":
+        return <EleccionEquipoDigital item={item} />;
+
+      case "unidades":
+        return <EleccionUnidSum item={item} />;
+
+      default:
+        return null;
+    }
+  }
+
   return (
-    <section className='elecciones-container' ref={containerModalRef}>
-      <article className='elecciones' ref={modalWinwowRef}>
-        {
-          item.gasoterapia ? <EleccionGasoterapia item={item}/> :  item.accesorio ? <EleccionAccesorio item={item}/> : item.equipoDigital ? <EleccionEquipoDigital item={item}/> : <EleccionUnidSum item={item}/>
-        }
-      </article>      
+    <section className="elecciones-container">
+      <article className="elecciones">
+        {mostrarEleccion()}
+      </article>
     </section>
-  )
+  );
 }
 
 export default EleccionesContainer;

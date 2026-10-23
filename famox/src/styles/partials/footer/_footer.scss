@@ -1,110 +1,133 @@
-@use '../../theme/index' as *;
 
-footer{
-    margin-top: 80px;
+@use "../../theme/index" as *;
+
+.site-footer {
+  width: 100%;
+  margin: 0;
+  padding: 80px 0 25px;
+  background: #17211c;
+  color: #fff;
+
+  &__container {
+    width: min(100% - 60px, 1300px);
+    margin: 0 auto;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 55px;
+    padding-bottom: 70px;
+  }
+
+  // MARCA
+
+  &__brand {
+    max-width: 300px;
+
+    p {
+      margin: 28px 0 0;
+      color: #bdc8c0;
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  // COLUMNAS
+
+  &__column {
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    border-top: 2px solid #ddd;
-    .footer-cabecera{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 10px;
-        background-color: $color2;
-        img{
-            width: 90px;
-            height: 65px;
-            padding: 5px;
-        }
-    }
-    .footer-info{
-        width: 100%;
-        background-color: $black;
-        color: $color2;
-        display: flex;
-        justify-content: space-around;
-        div{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin: 10px;
-            padding-bottom: 15px;
-            a{
-                text-decoration: none;
-                color: $white;
-            }
-            h5{
-                font-size: 0.9rem;
-            }
-            p{
-                font-size: 0.8rem;
-            }
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
 
-            .footer-links{
-                p{
-                    cursor: pointer;
-                }
-                p:hover{
-                    text-decoration: underline;
-                }
-            }
-        }
+    h3 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
     }
-}
 
-@media only screen and (max-width: 400px){
-    footer{
-        margin-top: 50px;
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        border-top: 2px solid #ddd;
-        .footer-cabecera{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-            background-color: $color2;
-            img{
-                width: 90px;
-                height: 65px;
-                padding: 5px;
-            }
-        }
-        .footer-info{
-            width: 100%;
-            background-color: $black;
-            color: $color2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            div{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin: 10px;
-                padding-bottom: 15px;
-                a{
-                    text-decoration: none;
-                    color: $white;
-                }
-                h5{
-                    font-size: 0.9rem;
-                }
-                p{
-                    font-size: 0.8rem;
-                }
-    
-                .footer-links{
-                    p{
-                        cursor: pointer;
-                    }
-                    p:hover{
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
+    a {
+      color: #bdc8c0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: #54c582;
+      }
     }
+
+    p {
+      margin: 0;
+      color: #bdc8c0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  &__contact-link {
+    margin-top: 8px;
+    color: #54c582 !important;
+    font-weight: 600;
+  }
+
+  // PARTE INFERIOR
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: #94a39a;
+    font-size: 0.8rem;
+  }
+
+  // TABLET
+
+  @media (max-width: 1050px) {
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 45px;
+    }
+  }
+
+  // CELULAR
+
+  @media (max-width: 600px) {
+    padding: 65px 0 25px;
+
+    &__container {
+      width: calc(100% - 40px);
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 35px;
+      padding-bottom: 45px;
+    }
+
+    &__brand {
+      max-width: 100%;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
 }

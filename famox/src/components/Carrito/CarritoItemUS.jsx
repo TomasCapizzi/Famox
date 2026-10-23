@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 
 
 function CarritoItem2({item}) {
-    const { i18n } = useTranslation();
+    const { i18n, t } = useTranslation();
     const lang = i18n.language;
 // Carrito Item 2 para los equipos de UNIDADES DE SUMINISTRO
   const {removerItem} = useContext(CarritoContext);
@@ -21,13 +21,13 @@ function CarritoItem2({item}) {
     <>
         <tr className='detalles'>
             <td><img src={item.img} alt="" /><p>{item.nombre[lang]}</p></td>
-            <td>
+            <td data-label={t("cart.tabla.t2")} >
                 {
                     handlerInfo ? <AiFillCloseCircle className='info' onClick={() => mostrarCaracteristicas(setHandlerInfo, handlerInfo, caractRef)}/> : <AiFillInfoCircle className='info' onClick={() => mostrarCaracteristicas(setHandlerInfo, handlerInfo, caractRef)}/> 
                 }
             </td>
-            <td><p> - </p></td>
-            <td><p>{item.cantidad}</p></td>
+            <td data-label={t("cart.tabla.t3")}><p> - </p></td>
+            <td data-label={t("cart.tabla.t4")}><p>{item.cantidad}</p></td>
             <td><BsTrashFill onClick={()=> removerItem(item)} /></td>
         </tr>
         <DetallesUnidSum item={item} caractRef={caractRef} />
